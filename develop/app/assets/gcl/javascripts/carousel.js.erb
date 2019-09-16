@@ -1,0 +1,109 @@
+﻿// var vimeoPlayers = $('.flexslider').find('iframe'), player;
+ 
+//         for (var i = 0, length = vimeoPlayers.length; i < length; i++) {
+//             player = vimeoPlayers[i];
+//             $f(player).addEvent('ready', ready);
+//         }
+ 
+//         function addEvent(element, eventName, callback) {
+//             if (element.addEventListener) {
+//                 element.addEventListener(eventName, callback, false)
+//             } else {
+//                 element.attachEvent(eventName, callback, false);
+//             }
+//         }
+ 
+//         function ready(player_id) {
+//             var froogaloop = $f(player_id);
+//             froogaloop.addEvent('play', function(data) {
+//                 $('.flexslider').flexslider("pause");
+//             });
+//             froogaloop.addEvent('pause', function(data) {
+//                 $('.flexslider').flexslider("play");
+//             });
+//         }
+
+
+if (doc.querySelector && doc.addEventListener) {
+
+    function videoRotator(url, callback) {
+        'use-strict';
+
+
+
+
+        // global vars
+        var
+            // create close button fragment
+            fragment = doc.createDocumentFragment(),
+            playClose = fragment.appendChild(doc.createElement('a'));
+
+        if (doc.getElementById("slide1-play")) {
+
+            // Slide 1 vars
+            var 
+                // video module wrapper
+                slide1Parent = doc.getElementById('slide1-parent'),
+
+                // play button
+                slide1Play = doc.getElementById('slide1-play'),
+                
+                // video wrapper
+                slide1Video = doc.getElementById('slide1-video'),
+
+                // device screenshot
+                layer1BG = doc.getElementById('slide1-screen')
+
+
+
+            // close btn attributes
+            setAttributes(playClose, {
+                "aria-controls": "slide1-play",
+                "href": "#slide1-parent",
+                "id": "videos-close",
+                "aria-label": "Close",
+                "role": "button",
+                "class": "hidden close-btn"
+            });
+            playClose.innerHTML = 'Close';
+
+            // close button events
+            playClose.addEventListener('click', function () {
+                setAttributes(slide1Video, { "class": "slides-video-wrapper" });
+                setAttributes(slide1Parent, { "class": "slide-video-parent" });
+                setAttributes(slide1Play, { "href": "#myExperience", "class": "ico i-video-play is--icon" });
+                setAttributes(playClose, { "class": "hidden ico i-m i--close close-btn" });
+                setAttributes(layer1BG, { "class": "slide-screen" });
+
+                //ga('beec4528a634c1272e86ba159d7b4b8e.send', 'event', 'Carousel Video EN', 'Closed', 'General Close' , {'nonInteraction': 1});
+
+                //w.preventDefault();
+            });
+
+            // play button events
+            slide1Play.addEventListener('click', function () {
+                //loadScript("https://sadmin.brightcove.com/js/BrightcoveExperiences.js", function () {
+
+                    setAttributes(slide1Video, { "class": "slides-video-wrapper" });
+                    slide1Play.removeAttribute('href');
+                    slide1Parent.className += " video-loaded";
+                    slide1Play.className += " video-active";
+                    layer1BG.className += " hide-bg";
+                    //slide1Play.onclick = null;
+                    //brightcove.createExperiences();
+                    slide1Parent.appendChild(fragment);
+                    setAttributes(playClose, { "class": "ico i-m i--close close-btn" });
+
+                    player.api("play");
+
+
+                //});
+                //j.preventDefault();
+                //$f( slider.slides.eq(slider.currentSlide).find('iframe').attr('id') ).api('play');
+            });
+
+        };
+
+    };
+
+};

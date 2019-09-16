@@ -1,0 +1,13 @@
+<p><%= link_to 'New Flag', new_admin_feature_flag_path %></p>
+<p>Flags:</p>
+
+<% @feature_flags.each do |flag| %>
+  <p>
+    <div><%= link_to 'Edit', edit_admin_feature_flag_path(id: flag.title) %>, <%= link_to 'Show', admin_feature_flag_path(id: flag.title) %>, title: <%= flag.title.inspect %>, active: <%= flag.active.inspect %></div>
+    <div>code: <%= flag.code.inspect %></div>
+    <div>turn_on_after: <%= flag.turn_on_after.inspect %></div>
+    <div>turn_off_after: <%= flag.turn_off_after.inspect %></div>
+    <div>options: <%= flag.options.inspect %></div>
+    <div><%= link_to 'Destroy', "/admin/feature_flags/#{flag.id}", method: :delete %></div>
+  </p>
+<% end %>

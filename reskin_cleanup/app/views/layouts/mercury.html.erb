@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0">
+    <%= csrf_meta_tags %>
+    <title>Mercury Editor</title>
+    <%= stylesheet_link_tag    'mercury' %>
+    <%= javascript_include_tag 'jquery-1.7', 'mercury' %>
+
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      $.fn.bindFirst = function(name, fn) {
+          // bind as you normally would
+          // don't want to miss out on any jQuery magic
+          this.bind(name, fn);
+
+          // Thanks to a comment by @Martin, adding support for
+          // namespaced events too.
+          var handlers = this.data('events')[name.split('.')[0]];
+          // take out the handler we just inserted from the end
+          var handler = handlers.pop();
+          // move it at the beginning
+          handlers.splice(0, 0, handler);
+      };
+
+      // Set to the url that you want to save any given page to, leave null for default handling.
+      var saveUrl = '/cms/mercury_update';
+      var mercury_panels = {};
+
+      // Instantiate the PageEditor
+      var mercury_page_editor = new Mercury.PageEditor(saveUrl, {
+        saveStyle:  'json', // 'form', or 'json' (default json)
+        saveMethod: 'POST', // 'PUT', or 'POST', (create, vs. update -- default PUT)
+        visible:    true  // boolean - if the interface should start visible or not
+      });
+      Mercury.config.regions.dataAttributes = ['version', 'code', 'controller', 'action', 'pageid'];
+
+
+      Mercury.on('ready', function() {
+        for (var i in mercury_page_editor.regions) {
+          var region = mercury_page_editor.regions[i];
+          var content = region.dataAttributes().code;
+          if (content.length > 0) region.content(content);
+        }
+
+        $( ".mercury-save-button" ).bindFirst('mouseup', function() {
+          $(window).unbind('mercury:region:focused');
+        });
+      });
+
+      Mercury.on('saved', function(e, data) {
+        window.location = window.location.href.replace(/\/editor\/?/i, '/');
+      });
+
+      Mercury.on('region:update', function(e, data) {
+        window.frames[0].$('#' + data.region.name).attr('data-code', data.region.content());
+      });
+
+
+      Mercury.on('region:focused', function(e, data) {
+        // Show panel
+        if (!mercury_panels[data.region.name])
+          mercury_panels[data.region.name] = new Mercury.Panel('/cms/section_versions/?section='+data.region.name, 'Versions', {appendTo: $('body'), title: 'Versions: ' + data.region.name, for: $('.mercury-panel-close'), closeButton: true})
+        mercury_panels[data.region.name].loaded = false;
+        mercury_panels[data.region.name].show();
+        data.region.content(data.region.dataAttributes().code);
+      });
+
+      Mercury.on('mode', function(e, data) {
+        if (!mercury_page_editor.previewing) {
+          var serialized = mercury_page_editor.serialize();
+          $.post( "/cms/sections/preview", serialized, function( data ) {
+            for (var key in data) {
+              var region = mercury_page_editor.regions.filter(function filter(region, index) {if (region.name == key) return true;  })[0];
+              if (region) region.previewElement.html(data[key]);
+            }
+          });
+        }
+
+      });
+
+      function update_region (id, version, code) {
+        var region = mercury_page_editor.regions.filter(function filter(region, index) {if (region.name == id) return true;  })[0]
+        region.content(code);
+        window.frames[0].$('#' + region.name).attr('data-code', code);
+        window.frames[0].$('#' + region.name).attr('data-version', version);
+      };
+
+      function add_version (id) {
+        $.get( "/cms/sections/add_version/" + id, function( data ) {
+          mercury_panels[id].loaded = false;
+          mercury_panels[id].show();
+        });
+      };
+      
+      function delete_version (id, version) {
+        $.get( "/cms/sections/delete_version/" + id + "/" + version, function( data ) {
+          mercury_panels[id].loaded = false;
+          mercury_panels[id].show();
+        });
+      };
+
+    </script>
+  </body>
+</html>

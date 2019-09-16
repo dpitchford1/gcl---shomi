@@ -1,0 +1,53 @@
+<% show_promo ||= false %>
+<% if @offer %>
+<section class="info info-lg info--primary">
+    <h3 class="hide-text"><%= t('orders.order_summary') %></h3>
+
+    <table class="order-table" summary="Review your order">
+    	<caption class="h-r size-L3"><%= t('orders.order_summary') %></caption>
+        <tbody>
+            <tr>
+                <td class="tleft size-M2">
+                    <%= t('offers.description.'+@offer.offer_id).html_safe %>
+                </td>
+                <td class="tright size-M2 h-l">
+                    <%= t('offers.price.'+@offer.offer_id).html_safe %>
+                </td>    
+            </tr> 
+            <% if @order.taxes %>   
+                <tr>
+                    <td class="tleft">
+                        
+                        <small><%= t('orders.applicable_taxes').html_safe %></small>
+                    </td>
+                     <td class="tright taxes size-SM">
+                        <% if I18n.locale == I18n.default_locale %> 
+                            $<%= @order.taxes %>
+                        <% else %>
+                            <small><%= @order.taxes %>$</small>
+                        <%end%>
+                    </td>
+                </tr>
+            <% end %>
+            <tr class="w-ul"><td>&nbsp;</td></tr>
+             <% if @order.total %>   
+                <tr class="total">
+                     <td class="tright size-L4" colspan="2">
+                        <%= t('orders.total').html_safe %>
+                        <% if I18n.locale == I18n.default_locale %> 
+                           $<%= @order.total %>
+                        <% else %>
+                           <%= @order.total.to_s.gsub('.',',') %>$
+                        <%end%>
+                        <small><%= t('orders.per_month').html_safe %></small>
+                    </td>
+                </tr>
+            <% end %>
+
+        </tbody>
+    </table>
+
+</section>
+<% end %>
+
+

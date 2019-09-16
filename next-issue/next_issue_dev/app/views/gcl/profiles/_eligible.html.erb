@@ -1,0 +1,109 @@
+<% content_for :title, t('titles.welcome').html_safe %>
+
+<% if @order %>
+	<% content_for :body_start do %>
+		<div id="track4"></div>
+	<% end %>
+	<% content_for :footer do %>
+		<script>
+			var track4js = '', axel = Math.random() + "", a = axel * 10000000000000; track4js += '<iframe src="https://4498654.fls.doubleclick.net/activityi;src=4498654;type=invmedia;cat=ekHojg9l;ord=' + a + '?" class="hidden"></iframe>';
+			document.getElementById('track4').innerHTML = track4js;
+			var google_conversion_id = 965243473, google_conversion_language = "en", google_conversion_format = "2", google_conversion_color = "ffffff", google_conversion_label = "0OexCOu-g1YQ0eShzAM", google_remarketing_only = false;
+		</script>
+		<script src="//www.googleadservices.com/pagead/conversion.js" async></script>
+	<% end %>
+	<% content_for(:noscript) do %>
+	<img alt="" src="//www.googleadservices.com/pagead/conversion/965243473/?label=0OexCOu-g1YQ0eShzAM&amp;guid=ON&amp;script=0">
+	<iframe class="hidden" src="https://4498654.fls.doubleclick.net/activityi;src=4498654;type=invmedia;cat=ekHojg9l;ord=1?"></iframe>
+	<% end %>
+<% end %>
+
+<%= cache(action_suffix: ['eligible', I18n.locale, @session.logged?, session[:user_region], @session.try(:profile).try(:product), @session.try(:profile).try(:level), @session.try(:profile).try(:code),  @order.try(:id)].join(':')) do %>
+	<section class="hero-standard text-center has--fancy-bot" style="padding-top: 1em">
+		<%= section :eligible_messaging do %>
+
+			<%# New %>
+			<% if session[:user_region] && @current_session.try(:profile).try(:product) == 'GCL' %>
+
+				<%# If purchased french, try again to purchase GCL %>
+				<h2 class="h-lgt sizes-M med-m"><%= t("profiles.eligible.purchased_heading_already").html_safe %></h2>
+				<p class="congrats-blurb copy-LG lg-m"><%= t("profiles.eligible.purchased_copy_already").html_safe %></p>
+
+			<% elsif @current_session.try(:profile).try(:product) == 'RDSGAMES' %>
+
+				<%# Purchased French Package %>
+				<h2 class="h-lgt sizes-M med-m"><%= t("profiles.eligible.purchased_heading_fp").html_safe %></h2>
+				<p class="congrats-blurb copy-LG lg-m"><%= t("profiles.eligible.purchased_copy_fp").html_safe %></p>
+
+			<% elsif @current_session.try(:profile).try(:purchased?) %>
+
+				<%# Purchased message %>
+				<h2 class="h-lgt sizes-M med-m"><%= t("profiles.eligible.purchased_heading2").html_safe %></h2>
+				<%#=<p class="congrats-blurb copy-LG"> t("profiles.eligible.purchased_copy2").html_safe </p>%>
+
+			<% else %>
+
+				<%# IS ELIGIBLE %>
+				<% if @session.profile.code == 0 %>
+
+					<%# Better message %>
+					<h2 class="h-lgt sizes-M med-m"><%= t("profiles.eligible.better_heading2").html_safe %></h2>
+					<p class="congrats-blurb copy-LG lg-m"><%= t("profiles.eligible.better_copy2").html_safe %></p>
+
+				<% else %>
+
+					<%# Best message %>
+					<h2 class="h-lgt sizes-M med-m"><%= t("profiles.eligible.best_heading2").html_safe %></h2>
+					<%#=<p class="congrats-blurb copy-LG lg-m"> t("profiles.eligible.best_copy2").html_safe </p>%>
+
+				<% end %>
+
+			<% end %>
+		<% end %>
+
+		<p class="copy-size-M"><%= t("pages.faq.notes.cta").html_safe %></p>
+
+		<p><%= link_to t("btn.start_watching"), "http://gamecenterlive.nhl.com", class: "btn btn-default btn--lg", rel: "external", target: "blank" %></p>
+
+	</section>
+
+	<%# START: Complimentary Content %>
+	<section class="app-downloads text-center">
+		<%# START: App downloads %>
+		<%= render 'partials/hero_app_download' %>
+	</section>
+
+	<section class="" style="width: 80%; margin: 0 auto;">
+		<div class="region hero-1-devices">
+            <div class="hero-device hero--device1" id="hero-device1">
+                <div class="hero-device1-screen"></div>
+            </div>
+            <div class="hero-device hero--device2">
+                <div class="hero-device2-container">
+                    <div class="hero-device2-screen" id="hero-device2"></div>
+                </div>
+            </div>
+            <div class="hero-device hero--device3" id="hero-device3">
+                <div class="hero-device3-screen"></div>
+            </div>
+        </div>
+
+	</section>
+
+
+	<% if @order %>
+		<p class="noprint print-btn float-r"><a href="javascript:window.print()"><span class="ico i-m i--print">Print</span></a></p>
+		<% content_for :footer do %>
+			<%= stylesheet_link_tag "print", media: "print" %>
+		<% end %>
+		<%= render "orders/pay_details_#{@order.billing_option}" %>
+	<% end %>
+
+	<aside class="" role="complementary" style="margin-top: 3em;">
+		<% if I18n.locale == I18n.default_locale %>
+		<p class="text-center"><a href="/frequently-asked-questions#devices" class="btn btn-tertiary" target="blank" rel="external"><%= t("btn.usage_details") %></a></p>
+		<% else %>
+		<p class="text-center"><a href="/frequently-asked-questions#devices" class="btn btn-tertiary" target="blank" rel="external"><%= t("btn.usage_details") %></a></p>
+		<%end%>
+	</aside>
+<% end %>

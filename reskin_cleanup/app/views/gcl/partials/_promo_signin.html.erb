@@ -1,0 +1,10 @@
+<article class="feature is--fancy">
+<%= section :signin, auto_generate: false do %>
+	<h3 class="h-sb sizes-M3"><%= t("promos.promo_signin.excerpt").html_safe %></h3>
+	<div class="feature-body">
+		<p class="feature-excerpt yuck1"><%= t("promos.promo_signin.heading2").html_safe %></p>
+		<p><button class="btn btn-default btn-block btn--myrogers" data-target="#new_session_modal" data-toggle="modal" href="#new_session_modal" id="btn-signin"><%= t("btn.my_rogers").html_safe %></button></p>
+		<p class="small-text"><%= t("signin.new").html_safe %> <%= link_to t("signin.registernow"), new_profile_path %></p>
+	</div>
+<% end %>
+</article>

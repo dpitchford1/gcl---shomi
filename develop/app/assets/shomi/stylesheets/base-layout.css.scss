@@ -1,0 +1,213 @@
+/* = IMPORTANT GLOBALS = only to be used as trailing class (the last class) on elements..
+    - .no-ss === no small screen === display none for small screens
+    - .no-ws === no wide screen === display none for wide screens
+    - target browsers: IE9+ FF6+ Chrome 11+ Safari5+ Opera11+
+    */
+
+/* TEMPLATE
+  0.0 Document setup
+  0.1 Accessibility & Usability
+  0.2 Images, Media & Embedded content
+  0.3 Common Layout
+  0.4 Site Structure - Basic
+  0.5 Headers - Navigations - Footers
+  0.6 Custom Content Structure
+
+---------------------------------------------- */
+.alert.is-animated {
+        opacity: 0;
+        animation: fadeInOut 8s;
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        }
+@keyframes fadeInOut {
+        0%  { opacity: 0; }
+        15% { opacity: 1; }
+        95% {
+            opacity: 1;
+            -webkit-transform: translate3d(-50%, 0);
+            transform: translate(-50%, 0);
+            }
+        100% {
+            opacity: 0;
+            -webkit-transform: translate(-50%, -50px);
+            transform: translate(-50%, -50px);
+            }
+    }
+.alert.is-persistent {
+        opacity: 1;
+        position: absolute;
+        top: 5px;
+        left: 0;
+        right: 0;
+        width: 70%;
+}
+
+
+/* 1.5 Headings & Titles 
+======================================================================
+====================================================================== */
+@import "partials/type";
+
+
+
+
+
+/* $ 0.0 Document setup
+====================================================================== */
+    html{
+        text-rendering: optimizeLegibility;
+        }
+    /* tweaks */
+    @media (max-width: 33.333333em){ /* 480px */
+        html{ 
+            -webkit-overflow-scrolling: touch; 
+            -webkit-tap-highlight-color: #ebebeb; 
+            }
+    }
+    body{  
+        min-height:100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        position: relative; 
+        z-index: 0;
+        }
+        .no-js .page-bg{
+            //background: url("content/bg-site-1920.jpg") no-repeat center 120px;
+            background-size: 100% auto;
+            }
+
+
+/* $ 0.1 Accessibility & Usability
+====================================================================== */
+@import "partials/accessibility";
+  
+
+/* $ 0.2 Images, Media & Embedded content
+====================================================================== */
+    img{
+        vertical-align:middle; 
+        }
+    figcaption{
+        @include rem(font-size, 13px);
+        }
+
+
+/* $ 0.3 Common Layout
+====================================================================== */
+
+    /* Global Setup
+    ---------------------------------------------- */
+    div, header, footer, aside, nav, section, article{ overflow: hidden; position: relative; }
+
+    /* main site wrapper = default to 980px for small desktop and IE 7 & 8 */
+    .site-wrapper{ margin: 0 auto; padding: 0 1.15%; width: 100%; }
+
+    /* Fluid wrapper for main content - identical to site wrapper - fine grained adjustments for responsive breakpoints */
+    .fluid{
+        margin: 0 auto;
+        max-width: 980px;
+        padding: 0 1.15%;
+        }
+    .page-home #main-content {
+        //padding-top: 60%;
+    } 
+
+    .page-home .fluid {
+        padding: 0 !important;
+    }   
+
+    /* all purpose wrapper */
+    .region{ width: 100%; }
+
+    /* all purpose wrapper == padding top, margin bottom */
+    .content-wrapper{
+        padding-top: 0;
+        padding-bottom: 1.563em;
+        width: 100%;
+        }
+
+    /* Clear fix
+    ---------------------------------------------- */
+    .cf:before, .cf:after   { content:""; display:table; }
+    .cf:after               { clear:both; }
+
+
+/* $ 0.4 Site Structure - Basic
+====================================================================== */
+
+    /* Global Wrappers
+    ---------------------------------------------- */
+    /* body - homepage */
+    //.page-home{}
+    .page-site #main-content{ padding-top: 2em; }
+
+    /* Global Header */
+    //.global-header {}
+    .is--primary   { background-color: #d1072e; color: #fff; padding: 0; }
+    .is--secondary { background-color: #e4e6e5; position: static; padding: 0.9em 0 0.8em; }
+
+    // .is--tertiary{
+    //     display: table;
+    //     table-layout: fixed;
+    //     }
+    .navigation-wrapper{ padding-top: .313em; }
+    
+    /* body content */
+    #main-content   { padding-bottom: 2em; }
+    
+    /* aside */
+    .aside{ margin-bottom: 2em; }
+    
+    /* footer */
+    //.footer         {}
+    .is--f-primary  { background-color: #e4e6e5; padding: 1em 0 1.375em; z-index: 3; }
+    .is--f-secondary{ 
+        background-color: #434a4f; 
+        color: #fff; 
+        padding: 1.563em 0 .75em; 
+        z-index: 3; 
+        //position: fixed;
+        //bottom: 0;
+        //width: 100%;
+    }
+
+
+/* $ 0.5 Headers - Navigations - Footers
+====================================================================== */
+    @import "layout/global-menus";
+
+
+/* $ 0.6 Custom Content Structure
+====================================================================== */
+
+    /* Hero Homepage
+    ---------------------------------------------- */
+    @import "layout/heros";
+
+
+    /* FORMS - Site Specific
+    ====================================================================== */
+    @import "layout/form-global";
+
+
+    /* Feature and Promos modules
+    ---------------------------------------------- */
+    @import "layout/grid-modules";
+
+
+    /* 3 Custom Promos styled with borders and LOGO's
+    ---------------------------------------------- */
+    @import "modules/fancy-promos";
+
+
+    /* App Downloads
+    ---------------------------------------------- */
+    @import "modules/app-buttons";
+
+
+    /* Order Table
+    ---------------------------------------------- */
+    @import "layout/order-tables";

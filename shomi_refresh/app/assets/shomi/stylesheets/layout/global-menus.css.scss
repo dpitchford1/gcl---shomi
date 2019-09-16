@@ -1,0 +1,199 @@
+/* Rogers Logo
+---------------------------------------------- */
+.brand-link{ 
+    background-color: $cc-primary;
+    border-radius: 0 0 7px 7px;
+    float: left;
+    margin-bottom: .5em;
+    text-indent: -9999em;
+    width: 11.875em;
+    }
+
+[lang="en-ca"] .brand-link .block{ 
+    background: transparent asset-url("/assets/logos/i-rogers-logo-en.png") no-repeat center center;
+    background-image: linear-gradient(transparent, transparent), url("/assets/logos/i-rogers-logo-en.svg");
+    background-size: 65%;
+    }
+[lang="fr-ca"] .brand-link .block{ 
+    background: transparent asset-url("/assets/logos/i-rogers-logo-en.png") no-repeat center center;
+    background-image: linear-gradient(transparent, transparent), url("/assets/logos/i-rogers-logo-fr.svg");
+    background-size: 65%;
+    }
+.brand-link .block{ 
+    //background-position: center center;
+    //background-repeat: no-repeat;
+    color: $white; 
+    min-height: 3.563em;
+    }
+
+
+/* Site Logo -- fs==full-screen | ss==small-screen
+---------------------------------------------- */
+.brand-fs{ 
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    float: left;
+    height: 45px; 
+    margin: 0 2% 0 0;
+    position: relative; 
+    text-indent: -9999em;
+    width: 140px;
+    }
+    .brand-fs .block{ min-height: 45px; }
+
+
+/* LOGO - Localization switch setup
+---------------------------------------------- */
+//[lang="en-ca"] .brand-fs{ background-image: asset-url('logos/logo-brand-fs.png'); background-size: 100% auto; }
+
+[lang="en-ca"] .brand-fs{
+    background: asset-url("/assets/logos/i-logo-alt.png") no-repeat 0 center;
+    background-image: asset-url("/assets/logos/i-logo-alt.svg"), none; 
+    background-size: 100% auto;
+    }
+
+
+[lang="fr-ca"] .brand-fs{ background-image: asset-url('/assets/logos/logo-brand-fs-fr.png'); background-size: 100% auto; }
+
+/* Only load small screen logo IF js enabled 
+---------------------------------------------- */
+[lang="en-ca"] .brand-ss{ 
+    background: transparent asset-url("/assets/logos/rogers-logo.png") no-repeat center center;
+    background-image: linear-gradient(transparent, transparent), url("/assets/logos/i-rogers-logo-en.svg");
+    background-size: 65%;
+    }
+[lang="fr-ca"] .brand-ss{ 
+    background: transparent asset-url("/assets/logos/rogers-logo.png") no-repeat center center;
+    background-image: linear-gradient(transparent, transparent), url("/assets/logos/i-rogers-logo-fr.svg");
+    background-size: 65%;
+    }
+
+// .js[lang="en-ca"] .brand-ss{ background-image: asset-url('logos/logo-brand-ss.png'); background-size: 100% auto; }
+// .js[lang="fr-ca"] .brand-ss{ background-image: asset-url('logos/logo-brand-ss-fr.png'); background-size: 100% auto; }
+
+
+/* Header link focus styles */
+.header a:focus{ text-decoration: none; border-radius: 7px; }
+
+
+/* General menu structure
+---------------------------------------------- */
+.menu{
+    line-height: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    @include rem(font-size, 14px);
+    }
+//[lang="fr-ca"] .menu { @include rem(font-size, 13px); } 
+.menu li{
+    float: left;
+    margin: 0;
+    //padding: .75em 0 0;
+    }
+.menu a{
+    display: block;
+    //padding: 0.4em .1em;
+    }
+
+
+/* Primary Menu abstrction 
+---------------------------------------------- */
+.menu--primary{
+    float: right;
+    }
+.menu--primary li{
+    padding: .75em 0 0;
+    }  
+
+.menu--primary a{
+    padding: 1em .7em 1em .7em;
+    position: relative;
+    //float: left;
+    }
+    .menu--primary .is-selected{
+        color: $callout;
+        }
+
+.menu--primary li:first-child a:after {
+    width: 1px;
+    content: '|';
+    position: absolute;
+    right: 0;
+    line-height: .7;
+    }
+    .menu--primary li:first-child a:after {
+        color: initial;
+        }
+
+.menu--primary a:focus {
+    background-color: #BBE4EC; color: #414042;
+    }  
+
+/* Secondary Menu abstrction 
+---------------------------------------------- */
+.menu--secondary{
+    font-family: $fonts-reg;
+    float: left;
+    margin-right: 2%;
+    padding-top: .3em;
+    }
+
+.menu--secondary a{
+    color: #fff;
+    @include rem(font-size, 21px);
+    padding: .5em 1.3em;
+    }
+    .menu--secondary a:focus, .menu--secondary a:active { background-color: #511d8f; color: #fff; }
+
+    .menu-cta{ float: right; margin-bottom: 0; }
+    .menu-cta .btn{ padding: 1em 2.5em }
+
+
+/* Hide small screen menu wrap - content generated with js 
+---------------------------------------------- */
+// .ss-nav{ background-color: #DA291C; display: none; border-bottom: 1px solid #bf261b; min-height: 55px; position: fixed; top: 0; left: 0; width: 100%; z-index: 100; backface-visibility: hidden; -webkit-backface-visibility: hidden; will-change: transform; }
+
+
+/* Footer secondary modifiers 
+---------------------------------------------- */
+.copyright, .footer-menu{ @include rem(font-size, 13px); margin: 0; padding-bottom: 0; }
+
+
+@media (max-width:51.250em){
+    .js .ss-nav{ padding: 8px 3.5%; }
+}
+
+@media (max-width:51.250em){ /* 820PX */
+    /* LOGO - Has SVG and JS support */
+    .js .brand-ss{
+        display: block;
+        background-size: contain;
+        min-height: 36px;
+        margin: 0 auto;
+        overflow: hidden;
+        text-indent: -100em;
+        width: 180px;
+        }
+    /* Small screen menu with JS enabled */
+    //.js .ss-nav{ display: block; } //padding: 8px 4.6875%;
+    //.ss-nav.is-sticky{ box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25); }
+    .js .ss-nav .i--menu { height: 24px; margin: 6px 0 0; width: 31px; }
+    .js .ss-nav .i--close{ background-color: #bf261b; height: 20px; width: 28px; margin-top: 6px; }
+    .js .menu-trigger {
+        color: #fff;
+        position: absolute;
+        right: 3%;
+        top: 8px;
+        }
+}
+
+@media (max-width: 23.75em) { /* 380PX */
+    .js .ss-nav{ padding: 8px 4.6875%; } 
+
+    .js .brand-ss{
+        width: 140px;
+        }
+}

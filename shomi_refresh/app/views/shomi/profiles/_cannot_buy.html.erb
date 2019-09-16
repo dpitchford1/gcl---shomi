@@ -1,0 +1,36 @@
+<% content_for :title, t('titles.welcome').html_safe %>
+<% content_for :live_chat_url, t('live_chat.signed_in_link_account') %>
+
+<main class="region">
+	<h2 class="h-reg sizes-XLG cc"><%= t('profiles.ineligible.subscribe_to_shomi') %></h2>
+	<p class="h-med sizes-M w-ul xlg-m"><%= t('text.hi') %> <%= @current_session.username %></p>
+
+<%= cache(action_suffix: ['cannotBuy', I18n.locale, @session.logged?, @session.try(:profile).try(:level), @session.try(:profile).try(:code)].join(':')) do %>
+	<div class="region">
+		<h2 class="h-lgt sizes-S"><%= t('profiles.ineligible.choose_getting_started').html_safe %></h2>
+	<% if session[:promo_code] %>
+		<h3 class="h-lgt sizes-XSM"><%= t("profiles.ineligible.thank_you").html_safe %> (<strong><%= session[:promo_code].code %></strong>)</h3>
+	<% end %>
+
+    <%= render partial: 'partials/module_purchase', locals: {link_accounts_link: true} %>
+	</div>
+</main>
+
+<section class="row span2">
+	<h3 class="hide-text"><%= t('profiles.ineligible.alternative_options') %></h3>
+
+	<div class="col span-4">
+    <%= render 'partials/module_upgraderogers' %>
+	</div>
+
+<% if ENV['display_module_wireless_options'] %>
+    <div class="col span-2">
+    	<%= render 'partials/module_wireless_options' %>
+    </div>
+<% end %>
+</section>
+
+	<div class="region promo-code-full has--fancy-bot" id="enter-promo-code">
+		<%= render 'profiles/promo_code_form', use_styling: "landing_page"%>
+	</div>
+<% end %>

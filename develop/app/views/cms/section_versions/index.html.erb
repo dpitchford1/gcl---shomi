@@ -1,0 +1,8 @@
+<ul>
+<% @versions.each do |v| %>
+  <li><%= link_to 'X', "javascript:delete_version('#{@section.name}', '#{v.version}')" %> <%= link_to v.version, "javascript:update_region('#{@section.name}', '#{v.version}', '#{escape_javascript(v.code)}')" %> <%=h truncate v.code, length: 150 %></li>
+<% end %>
+</ul>
+
+<%= link_to 'Add new version', "javascript:add_version('#{@section.name}')" if @section %>
+

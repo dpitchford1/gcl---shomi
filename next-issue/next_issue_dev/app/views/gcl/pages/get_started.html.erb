@@ -1,0 +1,226 @@
+<% content_for :title, t('menu.gettingstarted').html_safe %>
+
+<section class="content-wrapper">
+	<h2 class="h-lgt sizes-M w-ul"><%= t("pages.get_started.heading").html_safe %></h2>
+	<%= t("pages.get_started.headline").html_safe %>
+	<div class="content-wrapper row info info-lg info--secondary" role="navigation">
+		
+		<div class="col span-3">
+			<ul class="no-bullet copy-size-S styled-bullets">
+				<li><a href="#overview"><%= t("pages.faq.overview.heading").html_safe %></a></li>
+				<li><a href="#access"><%= t("pages.faq.access.heading").html_safe %></a></li>
+			</ul>
+		</div>
+		<div class="col span-3">
+			<ul class="no-bullet copy-size-S styled-bullets">
+				<li><a href="#streaming"><%= t("pages.get_started.streaming.heading").html_safe %></a></li>
+				<li><a href="#gameplus"><%= t("pages.faq.gameplus.heading").html_safe %></a></l
+			</ul>
+		</div>
+	</div>
+</section>
+
+
+<section class="content-wrapper">
+	<h2 class="sizes-M2 cc w-ul anchored" id="overview"><%= t("pages.faq.overview.heading").html_safe %></h2>
+
+	<h3 class="sizes-SM"><%= t("pages.faq.header.heading1").html_safe %></h3>
+
+	<p class="lg-m"><%= t("pages.faq.header.excerpt1").html_safe %></p>
+
+	<h3 class="sizes-SM"><%= t("pages.faq.header.heading2").html_safe %></h3>
+
+	<p><%= t("pages.faq.header.excerpt2").html_safe %></p>
+	<p><%= t("pages.faq.header.note1").html_safe %></p>
+	<p><%= t("pages.faq.header.note2").html_safe %></p>
+	<p><%= t("pages.faq.gameplus.1_copy3").html_safe %></p>
+</section>
+
+
+<section class="content-wrapper">
+	<h3 class="sizes-M2 cc w-ul anchored" id="access"><%= t("pages.faq.access.heading").html_safe %></h3>
+
+	<dl class="content-listing">
+		<dt><%= t("pages.get_started.access.1_title").html_safe %></dt>
+		<dd>
+			<ol>
+				<li><%= t("pages.get_started.access.1_copy1").html_safe %>
+					<ul class="alpha-list">
+						<%= t("pages.get_started.access.1_list1").html_safe %>
+					</ul>
+				</li>
+
+				<li><%= t("pages.get_started.access.2_copy1").html_safe %>
+
+					<ul class="app-button-list content-buttons">
+						<li><a href="https://itunes.apple.com/ca/app/nhl-gamecenter/id465092669?mt=8" class="ico i-apps i--apple" rel="external follow" target="blank"><%= t("promos.app_downloads.apple").html_safe %></a></li>
+						<li><a href="https://play.google.com/store/apps/details?id=com.nhl.gc1112.free&hl=en" class="ico i-apps i--google" rel="external follow" target="blank"><%= t("promos.app_downloads.google").html_safe %></a></li>
+						<!-- <li class="badge-bg"><a class="nhl-badge" href="http://gamecenterlive.nhl.com" rel="external follow" target="blank"><span class="i-inline i-pl i--logo-nhl-light"><%= t("promos.app_downloads.nhl_btn").html_safe %></span></a></li> -->
+					</ul>
+
+
+					<!-- <p class="content-buttons cf">
+					    <a href="https://play.google.com/store/apps/details?id=com.nhl.gc1112.free&hl=en" class="ico i-apps i--google" rel="external" target="blank"><%= t("apps_promo.google") %></a><a href="https://itunes.apple.com/ca/app/nhl-gamecenter/id465092669?mt=8" class="ico i-apps i--apple" rel="external" target="blank"><%= t("apps_promo.apple") %></a>
+					</p> -->
+					<ul class="alpha-list clear">
+						<%= t("pages.get_started.access.2_list1").html_safe %>
+					</ul>
+				</li>
+
+				<li><%= t("pages.get_started.access.3_copy1").html_safe %>
+					<ul class="alpha-list">
+						<%= t("pages.get_started.access.3_list1").html_safe %>
+					</ul>
+				</li>
+			</ol>
+		</dd>
+
+		<dd>
+			<%= t("pages.get_started.access.note1").html_safe %>
+		</dd>
+
+		<% if I18n.locale == I18n.default_locale %>
+		<% else %>
+		<dd><%= t("pages.get_started.access.note2_fr").html_safe %></dd>
+		<%end%>
+	</dl>
+
+	<p class="text-right top-of-page"><a href="#page-body"><%= t("blackouts.text.top").html_safe %></a></p>
+</section>
+
+<section class="content-wrapper">
+	<h3 class="sizes-M2 cc w-ul anchored" id="streaming"><%= t("pages.get_started.streaming.heading").html_safe %></h3>
+
+	<dl class="content-listing">
+		<dt><%= t("pages.get_started.streaming.1_title").html_safe %></dt>
+		<dd>
+			<ol class="loose-list">
+			<%= t("pages.get_started.streaming.1_list1").html_safe %>
+			</ol>
+		</dd>
+
+		<dt><%= t("pages.get_started.streaming.2_title").html_safe %></dt>
+		<dd>
+			<ol class="loose-list">
+			<%= t("pages.get_started.streaming.2_list1").html_safe %>
+			</ol>
+		</dd>
+
+		<dt><%= t("pages.get_started.streaming.3_title").html_safe %></dt>
+		<dd>
+			<ol class="loose-list">
+			<%= t("pages.get_started.streaming.3_list1").html_safe %>
+			</ol>
+		</dd>
+
+		<dt><%= t("pages.get_started.streaming.4_title").html_safe %></dt>
+		<dd>
+			<ol class="loose-list">
+			<%= t("pages.get_started.streaming.4_list1").html_safe %>
+			</ol>
+		</dd>
+	</dl>
+
+	<p class="text-right top-of-page"><a href="#page-body"><%= t("blackouts.text.top").html_safe %></a></p>
+</section>
+
+<section class="content-wrapper">
+	<h3 class="sizes-M2 cc w-ul anchored" id="gameplus"><%= t("pages.faq.gameplus.heading").html_safe %></h3>
+
+	<p><%= t("pages.faq.gameplus.1_copy3").html_safe %></p>
+
+	<dl class="content-listing">
+		<dt><%= t("pages.get_started.gameplus.1_title").html_safe %></dt>
+		<dd>
+			<%= t("pages.get_started.gameplus.1_copy1").html_safe %>
+		</dd>
+		<dd>
+			<%= t("pages.get_started.gameplus.note1").html_safe %>
+		</dd>
+
+
+		<dt><%= t("pages.get_started.gameplus.2_title").html_safe %></dt>
+		<dd>
+			<ol class="loose-list">
+			<%= t("pages.get_started.gameplus.2_list1").html_safe %>
+			</ol>
+		</dd>
+
+
+		<dt><%= t("pages.get_started.gameplus.3_title").html_safe %></dt>
+		<dd>
+			<ol class="loose-list">
+			<%= t("pages.get_started.gameplus.3_list1").html_safe %>
+			</ol>
+		</dd>
+
+
+		<dt><%= t("pages.get_started.gameplus.4_title").html_safe %></dt>
+		<dd>
+			<ol class="loose-list">
+			<%= t("pages.get_started.gameplus.4_list1").html_safe %>
+			</ol>
+		</dd>
+
+
+		<dt><%= t("pages.get_started.gameplus.5_title").html_safe %></dt>
+		<dd>
+			<ol class="loose-list">
+			<%= t("pages.get_started.gameplus.5_list1").html_safe %>
+			</ol>
+		</dd>
+
+
+		<dt><%= t("pages.get_started.gameplus.6_title").html_safe %></dt>
+		<dd>
+			<%= t("pages.get_started.gameplus.note2").html_safe %>
+		</dd>
+		<dd>
+			<ol class="loose-list">
+			<%= t("pages.get_started.gameplus.6_list1").html_safe %>
+			</ol>
+		</dd>
+
+		<dt><%= t("pages.get_started.gameplus.7_title").html_safe %></dt>
+		<dd>
+			<%= t("pages.get_started.gameplus.note2").html_safe %>
+		</dd>
+		<dd>
+			<ol class="loose-list">
+			<%= t("pages.get_started.gameplus.7_list1").html_safe %>
+			</ol>
+		</dd>
+
+		<dt><%= t("pages.get_started.gameplus.8_title").html_safe %></dt>
+		<dd>
+			<ol class="loose-list">
+			<%= t("pages.get_started.gameplus.8_list1").html_safe %>
+			</ol>
+		</dd>
+		<dd>
+			<%= t("pages.get_started.gameplus.tip1").html_safe %>
+		</dd>
+	</dl>
+
+	<p class="text-right top-of-page"><a href="#page-body"><%= t("blackouts.text.top").html_safe %></a></p>
+</section>
+
+<section class="content-wrapper has--fancy-top">
+	<h2 class="h-lgt sizes-M3"><%= t("pages.faq.notes.still_looking_heading").html_safe %></h2>
+	<p><%= t("pages.faq.notes.still_looking_copy").html_safe %></p>
+</section>
+
+<section class="content-wrapper">
+    <h2 class="h-lgt sizes-M3"><%= t("text.need_help") %></h2>
+    <ul class="inline-list help-list">
+    <% if I18n.locale == I18n.default_locale %>
+	    <li><a href="http://rogershelp.com/customerserv/livechatsupport/index.php?source=701&lctc=701%7C01%7Cws%7CGCL_portal_Support_en" target="blank" rel="external"><span class="i-inline i-pl i--livechat"><%= t("text.live_chat") %></span></a></li>
+    <% else %>
+	    <li><a href="http://rogershelp.com/customerserv/livechatsupport/index.php?source=751&lctc=751%7C01%7Cws%7CGCL_portal_Support_fr" target="blank" rel="external"><span class="i-inline i-pl i--livechat"><%= t("text.live_chat") %></span></a></li>
+    <%end%>
+	</ul>
+</section>
+
+<% content_for :legal_footnotes do %>
+	<%= render 'partials/footnotes_get_started' %>
+<% end %>

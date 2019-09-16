@@ -1,0 +1,57 @@
+<% content_for :body_start do %>
+  <div id="track2"></div>
+  <div id="track3"></div>
+<% end %>
+<% content_for :footer do %>
+      <script>
+            var track2js = '';
+            var axel = Math.random() + "", a = axel * 10000000000000; track2js += '<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=buI1julI;ord=' + a + '?" class="hidden"></iframe>';
+            document.getElementById('track2').innerHTML = track2js;
+        </script>
+        <noscript><iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=buI1julI;ord=1" class="hidden"></iframe></noscript>
+
+         <script>
+            var track3js = '';
+            var axel = Math.random() + "", a = axel * 10000000000000; track3js += '<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger004;ord=' + a + '?" class="hidden"></iframe>';
+            document.getElementById('track3').innerHTML = track3js;
+        </script>
+        <noscript><iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger004;ord=1" class="hidden"></iframe></noscript>
+<% end %>
+
+<%= render 'buy' %>
+
+<section class="content-wrapper submit-wrapper">
+  <% unless @order.optin %>
+	  <h2 class="h-r size-L"><%= t('orders.payment_method').html_safe %></h2>
+  <% end %>
+<%= render 'rogers_bill' %>
+
+<% content_for :support_module_class, 'hidden' %>
+
+</section>
+
+<aside id="footnote" class="footnote clear">
+    <h3><%= t('legal.title').html_safe %></h3>
+    <p><%= t("legal.terms1").html_safe %></p>
+    <p><%= t("legal.terms2").html_safe %></p>
+</aside>
+
+
+<!-- Facebook Conversion Code for Registration Pixel - Place After My Rogers Login -->
+<script>(function() {
+  var _fbq = window._fbq || (window._fbq = []);
+  if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+  }
+})();
+window._fbq = window._fbq || [];
+window._fbq.push(['track', '6021840383737', {'value':'0.01','currency':'CAD'}]);
+</script>
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6021840383737&amp;cd[value]=0.01&amp;cd[currency]=CAD&amp;noscript=1" /></noscript>
+
+<script src="//platform.twitter.com/oct.js" type="text/javascript"></script>      <script type="text/javascript">      twttr.conversion.trackPid('l5170');      </script>      <noscript>      <img height="1" width="1" style="display:none;" alt=""        src="https://analytics.twitter.com/i/adsct?txn_id=l5170&amp;p_id=Twitter" />      <img height="1" width="1" style="display:none;" alt=""        src="//t.co/i/adsct?txn_id=l5170&amp;p_id=Twitter" />      </noscript> 

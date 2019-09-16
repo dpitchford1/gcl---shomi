@@ -1,0 +1,32 @@
+
+// .app-downloads{
+//     padding: 1em 0 0;
+//     }
+.app-downloads .h-b{
+    border-left: 1px solid #ddd;
+    float: right;
+    line-height: 1.2;
+    margin-bottom: .2em;
+    padding-left: 3.5%;
+    width: 67%;
+    }
+.app-downloads .i-pl:before {
+    background-color: #eee !important;
+    background-position: 50% 50% !important;
+    background-size: 80% auto !important;
+    border-radius: 12px;
+    height: 75px;
+    margin-right: 30px;
+    //margin-top: 0.2em;
+    padding: 0.3em;
+    width: 75px;
+	}
+.app-buttons{ 
+	float: left; 
+	margin: 0.3em 0;
+    padding: 1.2em 0 1.7em 3.5%; 
+	}
+.content-buttons{
+    padding: .7em 0 0 2em;
+    margin: 0;
+    }

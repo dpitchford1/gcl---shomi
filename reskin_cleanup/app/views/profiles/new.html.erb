@@ -1,0 +1,32 @@
+<% content_for :title, t('titles.purchase_flow').html_safe %>
+
+<% content_for :body_start do %>
+	<div id="track5"></div>
+	<div id="track6"></div>
+<% end %>
+<% content_for :footer do %>
+	<script>
+		var track5js = '', axel1 = Math.random() + "", a1 = axel1 * 10000000000000, track6js = '', axel2 = Math.random() + "", a2 = axel2 * 10000000000000;
+
+		track5js += '<iframe class="hidden" src="https://4498654.fls.doubleclick.net/activityi;src=4498654;type=invmedia;cat=9GI6gir0;ord=' + a1 + '?"></iframe>';
+		track6js += '<iframe class="hidden" src="https://1662407.fls.doubleclick.net/activityi;src=1662407;type=invmedia;cat=9GI6gir0;ord=' + a2 + '?"></iframe>';
+
+		document.getElementById('track5').innerHTML = track5js;
+		document.getElementById('track6').innerHTML = track6js;
+
+		<%= Rails.application.assets["utils/fb-script-loader"].to_s.html_safe %>
+		window._fbq.push(['track', '6022576828830', {'value':'0.00','currency':'CAD'}]);
+	</script>
+<% end %>
+<% content_for(:noscript) do %>
+	<iframe class="hidden" src="https://4498654.fls.doubleclick.net/activityi;src=4498654;type=invmedia;cat=9GI6gir0;ord=1?"></iframe>
+	<iframe class="hidden" src="https://1662407.fls.doubleclick.net/activityi;src=1662407;type=invmedia;cat=qtvslgv5;ord=1?"></iframe>
+	<img class="hidden" src="https://www.facebook.com/tr?ev=6022576828830&amp;cd[value]=0.00&amp;cd[currency]=CAD&amp;noscript=1">
+<% end %>
+
+<section class="region">
+	<p class="already-have"><%= t("profiles.already").html_safe %> <%= link_to t("menu.sign_in"), new_session_path, class: 'inline' %></p>
+	<h2 class="h-lgt sizes-M w-ul"><%= t("profiles.accounts.create_heading").html_safe %></h2>
+	<%= render "form" %>
+	<%#= render 'tos/modal', tos: @tos %>
+<%#= section wrapper closes in form.html %>

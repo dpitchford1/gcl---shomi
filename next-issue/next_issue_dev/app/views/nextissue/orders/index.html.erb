@@ -1,0 +1,43 @@
+<% params[:order] ||= {billing_option: 'rogersbill'} %>
+<% params[:order][:billing_option] ||= 'rogersbill' %>
+<% @override_header_margin = @current_session.profile.accounts.any? %>
+
+<% content_for :navigation do  %>
+  <% if @current_session.profile.accounts.any? %>
+    <div class="site-wrapper">
+      <div class="btn-nextissue-group btn-group">
+        <%= link_to t('orders.rogers_account'), new_order_path(order: {billing_option: 'rogersbill', order_id: @current_session.try(:latest_order).try(:order_id), operation: params[:operation]}),
+                    'class' => "btn btn-nextissue #{params[:order][:billing_option] == 'rogersbill' ? 'active' : ''}" %>
+        <%= link_to t('orders.credit_card'), new_order_path(order: {billing_option: 'cc', order_id: @current_session.try(:latest_order).try(:order_id)}, operation: params[:order][:operation]),
+                    'class' => "btn btn-nextissue #{params[:order][:billing_option] == 'cc' ? 'active' : ''}"  %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<%= render 'orders/summary' %>
+
+<% if @current_session.profile.accounts.any? && params[:order] && params[:order][:billing_option] == 'rogersbill' %>
+  <%= render 'orders/rogers_bill' %>
+<% end %>
+
+<% if params[:order] && params[:order][:billing_option] == 'cc' %>
+  <%= render 'orders/cc' %>
+<% end %>
+
+<script>
+  addLoadEvent(function() {
+    // add the submit order event on click of the 'order_submit' class
+    if ($('.order_submit')) {
+      $('.order_submit').on('click', function (e) {
+        <% if @current_session.try(:has_rogers_account?) %>
+          <% if params[:order] && params[:order][:billing_option] == 'cc' %>
+            dataLayer.push({ "event": "revent", "eventCategory": "<%= I18n.locale.to_s %> existing user funnel", "eventAction": "3c submit card details", "eventLabel": "<%= @offer.try(:basic?) ? 'basic' : 'premium' %>" });
+          <% end %>
+        <% else %>
+          dataLayer.push({ "event": "revent", "eventCategory": "<%= I18n.locale.to_s %> new user funnel", "eventAction": "4 billing info submit", "eventLabel": "<%= @offer.try(:basic?) ? 'basic' : 'premium' %>" });
+        <% end %>
+      });
+    }
+  });
+</script>

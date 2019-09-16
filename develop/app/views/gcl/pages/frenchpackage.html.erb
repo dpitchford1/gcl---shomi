@@ -1,0 +1,101 @@
+<% content_for :title, t('titles.nhl_french_package').html_safe %>
+
+<section class="content-wrapper">
+	<h2 class="h-lgt sizes-M w-ul"><%= t("pages.french_package.page_heading").html_safe %></h2>
+	<p class="copy-size-M2"><%= t("pages.french_package.page_excerpt").html_safe %></p>
+
+	<%# start %>
+	<article class="content-table-group row" id="mideast-ontario">
+
+		<div class="col span-3 lg-m">
+			<h4 class="h-sb h-reverse"><%= t("pages.french_package.heading_available").html_safe %></h4>
+
+			<ul class="no-bullet content-table">
+				<li><%= t("pages.french_package.provinces.alberta").html_safe %></li>
+				<li><%= t("pages.french_package.provinces.bc").html_safe %></li>
+				<li><%= t("pages.french_package.provinces.manitoba").html_safe %></li>
+				<li><%= t("pages.french_package.provinces.nwt").html_safe %></li>
+				<li><%= t("pages.french_package.provinces.nunavut").html_safe %></li>
+				<li><%= t("pages.french_package.provinces.ontario_west").html_safe %></li>
+				<li><%= t("pages.french_package.provinces.sask").html_safe %></li>
+				<li><%= t("pages.french_package.provinces.yukon").html_safe %></li>
+			</ul>
+		</div>
+
+		<div class="col span-3 cf">
+			<h4 class="h-sb h-reverse"><%= t("pages.french_package.heading_notavailable").html_safe %></h4>
+
+			<ul class="no-bullet content-table">
+				<li><%= t("pages.french_package.provinces.newfoundland").html_safe %></li>
+				<li><%= t("pages.french_package.provinces.nb").html_safe %></li>
+				<li><%= t("pages.french_package.provinces.ns").html_safe %></li>
+				<li><%= t("pages.french_package.provinces.ontario_east").html_safe %></li>
+				<li><%= t("pages.french_package.provinces.pei").html_safe %></li>
+				<li><%= t("pages.french_package.provinces.quebec").html_safe %></li>
+			</ul>
+		</div>
+
+		<%= section :french_package_form do %>
+		<div class="info info-lg info--primary clear">
+			<%= simple_form_for :rds_games_region, url: frenchpackage_redirect_path, html: {class: 'alternative-form'}  do |f| %>
+			<fieldset class="content-wrapper">
+				<%= f.input :region, collection: Portal::RDS_REGIONS[session[:lang].to_s], as: :select, prompt: t('simple_form.prompts.rds_games_available_region.region'), error: 'big', label: t('pages.french_package.label').html_safe, wrapper: 'fancy_select' %>
+				<p><%= f.button :submit, t('pages.french_package.submit').html_safe, id: 'french_region_submit_btn', class: 'btn-tertiary' %></p>
+			</fieldset>
+			<p class="feature-excerpt no-m">
+				<%= t('pages.french_package.purchase_for') %>
+				<span class="buy-price block">
+					<span class="price wfsb">
+						<sup class="wfsb">$</sup>59<sup>99</sup>
+					</span>
+				</span>
+			</p>
+			<% end %>
+		</div>
+		<% end %>
+
+		<%# start all the copy %>
+		<dl class="content-listing clear">
+			<%= section :french_package_copy do %>
+			<dt class="h-sb" id="faq1"><%= t("pages.french_package.heading1").html_safe %></dt>
+			<dd>
+				<p><%= t("pages.french_package.1_copy1").html_safe %></p>
+			</dd>
+
+			<dt class="h-sb" id="faq2"><%= t("pages.french_package.heading2").html_safe %></dt>
+			<dd>
+				<p><%= t("pages.french_package.2_copy2").html_safe %></p>
+			</dd>
+
+			<dt class="h-sb" id="faq3"><%= t("pages.french_package.heading3").html_safe %></dt>
+			<dd>
+				<p><%= t("pages.french_package.copy3").html_safe %></p>
+			</dd>
+			<% end %>
+		</dl>
+
+		<dl class="content-listing clear">
+			<dt class="h-sb" id="faq3"><%= t("pages.french_package.heading4").html_safe %></dt>
+			<dd>
+				<p><%= t("pages.french_package.copy4").html_safe %></p>
+			</dd>
+			
+		</dl>
+	</article>
+</section>
+
+<% content_for :legal_footnotes do %>
+	<%= render 'partials/footnotes_get_started' %>
+<% end %>
+
+<% content_for :addload_ready do %>
+	$("#french_region_submit_btn").attr("disabled","disabled");
+	$( "#rds_games_region_region" ).change(function() {
+		if ($( "#rds_games_region_region option:selected" ).val() == ''){
+			$('#french_region_submit_btn').attr('disabled','disabled').addClass('btn-tertiary');
+		} else {
+			$('#french_region_submit_btn').removeClass('btn-tertiary').removeAttr('disabled');
+		}
+	});
+
+<% end %>

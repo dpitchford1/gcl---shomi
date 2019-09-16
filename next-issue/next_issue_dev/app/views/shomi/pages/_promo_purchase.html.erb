@@ -1,0 +1,10 @@
+<article class="feature purchase is--fancy">
+	<span class="shomi-logo"></span>
+	<h3 class="h-l size-L2"><%= t("promo_offers.heading").html_safe %></h3>
+	<div class="feature-body">
+		<p class="excerpt h-l size-M2">
+			<%= t("promo_offers.excerpt").html_safe %>
+		</p>
+		<p><%= link_to t("btn.subscribe"), @current_session.logged? ? orders_path : new_profile_path, class: 'btn btn-default' %></p>
+	</div>
+</article>

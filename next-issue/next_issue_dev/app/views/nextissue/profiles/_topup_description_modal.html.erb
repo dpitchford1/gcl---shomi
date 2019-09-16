@@ -1,0 +1,19 @@
+<% upgrade_link ||= '' %>
+
+<div class="modal m-fade" id="offer_description" tabindex="-1" role="dialog" aria-labelledby="OfferDescription" aria-hidden="true">
+  <div class="white-modal-dialog">
+    <a href="#main-content" class="icon-close size-M i-pt2 i-close-gray" data-dismiss="modal" role="button"></a>
+    <div class="modal-body cf">
+      <h3 class="sm-b-mg"><%= t('offers.premium_top_up_description') %></h3>
+
+      <p><%= t('offers.premium_titles_include') %></p>
+      <div class="premium-offer-images">
+        <% t('offers.premium_top_up_image_urls').to_s.split(',').each_with_index do |logo_url, i| %>
+          <%= image_tag logo_url, alt: "logo #{i}" %>
+        <% end %>
+      </div>
+
+      <div class="sm-b-mg"><%= upgrade_link %></div>
+    </div>
+  </div>
+</div>

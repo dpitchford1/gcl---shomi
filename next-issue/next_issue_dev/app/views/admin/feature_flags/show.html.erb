@@ -1,0 +1,11 @@
+
+<p>
+<div><%= link_to 'Edit', edit_admin_feature_flag_path(id: @feature_flag.title) %>, title: <%= @feature_flag.title.inspect %>, active: <%= @feature_flag.active.inspect %></div>
+<div>code: <%= @feature_flag.code.inspect %></div>
+<div>turn_on_after: <%= @feature_flag.turn_on_after.inspect %></div>
+<div>turn_off_after: <%= @feature_flag.turn_off_after.inspect %></div>
+<div>options: <%= @feature_flag.options.inspect %></div>
+</p>
+
+<p><%= link_to 'Destroy', "/admin/feature_flags/#{@feature_flag.id}", method: :delete %></p>
+<p><%= link_to 'Index', admin_feature_flags_path %></p>

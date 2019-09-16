@@ -1,0 +1,12 @@
+<% if !session[:promo_code] || !session[:promo_code].code  || !session[:promo_code].code_type %>
+
+	<%= cache(action_suffix: ['promo_code', I18n.locale].join(':')) do %>
+		<%= simple_form_for :promo_code, url: promo_code_path, remote: true, html: {class: 'promo-form cf'}  do |f| %>
+			<fieldset class="promo-code">
+				<%= f.input :code, :label_html => { :class => 'form-label' }, :label => t("simple_form.labels.promo_code.code").html_safe %>
+				<%= f.button :submit, t("btn.submit"), class: 'btn btn-default' %>
+			</fieldset>
+		<% end %>
+	<% end %>
+
+<% end %>

@@ -1,0 +1,34 @@
+<table class="summary-table" summary="Review order details">
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.payment_method') %>:</strong></td>
+		<td class="summary-col"><%= t('orders.promo_code') %>(<%= @order.promo_code %>)</td>
+	</tr>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.name') %>:</strong></td>
+		<td class="summary-col"><%= "#{@order.first_name} #{@order.last_name}" %></td>
+	</tr>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.street') %>:</strong></td>
+		<td class="summary-col"><%= @order.street %></td>
+	</tr>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.city') %>:</strong></td>
+		<td class="summary-col"><%= @order.city %></td>
+	</tr>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.province') %>:</strong></td>
+		<td class="summary-col"><%= @order.province %></td>
+	</tr>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.postal_code') %>:</strong></td>
+		<td class="summary-col"><%= @order.postal_code %></td>
+	</tr>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.birthdate') %>:</strong></td>
+		<td class="summary-col"><%= @order.birthdate %></td>
+	</tr>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.opt_in') %>:</strong></td>
+		<td class="summary-col"><%= @order.optin_email.to_i == 0 ? t('simple_form.no') : t('simple_form.yes') %></td>
+	</tr>
+</table>

@@ -1,0 +1,10 @@
+﻿var appSetup = appSetup || {};
+window.appSetup = (function (window, document, undefined) {
+	// testing again
+    <%= Rails.application.assets["utils/font-loader"].to_s.html_safe %>
+
+    <%= Rails.application.assets["utils/ie10-fix"].to_s.html_safe %>
+
+    <%= Rails.application.assets["utils/matchmedia"].to_s.html_safe %>
+
+})(this, this.document);

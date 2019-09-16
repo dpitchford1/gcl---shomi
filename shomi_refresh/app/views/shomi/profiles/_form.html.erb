@@ -1,0 +1,38 @@
+    <% content_for :footer do  ajax_validation(:profile) end %>
+    <%= render "layouts/form_error_header", object: @profile %>
+
+    <%= simple_form_for(@profile, remote: true, data: {validate: 'profile'}, html: {class: 'general-form' }) do |f| %>
+        <fieldset class="fieldset fieldset--rows-inline">
+            <legend class="legend-visible"><%= t('form.legend.email_address') %></legend>
+            <%= f.input :email_address, required: true, label: false, placeholder: t('activemodel.attributes.profile.email_address_2').html_safe, input_html: { autocomplete: 'on' } %>
+            <%= f.input :email_address_confirmation, label: false, required: true, placeholder: t('activemodel.attributes.profile.confirm_email_address').html_safe, input_html: { :autocomplete => 'on'} %>
+        </fieldset>
+
+        <fieldset class="fieldset fieldset--rows-inline">
+            <legend class="legend-visible"><%= t('form.legend.password').html_safe %></legend>
+            <%= f.input :password, label: false, :hint => false, placeholder: t('activemodel.attributes.profile.password'), input_html: { maxlength: 16, :autocomplete => 'off'} %>
+            <%= f.input :password_confirmation, label: false, placeholder: t('activemodel.attributes.profile.confirm_password'), input_html: { maxlength: 16, :autocomplete => 'off'} %>
+        </fieldset>
+
+        <fieldset class="fieldset fieldset--rows-stacked">
+            <legend class="legend-visible"><%= t('form.legend.password_confirmation') %></legend>
+            <%= f.input :question, collection: Question.collection(session[:lang]), as: :select, label: false, prompt: t('simple_form.prompts.profile.question'), error: 'big', wrapper: 'fancy_select' %>
+
+            <%= f.input :answer, input_html: { maxlength: 40 }, placeholder: t('simple_form.placeholders.answer_to_reminder').html_safe, label: false %>
+        </fieldset>
+
+        <fieldset class="fieldset">
+            <legend class="legend-visible"><%= t('form.legend.preferred_language') %></legend>
+            <%= f.input :lang_pref, collection: { "English" => :en, "Français" => :fr}, as: :radio_buttons, boolean_style: :inline, item_wrapper_class: 'radio-inline', checked: params[:profile] ? params[:profile][:lang_pref] : session[:lang], label: false %>
+        </fieldset>
+
+        <fieldset>
+            <legend class="legend-visible"><%= t('form.legend.shomi_scoop').html_safe %></legend>
+            <%= f.input :email_opt_in, as: :boolean, :wrapper => :inline_checkbox, :input_html => { :class => "check-tos" }, label: t('profiles.receive_email').html_safe %>
+        </fieldset>
+
+        <p class="submit-group"><%= link_to t('btn.cancel'), root_path, class: 'btn btn-cancel' %> <%= f.button :submit, t('profiles.create_profile_2') %></p>
+
+    <% end %>
+
+</section>

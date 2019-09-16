@@ -1,0 +1,19 @@
+<table class="order-table" summary="Review order details">
+    <caption class="hide-text"><%= t('orders.billing_details') %></caption>
+    <tbody>
+        <% if ENV['ask_for_email_optin'] %>
+        <tr class="t-row">
+            <td class="tleft sizes-XSM"><%= t('orders.optin_email') %>:</td>
+            <td class="tright sizes-XSM h-lgt"><%= @order.optin_email.to_i == 0 ? t('simple_form.no') : t('simple_form.yes') %></td>
+        </tr>
+        <% end %>
+        <tr class="t-row">
+            <td class="tleft sizes-XSM"><%= t('orders.rogers_account') %></td>
+            <td class="tright sizes-XSM h-lgt"><%= Account.find(account_token: @order.rogers_account_token).first.try(:account_desc) %></td>
+        </tr>
+        <tr >
+            <td class="tleft sizes-XSM"><%= t('orders.first_day_of_service') %></td>
+            <td class="tright sizes-XSM h-lgt"><%= l Date.today, :format => :long %></td>
+        </tr>
+    </tbody>
+</table>

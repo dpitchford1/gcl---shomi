@@ -1,0 +1,33 @@
+
+  .no-print, .no-print *, .footer, .menu, .nextissue_logo, .profiler-results
+  {
+      display: none !important;
+  }
+
+  .header-blue-banner {
+      display: none !important;
+  }
+
+  .printing-visible {
+      display: block !important;
+  }
+
+  h2 {
+      position: relative;
+      width: 221px;
+      height: 36px;
+      overflow: hidden;
+  }
+  h2 img {
+      position: absolute;
+      width: 1506px;
+      height: 424px;
+  }
+  .next-issue-logo {
+      left: -843px;
+      top: -259px;
+  }
+
+  .table-overflow { overflow-x: hidden; }
+
+  .col.span-4 {width: 90% !important; }

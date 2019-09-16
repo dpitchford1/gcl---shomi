@@ -1,0 +1,255 @@
+/* = IMPORTANT GLOBALS = only to be used as trailing class (the last class) on elements..
+    - .no-ss === no small screen === display none for small screens
+    - .no-ws === no wide screen === display none for wide screens
+    - target browsers: IE9+ FF6+ Chrome 11+ Safari5+ Opera11+
+    */
+
+/* TEMPLATE
+  0.0 Document setup
+  0.1 Accessibility & Usability
+  0.2 Images, Media & Embedded content
+  0.3 Common Layout
+  0.4 Site Structure - Basic
+  0.5 Headers - Navigations - Footers
+  0.6 Custom Content Structure
+
+---------------------------------------------- */
+
+
+/* $ 0.0 Document setup
+====================================================================== */
+@import "layout/globals";
+
+
+/* $ 0.2 Common Layout
+====================================================================== */
+
+    // /* main site wrapper = default to 980px for small desktop and IE 7 & 8 */
+    // .site-wrapper{ margin: 0 auto; padding: 0 1.15%; /*width: 100%; max-width: 61.250em;*/ }
+
+    // .site-wrapper, .fluid{ width: 100%; max-width: 61.250em; }
+
+    // /* Fluid wrapper for main content - identical to site wrapper - fine grained adjustments for responsive breakpoints */
+    // .fluid, .fluid-lg{
+    //     margin: 0 auto;
+    //     padding: 0 1.15%;
+    //     }
+
+    // .fluid-lg{
+    //     max-width: 1115px;
+    //     }
+
+    // /* all purpose wrapper */
+    // .region{ width: 100%; }
+
+    // /* all purpose wrapper == padding top, margin bottom */
+    // .content-wrapper{
+    //     padding-bottom: 1.563em;
+    //     width: 100%;
+    //     }
+
+    // /* Clear fix
+    // ---------------------------------------------- */
+    // .cf:before, .cf:after   { content:""; display:table; }
+    // .cf:after               { clear:both; }
+
+    // a { word-wrap: break-word; }
+
+
+/* $ 0.4 Site Structure - Basic
+====================================================================== */
+
+    /* Global Wrappers
+    ---------------------------------------------- */
+    // .global-header { 
+    //     clear: both; width: 100%; z-index: 100; position: fixed; top: 0; left: 0;
+    //     //-moz-transform: translateZ(0); -ms-transform: translateZ(0); -o-transform: translateZ(0); -webkit-transform: translateZ(0); transform: translateZ(0);
+    //     }
+
+    // /* body - homepage */
+    // //.page-home{}
+    // .page-home #main-content{ padding-top: 8.9em; }
+    // .page-site #main-content{ padding-top: 12em; }
+
+    // /* Global Header */
+    // .is--primary   { background-color: #fff; /*border-bottom: 3px solid #eee;*/ color: $black; }
+    // .is--secondary { background-color: #2a0251; position: static; padding: 1em 0; }
+
+    // .navigation-wrapper{ }
+
+    //.is-sticky .global-header{ box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15); }
+
+    /* target needs to be on element, does not work on a wrapper */ 
+    .anchored:before{
+        display: block;
+        content: " "; 
+        visibility: hidden;
+        height: 155px;      /* Give height of your fixed element */
+        margin-top: -155px; /* Give negative margin of your fixed element */
+        }
+    
+    /* body content */
+    //#main-content   { padding-bottom: 2em; }
+    
+    /* aside */
+    .aside{ margin-bottom: 2em; }
+    
+    /* footer */
+    //.footer         {}
+    //.is--f-primary  { background-color: #fff; border-top: 3px solid #eee; padding: 1em 0 1.375em; z-index: 3; }
+    .is--f-secondary{  
+        border-top: 3px solid #eee;
+        margin-top: 5px;
+        padding: 1.563em 0 .75em; 
+        z-index: 3; 
+        }
+
+    .touch .print-btn{ display: none; }
+
+
+    // /* Simple Grid
+    // ---------------------------------------------- */
+    // .simple-grid .box{ 
+    //     float: left; 
+
+    //     //background-color: #f1f1f1;
+    //     }
+    // .simple-grid .pr{ /* pull right */
+    //     float: right; 
+
+    //     //background-color: #f1f1f1;
+    //     }
+
+    // .simple-grid .box:last-child{ 
+    //     margin-left: 0;
+    //     }
+
+    // .simple-grid .flipped > .box{
+    //     margin-left: 0; 
+
+    //     }
+
+    // .simple-grid .three-fifths{ 
+    //     float: right;
+    //     width: 60%;
+    //     }
+
+    // /* 2 in a row */
+    // .span-of-2 .box{
+    //     width: 47.368421052632%;
+    //     }
+
+    // .span-of-2 > .box + .box{
+    //     margin-left: 5.263157894737%;
+    //     }
+
+    // .flipped > .box + .box{
+    //     margin-left: 0;
+    //     margin-right: 4.6875%;
+    //     }
+
+
+    // /* 3 in a row */
+    // .span-of-3 .box{
+    //     width: 29.824561403509%;
+    //     }
+    // .span-of-3 .box{
+    //     margin-right: 5.263157894737%;
+    //     }
+    // .span-of-3 > .box + .box + .box{ margin-right: 0; }
+
+        
+    // /* 4 in a row */
+    // .span-of-4 .box{
+    //     width: 22.368421052632%;
+    //     }
+    // .span-of-4 .box{
+    //     margin-right: 3.508771929825%;
+    //     }
+    // .span-of-4 > .box + .box + .box + .box{ margin-right: 0; }
+
+
+    // /* 5 in a row */
+    // .span-of-5 .box{
+    //     width: 19.111111%;
+    //     }
+    // .span-of-5 > .box + .box{
+    //     margin-left: 1.111111%;
+    //     }
+
+
+    .padding-bump{ padding: 0 10%; }
+
+
+    /* Gateway Page */
+    .gateway {
+        color: #2D2C2C;
+
+        .bookmark {
+        width: 60%;
+        margin: 0 auto;
+        }
+
+        h2 {
+        margin: 0 auto 1em;
+        width: 75%;
+        }
+
+        p, aside {
+        margin: 1.5em auto;
+        padding: 0 2%;
+        }
+    }
+
+
+/* 1.5 Headings & Titles 
+====================================================================== */
+@import "partials/type";
+
+
+/* $ 0.5 Headers - Navigations - Footers
+====================================================================== */
+//@import "layout/global-menus";
+
+
+/* $ 0.6 Custom Content Structure
+====================================================================== */
+
+    /* Hero Homepage
+    ---------------------------------------------- */
+    @import "layout/hero-styles";
+
+
+    /* FORMS - Site Specific
+    ====================================================================== */
+    @import "layout/form-global";
+
+
+    /* FORMS - Styling additions
+    ====================================================================== */
+    @import "partials/forms-enhanced";
+
+
+    /* Feature and Promos modules
+    ---------------------------------------------- */
+    //@import "layout/simple-grid";
+
+
+    /* 3 Custom Promos styled with borders and LOGO's
+    ---------------------------------------------- */
+    //@import "modules/fancy-promos";
+
+
+    /* App Downloads
+    ---------------------------------------------- */
+    @import "modules/app-buttons";
+
+
+    /* Order Table
+    ---------------------------------------------- */
+    @import "layout/order-tables";
+
+
+/* $ 0.1 Accessibility & Usability
+====================================================================== */
+@import "partials/accessibility";

@@ -1,0 +1,696 @@
+<% content_for :title, t('titles.blackouts').html_safe %>
+
+<main class="content-wrapper" role="main">
+	<h2 class="h-lgt sizes-M w-ul"><%= t("blackouts.main_header").html_safe %></h2>
+	<p><%= t("blackouts.headline").html_safe %></p>
+	<section class="content-wrapper">
+		<h3 class="sizes-SM"><%= t("blackouts.summary.heading1").html_safe %></h3>
+		<p class="lg-m"><%= t("blackouts.summary.copy1").html_safe %></p>
+
+		<h3 class="sizes-SM"><%= t("blackouts.summary.heading2").html_safe %></h3>
+		<p><%= t("blackouts.summary.copy2").html_safe %></p>
+		<p class="lg-m"><%= t("blackouts.summary.copy2_2").html_safe %></p>
+
+		<h3 class="sizes-SM"><%= t("blackouts.summary.heading3").html_safe %></h3>
+		<p class="has--fancy-bot"><%= t("blackouts.summary.copy3").html_safe %></p>
+
+		<h3 class="sizes-S cc"><%= t("blackouts.headings.heading_english").html_safe %></h3>
+		<p><%= t("blackouts.heading_excerpt_en").html_safe %></p>
+
+		<p class="lg-m"><%= t("blackouts.headnote_general").html_safe %></p>
+
+		<nav class="content-wrapper row info info-lg info--secondary" role="navigation">
+			<h3 class="hide-text"><%= t("blackouts.text.choose_region").html_safe %></h3>
+			<div class="col span-3">
+				<ul class="no-bullet copy-size-S styled-bullets">
+					<li><a href="#central-ontario"><%= t("blackouts.regions.central_ontario.heading").html_safe %> (<%= t("blackouts.regions.central_ontario.sub_heading").html_safe %>)</a></li>
+					<li><a href="#north-ontario"><%= t("blackouts.regions.northwestern_ontario.heading").html_safe %> (<%= t("blackouts.regions.northwestern_ontario.sub_heading").html_safe %>)</a></li>
+					<li><a href="#mideast-ontario"><%= t("blackouts.regions.mid_eastern_ontario.heading").html_safe %> (<%= t("blackouts.regions.mid_eastern_ontario.sub_heading").html_safe %>)</a></li>
+					<li><a href="#ontario-east"><%= t("blackouts.regions.eastern_ontario.heading").html_safe %> (<%= t("blackouts.regions.eastern_ontario.sub_heading").html_safe %>)</a></li>
+					<li><a href="#niagara"><%= t("blackouts.regions.niagara_district.heading").html_safe %> (<%= t("blackouts.regions.niagara_district.sub_heading").html_safe %>)</a></li>
+					<li><a href="#ontario-east"><%= t("blackouts.regions.quebec.heading").html_safe %></a></li>
+					<li><a href="#ontario-east"><%= t("blackouts.regions.maritimes.heading").html_safe %></a></li>
+				</ul>
+			</div>
+			<div class="col span-3">
+				<ul class="no-bullet copy-size-S styled-bullets">
+					<li><a href="#bc-yukon"><%= t("blackouts.regions.bc_yukon.heading").html_safe %></a></li>
+					<li><a href="#alberta"><%= t("blackouts.regions.alberta.heading").html_safe %></a></li>
+					<li><a href="#saskatchewan-nwt"><%= t("blackouts.regions.saskatchewan.heading").html_safe %></a></li>
+					<li><a href="#manitoba"><%= t("blackouts.regions.manitoba.heading").html_safe %></a></li>
+					<li><a href="#saskatchewan-nwt"><%= t("blackouts.regions.territories.heading").html_safe %></a></li>
+					
+				</ul>
+			</div>
+		</nav>
+		<p class="clear"><a href="#flb"><%= t("blackouts.headings.heading_french").html_safe %></a></p>
+
+		<%# start %>
+		<article class="content-table-group row">
+			<h4 class="sizes-SM-alt anchored" id="central-ontario"><%= t("blackouts.regions.central_ontario.heading").html_safe %> <small>(<%= t("blackouts.regions.central_ontario.sub_heading").html_safe %> <%= t("blackouts.text.see_below").html_safe %>)</small></h4>
+			<p><%= t("blackouts.regions.local_teams.tor").html_safe %></p>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading_gamesincluded").html_safe %></h4>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.toronto").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.56").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_1").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_1_excerpt").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_2").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_2_excerpt").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_3").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_3_excerpt").html_safe %></dd>
+					<dd><%= t("blackouts.headings.heading_table_3_excerpt2").html_safe %></dd>
+				</dl>
+			</div>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading").html_safe %><sup>*</sup></h4>
+				<div class="indent">
+					<p><%= t("blackouts.blacked_out.toronto.excerpt1").html_safe %></p>
+					<p><a class="copy-size-S" href="http://www.sportsnet.ca/hockey/nhl/teams/toronto-maple-leafs/" rel="external" target="blank"><%= t("blackouts.links.toronto_schedule").html_safe %></a></p>
+				</div>
+			</div>
+			<footer class="content-table-footer">
+				<!-- <p><em><%= t("blackouts.footnote_general1").html_safe %></em></p> -->
+				<p><em><%= t("blackouts.footnote_general2").html_safe %></em></p>
+
+				<p><%= t("blackouts.regions.central_ontario.footnote").html_safe %></p>
+				<p class="copy-size-S"><%= t("blackouts.regions.central_ontario.includes1").html_safe %></p>
+				<p class="copy-size-S"><%= t("blackouts.regions.central_ontario.includes2").html_safe %></p>
+			</footer>
+		</article>
+
+		<%# start %>
+		<article class="content-table-group row">
+			<h3 class="sizes-SM-alt anchored" id="north-ontario"><%= t("blackouts.regions.northwestern_ontario.heading").html_safe %> <small>(<%= t("blackouts.regions.northwestern_ontario.sub_heading").html_safe %> <%= t("blackouts.text.see_below").html_safe %>)<sup>**</sup></small></h3>
+			<p><%= t("blackouts.regions.local_teams.tor_win").html_safe %></p>
+			<p><%= t("blackouts.regions.northwestern_ontario.footnote2").html_safe %></p>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading_gamesincluded").html_safe %></h4>
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.winnipeg").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.22").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.toronto").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.56").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_1").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_1_excerpt").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_2").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_2_excerpt").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_3").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_3_excerpt").html_safe %></dd>
+					<dd><%= t("blackouts.headings.heading_table_3_excerpt2").html_safe %></dd>
+				</dl>
+
+			</div>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading").html_safe %><sup>*</sup></h4>
+				<div class="indent">
+					<p><%= t("blackouts.blacked_out.jets.excerpt3").html_safe %></p>
+					<p><a class="copy-size-S" href="http://www.sportsnet.ca/hockey/nhl/teams/winnipeg-jets/scores/" rel="external" target="blank"><%= t("blackouts.links.jets_schedule").html_safe %></a></p>
+					<p><%= t("blackouts.blacked_out.toronto.excerpt1").html_safe %></p>
+					<p><a class="copy-size-S" href="http://www.sportsnet.ca/hockey/nhl/teams/toronto-maple-leafs/" rel="external" target="blank"><%= t("blackouts.links.toronto_schedule").html_safe %></a></p>
+				</div>
+			</div>
+
+			<footer class="content-table-footer">
+				<!-- <p><em><%= t("blackouts.footnote_general1").html_safe %></em></p> -->
+				<p><em><%= t("blackouts.footnote_general2").html_safe %></em></p>
+
+				<p><%= t("blackouts.regions.northwestern_ontario.footnote").html_safe %></p>
+			</footer>
+
+		</article>
+
+		<p class="text-right top-of-page"><a href="#page-body"><%= t("blackouts.text.top").html_safe %></a></p>
+
+		<%# start %>
+		<article class="content-table-group row">
+			<h3 class="sizes-SM-alt anchored" id="mideast-ontario"><%= t("blackouts.regions.mid_eastern_ontario.heading").html_safe %> <small>(<%= t("blackouts.regions.mid_eastern_ontario.sub_heading").html_safe %> <%= t("blackouts.text.see_below").html_safe %>)<sup>**</sup></small></h3>
+			<p><%= t("blackouts.regions.local_teams.tor_ott_mtl").html_safe %></p>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading_gamesincluded").html_safe %></h4>
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.toronto").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.56").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.montreal").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.82").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.ottawa").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.31").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_1").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_1_excerpt").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_2").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_2_excerpt").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_3").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_3_excerpt").html_safe %></dd>
+					<dd><%= t("blackouts.headings.heading_table_3_excerpt2").html_safe %></dd>
+				</dl>
+			</div>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading").html_safe %><sup>*</sup></h4>
+				<div class="indent">
+					<p><%= t("blackouts.blacked_out.toronto.excerpt1").html_safe %></p>
+					<p><a class="copy-size-S" href="http://www.sportsnet.ca/hockey/nhl/teams/toronto-maple-leafs/" rel="external" target="blank"><%= t("blackouts.links.toronto_schedule").html_safe %></a></p>
+
+					<p><%= t("blackouts.blacked_out.montreal.excerpt1").html_safe %></p>
+					<p><a class="copy-size-S" href="http://www.sportsnet.ca/hockey/nhl/teams/montreal-canadiens/scores/" rel="external" target="blank"><%= t("blackouts.links.montreal_schedule_sn").html_safe %></a></p>
+
+					<p><%= t("blackouts.blacked_out.ottawa.excerpt1").html_safe %></p>
+					<p><a class="copy-size-S" href="http://www.sportsnet.ca/hockey/nhl/teams/ottawa-senators/scores/" rel="external" target="blank"><%= t("blackouts.links.ottawa_schedule_sn").html_safe %></a></p>
+				</div>
+			</div>
+
+			<footer class="content-table-footer">
+				<!-- <p><em><%= t("blackouts.footnote_general1").html_safe %></em></p> -->
+				<p><em><%= t("blackouts.footnote_general2").html_safe %></em></p>
+
+				<p><%= t("blackouts.regions.mid_eastern_ontario.footnote").html_safe %></p>
+				<p class="copy-size-S"><%= t("blackouts.regions.mid_eastern_ontario.include1").html_safe %></p>
+				<p class="copy-size-S"><%= t("blackouts.regions.mid_eastern_ontario.include2").html_safe %></p>
+			</footer>			
+
+		</article>
+
+		<p class="text-right top-of-page"><a href="#page-body"><%= t("blackouts.text.top").html_safe %></a></p>
+
+		<%# start %>
+		<article class="content-table-group row">
+			<h3 class="sizes-SM-alt anchored" id="niagara"><%= t("blackouts.regions.niagara_district.heading").html_safe %> <small>(<%= t("blackouts.regions.niagara_district.sub_heading").html_safe %> <%= t("blackouts.text.see_below").html_safe %>)<sup>**</sup></small></h3>
+			<p><%= t("blackouts.regions.local_teams.tor_buf").html_safe %></p>
+			<p><%= t("blackouts.regions.niagara_district.footnote2").html_safe %></p>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading_gamesincluded").html_safe %></h4>
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.toronto").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.56").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.buffalo").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.30").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_1").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_1_excerpt").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_2").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_2_excerpt").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_3").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_3_excerpt").html_safe %></dd>
+					<dd><%= t("blackouts.headings.heading_table_3_excerpt2").html_safe %></dd>
+				</dl>
+			</div>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading").html_safe %><sup>*</sup></h4>
+				<div class="indent">
+					<p><%= t("blackouts.blacked_out.toronto.excerpt1").html_safe %></p>
+					<p><a class="copy-size-S" href="http://www.sportsnet.ca/hockey/nhl/teams/toronto-maple-leafs/" rel="external" target="blank"><%= t("blackouts.links.toronto_schedule").html_safe %></a></p>
+
+					<p><%= t("blackouts.blacked_out.buffalo.excerpt1").html_safe %></p>
+				</div>
+			</div>
+
+			<footer class="content-table-footer">
+				<!-- <p><em><%= t("blackouts.footnote_general1").html_safe %></em></p> -->
+				<p><em><%= t("blackouts.footnote_general2").html_safe %></em></p>
+
+				<p><%= t("blackouts.regions.niagara_district.footnote").html_safe %></p>
+			</footer>		
+
+		</article>
+
+		<p class="text-right top-of-page"><a href="#page-body"><%= t("blackouts.text.top").html_safe %></a></p>
+
+		<%# start %>
+		<article class="content-table-group row">
+			<h3 class="sizes-SM-alt anchored" id="ontario-east">
+				<%= t("blackouts.regions.eastern_ontario.heading").html_safe %><br>
+				<%= t("blackouts.regions.quebec.heading").html_safe %><br>
+				<%= t("blackouts.regions.maritimes.heading").html_safe %>
+				<small>(<%= t("blackouts.regions.eastern_ontario.sub_heading").html_safe %> <%= t("blackouts.text.see_below").html_safe %>)<sup>**</sup></small>
+			</h3>
+			<p><%= t("blackouts.regions.local_teams.ott_mtl").html_safe %></p>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading_gamesincluded").html_safe %></h4>
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.montreal").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.82").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.ottawa").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.31").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_1").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_1_excerpt").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_2").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_2_excerpt").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_3").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_3_excerpt").html_safe %></dd>
+					<dd><%= t("blackouts.headings.heading_table_3_excerpt2").html_safe %></dd>
+				</dl>
+			</div>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading").html_safe %><sup>*</sup></h4>
+				<div class="indent">
+					<p><%= t("blackouts.blacked_out.montreal.excerpt1").html_safe %></p>
+					<p><a class="copy-size-S" href="http://www.sportsnet.ca/hockey/nhl/teams/montreal-canadiens/scores/" rel="external" target="blank"><%= t("blackouts.links.montreal_schedule_sn").html_safe %></a></p>
+					<p><%= t("blackouts.blacked_out.ottawa.excerpt1").html_safe %></p>
+					<p><a class="copy-size-S" href="http://www.sportsnet.ca/hockey/nhl/teams/ottawa-senators/scores/" rel="external" target="blank"><%= t("blackouts.links.ottawa_schedule_sn").html_safe %></a></p>
+				</div>
+			</div>
+
+			<footer class="content-table-footer">
+				<!-- <p><em><%= t("blackouts.footnote_general1").html_safe %></em></p> -->
+				<p><em><%= t("blackouts.footnote_general2").html_safe %></em></p>
+
+				<p><%= t("blackouts.regions.eastern_ontario.footnote").html_safe %></p>
+				<p class="copy-size-S"><%= t("blackouts.regions.eastern_ontario.includes1").html_safe %></p>
+			</footer>		
+
+		</article>
+
+		<p class="text-right top-of-page"><a href="#page-body"><%= t("blackouts.text.top").html_safe %></a></p>
+
+		<%# start %>
+		<article class="content-table-group row">
+			<h3 class="sizes-SM-alt anchored" id="bc-yukon"><%= t("blackouts.regions.bc_yukon.heading").html_safe %></h3>
+			<p><%= t("blackouts.regions.local_teams.van").html_safe %></p>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading_gamesincluded").html_safe %></h4>
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.vancouver").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.82_36").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_1").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_1_excerpt").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_2").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_2_excerpt").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_3").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_3_excerpt").html_safe %></dd>
+					<dd><%= t("blackouts.headings.heading_table_3_excerpt2").html_safe %></dd>
+				</dl>
+			</div>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading").html_safe %><sup>*</sup></h4>
+				<div class="indent">
+					<p><%= t("blackouts.blacked_out.general.excerpt1").html_safe %></p>
+					<p><a class="copy-size-S" href="http://www.sportsnet.ca/hockey/nhl/scores/" rel="external" target="blank"><%= t("blackouts.links.general_schedule_sn").html_safe %></a></p>
+				</div>
+			</div>
+
+			<footer class="content-table-footer">
+				<!-- <p><em><%= t("blackouts.footnote_general1").html_safe %></em></p> -->
+				
+			</footer>	
+
+		</article>
+
+		<p class="text-right top-of-page"><a href="#page-body"><%= t("blackouts.text.top").html_safe %></a></p>
+
+		<%# start %>
+		<article class="content-table-group row">
+			<h3 class="sizes-SM-alt anchored" id="alberta"><%= t("blackouts.regions.alberta.heading").html_safe %></h3>
+			<p><%= t("blackouts.regions.local_teams.cal_edm").html_safe %></p>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading_gamesincluded").html_safe %></h4>
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.calgary").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.82_35").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.edmonton").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.82_31").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_1").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_1_excerpt").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_2").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_2_excerpt").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_3").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_3_excerpt").html_safe %></dd>
+					<dd><%= t("blackouts.headings.heading_table_3_excerpt2").html_safe %></dd>
+				</dl>
+			</div>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading").html_safe %><sup>*</sup></h4>
+				<div class="indent">
+					<p><%= t("blackouts.blacked_out.general.excerpt1").html_safe %></p>
+					<p><a class="copy-size-S" href="http://www.sportsnet.ca/hockey/nhl/scores/" rel="external" target="blank"><%= t("blackouts.links.general_schedule_sn").html_safe %></a></p>
+				</div>
+			</div>
+
+			<footer class="content-table-footer">
+				<!-- <p><em><%= t("blackouts.footnote_general1").html_safe %></em></p> -->
+				
+			</footer>
+
+		</article>
+
+		<p class="text-right top-of-page"><a href="#page-body"><%= t("blackouts.text.top").html_safe %></a></p>
+
+		<%# start %>
+		<article class="content-table-group row">
+			<h3 class="sizes-SM-alt anchored" id="saskatchewan-nwt">
+				<%= t("blackouts.regions.saskatchewan.heading").html_safe %><br>
+				<%= t("blackouts.regions.territories.heading").html_safe %>
+			</h3>
+			<p><%= t("blackouts.regions.local_teams.cal_edm_win").html_safe %></p>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading_gamesincluded").html_safe %></h4>
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.calgary").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.82_35").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.edmonton").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.82_31").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.winnipeg").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.26").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_1").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_1_excerpt").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_2").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_2_excerpt").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_3").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_3_excerpt").html_safe %></dd>
+					<dd><%= t("blackouts.headings.heading_table_3_excerpt2").html_safe %></dd>
+				</dl>
+			</div>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading").html_safe %><sup>*</sup></h4>
+				<div class="indent">
+					<p><%= t("blackouts.blacked_out.alberta").html_safe %></p>
+					<p><a class="copy-size-S" href="http://www.sportsnet.ca/schedule/"><%= t("blackouts.links.general_schedule_sn").html_safe %></a></p>
+
+					<p><%= t("blackouts.blacked_out.jets.excerpt1").html_safe %></p>
+					<p><a class="copy-size-S" href="http://www.sportsnet.ca/hockey/nhl/teams/winnipeg-jets/scores/" rel="external" target="blank"><%= t("blackouts.links.jets_schedule").html_safe %></a></p>
+				</div>
+			</div>
+
+			<footer class="content-table-footer">
+				<!-- <p><em><%= t("blackouts.footnote_general1").html_safe %></em></p> -->
+				
+			</footer>
+
+		</article> 
+
+		<p class="text-right top-of-page"><a href="#page-body"><%= t("blackouts.text.top").html_safe %></a></p>
+
+		<%# start %>
+		<article class="content-table-group row">
+			<h3 class="sizes-SM-alt anchored" id="manitoba"><%= t("blackouts.regions.manitoba.heading").html_safe %></h3>
+			<p><%= t("blackouts.regions.local_teams.win").html_safe %></p>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading_gamesincluded").html_safe %></h4>
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.winnipeg").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.22").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_1").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_1_excerpt").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_2").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_2_excerpt").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_3").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_3_excerpt").html_safe %></dd>
+					<dd><%= t("blackouts.headings.heading_table_3_excerpt2").html_safe %></dd>
+				</dl>
+			</div>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading").html_safe %><sup>*</sup></h4>
+				<div class="indent">
+					<p><%= t("blackouts.blacked_out.jets.excerpt2").html_safe %></p>
+					<p><a class="copy-size-S" href="http://www.sportsnet.ca/hockey/nhl/teams/winnipeg-jets/scores/" rel="external" target="blank"><%= t("blackouts.links.jets_schedule").html_safe %></a>.</p>
+				</div>
+			</div>
+
+			<footer class="content-table-footer">
+				<!-- <p><em><%= t("blackouts.footnote_general1").html_safe %></em></p> -->
+			</footer>
+
+		</article>
+
+		<p class="text-right top-of-page"><a href="#page-body"><%= t("blackouts.text.top").html_safe %></a></p>
+
+		<h2 class="sizes-S cc anchored" id="flb"><%= t("blackouts.headings.heading_french").html_safe %></h2>
+		<p><%= t("blackouts.heading_excerpt_fr").html_safe %></p>
+		<p><%= t("blackouts.text.choose_region_fr").html_safe %></p>
+
+		<ul class="no-bullet">
+			<li><a href="#quebec-fr"><%= t("blackouts.regions.quebec.heading_fl").html_safe %></a></li>
+			<li><a href="#martimes-fr"><%= t("blackouts.regions.eastern_ontario.truncated").html_safe %> <%= t("blackouts.regions.mid_eastern_ontario.heading").html_safe %> (<%= t("blackouts.regions.eastern_ontario.sub_heading2").html_safe %>)</a></li>
+			<li><a href="#martimes-fr"><%= t("blackouts.regions.maritimes.heading_fl").html_safe %></a></li>
+			<li><a href="#all-other-fr"><%= t("blackouts.regions.all_other.heading").html_safe %></a></li>
+		</ul>
+
+
+		<%# start %>
+		<article class="content-table-group row">
+			<h3 class="sizes-SM-alt anchored" id="quebec-fr"><%= t("blackouts.regions.quebec.heading_fl").html_safe %></h3>
+			<p><%= t("blackouts.regions.local_teams.ott_mtl").html_safe %></p>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading_gamesincluded").html_safe %></h4>
+				<div class="indent">
+					<p><%= t("blackouts.blacked_out.general.info1").html_safe %></p>
+					<ul>
+						<li><%= t("blackouts.blacked_out.general.fr_excerpt3").html_safe %></li>
+						<li><%= t("blackouts.blacked_out.general.fr_excerpt4").html_safe %></li>
+					</ul>
+				</div>
+
+				<p class="indent no-m"><strong><%= t("blackouts.blacked_out.general.fr_excerpt5").html_safe %></strong></p>
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.montreal").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.22_2").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.ottawa").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.22_2").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.games.premium").html_safe %></dt>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.headings.heading_table_2").html_safe %></dt>
+					<dd><%= t("blackouts.headings.heading_table_2_excerpt").html_safe %></dd>
+				</dl>
+			</div>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading").html_safe %><sup>*</sup></h4>
+				<div class="indent">
+					<p><%= t("blackouts.blacked_out.montreal.excerpt3").html_safe %></p>
+					<p><a class="copy-size-S" href="http://tvasports.ca/hockey/lnh/calendrier-complet-de-la-saison-12082014" rel="external" target="blank"><%= t("blackouts.links.montreal_schedule_tva").html_safe %></a>.</p>
+
+					<p><%= t("blackouts.blacked_out.ottawa.excerpt3").html_safe %></p>
+					<p><a class="copy-size-S" href="http://tvasports.ca/hockey/lnh/calendrier-complet-de-la-saison-12082014" rel="external" target="blank"><%= t("blackouts.links.ottawa_schedule_tva").html_safe %></a>.</p>
+				</div>
+			</div>
+			<footer class="content-table-footer">
+				<!--<p><%= t("blackouts.footnote_general").html_safe %></p>-->
+				<p><em><%= t("blackouts.footnote_general1_fr").html_safe %></em></p>
+				<p><%= t("blackouts.regions.quebec.footnote").html_safe %></p>
+			</footer>
+
+		</article>
+
+		<p class="text-right top-of-page"><a href="#page-body"><%= t("blackouts.text.top").html_safe %></a></p>
+
+		<%# start %>
+		<article class="content-table-group row">
+			<h3 class="sizes-SM-alt anchored" id="martimes-fr">
+				<%= t("blackouts.regions.eastern_ontario.truncated").html_safe %> <%= t("blackouts.regions.mid_eastern_ontario.heading").html_safe %><sup>**</sup> (<%= t("blackouts.regions.eastern_ontario.exclude_ottawa").html_safe %>)<br>
+				<%= t("blackouts.regions.maritimes.heading_fl").html_safe %>
+			</h3>
+			<p><%= t("blackouts.regions.local_teams.ott_mtl").html_safe %></p>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading_gamesincluded").html_safe %></h4>
+				<div class="indent">
+					<p><%= t("blackouts.games_included.games.no_date1").html_safe %></p>
+					<p><%= t("blackouts.games_included.games.no_date2").html_safe %></p>
+				</div>
+			</div>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading").html_safe %><sup>*</sup></h4>
+				<div class="indent">
+					<p><a class="copy-size-S" href="http://tvasports.ca/hockey/lnh/calendrier-complet-de-la-saison-12082014" rel="external" target="blank"><%= t("blackouts.links.montreal_schedule_tva").html_safe %></a>.</p>
+					<p><a class="copy-size-S" href="http://tvasports.ca/hockey/lnh/calendrier-complet-de-la-saison-12082014" rel="external" target="blank"><%= t("blackouts.links.ottawa_schedule_tva").html_safe %></a>.</p>
+				</div>
+			</div>
+
+			<footer class="content-table-footer">
+				<p><em><%= t("blackouts.footnote_general2").html_safe %></em></p>
+
+				<p><%= t("blackouts.regions.eastern_ontario.includes_fr1").html_safe %></p>
+				<p class="copy-size-S"><%= t("blackouts.regions.eastern_ontario.includes_fr2").html_safe %></p>
+				<p class="copy-size-S"><%= t("blackouts.regions.eastern_ontario.includes_fr3").html_safe %></p>
+				<p class="copy-size-S"><%= t("blackouts.regions.eastern_ontario.footnote_exclude").html_safe %></p>
+			</footer>
+
+		</article>
+
+
+		<%# start %>
+		<article class="content-table-group row">
+			<h3 class="sizes-SM-alt anchored" id="all-other-fr"><%= t("blackouts.regions.all_other.heading").html_safe %></h3>
+			<p><small><%= t("blackouts.regions.all_other.note").html_safe %></small></p>
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading_gamesincluded").html_safe %></h4>
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.montreal").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.60_regional").html_safe %> <%= t("blackouts.text.french").html_safe %></dd>
+				</dl>
+
+				<dl class="content-table">
+					<dt><%= t("blackouts.games_included.teams.ottawa").html_safe %></dt>
+					<dd><%= t("blackouts.games_included.games.54_regional").html_safe %> <%= t("blackouts.text.french").html_safe %></dd>
+				</dl>
+			</div>
+
+			<div class="col span-3">
+				<h4 class="h-sb h-reverse"><%= t("blackouts.headings.heading").html_safe %><sup>*</sup></h4>
+				<div class="indent">
+					<p><%= t("blackouts.blacked_out.general.fr_excerpt1").html_safe %></p>
+					<p><a class="copy-size-S" href="http://tvasports.ca/hockey/lnh/calendrier-complet-de-la-saison-12082014"><%= t("blackouts.links.general_schedule_tva").html_safe %></a></p>
+				</div>
+			</div>
+
+			<footer class="content-table-footer">
+				<p><%= t("blackouts.regions.all_other.footnote").html_safe %></p>
+				<ul>
+					<%= t("blackouts.regions.all_other.includes1").html_safe %>
+				</ul>
+			</footer>
+
+		</article>
+
+		<p class="text-right top-of-page"><a href="#page-body"><%= t("blackouts.text.top").html_safe %></a></p>
+	</section>
+
+</main>
+
+<section class="content-wrapper has--fancy-top">
+	<h2 class="h-lgt sizes-M3"><%= t("pages.faq.notes.still_looking_heading").html_safe %></h2>
+	<p><%= t("pages.faq.notes.still_looking_copy").html_safe %></p>
+</section>
+
+<aside class="content-wrapper" role="complementary">
+    <h2 class="h-lgt sizes-M3"><%= t("text.need_help") %></h2>
+    <ul class="inline-list help-list">
+    <% if I18n.locale == I18n.default_locale %>
+	    <li><a href="http://www.rogershelp.com/customerserv/livechatsupport/index.php?source=701" target="blank" rel="external"><span class="i-inline i-pl i--livechat"><%= t("text.live_chat") %></span></a></li>
+    <% else %>
+	    <li><a href="http://www.rogershelp.com/customerserv/livechatsupport/index.php?source=751" target="blank" rel="external"><span class="i-inline i-pl i--livechat"><%= t("text.live_chat") %></span></a></li>
+    <%end%>
+	</ul>
+</aside>

@@ -1,0 +1,246 @@
+/* BTN Setup 
+---------------------------------------------- */
+// .btn {
+//     border: 0 solid transparent;
+//     color: #fff;
+//     display: inline-block;
+//     font: 14px/1.2 $fonts-light;
+//     margin-bottom: 0;
+//     padding: .7em 2.5em;
+//     border-radius: 7px;
+//     text-align: center;
+//     text-transform: uppercase;
+//     vertical-align: middle;
+//     white-space: nowrap;
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
+//     }
+//     /* btn behaviours */
+//     .btn:hover, .btn:focus, .btn:active {
+//         color: #fff;
+//         text-decoration: none;
+//         }
+//     .btn:active, .btn.active {
+//         outline: 0;
+//         // -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.325);
+//         // box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.325);
+//         }
+//     .btn:focus{
+//         outline: thin dotted;
+//         outline: 5px auto -webkit-focus-ring-color;
+//         outline-offset: -2px;
+//         }
+//     .btn:active:focus{
+//         outline: 0 none;
+//         }
+
+
+
+/* Shutter Out Horizontal */
+.btn {
+    border: 0 solid transparent;
+    border-radius: 7px;
+    color: #fff;
+    font: 14px/1.2 $fonts-light;
+    margin-bottom: 0;
+    padding: .7em 2.5em;
+    text-align: center;
+    text-transform: uppercase;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    //-moz-osx-font-smoothing: grayscale;
+    position: relative;
+    background: #e1e1e1;
+    // -webkit-transition-property: color;
+    // transition-property: color;
+    // -webkit-transition-duration: 0.3s;
+    // transition-duration: 0.3s;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+.btn:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    //background-color: transparent;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    }
+.btn:hover, .btn:focus, .btn:active {
+    color: #fff;
+    text-decoration: none;
+    }
+.btn:hover:before, .btn:focus:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    }
+.btn:active:before {
+    opacity: 0;
+    }
+
+    .btn:active, .btn.active {
+        //background-color: inherit;
+        outline: 0;
+        -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.325);
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.325);
+        }
+    .btn:focus{
+        outline: thin dotted;
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-offset: -2px;
+        }
+    .btn:active:focus{
+        outline: 0 none;
+        }
+        
+
+/* BTN COLOURS 
+---------------------------------------------- */
+/* Default - Red */
+.btn-default {
+    background-color: #DA291C;
+    }
+// .btn-default:hover, .btn-default:focus, .btn-default:active {
+//     background-color: #D42417;
+//     }
+
+input[type="submit"].btn-default:hover, input[type="submit"].btn-default:focus{ background-color: #bf261b; }
+
+.btn-default:hover:before, .btn-default:focus:before, .btn-default:active {
+    background-color: #bf261b;
+    border-radius: 7px;
+    }
+
+/* Secondary Colour */
+.btn-secondary {
+    background-color: #445057;
+    }
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
+    background-color: #69757f;
+    }
+
+/* Tertiary Colour */
+.btn-tertiary {
+    background-color: #eaeaea;
+    color: $color-primary;
+    }
+
+.btn-tertiary:hover:before, .btn-tertiary:focus:before, .btn-tertiary:active {
+    background-color: #adb0af;
+    border-radius: 7px;
+    }
+
+
+/* BTN Cancel 
+---------------------------------------------- */
+.btn-cancel{
+    background-color: #bbbdc0;
+    color: $color-primary;
+    }
+
+.btn-cancel:hover:before, .btn-cancel:focus:before, .btn-cancel:active {
+    background-color: $color-primary;
+    border-radius: 7px;
+    }
+
+
+/* BTN Shomi 
+---------------------------------------------- */
+.btn-shomi{
+    background-color: $cc-tertiary;
+    color: $color-primary;
+    }
+
+.btn-shomi:hover:before, .btn-shomi:focus:before, .btn-shomi:active {
+    background-color: #e0a837;
+    border-radius: 7px;
+    }
+
+
+/* BTN MY Rogers Alternative 
+---------------------------------------------- */
+.btn--myrogers { 
+     padding: .35em 0 .20em !important;
+    }
+.btn--viewpackages { 
+     padding: .65em 0.8em !important;
+    }
+.btn--myrogers .my-rogers-text {
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+    display: inline-block;
+    min-height: 33px;
+    line-height: 26px;
+    text-indent: -999em;
+    }
+
+[lang="en-ca"] .my-rogers-text{ 
+    background: asset-url("logos/i-logo-myrogers-en-alt-sm.png") no-repeat 0 0;
+    background-image: asset-url("logos/i-logo-myrogers-en-alt.svg"), none; width: 90px; 
+    }
+[lang="fr-ca"] .my-rogers-text{ 
+    background: asset-url("logos/i-logo-myrogers-fr-alt-sm.png") no-repeat 0 0;
+    background-image: asset-url("logos/i-logo-myrogers-fr-alt.svg"), none; width: 105px; 
+    }
+
+
+/* BTN Layout modifier - full width 
+---------------------------------------------- */
+.btn-block {
+    display: block;
+    margin-bottom: 5px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    }
+
+
+/* BTN Groups 
+---------------------------------------------- */
+.btn-group{ margin-bottom: 1em; }
+
+/* Button layout - group full width */
+.btn-group-wide{
+    display: table;
+    table-layout: fixed;
+    padding: 0;
+    margin-bottom: 1em;
+    width: 100%;
+    }
+.btn-group-wide li{
+    display: table-cell;
+    padding-left: 5px;
+    }
+.btn-group-wide li:first-child{
+    padding-left: 0;
+    }
+.btn-group-wide .btn{
+    display: block;
+    line-height: 1.1;
+    white-space: normal;
+    }
+[lang="fr-ca"] .btn-group-wide .btn{
+    @include rem(font-size, 14px);
+    }
+
+
+

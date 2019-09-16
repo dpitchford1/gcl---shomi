@@ -1,0 +1,155 @@
+﻿(function() {
+/*
+  Credit Card Type Detection
+  
+  Created by Nathan Searles <http://nathansearles.com>
+
+  Version: 1.0
+  Updated: June 30th, 2011
+
+  (c) 2011 by Nathan Searles
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+*/
+
+/*
+  Test credit card numbers
+  Visa: 4111111111111
+  Mastercard: 5555555555554444
+  American Express: 378282246310005
+  Discover: 6011000990139424
+*/
+
+function validate( number ) {
+  // Match and define
+  var visa = number.match(/^4[0-9]/),
+      mastercard = number.match(/^5[1-5]/),
+      amex = number.match(/^3[47]/),
+      visacheck = doc.getElementById('credit_card_field_creditCardType_visa'),
+      mastercheck = doc.getElementById('credit_card_field_creditCardType_mastercard'),
+      amexcheck = doc.getElementById('credit_card_field_creditCardType_americanexpress'),
+      matched;
+      //discover = number.match(/^6(?:011|5[0-9]{2})[0-9]{12}$/);
+      //cvvFront = "img/icon-cvv-front.png",
+      //cvvBack = "img/icon-cvv-back.png";
+  
+
+  // Create matched object
+  if (visa) {
+    matched = {
+      name: "visa",
+      cvv: "back",
+      check: "visacheck"
+      
+    };
+  } else if (mastercard) {
+    matched = {
+      name: "mastercard",
+      cvv: "back",
+      check: "mastercheck"
+    };
+  } else if (amex) {
+    matched = {
+      name: "amex",
+      cvv: "front",
+      check: "amexcheck"
+    };
+  } 
+  // else if (discover) {
+  //   matched = {
+  //     name: "discover",
+  //     cvv: "back"
+  //   };
+  // }
+  
+  $("#cc-types span").css({
+    opacity: 1
+  });
+
+  if (matched) {
+    // Fade out all but matched
+    $("#cc-types span:not(#"+ matched.name +")").css({
+      opacity: 0.2
+    });
+   
+    // change cvv icon
+    if (matched.cvv === "front") {
+      $("#cvv").removeClass().addClass("cvvFront");
+    } else if (matched.cvv === "back") {
+      $("#cvv").removeClass().addClass("cvvBack");
+    }
+
+    if (matched.check === "visacheck") {
+      visacheck.setAttribute('checked', 'true');
+      mastercheck.removeAttribute('checked');
+      amexcheck.removeAttribute('checked');
+    } else if (matched.check === "mastercheck") {
+      visacheck.removeAttribute('checked');
+      mastercheck.setAttribute('checked', 'true');
+      amexcheck.removeAttribute('checked');
+    } else if (matched.check === "amexcheck") {
+      visacheck.removeAttribute('checked');
+      mastercheck.removeAttribute('checked');
+      amexcheck.setAttribute('checked', 'true');
+    }
+  
+    return;
+  } 
+  
+  // fade all cards in
+  $("#cc-types span").css({
+    opacity: 1
+  });
+
+  // change cvv infograph
+  $("#cvv").removeClass().addClass("cvv");
+
+}
+
+$(function(){
+  // Credit card validation
+  $("#credit_card_field_creditCardNumber").bind("keyup",function(){
+    validate($(this).val());
+  });
+  
+  // Test numbers, for this example
+  // $("#test_number a").click(function(e) {
+  //   e.preventDefault();
+    
+  //   var selected = $(this).attr("href").replace("#","");
+  //   var testNumber;
+    
+  //   switch(selected) {
+  //     case "visa":
+  //       testNumber = 4111111111111;
+  //     break;
+  //     case "mastercard":
+  //       testNumber = 5555555555554444;
+  //     break;
+  //     case "amex":
+  //       testNumber = 378282246310005;
+  //     break;
+  //     // case "discover":
+  //     //   testNumber = 6011000990139424;
+  //     // break;
+  //   }
+    
+  //   // Update input with number
+  //   $("#credit_card_field_creditCardNumber").val(testNumber);
+    
+  //   // Validate the number
+  //   validate( $("#credit_card_field_creditCardNumber").val() );
+  // });
+});
+
+}).call(this);

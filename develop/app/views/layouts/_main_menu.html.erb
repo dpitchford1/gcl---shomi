@@ -1,0 +1,7 @@
+<li><%= link_to_unless_current t("menu.gettingstarted"), get_started_path, :class => "not-selected" do link_to t("menu.gettingstarted"), get_started_path, :class => "is-selected" end %></li>
+
+<li><%= link_to_unless_current t("menu.faq"), faq_path, :rel => "help", :class => "not-selected" do link_to t("menu.faq"), faq_path, :class => "is-selected", :rel => "help" end %></li>
+
+<li><%= link_to_unless_current t("menu.gameplus"), gameplus_path, :class => "not-selected" do link_to t("menu.gameplus"), gameplus_path, :class => "is-selected" end %></li>
+<li><%= link_to_unless_current t("menu.blackouts"), blackouts_path, :class => "not-selected" do link_to t("menu.blackouts"), blackouts_path, :class => "is-selected" end %></li>
+<li><%= link_to_unless_current t("menu.devices"), devices_path, :class => "not-selected" do link_to t("menu.devices"), root_path, :class => "is-selected" end %></li>

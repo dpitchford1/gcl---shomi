@@ -1,0 +1,28 @@
+<% content_for :body_start do %>
+	<div id="track5"></div>
+	<div id="track6"></div>
+<% end %>
+<% content_for :footer do %>
+	<script>
+		var track5js = '';
+		var axel = Math.random() + "", a = axel * 10000000000000; track5js += '<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=YmKFdqEM;ord=' + a + '?" class="hidden"></iframe>';
+		document.getElementById('track5').innerHTML = track5js;
+	</script>
+	<noscript><iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=YmKFdqEM;ord=1?" class="hidden"></iframe></noscript>
+
+	<script>
+		var track6js = '';
+		var axel = Math.random() + "", a = axel * 10000000000000; track6js += '<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger002;ord=' + a + '?" class="hidden"></iframe>';
+		document.getElementById('track6').innerHTML = track6js;
+	</script>
+	<noscript><iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger002;ord=1?" class="hidden"></iframe></noscript>
+<% end %>
+
+<% content_for :title, t('titles.create_profile').html_safe %>
+
+<section class="region create-profile">
+	<p class="already-have"><%= t("profiles.already").html_safe %> <%= link_to t("menu.sign_in"), new_session_path, class: 'inline' %></p>
+	<h2 class="h-r rogers-red size-L w-ul"><%= t("profiles.create_heading").html_safe %></h2>
+	
+	<%= render "form" %>
+<%#= section wrapper closes in form.html %>  

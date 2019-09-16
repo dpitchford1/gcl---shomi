@@ -1,0 +1,32 @@
+<% presenter = CancelSubscriptionHeader.new(@current_session, session) %>
+
+<% content_for :below_navigation do  %>
+  <%= render partial: 'layouts/presenting_summary', locals: { p: presenter } %>
+<% end %>
+
+<div class="hidden"><%= session[:cancel_survey_promo].inspect %></div>
+
+<div class="general-form">
+  <% if session[:cancel_survey_promo].try(:valid?) %>
+    <div class="form-row"><%= t('cancel_order.cancel_discount_description') %></div>
+
+    <% if session[:cancel_survey_promo].image_url.present? %>
+      <div class="form-row">
+        <%= image_tag session[:cancel_survey_promo].image_url, alt: 'promotion image' %>
+      </div>
+    <% end %>
+
+    <div class="cancel-or-allow-cancellation">
+      <p><%= simple_format(@tos.try("tos_#{I18n.locale.to_s}").force_encoding('ISO-8859-1').encode('UTF-8')) if @tos.try("tos_#{I18n.locale.to_s}") %></p>
+
+      <%= link_to t('buttons.confirm_cancellation_promo'), apply_cancel_promo_path(order: {order_id: @current_session.latest_order.try(:order_id), offer_id: @current_session.latest_order.try(:offer_id)}), remote: true, method: :post, class: 'btn btn-default sm-r-p' %>
+      <%= link_to t('buttons.confirm_cancellation'), cancel_subscription_confirmation_path(order: {order_id: @current_session.latest_order.try(:order_id)}), remote: true, method: :post, class: 'btn btn-default' %>
+    </div>
+  <% else %>
+    <div class="cancel-or-allow-cancellation">
+      <p><%= t('header.cancel_subscription_to', description: @current_session.latest_order.try(:short_description).to_s).html_safe %></p>
+      <%= link_to t('buttons.cancel_subscription'), cancel_subscription_confirmation_path(order: {order_id: @current_session.latest_order.try(:order_id)}), remote: true, method: :post, class: 'btn btn-default' %>
+    </div>
+  <% end %>
+
+</div>

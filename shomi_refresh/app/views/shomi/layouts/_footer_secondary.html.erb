@@ -1,0 +1,11 @@
+<%= cache(action_suffix: ['footer-secondary', I18n.locale].join(':')) do %>
+<footer class="footer is--f-secondary cf" role="contentinfo" id="footer-secondary">
+    <h4 class="hide-text"><%= t("menu.more") %></h4>
+    <div class="site-wrapper">
+        <ul class="footer-menu content-list float-l">
+            <li><a href="<%= t("legal.terms_link").html_safe %>" rel="external" target="_blank"><%= t("menu.terms").html_safe %></a>&nbsp;(pdf)</li>
+        </ul>
+        <p class="float-r copyright"><%= t("menu.copyright").html_safe %></p>
+    </div>
+</footer>
+<% end %>

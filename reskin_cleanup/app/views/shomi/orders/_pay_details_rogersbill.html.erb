@@ -1,0 +1,22 @@
+<table class="summary-table" summary="Review order details">
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.payment_method') %>:</strong></td>
+		<td class="summary-col"><%= t('orders.rogers_bill') %> (<%= Account.find(account_token: @order.rogers_account_token).first.try(:account_desc) %>)</td>
+	</tr>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.phone_number') %>:</strong></td>
+		<td class="summary-col"><%= @order.phone_number %></td>
+	</tr>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.birthdate') %>:</strong></td>
+		<td class="summary-col"><%= l @order.birthdate, :format => :long %></td>
+	</tr>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.optin_email') %>:</strong></td>
+		<td class="summary-col"><%= @order.optin_email.to_i == 0 ? t('simple_form.no') : t('simple_form.yes') %></td>
+	</tr>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.purchase_date') %>:</strong></td>
+		<td class="summary-col"><%= l Date.today, :format => :long %></td>
+	</tr>
+</table>

@@ -1,0 +1,15 @@
+<% content_for :title, t('titles.welcome_business').html_safe %>
+
+<h2 class="h-sb size-L w-ul"><%= t('titles.welcome_business').html_safe %>,</h3>
+<section class="region span-of-3">
+	<h3 class="h-sb size-M-alt lg-m"><%= t('promo_code.business.subheading_html') %></h3>
+
+	<%= render 'promo_business_box',
+		text: t('promo_code.business.ineligible'),
+		button: link_to( t('btn.create_profile').html_safe, new_profile_path, class: 'btn btn-default')
+	%>
+	<%= render 'promo_business_box',
+		text: t('promo_code.business.eligible'),
+		button: link_to( t('btn.my_rogers').html_safe, '#', class: 'btn btn-default btn--myrogers', data: { toggle: 'modal', target: '#new_session_modal' }, role: 'button')
+	%>
+</section>

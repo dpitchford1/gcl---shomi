@@ -1,0 +1,128 @@
+/* PROMO CODE FORM TWEAKS */
+// .promo-code-full .promo-form{
+//     padding-bottom: 1.5em;
+//     }
+
+// .promo-form{ text-align: center; }
+
+.promo-form .form-label{
+    //font-family: $font-reg;
+    margin: 0 auto .9em auto; 
+    }
+
+.hero-promocode .form-label, .is--fancy .form-label{ @include rem(font-size, 19px); }
+.hero-promocode .form-label { line-height: 1.3; margin: 0 auto 30px auto; }
+
+.is--fancy .form-label      { line-height: 1.4; letter-spacing: -1px; }
+
+[lang="en-ca"] .is--fancy .form-label{ margin-bottom: 2.3em; }
+[lang="fr-ca"] .is--fancy .form-label{ margin-bottom: 1.9em; }
+
+
+
+.promo-form legend{
+    display: block;
+    margin-bottom: .3em;
+    width: 100%;
+    }
+
+.promo-code-full .form-row{
+    float: left;
+    //display: inline-block;
+    padding-top: 0;
+    margin-left: 30%;
+    }
+// .promo-code-full .controls{
+//     float: right;
+//     padding-top: 0;
+//     }
+// .promo-code-full .form-label{
+//     @include rem(font-size, 20px);
+//     float: left;
+//     margin-right: 1em;
+//     padding-top: .2em;
+//     }
+    // [lang="fr-ca"] .promo-code-full .form-label{
+    //     @include rem(font-size, 18px);
+    //     float: left;
+    //     margin-right: 1em;
+    //     padding-top: .2em;
+    //     }
+
+
+.promo-code-full .text-field{
+    float: none;
+    width: 310px;
+    }
+.promo-code-full .form-label{ width: 55%; }
+
+.promo-code-full .btn{
+    padding-top: .65em;
+    padding-bottom: .65em;
+    margin-left: 15px;
+    }
+// .promo-code-full .btn-default{
+//     background-color: #445057;
+//     }
+// .promo-code-full .btn-default:hover, .promo-code-full .btn-default:focus, .promo-code-full .btn-default:active {
+//     background-color: #69757f;
+//     }
+.promo-code-full abbr{ display: none; }
+
+
+/* PROMO CODE WITHIN A PROMO BLOCK */
+.is--fancy .form-label abbr{ visibility: hidden; }
+
+.is--fancy legend.sizes-L{
+    font-family: $font-semibold;
+    @include rem(font-size, 22px); 
+    line-height: 1.1; 
+    margin-bottom: .7em;
+    }
+// .is--fancy legend span{
+//     display: block;
+//     }
+// .is--fancy .form-label{
+//     margin-bottom: 0;
+//     }
+
+// [lang="en-ca"] .is--fancy .form-label{ margin-bottom: 1.15em; }
+// [lang="fr-ca"] .is--fancy .form-label{ margin-bottom: 2.35em; }
+
+.is--fancy .text-field{
+    width: 100%;
+    margin: .3em 0;
+    }
+.is--fancy .promo-form .btn-default{
+    width: 100%;
+    }
+
+.info .promo-code-full .sizes-L{ font-size: 18px; text-indent: -1000em; }
+.info .promo-form{ padding-bottom: 0; }
+
+
+.info .promo-code-full .form-row{
+    margin-left: 0;
+    }
+.info .form-label.text-center{
+    text-align: left;
+    width: auto;
+    margin-bottom: .5em;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

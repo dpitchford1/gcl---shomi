@@ -1,0 +1,32 @@
+<% content_for :title, t("signin.page_heading_no_html").html_safe %>
+<% content_for :footer do ajax_validation(:session, nil, 'main') end %>
+
+<section class="region">
+	<p class="already-have"><%= t("signin.new").html_safe %> <%= link_to t("signin.registernow").html_safe, new_profile_path %></p>
+	<h2 class="h-lgt sizes-M w-ul"><%= t("signin.page_heading").html_safe %></h2>
+	
+	<%= render "sessions/form_error_header", object: @session %>
+	
+	<!-- <div class="having-trouble">
+		<h3 class="h-sb uc size-L3"><%= t("form.errors.having_trouble").html_safe %></h3>
+		<p class="copy-size-M"><%= t("form.errors.live_chat_full").html_safe %></p>
+	</div> -->
+	<%= simple_form_for @session, remote: true, html: {class: 'general-form inline-bl' }, data: {validate: 'session.main'} do |f| %>
+		<%= f.input :username, label: t('activemodel.attributes.session.username_html'), placeholder: false %>
+		<%= f.input :password, label: t('activemodel.attributes.session.password_html'), placeholder: false, hint: false, input_html: {:autocomplete => 'off', :autocapitalize => 'off',  maxlength: 16, :id => 'session_password2' } %>
+		<div class="password-toggle cf">
+            <input class="checkbox" type="checkbox" id="show-password"> <label class="form-label" for="show-password"><%= t('sessions.password_toggle_show').html_safe %></label>
+        </div>
+
+		<p><%= f.button :submit, t('btn.signin') %></p>
+		
+		<p class="copy-S"><%= t('text.forgot') %> <%= link_to t("text.username").downcase, CONFIG["forgot_username_#{session[:lang].to_s}".to_sym], title: t('sessions.will_be_taken') , rel: 'external' %> <%= t('text.or') %> <%= link_to t("text.password").downcase, forgot_password_path %>?</p>
+	<% end %>
+
+	<%= render "partials/having_trouble" %>
+	
+</section>
+<% content_for :addload_ready do %>
+<%# show hide password %>
+$('#show-password').change(function(){ $('#session_password2').hideShowPassword($(this).prop('checked')); });
+<% end %>

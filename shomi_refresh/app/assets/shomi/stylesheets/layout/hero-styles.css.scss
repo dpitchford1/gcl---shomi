@@ -1,0 +1,362 @@
+/* HEROS: Structure
+------------------------ */
+.hero-SM{
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    }
+.hero-SM-centered{
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    text-align: center;
+    }
+
+
+.hero-M{
+    padding-top: 2em;
+    padding-bottom: 2em;
+    }
+.hero-M-centered{
+    padding-top: 2em;
+    padding-bottom: 2em;
+    text-align: center;
+    }
+
+
+.hero-LG{
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+    }
+.hero-LG-centered{
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+    text-align: center;
+    }
+
+.heros-enhanced{ 
+    min-height: 400px;
+    padding-top: 3em;
+    padding-bottom: 3em; 
+    z-index: 10;
+    }
+
+/* Hero Adjustments */
+.silly-width    { margin-left: auto; margin-right: auto; width: 80%; }
+.silly-width2   { margin-left: auto; margin-right: auto; width: 90%; }
+.silly-width-lg { margin-left: auto; margin-right: auto; width: 60%; }
+
+.has--border    { border-bottom: 1px solid #babec1; }
+
+
+/* HEROs: BG Enhancements
+------------------------ */
+.hero-collections, .hero-welcome{ 
+    background: #2a0251; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  #9264cd 0%, #2a0251 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#9264cd), color-stop(100%,#2a0251)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  #9264cd 0%,#2a0251 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  #9264cd 0%,#2a0251 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  #9264cd 0%,#2a0251 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  #9264cd 0%,#2a0251 100%); /* W3C */
+    color: #fff;
+    }
+
+.hero-devices{ 
+    background: #c6c6c6; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  #eeeeee 0%, #c6c6c6 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#eeeeee), color-stop(100%,#c6c6c6)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  #eeeeee 0%,#c6c6c6 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  #eeeeee 0%,#c6c6c6 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  #eeeeee 0%,#c6c6c6 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  #eeeeee 0%,#c6c6c6 100%); /* W3C */
+    }
+
+
+
+/* HERO: Welcome
+------------------------ */
+.hero-welcome .hero-welcome-inner{
+    background: transparent asset-url("content/bg-clouds-lg.png") no-repeat scroll 50% 0;
+    //min-height: 540px;
+    padding-top: 5.5em;
+    text-align: center; 
+    }
+    
+.hero-welcome-inner ul{
+    list-style-position: inside;
+    margin-bottom: 205px;
+    padding-left: 0;
+    }
+
+
+/* HERO: Welcome w/Boxart
+------------------------ */
+.hero-welcome-bonus{ margin-top: -205px; z-index: 5; }
+.hero-welcome-bonus .h-med{ position: relative; z-index: 6; }
+
+.covers-wrapper{
+    min-height: 310px;
+    margin: 0 auto;
+    max-width: 1140px;
+    padding-left: 1px;
+    z-index: 7;
+    }
+
+.covers-wrapper .boxart{
+    float: left;
+    margin-right: 6.364912280702%;
+    overflow: visible;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+
+    backface-visibility: hidden; -webkit-backface-visibility: hidden; will-change: transform;
+    }
+.covers-wrapper .boxart:last-child{
+    margin-right: 0;
+    }
+
+.boxart:after {
+    content:'';
+    display: block;
+    position: absolute;
+    left: 7%;
+    bottom: 0px;
+    width: 90%;
+    max-width: 210px;
+    height: 10px;
+    background: transparent;
+    border-radius: 100px/50px;
+    box-shadow: 0 23px 10px rgba(0,0,0,0.4);
+    }
+
+.boxart--1 { 
+    background-image: asset-url("/assets/box-art/welcome-features/mozart.jpg");
+    transform: perspective( 127px ) rotateY( 5deg );
+    padding-bottom: 17%;
+    top: 12px;
+    width: 11.140350877193%
+    }
+.boxart--2 { 
+    background-image: asset-url("/assets/box-art/welcome-features/fresh-off-boat.jpg");
+    transform: perspective( 156px ) rotateY( 7deg );
+    padding-bottom: 21%;
+    top: 8px;
+    width: 13.684210526316%
+    }
+.boxart--3 { 
+    background-image: asset-url("/assets/box-art/welcome-features/2-broke-girls.jpg");
+    transform: perspective( 105px ) rotateY( 7deg );
+    padding-bottom: 14.5%;
+    top: 31px;
+    width: 9.210526315789%;
+    }
+.boxart--4 { 
+    background-image: asset-url("/assets/box-art/welcome-features/bobs-burgers.jpg");
+    transform: perspective( 145px ) rotateY( -7deg );
+    padding-bottom: 20%;
+    top: 11px;
+    width: 12.719298245614%;
+    }
+.boxart--5 { 
+    background-image: asset-url("/assets/box-art/welcome-features/izombie.jpg");
+    transform: perspective( 103px ) rotateY( -5deg );
+    padding-bottom: 14.5%;
+    top: 10px;
+    width: 9.035087719298%;
+    }
+.boxart--6 { 
+    background-image: asset-url("/assets/box-art/welcome-features/the-office.jpg");
+    transform: perspective( 137px ) rotateY( -5deg );
+    padding-bottom: 18%;
+    top: 5px;
+    width: 12.017543859649%;
+    }
+
+
+/* HERO: Get Started
+------------------------ */
+.boxart-img{
+    display: block;
+    margin-bottom: 1em;
+    overflow: hidden;
+    }
+    .boxart-img img{ width: 100%; }
+
+//.boxart-span-2{}
+.boxart-span-2 .boxart-img{
+    float: left;
+    margin-right: 5.263157894737%;
+    width: 47.368421052632%;
+    }
+
+.boxart-span-2 .boxart-img:nth-child(even){
+    margin-right: 0;
+    }
+
+//.boxart-span-3{}
+.boxart-span-3 .boxart-img{
+    float: left;
+    margin-right: 5.263157894737%;
+    width: 29.824561403509%;
+    }
+
+.boxart-span-3 .boxart-img:nth-child(3n+3) {  
+    margin-right: 0;
+    }
+
+//.block-ms{}
+
+
+/* HERO: TV Movies
+------------------------ */
+
+
+/* HERO: Kids
+------------------------ */
+
+
+/* HERO: Collections
+------------------------ */
+// .collections-grid{}
+// .span--2{}
+
+/* Structure */
+.collection-lead{
+    float: right;
+    margin-top: 175px;
+    width: 30.701754385965%;
+    }
+
+.collection-features{ 
+    float: left;
+    margin-right: 6.017543859649%;
+    width: 62.543859649123%; 
+    }
+.collections-title{ 
+    @include rem(font-size, 45px);
+    text-align: center;
+    margin-bottom: 1em; 
+    }
+
+.collections-title .shomi-cta{ 
+    border-bottom: 2px solid $shomi-primary;
+    color: $shomi-primary;  
+    }
+.collection-lead .lead-copy{ @include rem(font-size, 18px); line-height: 1.7; }
+
+.collection-features{ z-index: 5; }
+
+
+/* General Styles */
+.featured-img{ display: block; overflow: hidden; z-index: 6; }
+.featured-img img{ width: 100%; }
+.featured-content{
+    background-color: $shomi-primary; 
+    color: $white;
+    z-index: 7;
+    }
+
+/* Main Box */
+.featured-main{ background-color: $shomi-primary; margin-bottom: .7em; }
+.featured-main .featured-img{ float: right; width: 58.064516129032%; }
+.featured-main .featured-content{
+    float: left;
+    @include rem(font-size, 13px);
+    //min-height: 247px;
+    padding: 1.25em 1.875em 1.25em 1.25em;
+    width: 41.935483870968%;
+    }
+.featured-main .notes{ @include rem(font-size, 14px); margin: .7em 0 0; opacity: .65; }
+
+/* Secondary Orange Box */
+.featured-secondary{ float: left; width: 41.935483870968%; }
+.featured-secondary .featured-content{
+    @include rem(font-size, 13px);
+    overflow: visible;
+    padding: 1em;
+    text-align: center;
+    width: 100%;
+    }
+.featured-secondary .featured-img{ margin-bottom: .7em; width: 100%; }
+.featured-secondary .featured-title{ @include rem(font-size, 14px); margin: -55px 0 2.3em; text-align: left; }
+
+
+/* Box Art Structure */
+.box-img{ display: block; float: left; overflow: hidden; margin-bottom: .85em; min-height: 190px; }
+.box-img img, .collection-boxart2{ width: 100%; }
+
+.collection-boxart1{
+    float: right;
+    width: 56.661991584853%;
+    }
+.collection-boxart1 .box-img{
+    margin-right: 2%;
+    width: 23.5%;
+    }
+.collection-boxart1 .box-img:nth-child(4n+4){
+    margin-right: 0;
+    }
+
+.collection-boxart2 .box-img{ 
+    margin-right: 1.2%;
+    width: 13.25%; 
+    }
+.collection-boxart2 .box-img:last-child{
+    margin-right: 0;
+    }
+
+/* Little Tags Box */
+.box-tags{ 
+    background-color: #ffaf00;
+    @include rem(font-size, 13px);
+    line-height: 1.7;
+    margin-bottom: 0;
+    padding: .8em 1% .3em;
+    text-align: center;
+    }
+.box-tags .block{ 
+    @include rem(font-size, 11px);
+    }
+
+
+/* HERO: Watch = Devices
+------------------------ */
+//.hero-watch{}
+.hero-watch .info{ margin-bottom: 0; }
+.hero-devices .bg-devices{
+    background: transparent asset-url("content/bg-devices-lg.png") no-repeat scroll center center;
+    margin-top: 3em;
+    min-height: 361px;
+    width: 100%;
+    }
+
+
+/* HERO: Getting Started Plus
+------------------------ */
+
+
+/* HERO: Getting started Options
+------------------------ */
+
+
+/* HERO: Footer Support
+------------------------ */
+.hero-support{
+    background: $cc-secondary2 url("data:image/gif;base64,R0lGODlhgAwBAIABAHTO4AAAACH5BAEAAAEALAAAAACADAEAQAJZjI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6ziPADwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/R6sAAAOw==") repeat-y 50% 0 scroll;
+    margin-top: 2em;
+    padding: 2.5em 0 1em;
+    }
+
+.hero-help{ 
+    background-color: $cc-secondary2;
+    float: left;
+    margin-right: 3%;
+    width: 47%;
+    }
+
+.hero-contact{  
+    background-color: $cc-secondary; 
+    float: right;
+    margin-left: 6%;
+    width: 44%;
+    }

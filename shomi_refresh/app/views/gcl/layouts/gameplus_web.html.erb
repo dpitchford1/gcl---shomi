@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<% if I18n.locale == I18n.default_locale %>
+<html class="no-js no-touch" dir="ltr" lang="en-CA">
+<% else %>
+<html class="no-js no-touch" dir="ltr" lang="fr-CA">
+<%end%>
+<!--[if IE]><![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--[if IE]>
+    <meta http-equiv="imagetoolbar" content="false"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="cleartype" content="on">
+    <![endif]-->
+
+    <title><%= page_title %></title>
+
+    <%# critical css %>
+    <style type="text/css">html{font-family:"regular","Helvetica",Arial,sans-serif;font-style:normal}body,div,object,iframe,fieldset,form,legend,article,aside,details,figcaption,footer,header,main,nav,section,summary{margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,main,nav,section,summary{display:block}[hidden],template{display:none}div,fieldset,form,article,aside,footer,header,menu,nav,section,summary,ul,ol,li,dl,dt,dd,hr,.text-field{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}iframe{overflow:hidden}html{background-color:#fff}html{font-size:1em;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{color:#434a4f;line-height:1.5;z-index:0}h1{font-size:2em}address,caption,cite{font-style:normal;font-weight:normal;font-size:14px;font-size:.875rem;text-transform:none;vertical-align:middle}del{text-decoration:line-through}abbr[title],acronym[title],dfn[title]{border-bottom:0}sup,sub{font-size:10px;line-height:0;position:relative;font-family:"regular","Helvetica",Arial,sans-serif}sup{vertical-align:super;padding:0 0 0 .1em;top:0;letter-spacing:0;font-family:Arial}sub{vertical-align:sub;bottom:-0.25em}caption,cite,dfn,em,i{font-style:italic}b,strong{font-weight:bold}p{margin:0 0 .825em;word-spacing:.125em}small{font-size:75%}.small-text{font-size:80%}hr{height:0;overflow:hidden}.intro:first-line {font-variant:small-caps}.drop:first-letter {float:left;font-size:3em;margin:-.0em 1px .3125em 0}.lead{font-size:18px;font-size:1.125rem;font-weight:300;line-height:1.4em;margin-bottom:.75em}q{quotes:"\201C" "\201D" "\2018" "\2019"}blockquote{font-size:18px;font-size:1.125rem;line-height:1.3;margin:.6667em 0;padding:0 2.2222em .6667em 0;float:left;width:33%}blockquote p{margin-top:.3333em;margin-bottom:.6667em}img{border:0;color:#c00;height:auto;vertical-align:middle}svg:not(:root){overflow:hidden}figure{margin:0 0 .625em;padding:0}figcaption{font-weight:normal;font-size:13px;font-size:.8125rem;color:#000}object,embed,video{max-width:100%;height:auto}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}ul,ol,dl{margin-top:0;margin-bottom:1.625em}ul{list-style-type:disc}ul li{margin-bottom:.3em}ol{list-style-type:decimal;list-style-position:outside}ol li{margin-bottom:.3em}ul ul,ul ol,ol ol,ol ul{margin:.6em 0 .6em 1em;padding-left:30px}dt{font-weight:normal}dl dd{margin:0 0 .5125em}dialog dd{margin-bottom:.5em;line-height:normal}ul dl,ol dl{margin:0 0 0 .625em}table{border-collapse:collapse;border-spacing:0;table-layout:fixed}th summary{font-weight:normal;margin:0 0 .625em 0}td,th{padding:0}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0;margin-right:10px}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:0 none;margin:0;padding:0}legend{border:0;font-weight:normal}textarea{overflow:auto}optgroup{font-weight:bold}form abbr[title]{color:#dd3829;border-bottom:0 none}label{color:#2c2c2c;display:block;font:16px/1.42857143 'semibold','Helvetica',Arial,sans-serif;padding-bottom:.2em;overflow:hidden}select{background-color:#fff;border-radius:0;color:#434a4f;float:left;font-size:14px;font-size:.875rem;text-indent:.01px;text-overflow:"";-webkit-box-align:center;-webkit-rtl-ordering:logical}select{appearance:none;-webkit-appearance:none;-moz-appearance:window;background:0;border:0;outline:0}.alert.is-animated{opacity:0;-webkit-animation:fadeInOut 8s;animation:fadeInOut 8s;position:absolute;top:5px;left:50%;-webkit-transform:translate(-50%,0);-ms-transform:translate(-50%,0);transform:translate(-50%,0)}@-webkit-keyframes fadeInOut{0%{opacity:0}15%{opacity:1}95%{opacity:1;-webkit-transform:translate3d(-50%,0);transform:translate(-50%,0)}100%{opacity:0;-webkit-transform:translate(-50%,-50px);transform:translate(-50%,-50px)}}@keyframes fadeInOut{0%{opacity:0}15%{opacity:1}95%{opacity:1;-webkit-transform:translate3d(-50%,0);transform:translate(-50%,0)}100%{opacity:0;-webkit-transform:translate(-50%,-50px);transform:translate(-50%,-50px)}}.alert.is-persistent{opacity:1;position:absolute;top:5px;left:50%}html{text-rendering:optimizeLegibility}@media(max-width:33.333333em){html{-webkit-overflow-scrolling:touch;-webkit-tap-highlight-color:#ebebeb}}body{min-height:100%;overflow-y:scroll;overflow-x:hidden;position:relative;z-index:0}.no-js .page-bg{-webkit-background-size:100% auto;background-size:100% auto}div,header,footer,aside,nav,section,article{overflow:hidden;position:relative}h1,h2,h3,h4,h5,h6{font-weight:normal;margin-top:0;margin-bottom:0}h1 small,h2 small,h3 small,h4 small,h5 small,h6 small{font-family:"regular","Helvetica",Arial,sans-serif;font-style:normal;text-transform:none}label,select,.pointer,button,html input[type="button"],.submit,input[type="reset"],input[type="submit"]{cursor:pointer}a{background:transparent;text-decoration:none;color:#1c85c2}a:hover{text-decoration:underline}a:focus{text-decoration:underline;outline:0;color:#e00}a:active{color:inherit;background-color:transparent}h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{display:block;color:#434a4f;text-decoration:none}h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover{color:#e00}</style>
+
+    <%# quick app setup %>
+    <script>var doc = window.document; function addLoadEvent(b){var a=window.onload;if(typeof window.onload!=="function"){window.onload=b}else{window.onload=function(){a();b()}}}; doc.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js';</script> 
+
+    <%# main css files %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+
+    <%# OLD IE CSS %>
+    <!--[if (lte IE 8)&(!IEMobile 7)]>
+    <%= stylesheet_link_tag  "oldIE", media: "all" %>
+    <![endif]-->
+
+    <%# inject enjance with js %>
+    <%= javascript_include_tag "utils", async: "true" %>
+
+    <!--[if lt IE 9]>
+    <%= javascript_include_tag "html5" %>
+    <![endif]-->  
+
+    <%# MOBILE SPECIFIC %> 
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%# SEARCH AND SEO %>
+    <meta name="googlebot" content="NOODP">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <meta name="description" content="<%= t("legal.meta_desc").html_safe %>">
+    <% if I18n.locale == I18n.default_locale %>
+    <meta http-equiv="Content-Language" content="en">
+    <% else %>
+    <meta http-equiv="Content-Language" content="fr">
+    <%end%>
+
+    <%# APPLE SPECIFIC %> 
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="NHL GameCenter Live&trade;">
+
+    <%# COPYRIGHTS %>
+    <meta name="copyright" content="All content presented in this domain may not be used by third parties without the prior written consent of Rogers Communications Inc.">
+    <meta name="copyright" content="NHL Enterprises, L.P. &copy; NHL">
+
+    <%# IE meta and pinning %>
+    <meta name="application-name" content="Rogers&trade; NHL GameCenter Live&trade;">
+    <meta name="msapplication-tooltip" content="Rogers&trade; NHL GameCentre Live&trade;">
+    <meta name="msapplication-starturl" content="http://gamecentrelive.rogers.com">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="/assets/icons/favicon/favicon-144.png">
+    <meta name="msapplication-navbutton-color" content="#fa1f00">
+
+    <meta name="msapplication-task" content="name=NHL on Twitter;action-uri=https://twitter.com/NHL;icon-uri=http://twitter.com/favicon.ico">
+    <meta name="msapplication-task" content="name=NHL on Facebook;action-uri=https://www.facebook.com/NHL;icon-uri=https://www.facebook.com/favicon.ico">
+    <meta name="msapplication-task" content="name=NHL on Google+;action-uri=https://plus.google.com/+NHL;icon-uri=https://ssl.gstatic.com/s2/oz/images/faviconr2.ico">
+
+    <%# ICONS %>
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/icons/favicon/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/icons/favicon/favicon-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/assets/icons/favicon/favicon-120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/icons/favicon/favicon-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/assets/icons/favicon/favicon-76.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/icons/favicon/favicon-72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/assets/icons/favicon/favicon-60.png">
+    <link rel="apple-touch-icon-precomposed" href="/assets/icons/favicon/favicon-57.png">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="/assets/icons/favicon/favicon-160.png">
+    
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="https://gamecentrelive.nhl.com/favicon.ico"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="http://www.rogers.com/favicon.ico">
+
+    <link rel="home" title="Home page" href="/">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+
+    <%#= yield :head %>
+    <%#= csrf_meta_tags %>
+    <%# dtm header code start %>
+    
+    <noscript><%= stylesheet_link_tag "font", media: "all" %></noscript> 
+</head>
+<body class="<%= @home_page ? 'page-home page-bg' : 'page-site'%>" id="page-body">
+
+
+<%#= yield :body_start %>
+
+<%# START: main content %>
+<div class="fluid" id="main-content">
+    <%#= render 'layouts/messages' %>
+
+    <%= yield %>  
+
+    <p class="footnote-basic lg-m"><%= t("legal.nhl_legend").html_safe %></p>
+    
+</div>
+<script>
+var gcl=gcl||{};window.gcl=(function(f,b,h){var g={q:function(o,m){if(doc.querySelectorAll){m=doc.querySelectorAll(o)}else{a=doc.styleSheets[0]||doc.createStyleSheet();a.addRule(o,"f:b");for(var k=d.all,j=0,p=[],n=k.length;j<n;j++){k[j].currentStyle.f&&p.push(k[j])}a.removeRule(0);m=p}return m}};function i(){var l=g.q("[data-src]"),m=g.q("[data-alt]"),q=g.q("[data-width]"),r=g.q("[data-height]");for(var o=0;o<l.length;o++){var j=l[o].getAttribute("data-src"),p=m[o].getAttribute("data-alt"),k=q[o].getAttribute("data-width"),s=r[o].getAttribute("data-height"),n=new Image();n.src=j;n.alt=p;n.width=k;n.height=s;l[o].insertBefore(n,l[o].firstChild);m[o].appendChild(n);q[o].appendChild(n);r[o].appendChild(n)}}function c(k,l){var j=doc.createElement("script");if(j.readyState){j.onreadystatechange=function(){if(j.readyState=="loaded"||j.readyState=="complete"){j.onreadystatechange=null;l()}}}else{j.onload=function(){l()}}j.src=k;doc.getElementsByTagName("head")[0].appendChild(j)}function e(){var j=false;if("ontouchstart" in f){j=true;doc.documentElement.className=doc.documentElement.className.replace(/\bno-touch\b/g,"")+" touch";(function(){var n=navigator.userAgent;if(!(/iPhone|iPad|iPod/.test(navigator.platform)&&/OS [1-5]_[0-9_]* like Mac OS X/i.test(n)&&n.indexOf("AppleWebKit")>-1)){return}if(!doc.querySelector){return}var A=doc.querySelector("meta[name=viewport]"),k=A&&A.getAttribute("content"),v=k+",maximum-scale=1",o=k+",maximum-scale=10",r=true,u,t,s,m;if(!A){return}function q(){A.setAttribute("content",o);r=true}function l(){A.setAttribute("content",v);r=false}function p(x){m=x.accelerationIncludingGravity;u=Math.abs(m.x);t=Math.abs(m.y);s=Math.abs(m.z);if((!w.orientation||w.orientation===180)&&(u>7||((s>6&&t<8||s<8&&t>6)&&u>5))){if(r){l()}}else{if(!r){q()}}}w.addEventListener("orientationchange",q,false);w.addEventListener("devicemotion",p,false)})(this)}else{if(f.navigator.msPointerEnabled){j=true;doc.documentElement.className=doc.documentElement.className.replace(/\bno-touch\b/g,"")+" touch"}else{if(j===false){doc.documentElement.className=doc.documentElement.className.replace(/\bno-touch\b/g,"")+" no-touch"}}}}if(doc.getElementsByClassName("lazy-img")){if(f.matchMedia("only screen and (min-width: 299px)").matches){addLoadEvent(i)}}else{if(doc.getElementById("gcl-devices")){if(f.matchMedia("only screen and (min-width: 481px)").matches){addLoadEvent(i)}}}})(this,this.document);
+</script>
+
+</body>
+</html>

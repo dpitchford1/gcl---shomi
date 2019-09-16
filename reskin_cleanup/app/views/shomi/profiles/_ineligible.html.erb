@@ -1,0 +1,36 @@
+<% content_for :title, t('titles.confirmation').html_safe %>
+<% content_for :live_chat_url, t('live_chat.signed_in_associated_accounts') %>
+
+<% if @order %>
+	<%# content_for :body_start do %>
+	<%# end %>
+<% end %>
+
+<p class="h-sb size-L3 rogers-red"><%= t('text.hi') %> <%= @current_session.username %></p>
+
+<%= cache(action_suffix: ['ineligible', I18n.locale, @session.logged?, @session.try(:profile).try(:level), @session.try(:profile).try(:code)].join(':')) do %>
+
+	<section class="hero-eligible">
+	    <h2 class="h-l size-M2"><%= t("profiles.eligible.your_profile").html_safe %></h2>   
+
+	</section>
+
+	<section class="fancy-promos eligible">
+	    <%= render 'pages/promo_purchase' %>
+	</section>
+
+	<section class="fancy-promos eligible upgrade">
+	    <%= render 'profiles/promo_upgraderogers' %>
+	</section>
+
+	<div class="region promo-code-full has--fancy-bot" id="enter-promo-code">
+		<%= render 'profiles/promo_code_form', use_styling: "landing_page"%>
+	</div>
+
+	<aside id="footnote" class="footnote clear">
+	    <h3><%= t('legal.title').html_safe %></h3>
+	    <p><%= t("legal.terms1").html_safe %></p>
+	    <p><%= t("legal.terms2").html_safe %></p>
+	</aside>
+
+<% end %>

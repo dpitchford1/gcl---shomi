@@ -1,0 +1,256 @@
+/* $ Common Layout
+====================================================================== */
+
+    /* main site wrapper = default to 980px for small desktop and IE 7 & 8 */
+    .site-wrapper{ margin: 0 auto; padding: 0 1.15%; /*width: 100%; max-width: 61.250em;*/ }
+
+    .site-wrapper, .fluid{ width: 100%; max-width: 61.250em; }
+
+    /* Fluid wrapper for main content - identical to site wrapper - fine grained adjustments for responsive breakpoints */
+    .fluid, .fluid-lg{
+        margin: 0 auto;
+        padding: 0 1.15%;
+        }
+
+    .fluid-lg{
+        max-width: 1115px;
+        }
+
+    /* all purpose wrapper */
+    .region{ width: 100%; }
+
+    /* all purpose wrapper == padding top, margin bottom */
+    .content-wrapper{
+        padding-bottom: 1.563em;
+        width: 100%;
+        }
+
+    /* Global Wrappers
+    ---------------------------------------------- */
+    .global-header { 
+        clear: both; width: 100%; z-index: 100; position: fixed; top: 0; left: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; will-change: transform;
+        }
+
+    /* Global Header Enhanced with Animation */
+    .js .global-header{ 
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+        }
+
+    .js .is-hidden {
+        top: -480px;
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        }
+    .js .is-visible {
+        padding-top: 3em;
+        top: 0px;
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        }
+
+    .ss-nav{ background-color: #DA291C; border-bottom: 1px solid #bf261b; min-height: 55px; position: fixed; top: 0; left: 0; width: 100%; z-index: 100; backface-visibility: hidden; -webkit-backface-visibility: hidden; will-change: transform; }
+    @media (min-width:51.260em){ .ss-nav{ display: none; } .js .is-hidden { top: 0; } }
+
+    /* body - homepage */
+    .page-home #main-content{ padding-top: 8.9em; }
+    .page-site #main-content{ padding-top: 12em; }
+
+    /* Global Header */
+    .is--primary   { background-color: #fff; color: $black; }
+    .is--secondary { background-color: #2a0251; position: static; padding: 1em 0; }
+
+    //.navigation-wrapper{ }
+
+    /* body content */
+    #main-content   { padding-bottom: 2em; }
+
+
+    /* $ Headers - Navigations - Footers
+    ====================================================================== */
+    @import "layout/global-menus";
+
+
+    /* Simple Grid
+    ---------------------------------------------- */
+    .simple-grid .box{ 
+        float: left; 
+
+        //background-color: #f1f1f1;
+        }
+    .simple-grid .pr{ /* pull right */
+        float: right; 
+
+        //background-color: #f1f1f1;
+        }
+
+    .simple-grid .box:last-child{ 
+        margin-left: 0;
+        }
+
+    .simple-grid .flipped > .box{
+        margin-left: 0; 
+        }
+
+    .simple-grid .three-fifths{ 
+        float: right;
+        width: 60%;
+        }
+
+    /* 2 in a row */
+    .span-of-2 .box{
+        width: 47.368421052632%;
+        }
+
+    .span-of-2 > .box + .box{
+        margin-left: 5.263157894737%;
+        }
+
+    .flipped > .box + .box{
+        margin-left: 0;
+        margin-right: 4.6875%;
+        }
+
+
+    /* 3 in a row */
+    .span-of-3 .box{
+        margin-right: 5.263157894737%;
+        width: 29.824561403509%;
+        }
+
+    .span-of-3 > .box + .box + .box{ margin-right: 0; }
+
+        
+    /* 4 in a row */
+    .span-of-4 .box{
+        margin-right: 3.508771929825%;
+        width: 22.368421052632%;
+        }
+    .span-of-4 > .box + .box + .box + .box{ margin-right: 0; }
+
+
+    /* 5 in a row */
+    .span-of-5 .box{
+        width: 19.111111%;
+        }
+    .span-of-5 > .box + .box{
+        margin-left: 1.111111%;
+        }
+
+
+
+/* STRUCTURE TWEAKS
+================================================================================ */
+/* min width 1280px ++
+---------------------------------------------- */
+@media (min-width: 61.25em) {
+
+    .fluid, .site-wrapper{ max-width: 77.5em; } /* bump to 1240px */
+
+}
+
+/* min width 1366px
+---------------------------------------------- */
+@media (min-width: 85.375em) {
+
+    /* GLOBAL BUMP
+    ------------------------ */
+    .fluid, .site-wrapper{ max-width: 82.5em; } /* bump to 1320px */
+
+    .fluid-lg{
+        max-width: 1280px;
+        }
+}
+
+/* min width 1600px ++
+---------------------------------------------- */
+@media (min-width: 100em) {
+        
+    .fluid, .site-wrapper{ max-width: 90em; } /* bump to 1440px */
+}
+
+/* min width 1920px ++
+---------------------------------------------- */
+@media (min-width: 120em) {
+        
+    .fluid, .site-wrapper{ max-width: 100em; } /* bump to 1440px */
+
+}
+
+/* MQ 1024- MAX WIDTH
+================================================================================ */
+@media (max-width: 64em) {
+    .page-site #main-content{ padding-top: 10.5em; }
+
+}
+
+/* MQ 820- tablets & small screens
+================================================================================ */
+@media (max-width:51.250em){
+
+    .fluid, .site-wrapper{ 
+        padding-left: 3.5%;
+        padding-right: 3.5%;
+        }
+
+    .page-home #main-content{ padding-top: 3.25em; }
+    .page-site #main-content{ padding-top: 5.5em; }
+
+    .simple-grid .pr{ /* reset pull right */
+        float: none; 
+        }
+
+}
+
+/* MQ 600- tablets & small screens
+================================================================================ */
+@media (max-width: 37.5em) {
+    .page-site{ padding-top: 3.5em; }
+
+    .page-home #main-content{ padding-top: 2.5em; }
+    .page-site #main-content{ padding-top: 2em; }
+
+
+    .simple-grid .three-fifths, .simple-grid .box{
+        float: none;
+        width: 100%;
+        }
+
+    .simple-grid .box{
+        //float: none;
+        margin-bottom: 2em;
+        margin-right: 0;
+        //width: 100%;
+        }
+    .span-of-2 > .box + .box{ margin-left: 0; }
+
+}
+
+/* MQ 380- small screens
+================================================================================ */
+@media (max-width: 23.75em) {
+    //.page-site{ padding-top: 3.5em; }
+
+    .page-home #main-content{ padding-top: 2.6em; }
+    //.page-site #main-content{ padding-top: 2em; }
+
+
+    // .simple-grid .three-fifths, .simple-grid .box{
+    //     float: none;
+    //     width: 100%;
+    //     }
+
+    // .simple-grid .box{
+    //     //float: none;
+    //     margin-bottom: 2em;
+    //     margin-right: 0;
+    //     //width: 100%;
+    //     }
+    // .span-of-2 > .box + .box{ margin-left: 0; }
+
+}

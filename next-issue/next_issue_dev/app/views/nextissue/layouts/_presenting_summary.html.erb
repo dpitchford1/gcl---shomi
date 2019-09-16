@@ -1,0 +1,37 @@
+<% p ||= nil %>
+
+<% if p %>
+  <% if p.layout[:type] == 'simple-grid' %>
+    <% p.layout[:column_ratio].length.times do |row_index| %>
+      <div class="row no-b-margin <%= p.row_class(row_index) %>">
+
+        <% p.layout[:column_ratio][row_index].each_with_index do |cr, column_index| %>
+
+          <div class="<%= p.col_class(column_index, row_index) %> span-<%= cr %>">
+
+            <div class="<%= p.inner_div_class(column_index, row_index) %>">
+
+              <% if p.headers(column_index, row_index) %>
+                <% p.headers(column_index, row_index).each do |header_html| %>
+                  <h3 class="sm-b-mg"><%= header_html.html_safe %></h3>
+                <% end %>
+              <% end %>
+
+              <% if p.inner_div_content(column_index, row_index) %>
+                <% p.inner_div_content(column_index, row_index).each do |inner_html| %>
+                  <%= inner_html.html_safe %>
+                <% end %>
+              <% end %>
+
+              <% if p.inner_div_partials(column_index, row_index) %>
+                <% p.inner_div_partials(column_index, row_index).each do |partials| %>
+                  <%= render partial: partials[:name], locals: partials[:locals] %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

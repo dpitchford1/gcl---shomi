@@ -1,0 +1,162 @@
+
+.brand-link{ color: #fff; margin: 0; float: left; @include rem(font-size, 14px); }
+.brand-link .block{ color: #fff; padding-top: .2em; }
+
+.four-hundred-four-error-page .navigation-wrapper { display: none !important; }
+
+.nextissue_logo {
+  width: 221px;
+  height: 36px;
+  background: asset-url('content/diagonal-sprites.png') -843px -259px no-repeat;
+  margin: 0;
+  float: left;
+}
+
+/* Site Logo -- fs==full-screen | ss==small-screen
+---------------------------------------------- */
+.brand-fs {
+  width: 221px;
+  height: 36px;
+  background: asset-url('content/diagonal-sprites.png') -843px -259px no-repeat;
+  margin: 0;
+  float: left;
+}
+.brand-fs .block { display: none !important; }
+
+/* Only load small screen logo IF js enabled 
+---------------------------------------------- */
+.js[lang="en-ca"] .brand-ss{
+  width: 221px;
+  height: 36px;
+  background: asset-url('content/diagonal-sprites.png') -843px -259px no-repeat;
+}
+.js[lang="fr-ca"] .brand-ss{
+  width: 221px;
+  height: 36px;
+  background: asset-url('content/diagonal-sprites.png') -843px -259px no-repeat;
+}
+
+
+/* Header link focus styles */
+.header a:focus{ text-decoration: none; border-radius: 3px; }
+
+
+/* General menu structure
+---------------------------------------------- */
+.menu{
+    line-height: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    @include rem(font-size, 14px);
+    }
+.menu li{
+    float: left;
+    margin: 0;
+    padding: 0;
+    }
+.menu a, .menu .welcome{
+    display: block;
+    padding: 0.4em .1em;
+    }
+.welcome {
+  float:right;
+  text-transform: none;
+}
+
+
+/* Primary Menu abstrction 
+---------------------------------------------- */
+.menu--primary{
+    float: right;
+    }
+.menu--primary li{
+    margin-left: 1.5em;
+    }
+.menu--primary a{
+    color: #000000;
+    }
+    .menu--primary a:hover{ color: #000000; }
+    .menu--primary a:focus{ background-color: #c7ced4; }
+
+.menu--primary a:active {
+  color: #fff;
+  background-color: #c7ced4;
+  text-decoration: none;
+}
+
+/* Secondary Menu abstrction 
+---------------------------------------------- */
+.menu--secondary{
+    font-family: "ff-din-web","Helvetica",Arial,sans-serif/* $font-bold */;
+    }
+.menu--secondary li{
+    margin-left: 1.2em;
+    }
+    .menu--secondary li:first-child{
+        margin-left: 0;
+        }
+.menu--secondary a{
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease-in-out;
+    color: #000000/*#3d4142*/;
+    }
+    .menu--secondary a:hover,  .menu--secondary .is-selected{ border-bottom-color: #000000/*#aeb0af*/; text-decoration: none; }
+    .menu--secondary a:focus { background-color: #fff; color: #000; }
+    .menu--secondary a:active{ background-color: #eee; }
+.menu--secondary a.nextlink {
+  color: #88d3e8 /*#d6f2f6*/;
+}
+
+/* Hide small screen menu wrap - content generated with js 
+---------------------------------------------- */
+.ss-nav{ display: none; }
+
+
+/* Footer secondary modifiers 
+---------------------------------------------- */
+.copyright, .footer-menu{ @include rem(font-size, 11px); margin: 0; padding-bottom: 0; }
+
+.footer-menu a{
+    color: #fff;
+    }
+.footer a {
+  color: #000000;
+  text-decoration: none;
+}
+.footer a:hover {
+  color: #333333;
+  text-decoration: underline;
+}
+.center-with-margins { margin-left:auto; margin-right:auto; }
+// @media (max-width:51.250em){
+//     .js .ss-nav{ padding: 8px 3.5%; }
+// }
+
+@media (max-width: 37.5em) { /* 600PX */
+    /* LOGO - Has SVG and JS support */
+    .js .brand-ss{
+        background-position: right 0;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 36px;
+        margin: 0;
+        overflow: hidden;
+        text-indent: -100em;
+        width: 200px;
+        }
+    /* Small screen menu with JS enabled */
+    .js .ss-nav{ background-color: #ffffff; display: block; position: absolute; top: 0; left: 0; padding: 8px 3.5%; width: 100%; z-index: 20; } //padding: 8px 4.6875%;
+    .js .ss-nav .i--menu { height: 24px; margin: 6px 0 0; width: 31px; float: right; }
+    .js .ss-nav .i--close{ background-color: #ffffff; background-size: 100% auto; height: 20px; width: 20px; margin-top: 6px; float: right; }
+    .js .menu-trigger{
+        color: #000000;
+        }
+  .btn-group { margin-top: 1.5em; }
+}
+
+@media (max-width: 23.75em) { /* 380PX */
+    .js .ss-nav{ padding: 8px 4.6875%; } 
+}

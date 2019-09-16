@@ -1,0 +1,12 @@
+<article class="feature is--fancy">
+<%= section :frenchpackage_box, auto_generate: false do %>
+	<h3 class="h-sb sizes-L4"><%= t("promos.promo_french_package.heading").html_safe %></h3>
+	<div class="feature-body">
+		<p class="feature-excerpt"><%= t("promos.promo_french_package.excerpt2").html_safe %></p>
+
+		<p class="small-text"><%= t("promos.promo_french_package.small").html_safe %></p>
+		<p><%= link_to t("btn.subscribe"), frenchpackage_path, class: 'btn btn-default btn-block' %></p>
+		<p class="small-text"><%= t("promos.promo_french_package.small2").html_safe %></p>
+	</div>
+<% end %>
+</article>

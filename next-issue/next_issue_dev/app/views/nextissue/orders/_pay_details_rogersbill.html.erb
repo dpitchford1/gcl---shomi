@@ -1,0 +1,28 @@
+<table class="summary-table" summary="Review order details">
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.payment_method') %>:</strong></td>
+		<td class="summary-col"><%= t('orders.rogers_bill') %> (<%= @session.profile.accounts.find(account_token: @order.rogers_account_token).try(:first).try(:account_desc) %>)</td>
+	</tr>
+	<% unless @order.phone_number.blank? %>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.phone_number') %>:</strong></td>
+		<td class="summary-col"><%= @order.phone_number %></td>
+	</tr>
+	<% end %>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.purchase_date') %>:</strong></td>
+		<td class="summary-col"><%= l Date.today, :format => :long %></td>
+	</tr>
+  <% if !@order.promo_code.blank? %>
+    <tr class="summary-row">
+      <td class="summary-col"><strong><%= t('orders.promo_code') %>:</strong></td>
+      <td class="summary-col"><%= @order.promo_code %></td>
+    </tr>
+  <% end %>
+  <% if !@order.membership_number.blank? %>
+    <tr class="summary-row">
+      <td class="summary-col"><strong><%= t('orders.membership_number') %>:</strong></td>
+      <td class="summary-col"><%= @order.membership_number %></td>
+    </tr>
+  <% end %>
+</table>

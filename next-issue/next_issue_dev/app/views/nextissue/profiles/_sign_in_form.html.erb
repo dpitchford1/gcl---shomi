@@ -1,0 +1,21 @@
+<% form_class ||= 'general-form' %>
+<% sign_in_note ||= '' %>
+<% email_address_placeholder ||= '' %>
+
+<% content_for :footer do ajax_validation(:session) end %>
+
+
+<%= simple_form_for(@session, remote: true, html: {class: form_class }, data: {validate: 'session'}) do |f| %>
+    <h4 class="modal-title rogers-red modal-header" id="SignInLabel">
+      <%= sign_in_note.html_safe %>
+    </h4>
+
+    <%= f.input :username, label: false, required: true, input_html: {placeholder: email_address_placeholder,
+                                                                      title: t('errors.attributes.email_address.blank'), autofocus: true},
+                hint: session[:promo_code] && session[:promo_code].code_type == 'business'  ? t('simple_form.hints.promo.business_username') : nil %>
+    <%= f.input :password, label: false, required: false, input_html: { placeholder: t('simple_form.placeholders.password'), maxlength: 16, :autocomplete => 'off'}, :hint => '' %>
+
+    <%= yield :forgot_password_section %>
+
+    <%= f.button :submit, t("btn.signin"), class: "btn-signin btn-light" %>
+<% end %>

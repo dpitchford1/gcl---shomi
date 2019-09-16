@@ -1,0 +1,5 @@
+<% content_for :below_navigation do render 'profiles/profile_summary' end %>
+
+<%= render 'profiles/email_check_form', email_placeholder: t('simple_form.placeholders.email_address'), email_check_form_note: t("profiles.profile_form.new_user_question") %>
+
+<div class="text-center"><%= t('register.email_check.already_have_account') %> <%= link_to t("profiles.sign_in"), new_session_path, :class => "btn-blk" %></div>

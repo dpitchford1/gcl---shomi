@@ -1,0 +1,84 @@
+default: &DEFAULT
+  name: "default_app"
+  forgot_username_en: "https://www.rogers.com/web/link/forgotUsername"
+  forgot_username_fr: "https://www.rogers.com/web/link/forgotUsername?setLanguage=fr&lang=fr"
+  gst: 5
+  pst:
+    ab: 0
+    bc: 7
+    mb: 8
+    nb: 8
+    nl: 8
+    ns: 10
+    nt: 0
+    nu: 0
+    'on': 8
+    pe: 9
+    qc: 9.975
+    sk: 5
+    yt: 0
+  tos_id: "NHL"
+  billing_options: 
+    - :cc
+    - :rogersbill
+    - :free
+
+  rds_games_available: ['BC', 'AB', 'MB', 'YT', 'NT', 'NU', 'ON']
+  rds_games_unavailable: ['QC', 'NB', 'NS', 'PE', 'NL', 'ON']
+
+  page_names:
+    sessions:
+      get_new: signin
+    profiles:
+      get_new: Registration
+      get_promo_code: Promo code
+      get_promo_business: Business promo
+      get_accounts: Link accounts
+      get_index: Start page
+      get_forgot_password: Forgot password
+      get_forgot_password_hint: Forgot password hint  
+      get_change_password: Change password
+
+    orders:
+      get_index: rogersbill or cc order page
+      get_new: Order page
+      get_promo_contact: Promo contact info
+      get_callback: cc order review page
+      get_history: billing and payment
+      get_summary: Order summary
+
+development:
+  <<: *DEFAULT
+  api_endpoint: "https://nhl-qa1.vf.rogers.com"
+  api_target: "https://nhl-qa1.vf.rogers.com/secure/version01/loginsuccess?from=digital"
+  zuora_api_endpoint: https://apisandbox.zuora.com
+
+test:
+  <<: *DEFAULT
+  api_endpoint: "https://nhl-qa1.vf.rogers.com"
+  api_target: "https://nhl-qa1.vf.rogers.com/secure/version01/loginsuccess?from=digital"
+  zuora_api_endpoint: https://apisandbox.zuora.com
+
+test:
+  <<: *DEFAULT
+  api_endpoint: "https://nhl-qa1.vf.rogers.com"
+  api_target: "https://nhl-qa1.vf.rogers.com/secure/version01/loginsuccess?from=digital"
+  zuora_api_endpoint: https://apisandbox.zuora.com
+
+integration:
+  <<: *DEFAULT
+  api_endpoint: "https://nhl-qa1.vf.rogers.com"
+  api_target: "https://nhl-qa1.vf.rogers.com/secure/version01/loginsuccess?from=digital"
+  zuora_api_endpoint: https://apisandbox.zuora.com
+
+staging:
+  <<: *DEFAULT
+  api_endpoint: "https://nhl-qa1.vf.rogers.com"
+  api_target: "https://nhl-qa1.vf.rogers.com/secure/version01/loginsuccess?from=digital"
+  zuora_api_endpoint: https://apisandbox.zuora.com
+
+production:
+  <<: *DEFAULT
+  api_endpoint: "https://nhl.rogers.com"
+  api_target: "https://nhl.rogers.com/secure/version01/loginsuccess?from=digital"
+  zuora_api_endpoint: https://api.zuora.com

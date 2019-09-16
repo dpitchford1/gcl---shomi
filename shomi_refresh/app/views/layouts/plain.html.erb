@@ -1,0 +1,21 @@
+<html>
+<head>
+<style>
+  .error_notification{
+    color: red;
+  }
+  div.error .help-inline{
+    color: red;
+  }
+</style>
+<%= javascript_include_tag "jquery", "jquery_ujs" %>
+
+</head>
+<body>
+<div style="color:green"><%= notice %></div>
+<div style="color:red"><%= alert %></div>
+
+
+<%= yield %>
+</body>
+</html>

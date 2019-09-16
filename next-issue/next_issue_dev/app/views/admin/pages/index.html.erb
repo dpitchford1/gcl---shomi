@@ -1,0 +1,33 @@
+<ul>
+<li style="margin-bottom: 5px;"><%= link_to 'Clean up Redis DB', admin_clean_up_path %></li>
+<li style="margin-bottom: 5px;"><%= link_to 'Partial clean up Redis DB', admin_clean_up_partial_path %></li>
+<li style="margin-bottom: 5px;"><%= link_to 'Clear cache', admin_clear_cache_path %></li>
+<li style="margin-bottom: 5px;"><%= link_to 'Clear CMS', admin_clear_cms_path %></li>
+  <li style="margin-bottom: 5px;"><%= link_to 'Clear offers', admin_clear_offers_path %></li>
+  <li style="margin-bottom: 5px;"><%= link_to 'Clear promo codes', admin_clear_promo_codes_path %></li>
+  <li style="margin-bottom: 5px;"><%= link_to 'Clear tos', admin_clear_tos_path %></li>
+  <li style="margin-bottom: 5px;"><%= link_to 'Clear questions', admin_clear_questions_path %></li>
+  <li style="margin-bottom: 5px;"><%= link_to 'Clear survey questions', admin_clear_survey_questions_path %></li>
+  <li style="margin-bottom: 5px;"><%= link_to 'Clear loyalty codes', admin_clear_loyalty_codes_path %></li>
+  <li style="margin-bottom: 5px;"><%= link_to 'Clear debug logs', admin_clear_debug_logs_path %></li>
+  <li style="margin-bottom: 5px;"><%= link_to 'Clear debug godzilla logs', admin_clear_debug_godzilla_logs_path %></li>
+
+</ul>
+
+
+<div style="padding-top: 200px">
+  <hr>
+
+  <%= link_to 'Feature Flags', admin_feature_flags_path %><br/><br/>
+  <%= link_to 'Debug Logs', admin_debug_logs_path %><br/><br/>
+
+  <%= link_to 'Export CMS', cms_sections_export_path %>
+
+  <br /><br />
+  <%= form_tag(cms_sections_import_path, multipart: true) do %>
+    Import CMS: <%= file_field_tag 'file' %>
+    <%= submit_tag('Import') %>
+  <% end %>
+
+
+</div>

@@ -1,0 +1,9 @@
+//= require jquery_ujs
+//= require placeholder.polyfill
+//= require orders
+//= require jquery.cookie
+//= require flash
+//= require playerAPI
+//= require core 
+//= require profiles
+//= require jquery.xdomainrequest

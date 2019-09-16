@@ -1,0 +1,109 @@
+// GENERAL COLOURS
+$black: #000;
+$white: #fff;
+
+// FONT FAMILIES
+$font-light: 'light', 'Helvetica', Arial, sans-serif;
+$font-reg: 'regular', 'Helvetica', Arial, sans-serif;
+$font-semibold: 'semibold', 'Helvetica', Arial, sans-serif;
+$font-bold: 'bold', 'Helvetica', Arial, sans-serif;
+$font-extrabold: 'extrabold', 'Helvetica', Arial, sans-serif;
+
+
+$fonts-light: 'Avenir Light', 'Helvetica', Arial, sans-serif;
+$fonts-light-ital: 'Avenir Light Italic', 'Helvetica', Arial, sans-serif;
+
+$fonts-reg: 'Avenir Regular', 'Helvetica', Arial, sans-serif;
+$fonts-reg-ital: 'Avenir Regular Italic', 'Helvetica', Arial, sans-serif;
+
+$fonts-med: 'Avenir Medium', 'Helvetica', Arial, sans-serif;
+$fonts-med-ital: 'Avenir Medium Italic', 'Helvetica', Arial, sans-serif;
+
+$fonts-demi: 'Avenir Demi', 'Helvetica', Arial, sans-serif;
+$fonts-demi-ital: 'Avenir Demi Italic', 'Helvetica', Arial, sans-serif;
+
+
+// FONT COLOURS
+$body-color: #414042;
+$text-color-light: #404040;
+$link-color: #0A5498;
+
+$color-primary: #414042;
+$color-secondary: #808284;
+$color-tertiary: #BBBDC0;
+
+
+$callout: #da291c;
+
+$cc-primary: #da291c; // rogers red
+$cc-secondary: #74CEE0; // aqua
+$cc-secondary2: #00AEC7; // aqua dark
+$cc-tertiary: #FFBF3F; // yellow
+$cc-reverse: #fff; // reverse white
+
+
+$shomi-primary: #ffaf00; // shomi orange
+
+
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+      -webkit-box-shadow:$top $left $blur $color #{$inset};
+      -moz-box-shadow:$top $left $blur $color #{$inset};
+      box-shadow:$top $left $blur $color #{$inset};
+    }
+
+
+// Base font size in pixels, if not already defined.
+// Should be the same as the font-size of the html element.
+$base-font-size: 16px !default;
+
+// Whether to output fallback values in px when outputting rems.
+$rem-with-px-fallback: true !default;
+
+// For the given property, use rem units with px as a fallback value for older
+// browsers.
+//
+// $property - The css property name.
+// $values - The value (or space-separated list of values) for the property.
+// $use-px-fallback - Boolean, default: true; whether to use pixel fallback values
+//
+// USAGE === @include rem(font-size, 14px); == substitute font-size for other css properties if needed
+
+@mixin rem($property, $values) {
+  // Create a couple of empty lists as output buffers.
+  $font-size: $base-font-size;
+  $px-values: ();
+  $rem-values: ();
+
+  // Loop through the $values list
+  @each $value in $values {
+    // For each property value, if it's in rem or px, derive both rem and
+    // px values for it and add those to the end of the appropriate buffer.
+    // Ensure all pixel values are rounded to the nearest pixel.
+    @if $value == 0 or $value == 0px {
+      // 0 -- use it without a unit
+      $px-values: join($px-values, 0);
+      $rem-values: join($rem-values, 0);
+    } @else if type-of($value) == number and not unitless($value) and (unit($value) == px) {
+      // px value given - calculate rem value from font-size
+      $new-rem-value: $value / $font-size;
+      $px-values: join($px-values, round($value));
+      $rem-values: join($rem-values, #{$new-rem-value}rem);
+    } @else if type-of($value) == number and not unitless($value) and (unit($value) == "%") {
+      // % value given - don't add px or rem
+      $px-values: join($px-values, #{$value});
+      $rem-values: join($rem-values, #{$value});
+    } @else if $value == auto {
+      // auto - don't add px or rem
+      $px-values: join($px-values, auto);
+      $rem-values: join($rem-values, auto);
+    } @else {
+      // unitless value - use those directly as rem and calculate the px-fallback
+      $px-values: join($px-values, round($value * $font-size));
+      $rem-values: join($rem-values, #{$value}rem);
+    }
+  }
+
+  // output the converted rules
+  #{$property}: $px-values;
+  #{$property}: $rem-values;
+}

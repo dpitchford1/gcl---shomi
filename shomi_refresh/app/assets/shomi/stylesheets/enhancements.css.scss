@@ -1,0 +1,1528 @@
+/* General enhancements only if media queries supported 
+======================================================================
+====================================================================== */
+
+/* MQ TEMPLATE: Every media query to receive this template, immediately needed or not */
+
+/* Headings & Titles
+---------------------------------------------- */
+
+/* Global Wrappers
+---------------------------------------------- */
+
+/* Headers - Navigations - Footers
+---------------------------------------------- */
+
+/* Global Menus
+---------------------------------------------- */
+
+/* Global Forms
+---------------------------------------------- */
+
+/* Custom Content Structure
+---------------------------------------------- */
+    /* Hero Homepage
+    ------------------------ */
+
+    /* Feature and Promos
+    ------------------------ */
+
+    /* 3 Custom Promos
+    ------------------------ */
+
+    /* UI Helpers
+    ------------------------ */
+
+    /* App Downloads
+    ------------------------ */
+
+    /* Promo Form
+    ------------------------ */
+
+
+/* Modules
+---------------------------------------------- */
+    /* Modals
+    ------------------------ */
+    /* Buttons
+    ------------------------ */
+    /* Alerts
+    ------------------------ */
+    /* Info Boxes
+    ------------------------ */
+
+
+
+
+/* VIEWPORT SETUP
+---------------------------------------------- */
+@media only screen{
+
+    /* VIEWPORT SETUP
+    ---------------------------------------------- */
+    @-webkit-viewport   { width: device-width; }
+    @-moz-viewport      { width: device-width; }
+    @-ms-viewport       { width: device-width; }
+    @-o-viewport        { width: device-width; }
+    @viewport           { width: device-width; }
+
+
+    /* MODAL ANIMATIONS
+    ---------------------------------------------- */
+    .js .m-fade .modal-dialog {
+        -webkit-transform: scale(0.7);
+        -moz-transform: scale(0.7);
+        -ms-transform: scale(0.7);
+        transform: scale(0.7);
+        opacity: 0;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+        }
+    .js .in .modal-dialog {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+        }
+}
+
+
+/* BG IMAGES & HEROS & GLOBAL TWEAKS
+================================================================================ */
+
+/* min width 980px ++
+---------------------------------------------- */
+//@media (min-width: 61.25em) {}
+
+
+/* min width 1280px ++
+---------------------------------------------- */
+// @media (min-width: 61.25em) {
+
+//     .fluid, .site-wrapper{ max-width: 77.5em; } /* bump to 1240px */
+
+// }
+
+
+/* min width 1366px
+---------------------------------------------- */
+@media (min-width: 85.375em) {
+
+//     /* GLOBAL BUMP
+//     ------------------------ */
+//     .fluid, .site-wrapper{ max-width: 82.5em; } /* bump to 1320px */
+
+//     .fluid-lg{
+//         max-width: 1280px;
+//         }
+    
+    .collection-lead{
+        width: 27.701754385965%;
+        }
+
+    .collection-features{ 
+        margin-right: 3.017543859649%;
+        width: 66.543859649123%; 
+        }
+
+    .featured-main .featured-content{
+        @include rem(font-size, 16px);
+        }
+    .featured-main .sizes-XSM{
+        @include rem(font-size, 20px);
+        }
+
+    .featured-secondary .featured-content{
+        min-height: 121px;
+        }
+
+    .box-img{ min-height: 183px; }
+
+}
+
+
+/* min width 1600px ++
+---------------------------------------------- */
+// @media (min-width: 100em) {
+        
+//     .fluid, .site-wrapper{ max-width: 90em; } /* bump to 1440px */
+// }
+
+/* min width 1920px ++
+---------------------------------------------- */
+@media (min-width: 120em) {
+        
+
+    //.fluid, .site-wrapper{ max-width: 100em; } /* bump to 1440px */
+
+    /* Hero Homepage
+    ------------------------ */
+    .hero-welcome .hero-welcome-inner{
+        background-position: 0 -45px;
+        background-size: 120% auto;
+        }
+
+
+    /* collections */
+    // .featured-main .featured-content{
+    //     @include rem(font-size, 16px);
+    //     }
+    // .featured-main .sizes-XSM{
+    //     @include rem(font-size, 20px);
+    //     }
+    .featured-secondary .featured-content{
+        @include rem(font-size, 14px);
+        min-height: 126px;
+        }
+
+    //.box-img{ min-height: 160px; }
+
+
+}
+
+/* min width 2100px ++
+---------------------------------------------- */
+// @media (min-width: 131.25em) {}
+
+/* max width 980px
+---------------------------------------------- */
+//@media (max-width: 80em) {}
+
+/* max width 820px
+---------------------------------------------- */
+// @media (max-width: 51.25em) {}
+
+/* max width 660px
+---------------------------------------------- */
+// @media (max-width: 41.25em) {}
+
+/* max width 660px
+---------------------------------------------- */
+//@media (max-width: 37.5em) {}
+
+/* max width 480px
+---------------------------------------------- */
+// @media (max-width: 30em) {}
+
+/* max width 380px
+---------------------------------------------- */
+// @media (max-width: 23.75em) {}
+
+
+/* max width 1440px
+---------------------------------------------- */
+@media (max-width: 90em) {
+
+    /* Hero Homepage
+    ------------------------ */
+    .hero-welcome .hero-welcome-inner{
+        background-size: auto auto;
+        //min-height: 540px; 
+        }
+
+    /* Collections */
+    .featured-secondary .featured-content{
+        @include rem(font-size, 12px);
+        min-height: 107px;
+        }
+    .box-img{ min-height: 160px; }
+    .box-tags{ 
+        line-height: 1.6;
+        }
+
+}
+
+/* max width 1280px
+---------------------------------------------- */
+@media (max-width: 80em) {
+
+    /* Hero Homepage
+    ------------------------ */
+    .hero-welcome .hero-welcome-inner{
+        background-size: 115% auto;
+        //min-height: 520px;
+        padding-top: 4.5em;
+        }
+
+    .covers-wrapper{
+        min-height: 310px;
+        }
+
+    /* Collections */
+    .featured-secondary .featured-content{
+        min-height: 100px;
+        }
+    .box-img{ min-height: 151px; }
+    .box-tags{ 
+        line-height: 1.4;
+        word-spacing: -1px;
+        }
+
+    .hero-devices .bg-devices{
+        background-size: 100% auto;
+        //background-position: 0 0;
+        }
+
+}
+
+
+/* MQ 1024- MAX WIDTH
+================================================================================ */
+@media (max-width: 64em) {
+
+    /* Headings & Titles
+    ---------------------------------------------- */
+    .sizes-XLG      { @include rem(font-size, 40px); @include rem(margin-bottom, 25px); }
+    // .sizes-LRG      { @include rem(font-size, 40px); margin-bottom: .7em; }
+    // .sizes-LG       { @include rem(font-size, 36px); margin-bottom: .7em; }
+    // .sizes-L        { @include rem(font-size, 34px); margin-bottom: .8em; line-height: 1.1; }
+
+    .sizes-M        { @include rem(font-size, 26px); }
+    // .sizes-M2       { @include rem(font-size, 24px); }
+    // .sizes-M3       { @include rem(font-size, 24px); margin-bottom: .3em; }
+
+    // .sizes-S        { @include rem(font-size, 22px); margin-bottom: .9em; }
+    // .sizes-SM       { @include rem(font-size, 20px); margin-bottom: .7em; }
+    // .sizes-SM-alt   { @include rem(font-size, 20px); color: $callout; }
+    // .sizes-XSM      { @include rem(font-size, 18px); margin-bottom: .7em; }
+
+
+
+/* Global Wrappers
+---------------------------------------------- */
+    //.page-site #main-content{ padding-top: 10.5em; }
+
+/* Headers - Navigations - Footers
+---------------------------------------------- */
+
+/* Global Menus
+---------------------------------------------- */
+    // .menu--secondary{
+    //     font-family: $fonts-reg;
+    //     float: left;
+    //     margin-right: 2%;
+    //     padding-top: .3em;
+    //     }
+
+    .menu--secondary a{
+        @include rem(font-size, 18px);
+        padding: .5em 1em;
+        }
+        .menu-cta .btn{ padding: 1em 2em }
+
+/* Global Forms
+---------------------------------------------- */
+
+/* Custom Content Structure
+---------------------------------------------- */
+    /* Hero Homepage
+    ------------------------ */
+    .hero-welcome .hero-welcome-inner{
+        background-image: asset-url("content/bg-clouds-m.png");
+        //min-height: 650px;
+        padding-top: 9.5em; 
+        }
+    .hero-welcome-inner #welcome{
+        line-height: 1; 
+        margin-bottom: 1em;
+        }
+
+    .hero-welcome-inner ul{
+        width: 60%;
+        margin: 0 auto 140px;
+        }
+    .hero-welcome-inner ul li{
+        margin-bottom: 1em;
+        }
+
+    .hero-welcome-bonus{ margin-top: -135px; z-index: 5; }
+
+    .covers-wrapper{
+        min-height: 315px;
+        width: 93%;
+        }
+    .covers-wrapper .boxart{
+        margin-right: 2.364912280702%;
+        }
+
+    .boxart--1 { 
+        padding-bottom: 22%;
+        width: 14.140350877193%
+        }
+    .boxart--2 { 
+        padding-bottom: 27%;
+        width: 17.684210526316%
+        }
+    .boxart--3 { 
+        padding-bottom: 18.5%;
+        width: 12.210526315789%;
+        }
+    .boxart--4 { 
+        padding-bottom: 24%;
+        width: 15.719298245614%;
+        }
+    .boxart--5 { 
+        padding-bottom: 18.5%;
+        width: 12.035087719298%;
+        }
+    .boxart--6 {
+        padding-bottom: 22%;
+        width: 15.017543859649%;
+        }
+
+
+    .hero-devices .bg-devices{
+        background-position: 0 0;
+        margin-top: 2.5em;
+        min-height: 1px;
+        padding-bottom: 31%;
+        }
+
+    /* Collections */
+    .hero-collections{
+        padding: 0 3.5%;
+        }
+    .collection-lead{
+        margin-top: 105px;
+        width: 40.701754385965%;
+        }
+
+    .collection-features{
+        width: 52.543859649123%; 
+        }
+    .collections-title{ 
+        @include rem(font-size, 40px);
+        }
+
+    .featured-main{ background-color: #ffaf00; margin-bottom: .7em; }
+    .featured-main .featured-img{ float: none; width: 100%; }
+    .featured-main .featured-content{
+        float: none;
+        min-height: auto;
+        width: 100%;
+        }
+
+    .featured-secondary{ display: none; }
+
+    .collection-boxart1{ float: left; }
+
+    .collection-boxart2{ float: right; width: 42.338008415147%; }
+    .collection-boxart2 .box-img{ 
+        margin-right: 2.5%;
+        width: 31.6%; 
+        }
+    .collection-boxart2 .box-img:nth-child(3n+3){
+        margin-right: 0;
+        }
+    .collection-boxart2 .box-img:last-child{
+        display: none;
+        }
+    .box-img{ margin-bottom: .5em; min-height: 1px; }
+
+
+    /* Feature and Promos
+    ------------------------ */
+
+    /* 3 Custom Promos
+    ------------------------ */
+
+    /* UI Helpers
+    ------------------------ */
+
+    /* App Downloads
+    ------------------------ */
+
+    /* Promo Form
+    ------------------------ */
+
+
+/* Modules
+---------------------------------------------- */
+    /* Modals
+    ------------------------ */
+    /* Buttons
+    ------------------------ */
+    /* Alerts
+    ------------------------ */
+    /* Info Boxes
+    ------------------------ */
+
+}
+
+
+/* MQ 820- tablets & small screens
+================================================================================ */
+@media (max-width:51.250em){
+
+/* Headings & Titles
+---------------------------------------------- */
+
+/* Global Wrappers
+---------------------------------------------- */
+    // .fluid, .site-wrapper{ 
+    //     padding-left: 3.5%;
+    //     padding-right: 3.5%;
+    //     }
+
+
+/* Headers - Navigations - Footers
+---------------------------------------------- */
+    /* Header navigation reset */
+    .global-header .header, 
+    .global-header .site-wrapper    { padding: 0; }
+    .is--secondary .site-wrapper    { position: static; }
+
+    .navigation-wrapper{ padding: 0; width: 100%; }
+
+    .is--primary{ background-color: #DA291C; border-bottom: 0; }
+    .global-header .is--secondary{ padding-top: 1em; }
+    
+
+    .is--f-primary{ display: none; }
+    .copyright, .footer-menu{ @include rem(font-size, 14px); }
+
+
+/* Global Menus
+---------------------------------------------- */
+    .header a{
+        text-decoration: none;
+        }
+    .header a:focus, .header a:active{
+        border-radius: 0; 
+        color: #fff;
+        }
+
+    /* logos */
+    .brand-fs {
+        height: 45px;
+        margin-left: 5%;
+        width: 110px;
+        }
+
+    .brand-link         { display: none; }
+    .brand-link .block  { min-height: 0; }
+
+    /* General Menu structures */
+    .menu, .menu li{ 
+        display: block; 
+        margin: 0; 
+        padding: 0;
+        width: 100%; 
+        }
+
+    .menu{
+        float: none;
+        line-height: normal;
+        }
+
+    /* Button in main menu */
+    .menu-cta{ 
+        float: none;
+        width: 99.99%;
+        }
+    .menu-cta .btn-default{
+        border-radius: 0;
+        display: block;
+        @include rem(font-size, 18px);
+        padding: .625em 0 .625em 5%;
+        text-align: left;
+        text-transform: none;
+        }
+    .menu-cta .btn-default:hover:before, .menu-cta .btn-default:focus:before, .menu-cta .btn-default:active {
+        border-radius: 0;
+        }
+
+    /* Primary Menu abstraction */
+    .menu--primary a{
+        border-bottom: 1px solid #bf261b;
+        color: #fff;
+        padding: .625em 5%;
+        @include rem(font-size, 18px);
+        }
+    .menu--primary li:first-child a:after {
+        width: 0;
+        content: '';
+        line-height: 0;
+        }
+    .menu--primary a:hover {
+        background-color: #bf261b;
+        }
+    .menu--primary a:focus, .menu--primary a:active {
+        background-color: #ac2218;
+        //border-radius: 0;
+        }
+
+    .menu--primary .is-selected{
+        background-color: #bf261b;
+        color: $white;
+        }
+
+
+    /* Secondary Menu abstraction */
+    .menu--secondary a{
+        padding: .625em 5% .625em 9%;
+        @include rem(font-size, 22px);
+        }
+    .menu--secondary a:hover { background-color: #511d8f; }
+    .menu--secondary a:focus, .menu--secondary a:active { background-color: #45197a; }
+
+    // .no-touch .menu--secondary a:hover:before, .no-touch .menu--secondary a:focus:before, .no-touch .menu--secondary a:active:before, .no-touch .menu--secondary .is-selected:before {
+    //     -webkit-transform: translateY(4px);
+    //     transform: translateY(4px);
+    //     }
+
+    /* target needs to be on element, does not work on a wrapper */
+    .anchored:before{
+        height: 85px;      /* Give height of your fixed element */
+        margin-top: -85px; /* Give negative margin of your fixed element */
+        }
+
+
+/* Global Forms
+---------------------------------------------- */
+    .form-row { margin: 0 0 .8em; }
+    .fieldset--rows-inline .form-row{ width: 50%; }
+
+    .fieldset--rows-inline .text-field{ width: 95%; }
+
+    /* Radio Buttons and Checkboxes */
+    .radio-inline{ margin-right: 0; padding: .6em 1em .5em; width: 47%; }
+    .radio-inline .collection_radio_buttons{ @include rem(font-size, 18px); }
+
+    .controls > .radio-inline + .radio-inline{ float: right; }
+
+    .form-label .check-label{ width: 95%; }
+
+    .fancy-select:after {
+        width: 10%;
+        }
+
+    .error .help-inline, .error-label{
+        @include rem(font-size, 14px);
+        line-height: 1.2;
+        }
+
+
+
+/* Custom Content Structure
+---------------------------------------------- */
+    /* Hero Homepage
+    ------------------------ */
+    .hero-welcome .hero-welcome-inner{
+        background-size: 130% auto;
+        background-position: 60% -12px; 
+        }
+    .hero-welcome-inner ul{
+        width: 65%;
+        }
+
+    .covers-wrapper{
+        min-height: 255px;
+        //width: 93%;
+        }
+
+    .hero-get-started .random-tv {
+        width: 31%;
+        padding-bottom: 22%;
+        }
+
+    .hero-devices .bg-devices{
+        background: transparent asset-url("content/bg-devices-sm.png") no-repeat scroll center 0;
+        padding-bottom: 33.5%;
+        margin-top: 2em;
+        min-height: 1px;
+        }
+
+    /* 3 in a row */
+    .hero-tv .box{
+        margin-right: 5.263157894737%;
+        margin-bottom: 2.5em;
+        width: 47.368421052632%;
+        }
+
+    .hero-tv .span-of-3 > .box + .box{ margin-right: 0; }
+    .hero-tv .span-of-3 > .box + .box + .box{ float: none; margin-bottom: 0; width: 100%; }
+
+
+    /* 4 in a row */
+    .hero-kids .box{
+        margin-right: 5.263157894737%;
+        margin-bottom: 2.5em;
+        width: 29.824561403509%;
+        }
+
+    .hero-kids .span-of-4 > .box + .box + .box{ margin-right: 0; }
+    .hero-kids .span-of-4 > .box + .box + .box + .box{ float: none; margin: 1.5em auto .5em; width: 67%; }
+
+
+    .block-ms-4 .boxart-img{ margin-right: 2%; width: 23.5%; }
+    .block-ms-4 .boxart-img:nth-child(even){
+        margin-right: 2%;
+        }
+    .block-ms-4 .boxart-img:last-child{
+        margin-right: 0;
+        }
+
+    .block-ms-6 .boxart-img{ margin-right: 1.5%; width: 15.41666666666667%; }
+    .block-ms-6 .boxart-img:nth-child(3n+3){
+        margin-right: 1.5%;
+        }
+    .block-ms-6 .boxart-img:last-child{
+        margin-right: 0;
+        }
+
+    /* Collections */
+    .collection-lead, .collection-features{
+        float: none;
+        width: 100%;
+        }
+    .collection-lead{
+        margin: 0 0 2.5em;
+        }
+
+    .featured-main .featured-content {
+        float: left;
+        @include rem(font-size, 24px);
+        line-height: 1.3;
+        padding: 1.25em 12%;
+        }
+    .featured-main .sizes-XSM{ @include rem(font-size, 36px); margin-bottom: .45em; }
+
+
+
+
+
+    /* Feature and Promos
+    ------------------------ */
+
+    /* 3 Custom Promos
+    ------------------------ */
+
+    /* UI Helpers
+    ------------------------ */
+
+    /* App Downloads
+    ------------------------ */
+
+    /* Promo Form
+    ------------------------ */
+    .promo-code{
+        position: relative;
+        width: 60%;
+        }
+    .promo-code-full .form-row{
+        float: none;
+        margin-bottom: 0px;
+        padding-top: 3em;
+        width: 100%;
+        }
+    .promo-code-full .form-label{
+        margin-right: 0;
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        }
+    .promo-code-full .controls {
+        width: 65%;
+        }
+    .promo-code-full .text-field {
+        margin-right: 0;
+        width: 100%;
+        }
+
+    .promo-code-full .btn{
+        float: none;
+        position: absolute;
+        bottom: .5em;
+        right: 0;
+        }
+
+
+/* Modules
+---------------------------------------------- */
+    /* Modals
+    ------------------------ */
+    /* Buttons
+    ------------------------ */
+    /* Alerts
+    ------------------------ */
+    /* Info Boxes
+    ------------------------ */
+    .info.silly-width-lg{ width: 100% }
+
+}
+
+
+
+
+/* MQ 768- tablets & small screens
+================================================================================ */
+@media (max-width: 48em) {
+
+/* Headings & Titles
+---------------------------------------------- */
+
+/* Global Wrappers
+---------------------------------------------- */
+
+/* Headers - Navigations - Footers
+---------------------------------------------- */
+
+/* Global Menus
+---------------------------------------------- */
+
+/* Global Forms
+---------------------------------------------- */
+
+/* Custom Content Structure
+---------------------------------------------- */
+    /* Hero Homepage
+    ------------------------ */
+
+    /* Feature and Promos
+    ------------------------ */
+
+    /* 3 Custom Promos
+    ------------------------ */
+
+    /* UI Helpers
+    ------------------------ */
+
+    /* App Downloads
+    ------------------------ */
+
+    /* Promo Form
+    ------------------------ */
+
+
+/* Modules
+---------------------------------------------- */
+    /* Modals
+    ------------------------ */
+    /* Buttons
+    ------------------------ */
+    /* Alerts
+    ------------------------ */
+    /* Info Boxes
+    ------------------------ */
+
+}
+
+
+
+
+/* MQ 600- tablets & small screens
+================================================================================ */
+@media (max-width: 37.5em) {
+
+/* Headings & Titles
+---------------------------------------------- */
+    .sizes-XLG      { @include rem(font-size, 32px); @include rem(margin-bottom, 20px); }
+    // .sizes-LRG      { @include rem(font-size, 40px); margin-bottom: .7em; }
+    .sizes-LG       { @include rem(font-size, 26px); margin-bottom: .3em; }
+    .sizes-L        { @include rem(font-size, 24px); margin-bottom: .4em; }
+
+    .sizes-M        { @include rem(font-size, 22px); }
+    .sizes-M2       { @include rem(font-size, 18px); }
+    .sizes-M3       { @include rem(font-size, 18px); }
+
+    // .sizes-S        { @include rem(font-size, 22px); margin-bottom: .9em; }
+    // .sizes-SM       { @include rem(font-size, 20px); margin-bottom: .7em; }
+    // .sizes-SM-alt   { @include rem(font-size, 20px); color: $callout; }
+    // .sizes-XSM      { @include rem(font-size, 18px); margin-bottom: .7em; }
+
+    .already-have{ float: none; line-height: 1.1; margin-bottom: 2em; }
+
+
+    //.copy--L      { @include rem(font-size, 22px); line-height: 1.2; }
+    .copy--L2     { @include rem(font-size, 18px); line-height: 1.2; }
+    // .copy--LG     { @include rem(font-size, 20px); line-height: 1.2; }
+    // .copy-size-M  { @include rem(font-size, 18px); margin: .3em 0 1.8em; }
+    // .copy-size-M2 { @include rem(font-size, 18px); margin: .3em 0 1.3em; }
+    // .copy-size-S  { @include rem(font-size, 14px); margin: 0; }
+    // .copy-size-SM {  }
+
+
+
+/* Global Wrappers
+---------------------------------------------- */
+
+    .padding-bump   { padding: 0; }
+    .l-m-bump       { margin-left: 0; }
+
+
+/* Headers - Navigations - Footers
+---------------------------------------------- */
+        
+    /* FOOTER */
+    .copyright, .footer-menu{ width: 100%; padding-bottom: .3em; }
+    .is--f-secondary{ padding: 1.2em 0; }
+
+    
+
+/* Global Menus
+---------------------------------------------- */
+
+
+/* Global Forms
+---------------------------------------------- */
+    .form-row { margin: 0 0 .8em; }
+
+    .fieldset{ margin-bottom: 2em; }
+
+    .fieldset--rows-inline .text-field{ width: 95%; }
+
+    .radio-inline .collection_radio_buttons{ width: 85%; }
+    .form-label .check-label{ width: 90%; @include rem(font-size, 14px);  }
+
+    .form-sm-centered{ width: 100%; }
+
+
+    .text-field[type="text"], .text-field[type="password"], .text-field[type="email"], .text-field[type="tel"], select{ 
+        @include rem(font-size, 18px); 
+        padding: .6em 1em; 
+        }
+
+    .form-row.select.error  { padding-bottom: 1.7em; }
+    .select .help-inline    { top: 50px; }
+
+    .submit-group{
+        margin-right: 0;
+        }
+
+
+/* Custom Content Structure
+---------------------------------------------- */
+    /* Hero Homepage
+    ------------------------ */
+    .silly-width, .silly-width-lg{ width: 100% }
+
+    .hero-SM{
+        padding-top: 1em;
+        padding-bottom: 1em;
+        }
+    .hero-SM-centered{
+        padding-top: 1em;
+        padding-bottom: 1em;
+        }
+
+
+    .hero-M{
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+        }
+    .hero-M-centered{
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+        }
+
+
+    .hero-LG{
+        padding-top: 2em;
+        padding-bottom: 2em;
+        }
+    .hero-LG-centered{
+        padding-top: 2em;
+        padding-bottom: 2em;
+        }
+
+    .heros-enhanced{ 
+        min-height: 100px;
+        padding-top: 2em;
+        padding-bottom: 2em; 
+        }
+
+
+    .hero-welcome .hero-welcome-inner{
+        background-position: 60% 10px;
+        padding-top: 7em; 
+        }
+    .hero-welcome-inner ul{
+        margin-bottom: 85px;
+        width: 70%;
+        }
+
+    .hero-welcome-bonus{ margin-top: -125px; }
+    .hero-welcome-bonus .h-med{ position: relative; }
+
+
+    .covers-wrapper{
+        min-height: 1px;
+        margin: 0 0 1em;
+        max-width: 100%;
+        padding: 3em 2% 0;
+        width: 100%;
+        }
+
+    .covers-wrapper .boxart{
+        margin-right: 3.5%;
+        margin-bottom: 2.5em;
+        padding-bottom: 46.5%;
+        top: 0;
+        transform: perspective( 110px ) rotateY( 0deg );
+        width: 31%;
+        }
+
+    .covers-wrapper .boxart:nth-child(3n+3){
+        margin-right: 0;
+        }
+
+    .boxart:after {
+        left: 7%;
+        max-width: 100%;
+        height: 8px;
+        bottom: 10px;
+        box-shadow: 0 23px 10px rgba(0,0,0,0.7);
+        width: 85%;
+        }
+
+
+
+    .hero-get-started{ text-align: center; }
+
+
+
+    /* 3 in a row */
+    .hero-tv .box, .hero-kids .box{
+        float: none;
+        margin: 0 0 1.2em;
+        width: 100%;
+        }
+    .hero-kids .span-of-4 > .box + .box + .box + .box{ width: 100%; }
+    
+    .hero-devices .bg-devices{
+        padding-bottom: 44.5%;
+        }
+
+
+    .boxart-span-2{ padding: 0 12%; }
+    .block-ms-4 .boxart-img{ 
+        //float: left;
+        margin-right: 5.263157894737%;
+        width: 47.368421052632%;
+        }
+    .block-ms-4 .boxart-img:nth-child(even){
+        margin-right: 0;
+        }
+
+    .block-ms-6 .boxart-img{ 
+        margin-right: 5.263157894737%;
+        width: 29.824561403509%; 
+        }
+    .block-ms-6 .boxart-img:nth-child(3n+3){
+        margin-right: 0;
+        }
+
+
+    /* Collections */
+    .collection-lead{
+        margin-bottom: 1.3em;
+        }
+    .collections-title{ 
+        @include rem(font-size, 36px);
+        }
+    .collection-lead .lead-copy{  line-height: 1.4; }
+
+    .featured-main .featured-content {
+        @include rem(font-size, 16px);
+        }
+    .featured-main .sizes-XSM{ @include rem(font-size, 20px); }
+
+
+    /* Feature and Promos
+    ------------------------ */
+
+    /* 3 Custom Promos
+    ------------------------ */
+
+    /* UI Helpers
+    ------------------------ */
+
+    /* App Downloads
+    ------------------------ */
+
+    /* Promo Form
+    ------------------------ */
+    .promo-code{
+        width: 80%;
+        }
+
+
+/* Modules
+---------------------------------------------- */
+    /* Modals
+    ------------------------ */
+    .modal-open{
+        overflow: hidden;
+        }
+    .modal-dialog {
+        width: 100%;
+        margin: 0;
+        overflow-y: auto;
+        padding: 4%;
+        }
+    #background_job_modal .modal-dialog{
+        height: auto !important;
+        }
+
+
+    /* Buttons
+    ------------------------ */
+    /* Alerts
+    ------------------------ */
+    .alert{ width: 90%; }
+    .alert.is-animated{ top: 20px; }
+
+
+    /* Info Boxes
+    ------------------------ */
+    .popover #howToFindMyAccount {
+        width: 215px;
+        height: 136px;
+        }
+    .popover #howToFindMyAccount img {
+      width: 206px;
+        }
+
+    .random-tv{
+        float: none;
+        margin-bottom: 1.5em;
+        padding-bottom: 62.5%;
+        width: 100%;
+        }
+    .has-TV{ background-size: 90% auto; background-position: 50% 0; }
+
+    .has-cable-box{background-size: 90% auto; background-position: 0 -68px; }
+
+}
+
+
+
+
+/* MQ 480- small screens
+================================================================================ */
+@media (max-width: 30em) {
+
+/* Headings & Titles
+---------------------------------------------- */
+    .sizes-XLG      { @include rem(font-size, 28px); }
+    // .sizes-LRG      { @include rem(font-size, 40px); margin-bottom: .7em; }
+    //.sizes-LG       { @include rem(font-size, 26px); margin-bottom: .3em; }
+    // .sizes-L        { @include rem(font-size, 34px); margin-bottom: .8em; line-height: 1.1; }
+
+    //.sizes-M        { @include rem(font-size, 22px); }
+    //.sizes-M2       { @include rem(font-size, 18px); }
+    //.sizes-M3       { @include rem(font-size, 18px); }
+
+    // .sizes-S        { @include rem(font-size, 22px); margin-bottom: .9em; }
+    // .sizes-SM       { @include rem(font-size, 20px); margin-bottom: .7em; }
+    // .sizes-SM-alt   { @include rem(font-size, 20px); color: $callout; }
+    // .sizes-XSM      { @include rem(font-size, 18px); margin-bottom: .7em; }
+
+    //.already-have{ float: none; line-height: 1.1; margin-bottom: 2em; }
+
+
+    //.copy--L      { @include rem(font-size, 22px); line-height: 1.2; }
+    //.copy--L2     { @include rem(font-size, 18px); line-height: 1.2; }
+    // .copy--LG     { @include rem(font-size, 20px); line-height: 1.2; }
+    // .copy-size-M  { @include rem(font-size, 18px); margin: .3em 0 1.8em; }
+    // .copy-size-M2 { @include rem(font-size, 18px); margin: .3em 0 1.3em; }
+    // .copy-size-S  { @include rem(font-size, 14px); margin: 0; }
+    // .copy-size-SM {  }
+
+/* Global Wrappers
+---------------------------------------------- */
+    #main-content{ padding-bottom: 1em; }
+
+
+/* Headers - Navigations - Footers
+---------------------------------------------- */
+    .copyright, .footer-menu{ @include rem(font-size, 12px); }
+
+    .footnote{  background: none; border-top: 2px solid #ddd; padding-top: 1.5em; margin-top: 1em; }
+
+    .footnote .footnote-title{ @include rem(font-size, 12px); }
+    .footnote p{ @include rem(font-size, 10px); }
+
+    .general-form .text-field{
+        width: 98%;
+        }
+
+    #page-body .hero-support{ background: none; padding: 0; }
+    .hero-support .fluid{ padding: 0; }
+    .hero-help, .hero-contact{ float: none; width: 100%; margin: 0; padding: 1.3em 5% 0; }
+
+
+
+/* Global Menus
+---------------------------------------------- */
+    .menu--secondary a{
+        //padding: .625em 5% .625em 12%;
+        @include rem(font-size, 18px);
+        }
+
+/* Global Forms
+---------------------------------------------- */
+    .general-form .text-field{ width: 100%; }
+    .fieldset--rows-inline .form-row{ float: none; width: 100%; }
+
+
+    .legend-visible{ @include rem(font-size, 18px); }
+
+    .text-field[type="text"], .text-field[type="password"], .text-field[type="email"], .text-field[type="tel"], select{
+        @include rem(font-size, 16px);
+        padding: .8em 1.1em;
+        }
+
+    .fancy-select-lg {
+        width: 100%;
+        max-width: 100%;
+        }
+    .fancy-select:after {
+        padding: 10px 9px;
+        }
+    
+    .select .help-inline    { top: 47px; }
+
+
+/* Custom Content Structure
+---------------------------------------------- */
+    /* Hero Homepage
+    ------------------------ */
+    .hero-welcome .hero-welcome-inner{
+        background-image: asset-url("content/bg-clouds-sm.png");
+        background-size: 100% auto;
+        // min-height: 650px;
+        padding-top: 4.5em; 
+        }
+
+    .hero-welcome-inner ul {
+        width: 75%;
+        }   
+
+    .hero-devices .bg-devices{
+        padding-bottom: 54.5%;
+        }
+
+
+    /* Feature and Promos
+    ------------------------ */
+
+    /* 3 Custom Promos
+    ------------------------ */
+
+    /* UI Helpers
+    ------------------------ */
+
+    /* App Downloads
+    ------------------------ */
+
+    /* Promo Form
+    ------------------------ */
+    .promo-code{
+        width: 90%;
+        }
+    .promo-code-full .controls {
+        width: 60%;
+        }
+
+
+/* Modules
+---------------------------------------------- */
+    /* Modals
+    ------------------------ */
+    /* Buttons
+    ------------------------ */
+    /* Alerts
+    ------------------------ */
+    /* Info Boxes
+    ------------------------ */
+
+}
+
+
+
+
+/* MQ 380- small screens
+================================================================================ */
+@media (max-width: 23.75em) {
+
+/* Headings & Titles
+---------------------------------------------- */
+    .sizes-XLG      { @include rem(font-size, 26px); }
+    // .sizes-LRG      { @include rem(font-size, 40px); margin-bottom: .7em; }
+    .sizes-LG       { @include rem(font-size, 23px); }
+    // .sizes-L        { @include rem(font-size, 34px); margin-bottom: .8em; line-height: 1.1; }
+
+    .sizes-M        { @include rem(font-size, 20px); }
+    //.sizes-M2       { @include rem(font-size, 18px); }
+    //.sizes-M3       { @include rem(font-size, 18px); }
+
+    // .sizes-S        { @include rem(font-size, 22px); margin-bottom: .9em; }
+    // .sizes-SM       { @include rem(font-size, 20px); margin-bottom: .7em; }
+    // .sizes-SM-alt   { @include rem(font-size, 20px); color: $callout; }
+    // .sizes-XSM      { @include rem(font-size, 18px); margin-bottom: .7em; }
+
+    //.already-have{ float: none; line-height: 1.1; margin-bottom: 2em; }
+
+
+    //.copy--L      { @include rem(font-size, 22px); line-height: 1.2; }
+    //.copy--L2     { @include rem(font-size, 18px); line-height: 1.2; }
+    // .copy--LG     { @include rem(font-size, 20px); line-height: 1.2; }
+    // .copy-size-M  { @include rem(font-size, 18px); margin: .3em 0 1.8em; }
+    // .copy-size-M2 { @include rem(font-size, 18px); margin: .3em 0 1.3em; }
+    // .copy-size-S  { @include rem(font-size, 14px); margin: 0; }
+    // .copy-size-SM {  }
+
+    // .already-have  { margin-bottom: 1.5em; }
+    // .already-have a{ display: block; }
+
+
+/* Global Wrappers
+---------------------------------------------- */
+    .fluid{ 
+        padding-left: 5%;
+        padding-right: 5%; 
+        }
+
+
+/* Headers - Navigations - Footers
+---------------------------------------------- */
+    .copyright, .footer-menu{ width: 100%; padding-bottom: 1em; }
+    .is--f-secondary{ padding: .8em 0 .2em; }
+
+
+/* Global Menus
+---------------------------------------------- */
+    .menu--secondary a{
+        padding: .625em 5% .625em 8%;
+        //@include rem(font-size, 18px);
+        }
+
+
+
+/* Global Forms
+---------------------------------------------- */
+    .general-form .text-field{
+        width: 98%;
+        }
+
+    .fieldset{ margin-bottom: 1.5em; padding-bottom: 1em; }
+
+    .radio-inline{ float: none; padding: .7em 1em .6em; width: 100%; display: block; overflow: hidden; }
+    .controls > .radio-inline + .radio-inline{ float: none; margin-top: .7em;  }
+    .radio-inline .collection_radio_buttons{ width: 90%; font-size: 16px; }
+
+    .legend-visible{ @include rem(font-size, 16px); margin-bottom: .7em; }
+
+
+    .fancy-select:after {
+        width: 13%;
+        }
+    
+    .submit-group{
+        margin-right: 0;
+        }
+    .submit-group .btn{
+        margin-left: 10px;
+        @include rem(font-size, 13px);
+        padding: .7em 1.4em;
+        }
+
+
+/* Custom Content Structure
+---------------------------------------------- */
+    /* Hero Homepage
+    ------------------------ */
+    .silly-width2{ width: 100%; }
+    .hero-LG{
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+        }
+    .hero-LG-centered{
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+        }
+
+
+    .hero-welcome .hero-welcome-inner{
+        //background-image: asset-url("content/bg-clouds-sm.png");
+        //background-size: 100% auto;
+        // min-height: 650px;
+        padding-top: 3.5em; 
+        }
+    .hero-welcome-inner ul {
+        width: 85%;
+        }  
+
+
+    .has-TV{ 
+        background-image: asset-url('/assets/content/TV-sm.jpg');
+        }
+
+    .hero-devices .bg-devices{
+        background: transparent asset-url("content/bg-devices-xsm.png") no-repeat scroll center 0 / 97% auto;
+        padding-bottom: 58.5%;
+        margin-top: 1.2em;
+        }
+
+
+    /* Collections */
+    .collection-lead{
+        margin-bottom: 1em;
+        }
+    .collections-title{ 
+        @include rem(font-size, 24px);
+        }
+    .collection-lead .lead-copy{ @include rem(font-size, 16px); line-height: 1.3; }
+
+
+
+    /* Feature and Promos
+    ------------------------ */
+
+    /* 3 Custom Promos
+    ------------------------ */
+
+    /* UI Helpers
+    ------------------------ */
+
+    /* App Downloads
+    ------------------------ */
+
+    /* Promo Form
+    ------------------------ */
+    .promo-code{
+        width: 100%;
+        }
+    .promo-code-full .form-row{
+        padding-top: 4em;
+        }
+    .promo-code-full .controls {
+        width: 47%;
+        }
+    .promo-code-full .form-label{
+        @include rem(font-size, 18px);
+        line-height: 1.2;
+        }
+    .promo-code-full .form-label strong{
+        display: block;
+        }
+
+
+/* Modules
+---------------------------------------------- */
+    /* Modals
+    ------------------------ */
+    /* Buttons
+    ------------------------ */
+    /* Alerts
+    ------------------------ */
+    /* Info Boxes
+    ------------------------ */
+
+}
+
+
+
+
+/* MQ 320- small screens
+================================================================================ */
+@media (max-width: 20em) {
+
+/* Headings & Titles
+---------------------------------------------- */
+    .sizes-XLG      { @include rem(font-size, 24px); }
+    // .sizes-LRG      { @include rem(font-size, 40px); margin-bottom: .7em; }
+    //.sizes-LG       { @include rem(font-size, 26px); margin-bottom: .3em; }
+    // .sizes-L        { @include rem(font-size, 34px); margin-bottom: .8em; line-height: 1.1; }
+
+    .sizes-M        { @include rem(font-size, 20px); }
+    //.sizes-M2       { @include rem(font-size, 18px); }
+    //.sizes-M3       { @include rem(font-size, 18px); }
+
+    // .sizes-S        { @include rem(font-size, 22px); margin-bottom: .9em; }
+    // .sizes-SM       { @include rem(font-size, 20px); margin-bottom: .7em; }
+    // .sizes-SM-alt   { @include rem(font-size, 20px); color: $callout; }
+    // .sizes-XSM      { @include rem(font-size, 18px); margin-bottom: .7em; }
+
+    //.already-have{ float: none; line-height: 1.1; margin-bottom: 2em; }
+
+
+    //.copy--L      { @include rem(font-size, 22px); line-height: 1.2; }
+    //.copy--L2     { @include rem(font-size, 18px); line-height: 1.2; }
+    // .copy--LG     { @include rem(font-size, 20px); line-height: 1.2; }
+    // .copy-size-M  { @include rem(font-size, 18px); margin: .3em 0 1.8em; }
+    // .copy-size-M2 { @include rem(font-size, 18px); margin: .3em 0 1.3em; }
+    // .copy-size-S  { @include rem(font-size, 14px); margin: 0; }
+    // .copy-size-SM {  }
+
+    // .already-have  { margin-bottom: 1.5em; }
+    // .already-have a{ display: block; }
+
+/* Global Wrappers
+---------------------------------------------- */
+
+/* Headers - Navigations - Footers
+---------------------------------------------- */
+    .copyright, .footer-menu{ width: 100%; padding-bottom: 1em; }
+    .is--f-secondary{ padding: .8em 0 .2em; }
+
+
+/* Global Menus
+---------------------------------------------- */
+
+/* Global Forms
+---------------------------------------------- */
+
+
+/* Custom Content Structure
+---------------------------------------------- */
+    /* Hero Homepage
+    ------------------------ */
+
+    /* Feature and Promos
+    ------------------------ */
+
+    /* 3 Custom Promos
+    ------------------------ */
+
+    /* UI Helpers
+    ------------------------ */
+
+    /* App Downloads
+    ------------------------ */
+
+    /* Promo Form
+    ------------------------ */
+
+
+/* Modules
+---------------------------------------------- */
+    /* Modals
+    ------------------------ */
+    /* Buttons
+    ------------------------ */
+    /* Alerts
+    ------------------------ */
+    /* Info Boxes
+    ------------------------ */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

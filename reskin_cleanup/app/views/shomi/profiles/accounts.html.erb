@@ -1,0 +1,80 @@
+<% content_for :title, t('titles.link_account').html_safe %>
+<% content_for :live_chat_url, t('live_chat.link_account') %>
+<% content_for :footer do  ajax_validation(:account_search, profiles_link_accounts_path) end %>
+
+
+<% content_for :body_start do %>
+    <div id="track2"></div>
+    <div id="track3"></div>
+<% end %>
+
+<section class="content-wrapper">
+
+    <h2 class="h-r size-L w-ul rogers-red"><%= t('titles.link_account').html_safe %></h2>
+
+    <%= render "layouts/form_error_header", object: @account_search %>
+    <fieldset class="link-account">
+    <%= simple_form_for @account_search, remote: true, url: profiles_link_accounts_path, data: {validate: 'account_search'}, html: {class: 'general-form link-account' } do |f| %>
+    <% if session[:accounts] && session[:accounts].size > 1 %>
+        <%= f.input :account_number, collection: session[:accounts].map { |a| a[:account_number] }, prompt: false, required: true %>
+    <% else %>
+        <%= f.input :account_number, label: false, placeholder: t('activemodel.attributes.account_search.account_number').html_safe, hint: '<div id="howToFindMyAccount"><img src="https://www.rogers.com/web/resources/images/selfregistration/bill_English.jpg"></div>', required: true, error: 'help me' %>
+    <% end %>
+        <%#= link_to t("profiles.accounts.cant_find"), '#account_search', data: {toggle:'modal', target: '#account_search' } %>
+
+        <%= f.input :postal_code, label: false, placeholder: t('activemodel.attributes.account_search.postal_code').html_safe, required: true, input_html: { size: 7, maxlength: 7, title: t("errors.attributes.postal_code.blank")} %>
+        <p><%= link_to t('btn.link_later'), root_path, class: 'btn btn-cancel' %> <%= f.button :submit, t("btn.link_account") %></p>
+    </fieldset>    
+    <% end %>
+
+    <section class="fancy-promos profiles link-account">
+        <%= render 'pages/promo_upgraderogers' %>
+    </section>
+</section>
+
+<aside id="footnote" class="footnote">
+    <h3><%= t('legal.title').html_safe %></h3>
+    <p><%= t("legal.terms1").html_safe %></p>
+</aside>
+
+<% content_for :link_account_faq_content do %>
+  <%= render "layouts/link_account_faq" %>
+<% end %>
+
+<% content_for :live_chat_content do %>
+  <%= render "layouts/live_chat" %>
+<% end %>
+
+
+<%# START: Inject these scripts into the Footer %>
+<% content_for :footer do %>
+
+<script>
+    var track2js = '', track3js = '';
+    var axel = Math.random() + "", a = axel * 10000000000000; track2js += '<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=Bv5kgyDL;ord=' + a + '?" class="hidden"></iframe>';
+    var axel = Math.random() + "", a = axel * 10000000000000; track3js += '<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger001;ord=' + a + '?" class="hidden"></iframe>';
+
+    document.getElementById('track2').innerHTML = track2js;
+    document.getElementById('track3').innerHTML = track3js;
+</script>
+<noscript>
+    <iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=Bv5kgyDL;ord=1" class="hidden"></iframe>
+    <iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger001;ord=1" class="hidden"></iframe>
+</noscript>
+
+<% end %>
+
+<%#
+<script>
+    var track2js = '';
+    var axel = Math.random() + "", a = axel * 10000000000000; track2js += '<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=Bv5kgyDL;ord=' + a + '?" class="hidden"></iframe>';
+    document.getElementById('track2').innerHTML = track2js;
+</script>
+<noscript><iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=Bv5kgyDL;ord=1" class="hidden"></iframe></noscript>
+<script>
+    var track3js = '';
+    var axel = Math.random() + "", a = axel * 10000000000000; track3js += '<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger001;ord=' + a + '?" class="hidden"></iframe>';
+    document.getElementById('track3').innerHTML = track3js;
+</script>
+<noscript><iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger001;ord=1" class="hidden"></iframe></noscript>
+%>

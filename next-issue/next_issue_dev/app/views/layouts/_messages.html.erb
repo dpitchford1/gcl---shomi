@@ -1,0 +1,16 @@
+<%= content_tag :div, '', id: 'error_div_id', :class => "alert alert--alert is-animated", style: "display:none", role: 'alert'%>
+<%= content_tag :div, '', id: 'notice_div_id', :class => "alert alert--notice is-animated", style: "display:none", role: 'alert'%>
+
+<% content_for :addload_ready do %>
+  Flash.transferFromCookies();
+  Flash.writeDataTo('alert', $('#error_div_id'), function() {$('#error_div_id').show()} );
+  Flash.writeDataTo('notice', $('#notice_div_id'), function() {$('#notice_div_id').show()} );
+<% end %>
+
+
+<% content_for :addload_ready do %>
+    if ($.cookie('persistent_message')){
+        $.removeCookie('persistent_message');
+        $('.alert').removeClass('is-animated').addClass('is-persistent');
+    };
+<% end %>

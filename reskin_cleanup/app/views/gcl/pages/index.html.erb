@@ -1,0 +1,175 @@
+<% content_for :title, t('titles.home').html_safe %>
+
+<% content_for :body_start do %>
+	<div id="track1"></div>
+	<div id="track2"></div>
+<% end %>
+<% content_for :footer do %>
+	<script>
+		var track1js = '', axel1 = Math.random() + "", a1 = axel1 * 10000000000000,	track2js = '', axel2 = Math.random() + "", a2 = axel2 * 10000000000000;
+		track1js += '<iframe class="hidden" src="https://4498654.fls.doubleclick.net/activityi;src=4498654;type=invmedia;cat=jKeGnrDq;ord=' + a1 + '?"></iframe>';
+		track2js += '<iframe class="hidden" src="https://1662406.fls.doubleclick.net/activityi;src=1662406;type=invmedia;cat=dzjbk9ms;ord=' + a2 + '?"></iframe>';
+		document.getElementById('track1').innerHTML = track1js;
+		document.getElementById('track2').innerHTML = track2js;
+
+		<%= Rails.application.assets["utils/fb-script-loader"].to_s.html_safe %>
+		window._fbq.push(['track', '6022576788430', {'value':'0.00','currency':'CAD'}]);
+	</script>
+<% end %>
+<% content_for(:noscript) do %>
+	<iframe class="hidden" src="https://4498654.fls.doubleclick.net/activityi;src=4498654;type=invmedia;cat=jKeGnrDq;ord=1?"></iframe>
+	<iframe class="hidden" src="https://1662406.fls.doubleclick.net/activityi;src=1662406;type=invmedia;cat=dzjbk9ms;ord=1?"></iframe>
+	<img class="hidden" src="https://www.facebook.com/tr?ev=6022576788430&amp;cd[value]=0.00&amp;cd[currency]=CAD&amp;noscript=1" height="1" width="1" alt="">
+<% end %>
+
+
+<%= render 'partials/hero_welcome' %>
+
+
+<%# START: GCL Features %>
+<div class="hero-basic hero-features" id="hero-features">
+	<div class="fluid">
+		<%= render 'partials/features_gcl' %>
+	</div>
+</div>
+
+
+<%# IF: logged in and ineligible %>
+<% if @current_session.logged? && !@current_session.profile.eligible? %>
+
+    
+	<div class="hero-basic hero-subscribe is--signedin" id="hero-subscribe">
+		<div class="fluid">
+			<%# <p>Modified Subscribe/Purchase Options</p> %>
+			<section class="fancy-promos-2 span-of-2">
+
+				<%= render 'partials/promo_getrogers' %>
+
+				<%= render 'partials/promo_purchase_nonrogers_gcl' %>
+
+				<%#= render 'partials/promo_french_package' %>
+			</section>
+
+			<p class="text-center copy-M" style="margin-top: 1.5em;"><%= t("promos.excerpt_link_account").html_safe %></p>
+			<%#= t("legal.data_overage").html_safe %>
+			<p class="overages"><small><%= t("legal.data_overage_new").html_safe %></small></p>
+		</div>
+	</div>
+    
+<%# IF: logged out and ineligible == default state for everyone %>
+<% else %>
+    
+    <div class="hero-basic hero-upgrade" id="hero-upgrade">
+		<section class="fluid">
+			<h2 class="hide-text">To enjoy Rogers NHL GameCentre LIVE™ free, upgrade your Rogers Services.</h2>
+			<%# <p>Default Subscribe/Purchase Options</p> %>
+		    <%= render 'partials/promo_getrogers' %>
+		</section>
+	</div>
+
+	<div class="hero-basic hero-subscribe" id="hero-subscribe">
+		<div class="fluid">
+			<section class="fancy-promos-2 span-of-2">
+				<h2 class="hide-text">Choose how to watch hockey</h2>
+
+				<%= render 'partials/promo_signin_rogers' %>
+
+				<%= render 'partials/promo_purchase_nonrogers_gcl' %>
+
+				<%#= render 'partials/promo_french_package' %>
+			</section>
+			<%#= t("legal.data_overage").html_safe 
+			<p class="text-center">Wireless Customer go here - <a href="https://www.qa02.rogers.com/web/totes/#/signin" target="blank">Link to portlet</a>%>
+			<p class="overages"><small><%= t("legal.data_overage_new").html_safe %></small></p>
+		</div>
+	</div>
+
+<% end %>
+
+
+<%# START: GCL App Downloads %>
+<div class="hero-enhance hero-appdownload" id="hero-app">
+	<div class="fluid">
+		<aside class="app-downloads" role="complementary">
+			<%= render 'partials/hero_app_download' %>
+		</aside>
+	</div>
+</div>
+
+
+
+<%# START: GCL Rotator %>
+<div class="hero-basic hero-rotator" id="hero-rotator">
+	<div class="fluid text-center slider cf">
+		<%= render 'partials/hero_rotator_test' %>
+	</div>
+</div>
+
+
+<%# START: GCL GamePlus Features %>
+<div class="hero-basic hero-gameplus" id="hero-gameplus">
+    <div class="fluid">
+		<%= render 'partials/features_gameplus' %>
+	</div>
+</div>
+	
+
+<%# START: GCL Devices Hero %>
+<div class="hero-enhance hero-devices" id="hero-devices">
+	<div class="fluid text-center">
+		<%= render 'partials/hero_devices' %>
+	</div>
+</div>
+
+
+
+<%# START: Hero Blackouts %>
+<div class="hero-basic hero-blackouts" id="hero-blackouts">
+	<%= render 'partials/hero_blackouts' %>
+</div>
+
+
+
+<%# START: GCL Promo Code Hero %>
+<div class="hero-basic hero-promocode" id="hero-promocode">
+	<div class="fluid">
+		<div class="region promo-code-full" id="enter-promo-code">
+			<%= section(:enter_promo_code) do %>
+		  	<%= render 'profiles/promo_code_form', use_styling: "landing_page"%>
+		  	<% end %>
+		</div>
+	</div>
+</div>
+
+
+
+<%# START: GCL Live Chat Hero %>
+<div class="hero-basic hero-chat" id="hero-chat">
+	<%= render 'partials/hero_livechat' %>
+</div>
+
+
+<%# START: GCL Footnotes Home %>
+<% content_for :legal_footnotes do %>
+	<%= render 'partials/footnotes_home' %>
+<% end %>
+
+
+<%#= render 'partials/x_checker' %>
+
+
+<%# START: GCL IE8 Warning Message %>
+<!--[if lte IE 8]>
+<div id="ltie8" class="ltie8">
+    <a id="closeIE" href="#main-content" class="ico i-m i--close float-l" style="margin-right:15px;" data-dismiss="ltie8" role="button"><%= t("btn.close") %></a>
+    <p><%= t("legal.browser_warning").html_safe %></p>
+    <script>
+	addLoadEvent(function() {
+	    $('#closeIE').on('click', function(){
+	        $('#ltie8').hide();
+	        return false;
+	    });
+	});
+</script>
+</div>
+<![endif]-->

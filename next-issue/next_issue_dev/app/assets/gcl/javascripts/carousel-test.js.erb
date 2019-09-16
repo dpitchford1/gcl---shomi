@@ -1,0 +1,227 @@
+﻿<%#= Rails.application.assets["utils/set-attributes"].to_s.html_safe %>
+
+function carouselVideos() {
+    'use-strict';
+
+    // set up carousel
+    $(".flexslider").flexslider({
+            animation: "slide",
+            slideshow: false,
+            useCSS: false,
+            touch: true,
+            //smoothHeight: true,
+
+            // Primary Controls
+            controlNav: true,
+            directionNav: true,
+            prevText: "Prev",
+            nextText: "Next",
+             
+            // Secondary Navigation
+            keyboard: true,
+            multipleKeyboard: false,
+            mousewheel: false,
+
+            before: function(slider){
+                if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0)
+                    Froogaloop( slider.slides.eq(slider.currentSlide).find('iframe').attr('id') ).api('pause');
+            }
+        });
+
+    // include vimeo API
+    var Froogaloop=function(){function e(a){return new e.fn.init(a)}function h(a,c,b){if(!b.contentWindow.postMessage)return!1;var f=b.getAttribute("src").split("?")[0],a=JSON.stringify({method:a,value:c});"//"===f.substr(0,2)&&(f=window.location.protocol+f);b.contentWindow.postMessage(a,f)}function j(a){var c,b;try{c=JSON.parse(a.data),b=c.event||c.method}catch(f){}"ready"==b&&!i&&(i=!0);if(a.origin!=k)return!1;var a=c.value,e=c.data,g=""===g?null:c.player_id;c=g?d[g][b]:d[b];b=[];if(!c)return!1;void 0!== a&&b.push(a);e&&b.push(e);g&&b.push(g);return 0<b.length?c.apply(null,b):c.call()}function l(a,c,b){b?(d[b]||(d[b]={}),d[b][a]=c):d[a]=c}var d={},i=!1,k="";e.fn=e.prototype={element:null,init:function(a){"string"===typeof a&&(a=document.getElementById(a));this.element=a;a=this.element.getAttribute("src");"//"===a.substr(0,2)&&(a=window.location.protocol+a);for(var a=a.split("/"),c="",b=0,f=a.length;b<f;b++){if(3>b)c+=a[b];else break;2>b&&(c+="/")}k=c;return this},api:function(a,c){if(!this.element|| !a)return!1;var b=this.element,f=""!==b.id?b.id:null,d=!c||!c.constructor||!c.call||!c.apply?c:null,e=c&&c.constructor&&c.call&&c.apply?c:null;e&&l(a,e,f);h(a,d,b);return this},addEvent:function(a,c){if(!this.element)return!1;var b=this.element,d=""!==b.id?b.id:null;l(a,c,d);"ready"!=a?h("addEventListener",a,b):"ready"==a&&i&&c.call(null,d);return this},removeEvent:function(a){if(!this.element)return!1;var c=this.element,b;a:{if((b=""!==c.id?c.id:null)&&d[b]){if(!d[b][a]){b=!1;break a}d[b][a]=null}else{if(!d[a]){b= !1;break a}d[a]=null}b=!0}"ready"!=a&&b&&h("removeEventListener",a,c)}};e.fn.init.prototype=e.fn;window.addEventListener?window.addEventListener("message",j,!1):window.attachEvent("onmessage",j);return window.Froogaloop=window.$f=e}();
+
+
+    // general frame vars
+    var iframe1 = document.getElementById('player_1')
+        iframe2 = document.getElementById('player_2'),
+        iframe3 = document.getElementById('player_3'),
+        slide1play = document.getElementById("btn-play-slide1"),
+        slide2play = document.getElementById("btn-play-slide2"),
+        slide3play = document.getElementById("btn-play-slide3"),
+
+        player1 = Froogaloop(iframe1),
+        player2 = Froogaloop(iframe2),
+        player3 = Froogaloop(iframe3),
+
+        fragment = doc.createDocumentFragment(),
+        fragment2 = doc.createDocumentFragment(),
+        fragment3 = doc.createDocumentFragment(),
+        playClose = fragment.appendChild(doc.createElement('a')),
+        playClose2 = fragment2.appendChild(doc.createElement('a')),
+        playClose3 = fragment3.appendChild(doc.createElement('a'));
+
+
+
+    if (doc.getElementById("video1-wrap")) {
+
+        // device screenshot
+        var layer1BG = doc.getElementById('slide1-screen'),
+            slide1Video = doc.getElementById('slide1-video');
+
+        // close btn attributes
+        setAttributes(playClose, {
+            "aria-controls": "video1-wrap",
+            "href": "#slide1-video",
+            "id": "video1-close",
+            "aria-label": "Close",
+            "role": "button",
+            "class": "hidden close-btn"
+        });
+        playClose.innerHTML = 'Close';
+
+        // set video source
+        setAttributes(iframe1, {
+                "src": "http://player.vimeo.com/video/123941214?api=1&player_id=player_1"
+            });
+        // setAttributes(iframe1FR, {
+        //         "src": "http://player.vimeo.com/video/123941214?api=1&player_id=player_1"
+        //     });
+
+
+        // play click handlers
+        slide1play.addEventListener("click", function(r) {
+
+            layer1BG.className += " hide-bg";
+            layer1BG.appendChild(fragment);
+
+            setAttributes(slide1play, { "href": "#slide1-video", "class": "ico i-video-play is--icon hidden" });
+            setAttributes(slide1Video, { "class": "slides-video-wrapper is--absolute" });
+            setAttributes(playClose, { "class": "ico i-m i--close close-btn" });
+
+            player1.api("play");
+
+            ga('beec4528a634c1272e86ba159d7b4b8e.send', 'event', 'Vimeo-test1', 'Started video', 'Laptop Video', {'nonInteraction': 1});
+            r.preventDefault();
+        });
+
+        // close button events
+        playClose.addEventListener('click', function (w) {
+            setAttributes(slide1Video, { "class": "slides-video-wrapper is--relative" });
+            setAttributes(slide1play, { "href": "#slide1-video", "class": "ico i-video-play is--icon" });
+            setAttributes(playClose, { "class": "hidden ico i-m i--close close-btn" });
+            setAttributes(layer1BG, { "class": "slide-screen" });
+
+            player1.api("pause");
+            w.preventDefault();
+        });
+
+
+    };
+
+    if (doc.getElementById("video2-wrap")) {
+
+        // device screenshot
+        var layer2BG = doc.getElementById('slide2-screen'),
+            slide2Video = doc.getElementById('slide2-video');
+
+        // set video source
+        setAttributes(iframe2, {
+            "src": "http://player.vimeo.com/video/123941720?api=1&player_id=player_2"
+        });
+
+        // close btn attributes
+        setAttributes(playClose2, {
+            "aria-controls": "video2-wrap",
+            "href": "#slide2-video",
+            "id": "video2-close",
+            "aria-label": "Close",
+            "role": "button",
+            "class": "hidden close-btn"
+        });
+        playClose2.innerHTML = 'Close';
+
+        // click handlers
+        slide2play.addEventListener("click", function(r) {
+
+            layer2BG.className += " hide-bg";
+            layer2BG.appendChild(fragment2);
+
+            setAttributes(slide2play, { "href": "#slide2-video", "class": "ico i-video-play is--icon hidden" });
+            setAttributes(slide2Video, { "class": "slides-video-wrapper is--absolute" });
+            setAttributes(playClose2, { "class": "ico i-m i--close close-btn" });
+
+            player2.api("play");
+
+            ga('beec4528a634c1272e86ba159d7b4b8e.send', 'event', 'Vimeo-test2', 'Started video', 'Tablet Video', {'nonInteraction': 1});
+            r.preventDefault();
+        });
+
+        // close button events
+        playClose2.addEventListener('click', function (w) {
+            setAttributes(slide2Video, { "class": "slides-video-wrapper is--relative" });
+            setAttributes(slide2play, { "href": "#slide2-video", "class": "ico i-video-play is--icon" });
+            setAttributes(playClose2, { "class": "hidden ico i-m i--close close-btn" });
+            setAttributes(layer2BG, { "class": "slide-screen" });
+
+            player2.api("pause");
+            w.preventDefault();
+        });
+    };
+
+    if (doc.getElementById("video3-wrap")) {
+
+        // device screenshot
+        var layer3BG = doc.getElementById('slide3-screen'),
+            slide3Video = doc.getElementById('slide3-video');
+
+        // set video source
+        setAttributes(iframe3, {
+            "src": "http://player.vimeo.com/video/123941560?api=1&player_id=player_3"
+        });
+
+        // close btn attributes
+        setAttributes(playClose3, {
+            "aria-controls": "video3-wrap",
+            "href": "#slide3-video",
+            "id": "video3-close",
+            "aria-label": "Close",
+            "role": "button",
+            "class": "hidden close-btn"
+        });
+        playClose3.innerHTML = 'Close';
+
+
+        // click handlers
+        slide3play.addEventListener("click", function(r) {
+
+            layer3BG.className += " hide-bg";
+            layer3BG.appendChild(fragment3);
+
+            setAttributes(slide3play, { "href": "#slide3-video", "class": "ico i-video-play is--icon hidden" });
+            setAttributes(slide3Video, { "class": "slides-video-wrapper is--absolute" });
+            setAttributes(playClose3, { "class": "ico i-m i--close close-btn" });
+
+            player3.api("play");
+            
+            ga('beec4528a634c1272e86ba159d7b4b8e.send', 'event', 'Vimeo-test3', 'Started video', 'Phone Video', {'nonInteraction': 1});
+            r.preventDefault();
+        });
+
+        // close button events
+        playClose3.addEventListener('click', function (w) {
+            setAttributes(slide3Video, { "class": "slides-video-wrapper is--relative" });
+            setAttributes(slide3play, { "href": "#slide3-video", "class": "ico i-video-play is--icon" });
+            setAttributes(playClose3, { "class": "hidden ico i-m i--close close-btn" });
+            setAttributes(layer3BG, { "class": "slide-screen" });
+
+            player3.api("pause");
+            w.preventDefault();
+        });
+
+    };
+
+};
+
+// if (window.matchMedia('only screen and (min-width: 768px)').matches) {
+//     addLoadEvent(carouselVideos);
+// }
+
+
+
+
+
+
+
+
+

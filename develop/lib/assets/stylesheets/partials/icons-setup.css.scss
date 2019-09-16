@@ -1,0 +1,54 @@
+/* General Icon selector
+---------------------------------------------- */
+.ico{ 
+    display: inline-block; 
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+    text-indent: -999em;
+    text-align: left;
+    margin-bottom: 5px;
+    }
+
+/* Have it inline selector
+---------------------------------------------- */
+.i-inline:before, .i-inline:after{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    }
+
+/* inline but pull it to the left and right */
+.i-pl:before, .i-pr:after{
+    content: "";
+    height: 25px;
+    width: 25px;
+    //margin-top: -1px;
+    }
+
+/* inline but pull it to the right */
+.i-pl:before{
+    float: left;
+    margin-right: 7px;
+    }
+
+/* inline but pull it to the right */
+.i-pr:after{
+    float: right;
+    margin-left: 7px;
+    }
+
+/* inline but position it on top of item */
+.i-pt:before{ 
+    background-position: 50% 0 !important;
+    display: block;
+    content: "";
+    height: 35px;
+    margin-bottom: 5px;
+    width: 100%;
+    }
+
+/* smaller sizes */
+.i-sm   { height: 25px; width: 25px; }
+.i-m    { height: 40px; width: 40px; }
+.i-lg   { height: 65px; width: 65px; }

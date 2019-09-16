@@ -1,0 +1,47 @@
+<% order ||= nil %>
+
+<div class="content-wrapper printing-visible hidden"><h3><%= t('buttons.latest_purchase')  %></h3></div>
+
+<div class="row">
+  <div class="col span-2 no-print"><%= render 'orders/account_management' %></div>
+
+  <div class="col span-4">
+    <div class="content-wrapper">
+      <div class="float-r"><%= link_to t('profiles.latest_purchase.print'), 'javascript:window.print()', class: 'btn-blk no-print' %></div>
+    </div>
+
+    <% if order.nil? %>
+      <div class="content-wrapper"><%= t('profiles.latest_purchase.no_purchases') %></div>
+    <% else %>
+      <div class="content-wrapper">
+        <div class="col span-3">
+          <div><strong><%= Date.parse(order.order_date).strftime('%b, %d, %Y') rescue t('profiles.your_activity.invalid_date') %></strong></div>
+          <div><%= order.short_description %></div>
+
+          <% if order.membership_number %>
+            <div><%= order.loyalty_partner %>: <%= order.membership_number %></div>
+          <% end %>
+
+          <% if @current_session.profile.has_redemption? || @current_session.profile.has_discount? || @current_session.profile.has_extended_free_trial? %>
+            <div><%= @current_session.profile.promotion_description %></div>
+            <div><%= (@current_session.profile.has_redemption? ? t('header.redemption_code') : "#{t('orders.promo_code')}:") + @current_session.profile.promotion_code.to_s %></div>
+          <% end %>
+        </div>
+
+        <div class="col span-3"></div>
+      </div>
+
+      <div class="content-wrapper">
+        <div class="col span-3">
+          <div><strong><%= t('profiles.latest_purchase.billed_to') %></strong></div>
+          <div><%= order.full_name %></div>
+          <div><%= order.billing_account %></div>
+          <div><%= order.masked_cc %></div>
+          <div><%= order.street %><%= order.address2.present? ? ", #{order.address2}" : '' %></div>
+          <div><%= order.city %>, <%= order.province %> <span class="uppercase"><%= order.postal_code %></span></div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

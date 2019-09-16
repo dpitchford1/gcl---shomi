@@ -1,0 +1,27 @@
+<p class="h-sb size-L3 rogers-red"><%= t('text.hi') %> <%= @current_session.username %></p>
+
+<% content_for :title, t('titles.welcome').html_safe %>
+<% content_for :live_chat_url, t('live_chat.signed_in_link_account') %>
+
+
+<%= cache(action_suffix: ['cannotBuy', I18n.locale, @session.logged?, @session.try(:profile).try(:level), @session.try(:profile).try(:code)].join(':')) do %>
+
+	<section class="hero-standard">
+	    <h2 class="h-l size-M2"><%= t("profiles.ineligible.your_profile").html_safe %></h2>   
+
+	    <div class="">
+	        <h3 class="h-r size-M2"><%= t("profiles.ineligible.associate").html_safe %></h3>
+	        <p><%= link_to t("btn.link_accounts"), profiles_accounts_path,  class: 'btn btn-default btn--lg' %></p>
+	    </div>
+	</section>
+
+	<section class="fancy-promos profiles">
+	    <%= render 'pages/promo_upgraderogers' %>
+	</section>
+
+	<aside id="footnote" class="footnote clear">
+	    <h3><%= t('legal.title').html_safe %></h3>
+	    <p><%= t("legal.terms1").html_safe %></p>
+	</aside>
+
+<% end %>

@@ -1,0 +1,97 @@
+/* PROMO CODE FORM TWEAKS */
+
+.promo-code-full .promo-form {
+    // border-top: 1px solid #cbd5d8;
+    // border-bottom: 1px solid #cbd5d8;
+    //padding: 1.8em 0 1.5em 0;
+    margin: 0 0 1em 0;
+    }
+ 
+.promo-code {
+    margin: 0 auto;
+    width: 750px;
+    }    
+
+.promo-code-full .form-row{
+    float: left;
+    margin-bottom: 0;
+    }
+.promo-code-full .controls{
+    padding-top: 0;
+    display: inline-block;
+    }
+.promo-code-full .form-label{
+    @include rem(font-size, 20px);
+    margin-right: 1em;
+    margin-top: 0.4em;
+    display: inline-block;
+    vertical-align: top;
+    }
+[lang="fr-ca"] .promo-code-full .form-label{
+        @include rem(font-size, 18px);
+        }
+
+.promo-code .form-label strong{
+    font-family: $fonts-demi;
+    }
+    
+
+.promo-code-full .text-field{
+    //width: 245px;
+    @include rem(font-size, 16px);
+    display: inline-block;
+    margin-right: 1em;
+    }
+.promo-code-full .btn{
+    @include rem(font-size, 16px);
+    padding-top: .8em;
+    padding-bottom: .8em;
+    //margin-left: 10px;
+    float: left;
+    }
+
+// .promo-code-full .btn-default{
+//     background-color: #445057;
+//     }
+// .promo-code-full .btn-default:hover, .promo-code-full .btn-default:focus, .promo-code-full .btn-default:active {
+//     background-color: #69757f;
+//     }
+.promo-code-full abbr{ display: none; }
+
+
+/* PROMO CODE WITHIN A PROMO BLOCK */
+// .feature .promo-form{ padding-top: 2em; }
+// .feature .form-label abbr{ visibility: hidden; }
+// .feature legend{
+//     line-height: 1.1;
+//     width: 100%;
+//     text-align: center;
+//     }
+// .feature legend.size-L{
+//     @include rem(font-size, 20px);
+//     padding-top: .6em;
+//     }
+// .feature legend span{
+//     display: block;
+//     }
+// .feature .form-label{
+//     @include rem(font-size, 20px);
+//     }
+// .feature .text-field{
+//     width: 100%;
+//     margin: .3em 0;
+//     }
+// .feature .btn-default{
+//     //color: $callout;
+//     width: 71%;
+//     margin: 0 auto;
+//     border-radius: 6px;
+//     padding-left: 0;
+//     padding-right: 0;
+//     }
+// .feature .btn-secondary{
+//     background-color: $color-primary;
+//     }
+
+//.info .promo-code-full .size-L{ font-size: 18px; text-indent: -1000em; }
+.info .promo-form{ padding-bottom: 0; }

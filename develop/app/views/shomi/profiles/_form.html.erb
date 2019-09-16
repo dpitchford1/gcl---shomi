@@ -1,0 +1,41 @@
+    <% content_for :footer do  ajax_validation(:profile) end %>
+    <%= render "layouts/form_error_header", object: @profile %>
+
+    <%= simple_form_for(@profile, remote: true, data: {validate: 'profile'}, html: {class: 'general-form' }) do |f| %>
+        <fieldset>
+            <legend class="hide-text"><%= t('form.legend.personal_details') %></legend>
+            <%#= f.input :first_name, required: true %>
+            <%#= f.input :last_name, required: true %>
+            <%= f.input :email_address, required: true, label: false, input_html: {:title => t('errors.attributes.email_address.blank')}, placeholder: t('activemodel.attributes.profile.email_address').html_safe %>
+            <%= f.input :email_address_confirmation, label: false, required: true, input_html: { :title => t('errors.attributes.email_address_confirmation.blank')}, placeholder: t('activemodel.attributes.profile.email_address_confirmation').html_safe %>
+            <%# f.input :phone, required: false, input_html: {:title => t('errors.attributes.phone.blank')} %>
+        </fieldset>
+
+        <fieldset>
+            <%= f.input :password, label: false, :hint => true, placeholder: t('activemodel.attributes.profile.password'), input_html: { maxlength: 16, :autocomplete => 'off', :title => t('errors.attributes.password.blank')} %>
+            <%= f.input :password_confirmation, label: false, placeholder: t('activemodel.attributes.profile.password_confirmation'), input_html: { :autocomplete => 'off', :title => t('errors.attributes.password_confirmation.blank')} %>
+        </fieldset>
+
+        <fieldset>
+            <legend class="hide-text"><%= t('form.legend.security_details') %></legend>
+            <%= f.input :question, collection: Question.collection(session[:lang]), as: :select, label: t('simple_form.placeholders.password_reminder_question').html_safe, prompt: t('simple_form.prompts.profile.question'), error: 'big' %>
+        </fieldset>
+
+        <fieldset>
+            <%= f.input :answer, input_html: { maxlength: 40 }, placeholder: t('simple_form.placeholders.password_reminder_answer').html_safe, label: false %>
+        </fieldset>
+
+        <fieldset>
+            <legend class="hide-text"><%= t('form.legend.language_details') %></legend>
+            <%= f.input :lang_pref, collection: { "English" => :en, "Français" => :fr}, as: :radio_buttons, item_wrapper_class: 'radio-inline', checked: params[:profile] ? params[:profile][:lang_pref] : session[:lang] %>
+        </fieldset>
+
+        <fieldset>
+            <%= f.input :email_opt_in, as: :boolean, :wrapper => :inline_checkbox, :input_html => { :class => "check-tos" }, label: t('profiles.receive_email').html_safe %>
+        </fieldset>
+
+        <p class="register-submit"><%= link_to t('btn.cancel'), root_path, class: 'btn btn-cancel' %> <%= f.button :submit, t('profiles.create_profile') %></p>
+
+    <% end %>
+
+</section>

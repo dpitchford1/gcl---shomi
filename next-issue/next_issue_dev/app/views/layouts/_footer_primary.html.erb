@@ -1,0 +1,21 @@
+<%# NOT USED %>
+
+<%= cache(action_suffix: ['footer-primary', I18n.locale].join(':')) do %>
+<footer class="footer is--f-primary cf" id="footer-primary" role="contentinfo">
+	NOT USED
+	<h5 class="hide-text"><%= t("menu.more") %></h5>
+	<div class="site-wrapper">
+	    <nav class="navigation-wrapper cf" role="navigation">
+	      	<h5 class="hide-text"><%= t("menu.main_menu") %></h5>
+	        <%# START: Main Menu %>
+	        <ul class="menu--tertiary cf">
+	        	<li><a href="<%= t("legal.terms_link").html_safe %>" rel="external"><%= t("menu.terms").html_safe %>&nbsp;(pdf)</a></li>
+	      		<%= render 'layouts/main_menu' %>
+	      		<li class="copyright"><%= t("menu.copyright").html_safe %></li>
+	      	</ul>
+	      	<p class="full-details"><a href="#footnotes" id="toggle-footnotes" class="toggle-footnotes"><%= t("legal.full_details").html_safe %></a></p>
+	    </nav>
+
+	</div>
+</footer>
+<% end %>

@@ -1,0 +1,157 @@
+/* BTN Setup 
+---------------------------------------------- */
+.btn {
+    border: 0 solid transparent;
+    color: #fff;
+    display: inline-block;
+    font: 17px/1.2 'regular', 'Helvetica', Arial, sans-serif;
+    margin-bottom: 0;
+    padding: .45em 2.5em;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+    /* btn behaviours */
+    .btn:hover, .btn:focus, .btn:active {
+        color: #fff;
+        text-decoration: none;
+        }
+    .btn:active, .btn.active {
+        outline: 0;
+        -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.325);
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.325);
+        }
+    .btn:focus{
+        outline: thin dotted;
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-offset: -2px;
+        }
+    .btn:active:focus{
+        outline: 0 none;
+        }
+
+/* BTN COLOURS 
+---------------------------------------------- */
+/* Default - Red */
+.btn-default {
+    background-color: #d1072e;
+    box-shadow: 1px 1px 3px #787878;
+    }
+.btn-default:hover, .btn-default:focus, .btn-default:active {
+    background-color: #e80632;
+    }
+
+/* Secondary Colour */
+.btn-secondary {
+    background-color: #445057;
+    }
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
+    background-color: #69757f;
+    }
+
+/* Tertiary Colour */
+.btn-tertiary {
+    background-color: #adb0af;
+    }
+.btn-tertiary:hover, .btn-tertiary:focus, .btn-tertiary:active {
+    background-color: #c7cac9;
+    }
+
+/* BTN Cancel 
+---------------------------------------------- */
+.btn-cancel{
+    background: none transparent;
+    color: #0a5498;
+    font-size: 14px;
+    text-transform: none;
+    font-weight: 600;
+    cursor: pointer;
+    padding: .45em 2.7em 0.45em 0.4em;
+    }
+.btn-cancel:hover, .btn-cancel:focus{
+    color: #0a5498;
+    text-decoration: underline;
+    }
+.btn-cancel:focus{
+    border: 1px solid #ccc;
+    }
+.btn-cancel.pr{
+    padding-right: 0;
+    }
+
+
+/* BTN MY Rogers Alternative 
+---------------------------------------------- */
+.btn--myrogers { 
+     padding: .35em 0 .20em !important;
+    }
+.btn--viewpackages { 
+     padding: .65em 0.8em !important;
+    }
+.btn--myrogers .my-rogers-text { 
+    //background-image: asset-url("logos/i-logo-myrogers-alt.svg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+    display: inline-block;
+    min-height: 33px;
+    line-height: 26px;
+    text-indent: -999em;
+    }
+
+[lang="en-ca"] .my-rogers-text{ 
+    background: asset-url("logos/i-logo-myrogers-en-alt-sm.png") no-repeat 0 0;
+    background-image: asset-url("logos/i-logo-myrogers-en-alt.svg"), none; width: 90px; 
+    }
+[lang="fr-ca"] .my-rogers-text{ 
+    background: asset-url("logos/i-logo-myrogers-fr-alt-sm.png") no-repeat 0 0;
+    background-image: asset-url("logos/i-logo-myrogers-fr-alt.svg"), none; width: 105px; 
+    }
+
+
+/* BTN Layout modifier - full width 
+---------------------------------------------- */
+.btn-block {
+    display: block;
+    margin-bottom: 5px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    }
+
+
+/* BTN Groups 
+---------------------------------------------- */
+.btn-group{ margin-bottom: 1em; }
+
+/* Button layout - group full width */
+.btn-group-wide{
+    display: table;
+    table-layout: fixed;
+    padding: 0;
+    margin-bottom: 1em;
+    width: 100%;
+    }
+.btn-group-wide li{
+    display: table-cell;
+    padding-left: 5px;
+    }
+.btn-group-wide li:first-child{
+    padding-left: 0;
+    }
+.btn-group-wide .btn{
+    display: block;
+    line-height: 1.1;
+    white-space: normal;
+    }
+[lang="fr-ca"] .btn-group-wide .btn{
+    @include rem(font-size, 14px);
+    }
+
+
+

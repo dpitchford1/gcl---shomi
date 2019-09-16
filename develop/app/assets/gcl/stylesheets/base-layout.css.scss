@@ -1,0 +1,247 @@
+/* = IMPORTANT GLOBALS = only to be used as trailing class (the last class) on elements..
+    - .no-ss === no small screen === display none for small screens
+    - .no-ws === no wide screen === display none for wide screens
+    - target browsers: IE9+ FF6+ Chrome 11+ Safari5+ Opera11+
+    */
+
+/* TEMPLATE
+  0.0 Document setup
+  0.1 Images, Media & Embedded content
+  0.2 Common Layout
+  0.3 Site Structure - Basic
+  0.4 Headings and Titles
+  0.5 Headers - Navigations - Footers
+  0.6 Custom Content Structure
+  0.1 Accessibility & Usability
+
+---------------------------------------------- */
+// .blink {
+ 
+//     -webkit-animation-name: blinker;
+ 
+//     -webkit-animation-duration: 1s;
+ 
+//     -webkit-animation-timing-function: linear;
+ 
+//     -webkit-animation-iteration-count: infinite;
+ 
+    
+ 
+//     -moz-animation-name: blinker;
+ 
+//     -moz-animation-duration: 1s;
+ 
+//     -moz-animation-timing-function: linear;
+ 
+//     -moz-animation-iteration-count: infinite;
+ 
+    
+ 
+//     animation-name: blinker;
+ 
+//     animation-duration: 1s;
+ 
+//     animation-timing-function: linear;
+ 
+//     animation-iteration-count: infinite;
+ 
+// }
+ 
+ 
+ 
+// @-moz-keyframes blinker {
+ 
+//     0% { opacity: 1.0; }
+ 
+//     50% { opacity: 0.0; }
+ 
+//     100% { opacity: 1.0; }
+ 
+// }
+ 
+ 
+ 
+// @-webkit-keyframes blinker {
+ 
+//     0% { opacity: 1.0; }
+ 
+//     50% { opacity: 0.0; }
+ 
+//     100% { opacity: 1.0; }
+ 
+// }
+ 
+ 
+ 
+// @keyframes blinker {
+ 
+//     0% { opacity: 1.0; }
+ 
+//     50% { opacity: 0.0; }
+ 
+//     100% { opacity: 1.0; }
+ 
+// }
+
+
+/* $ 0.2 Common Layout
+====================================================================== */
+
+    /* main site wrapper = default to 980px for small desktop and IE 7 & 8 */
+    .site-wrapper{ margin: 0 auto; padding: 0 1.15%; width: 100%; max-width: 61.250em; }
+
+    /* Fluid wrapper for main content - identical to site wrapper - fine grained adjustments for responsive breakpoints */
+    .fluid, .fluid-lg{
+        margin: 0 auto;
+        padding: 0 1.15%;
+        width: 100%;
+        }
+    .fluid{
+        max-width: 61.250em;
+        }
+    .fluid-lg{
+        //max-width: 81.250em;
+        max-width: 1115px;
+        //max-width: 80%;
+        }
+
+    /* all purpose wrapper */
+    .region{ width: 100%; }
+
+    /* all purpose wrapper == padding top, margin bottom */
+    .content-wrapper{
+        //padding-top: 0;
+        padding-bottom: 1.563em;
+        width: 100%;
+        }
+
+    /* Clear fix
+    ---------------------------------------------- */
+    .cf:before, .cf:after   { content:""; display:table; }
+    .cf:after               { clear:both; }
+
+    a { word-wrap: break-word; }
+
+
+/* $ 0.3 Site Structure - Basic
+====================================================================== */
+
+    /* Global Wrappers
+    ---------------------------------------------- */
+    #page-body{ padding-top: 121px; }
+    /* body - homepage */
+    //.page-home{}
+    .page-site #main-content{ padding-top: 2em; }
+
+    /* Global Header */
+    .global-header { 
+        clear: both; width: 100%; z-index: 100; position: fixed; top: 0; left: 0;
+        -moz-transform: translateZ(0); -ms-transform: translateZ(0); -o-transform: translateZ(0); -webkit-transform: translateZ(0); transform: translateZ(0);
+        }
+    // .is-sticky { 
+    //     position: fixed;
+    //     top: 0;
+    //     left: 0;
+    //     }
+    .is-sticky .global-header, .is-sticky .ss-nav{ box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25); }
+
+    .is--primary   { background-color: #DA291C; color: #fff; padding: .4em 0; 
+        -moz-transform: translateZ(0); -ms-transform: translateZ(0); -o-transform: translateZ(0); -webkit-transform: translateZ(0); transform: translateZ(0);
+        transition: padding 500ms; }
+    .is--secondary { background-color: #e4e6e5; position: static; padding: 1.375em 0;
+        -moz-transform: translateZ(0); -ms-transform: translateZ(0); -o-transform: translateZ(0); -webkit-transform: translateZ(0); transform: translateZ(0);
+        transition: padding 500ms; }
+
+    /* animate padding to shrink navs when fixed */
+    .is-sticky .is--primary{ 
+        padding: .2em 0; 
+        }
+    .is-sticky .is--secondary{ 
+        padding: .675em 0; 
+        }
+
+    /* target needs to be on element, does not work on a wrapper */ 
+    .anchored:before{
+        display: block;
+        content: " "; 
+        visibility: hidden;
+        height: 135px;      /* Give height of your fixed element */
+        margin-top: -135px; /* Give negative margin of your fixed element */
+        }
+
+    // .anchored:target{
+    //     padding-left: 30px;
+    //     border-left: 4px solid #eee;
+    //     }
+
+    .navigation-wrapper{ padding-top: .313em; }
+    
+    /* body content */
+    #main-content   { padding-bottom: 2em; }
+    
+    /* aside */
+    .aside{ margin-bottom: 2em; }
+    
+    /* footer */
+    //.footer         {}
+    .is--f-primary  { background-color: #e4e6e5; padding: 1em 0 1.375em; z-index: 5; }
+    //.is--f-secondary{ background-color: #434a4f; color: #fff; padding: 1.563em 0 .75em; z-index: 5; }
+
+    .touch .print-btn{ display: none; }
+
+
+/* 0.4 Headings & Titles 
+====================================================================== */
+    @import "partials/type";
+
+
+/* $ 0.5 Headers - Navigations - Footers
+====================================================================== */
+    @import "layout/global-menus";
+
+
+/* $ 0.6 Custom Content Structure
+====================================================================== */
+
+    /* Hero Homepage
+    ---------------------------------------------- */
+    @import "layout/heros";
+
+
+    /* FORMS - Site Specific
+    ====================================================================== */
+    @import "layout/form-global";
+
+
+    /* FORMS - Styling additions
+    ====================================================================== */
+    @import "partials/forms-enhanced";
+
+
+    /* Feature and Promos modules
+    ---------------------------------------------- */
+    @import "layout/grid-modules";
+
+
+    /* 3 Custom Promos styled with borders and LOGO's
+    ---------------------------------------------- */
+    @import "modules/fancy-promos";
+
+
+    /* App Downloads
+    ---------------------------------------------- */
+    @import "modules/app-buttons";
+
+
+    /* Order Table
+    ---------------------------------------------- */
+    @import "layout/order-tables";
+
+    /* 3 Custom Promos styled with borders and LOGO's
+    ---------------------------------------------- */
+    @import "modules/flex-slider";
+
+
+/* $ 0.7 Accessibility & Usability
+====================================================================== */
+@import "partials/accessibility";

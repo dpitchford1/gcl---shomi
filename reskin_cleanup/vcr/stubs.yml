@@ -1,0 +1,373 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nhl-qa1.vf.rogers.com/secure/version01/account?GUID=c54b654b-893c-4f2d-aac5-dd3285e481ca&accountNumberOnBill=230314689702&accountPIN=&apiKey=JeE/5I%5B%22$?4CvA!(Z6hU0qWHKX6,K%5E&dateOfBirth=&emailAddress=&firstName=&lastName=&phone=&postalCode=M3B%203B6&product=shomi&serviceName=shomi
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Esf-User-Guid:
+      - c54b654b-893c-4f2d-aac5-dd3285e481ca
+      Esf-User-Id:
+      - gladAPITest335@rogers.com
+      Esf-User-Lang:
+      - en
+      Esf-User-Mail:
+      - gladAPITest335@rogers.com
+      Params:
+      - ESF_USER_MAIL=gladAPITest335@rogers.com
+      Cookie:
+      - SMSESSION=B96C8RL5za1OUjSukZSu3VJmWIeYXqRX8gOfpFg3ugP/Uck5gvqrI1FgPVYaCvSb75xqzIVKdYRZFDfu/VH2uKhrUDnb9cQGDd9MhUgrSVANT6TAC1IPPMXM+cYw3YQbnDGFqtee8sJYcCrGCmKXXc3YSYET3dx1k18DcUNqh2lY8B9NA+k0TmnWsmAiwSiNXXuuQstMYx3nSYHOk5h8fE7bJh1yAUrm9wt7qBU0n1Gn0cP9r0J6bgM0L3rQvQoOz+JfIKs376rRIDJysIpZQGoKzQ39UF/Yu3AZYRBLrbJBstvYpR02YqjDDlIuxEd09b3DaAnhzybP0TudpMJZ4BhbDgFwFoBjuW4y5QOAYD4NE888snxuOPem92sZRURDPHr4as4X/MXsjXNrJuXYBiWLNPzWjCSGHpJqJrjZ2+CegeFqbiif1FU7YrSN0n8CbSxa80zKseMuN78QBJWKCnX0OsnHc++EeNBr7QyrWXB3MBtpMzjmP2EJAr16yQz9OEH9ivIVXX0GZPGpeQfWKy5n0xnuheEmZZF2h6dIjk/Alx8Dp6i909bfubyYdWvqEUREUq4mSdviqME/YrAY/+gRAcvpEHApcdrLFRgv2rVlMjSLYvA4PCO4oIEW/xK4rpHZclNeRdt0ivpA/xSylzG+4OD1XMqkQZrfaiMdFf1COeF2ajDnygqgU7muA8dCjfDoLlguf89vzr6NRKhvefZglOo8ZB2cdJw/59nQl6Ke/CJ5gGGCJPxgEFc9ut/63BdvwHGKTt7e8AK3lRZE4zK7Td9wP4E5UXGpUCVO8dIp1GVIWWNoFeKDo/Pp9jmawW3+SXE3pIs0jxbjnjdxG9KzcIMHayeEF551Lz6gbmtiDjPn7xSb8zGCGOae0ZgJF+sWkWM79JKPNOsPrjwyyfh8Ztdk3ycODeD8rzdD+gr5NMvFeibpRq+OOOISIu50e/MaruuzrHFoiVQGrdEJlV3efFQRUK3Ytcdj1aXYLWqmt97eR7yKgJbchnn8vu97axuwXNW8t5Vzb8WQ8qg/6wbJpWKxsgOClhAlkFroDZlIXONlM1e3R35Jg+Rg0rXVchXNm3JAoD1RSvj8n9VRvvSRmlzcqFKZlaJEk5qd9jJ+jngTM3+dRiQPGp/Wlb3cRbxzpPFtE2TEv/c3VpE+rvWaZ9jDHTL8aIK3inQ5zniyBHLM/zHTKpWM/nZiD8aixwSvXB8HiXOwpIbrNd1+yzc9FDHc9bBOzfqfA1InLcZmJszuPkWLCUMjlWXPmWRe0GAOX8V5p7G5r9B/DFUIxtAx8Cdnfx/WZoCjGHCfryI2lQkZ2LYnAjaQrTQoBwb7d2mErZOq9vjb/wzlSo/mijWs3DfDZcnxNJz1FZYr9sJd4Wl0CjYduNG1pdPvIpC0BPheugV9neDOTMVvL0tcHSyRD4l0SZWU
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Date:
+      - Tue, 14 Oct 2014 19:13:08 GMT
+      Set-Cookie:
+      - SMSESSION=LOGGEDOFF; path=/; domain=.rogers.com; secure; HTTPOnly
+      - sto-id-47873-%3FVFSIN_PUB%3Fsg_nhlweb_qa1_8080=BPJGKIMAJABP; Expires=Tue,
+        14-Oct-2014 19:33:19 GMT; Path=/
+      Cache-Control:
+      - no-store
+      Location:
+      - "/auth/login?TYPE=33554433&REALMOID=06-0004b5a3-248a-1434-aef5-01258e924055&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-JITDgu3eVCzE4H%2frGu%2biTsWxn0Gm0YVIfQ6Nk9mhmVqJXmcnfvWqH2gAcD6NjquU&TARGET=-SM-HTTP%3a%2f%2fnhl--qa1%2evf%2erogers%2ecom%2fsecure%2fversion01%2faccount%3fGUID%3dc54b654b--893c--4f2d--aac5--dd3285e481ca%26accountNumberOnBill%3d230314689702%26accountPIN%3d%26apiKey%3dJeE-%2F5I-%5B-%22-%24-%3F4CvA-%21-%28Z6hU0qWHKX6-%2CK-%5E%26dateOfBirth%3d%26emailAddress%3d%26firstName%3d%26lastName%3d%26phone%3d%26postalCode%3dM3B%2b3B6%26product%3dshomi%26serviceName%3dshomi"
+      Content-Length:
+      - '882'
+      Connection:
+      - close
+      Content-Type:
+      - text/html; charset=iso-8859-1
+    body:
+      encoding: UTF-8
+      string: '{"status":{"resultCode":1}, "data" : {"numberOfResults": 1, "tokenFound":
+        true, "rogersAccount": [{"rogersAccountToken": "1234123", "rogersAccountNumber"
+        : "230314694609", "billingAddressProvince": "Ontario"}]}}'
+    http_version: 
+  recorded_at: Tue, 14 Oct 2014 19:18:20 GMT
+- request:
+    method: get
+    uri: https://nhl-qa1.vf.rogers.com/auth/login?GUID=&METHOD=GET&REALMOID=06-0004b5a3-248a-1434-aef5-01258e924055&SMAGENTNAME=-SM-JITDgu3eVCzE4H/rGu%2BiTsWxn0Gm0YVIfQ6Nk9mhmVqJXmcnfvWqH2gAcD6NjquU&SMAUTHREASON=0&TARGET=-SM-HTTP://nhl--qa1.vf.rogers.com/secure/version01/account?GUID=c54b654b--893c--4f2d--aac5--dd3285e481ca%26accountNumberOnBill=230314689702%26accountPIN=%26apiKey=JeE-/5I-%5B-%22-$-?4CvA-!-(Z6hU0qWHKX6-,K-%5E%26dateOfBirth=%26emailAddress=%26firstName=%26lastName=%26phone=%26postalCode=M3B%2B3B6%26product=shomi%26serviceName=shomi&TYPE=33554433
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Esf-User-Guid:
+      - c54b654b-893c-4f2d-aac5-dd3285e481ca
+      Esf-User-Id:
+      - gladAPITest335@rogers.com
+      Esf-User-Lang:
+      - en
+      Esf-User-Mail:
+      - gladAPITest335@rogers.com
+      Params:
+      - ESF_USER_MAIL=gladAPITest335@rogers.com
+      Cookie:
+      - SMSESSION=B96C8RL5za1OUjSukZSu3VJmWIeYXqRX8gOfpFg3ugP/Uck5gvqrI1FgPVYaCvSb75xqzIVKdYRZFDfu/VH2uKhrUDnb9cQGDd9MhUgrSVANT6TAC1IPPMXM+cYw3YQbnDGFqtee8sJYcCrGCmKXXc3YSYET3dx1k18DcUNqh2lY8B9NA+k0TmnWsmAiwSiNXXuuQstMYx3nSYHOk5h8fE7bJh1yAUrm9wt7qBU0n1Gn0cP9r0J6bgM0L3rQvQoOz+JfIKs376rRIDJysIpZQGoKzQ39UF/Yu3AZYRBLrbJBstvYpR02YqjDDlIuxEd09b3DaAnhzybP0TudpMJZ4BhbDgFwFoBjuW4y5QOAYD4NE888snxuOPem92sZRURDPHr4as4X/MXsjXNrJuXYBiWLNPzWjCSGHpJqJrjZ2+CegeFqbiif1FU7YrSN0n8CbSxa80zKseMuN78QBJWKCnX0OsnHc++EeNBr7QyrWXB3MBtpMzjmP2EJAr16yQz9OEH9ivIVXX0GZPGpeQfWKy5n0xnuheEmZZF2h6dIjk/Alx8Dp6i909bfubyYdWvqEUREUq4mSdviqME/YrAY/+gRAcvpEHApcdrLFRgv2rVlMjSLYvA4PCO4oIEW/xK4rpHZclNeRdt0ivpA/xSylzG+4OD1XMqkQZrfaiMdFf1COeF2ajDnygqgU7muA8dCjfDoLlguf89vzr6NRKhvefZglOo8ZB2cdJw/59nQl6Ke/CJ5gGGCJPxgEFc9ut/63BdvwHGKTt7e8AK3lRZE4zK7Td9wP4E5UXGpUCVO8dIp1GVIWWNoFeKDo/Pp9jmawW3+SXE3pIs0jxbjnjdxG9KzcIMHayeEF551Lz6gbmtiDjPn7xSb8zGCGOae0ZgJF+sWkWM79JKPNOsPrjwyyfh8Ztdk3ycODeD8rzdD+gr5NMvFeibpRq+OOOISIu50e/MaruuzrHFoiVQGrdEJlV3efFQRUK3Ytcdj1aXYLWqmt97eR7yKgJbchnn8vu97axuwXNW8t5Vzb8WQ8qg/6wbJpWKxsgOClhAlkFroDZlIXONlM1e3R35Jg+Rg0rXVchXNm3JAoD1RSvj8n9VRvvSRmlzcqFKZlaJEk5qd9jJ+jngTM3+dRiQPGp/Wlb3cRbxzpPFtE2TEv/c3VpE+rvWaZ9jDHTL8aIK3inQ5zniyBHLM/zHTKpWM/nZiD8aixwSvXB8HiXOwpIbrNd1+yzc9FDHc9bBOzfqfA1InLcZmJszuPkWLCUMjlWXPmWRe0GAOX8V5p7G5r9B/DFUIxtAx8Cdnfx/WZoCjGHCfryI2lQkZ2LYnAjaQrTQoBwb7d2mErZOq9vjb/wzlSo/mijWs3DfDZcnxNJz1FZYr9sJd4Wl0CjYduNG1pdPvIpC0BPheugV9neDOTMVvL0tcHSyRD4l0SZWU
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 14 Oct 2014 19:01:03 GMT
+      Set-Cookie:
+      - JSESSIONID=DVkzJ91FQT22ZcS6K6JLXpRysy9TQMDTkvpKDxDQJ5tMPrz82gyS!1598930489;
+        path=/
+      - SMSESSION=LOGGEDOFF; path=/; domain=.rogers.com; secure; HTTPOnly
+      - sto-id-16671=GCJIKIMAEBBP; Expires=Tue, 14-Oct-2014 19:24:19 GMT; Path=/
+      - sto-id-47873-%3FVFSIN_PUB%3Fsg_nhlweb_qa1_8080=CAJGKIMAJABP; Expires=Tue,
+        14-Oct-2014 19:33:19 GMT; Path=/
+      Cache-Control:
+      - no-cache="Set-Cookie"
+      Content-Type:
+      - text/plain;charset=ISO-8859-1
+      X-Powered-By:
+      - Servlet/2.5 JSP/2.1
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"status":{"resultCode":1,"userMessageEnglish":"The page that you requested
+        requires that you sign in to your account.   Please select the sign in option
+        from the menu on the top of the page.","userMessageFrench":"The page that
+        you requested requires that you sign in to your account.   Please select the
+        sign in option from the menu on the top of the page.","developerMessage":"Login
+        Failure"}}'
+    http_version: 
+  recorded_at: Tue, 14 Oct 2014 19:18:20 GMT
+- request:
+    method: post
+    uri: https://nhl-qa1.vf.rogers.com/siteminderagent/forms/login.fcc
+    body:
+      encoding: UTF-8
+      string: CONFIRMATION=&NEWPASSWORD=&PASSWORD=rogers123&SMAGENTNAME=&SMAUTHREASON=0&SMENC=&SMTOKEN=&USER=gladAPITest334%40rogers.com&USERNAME=gladAPITest334%40rogers.com&target=https%3A%2F%2Fnhl-qa1.vf.rogers.com%2Fsecure%2Fversion01%2Floginsuccess%3Ffrom%3Ddigital
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Date:
+      - Tue, 14 Oct 2014 19:01:20 GMT
+      Server:
+      - Apache/2.2.3 (Red Hat)
+      Set-Cookie:
+      - SMSESSION=1U8mGbS4FBMdzIPPu57H/sI7pcm5L3EUmcAOX2Vpa/pL4Q2gTeZF7XRAOGaHpjO6ErWih+VPkwvmvk7o8JocES7N83sEbQ5NWsGN4wKUp75ldQX5umqgybeHYjjSB4+/stkrXU+E7748nrMOzMUZLkIuOqg9QMHkZsbFW3gP9bvKPfUdsoml57u2Tgskilyyd576lKo9DXmL37EdV894fLZeFz2nv1ysRtozekekdsik+O+k3XqNBxd8HOH7X2KEYS+OvzOwyP/c1sQxrgNDRlvn8aNFsrxSXRyfkJKXEZHmklrv9DD6GjmaTcayv/Qxshj4ebLOuBrvHXh4yPPnbs75rp7FgcFom402KQ6+YnenGsgq+41r7ojw/ihHMwZxdEOVO1A43o9VZy3/XDQKW1dOePjCBDG/gMBi+PeXyhY263pcJCdwLhqUt7/q+dIkoRz6AYa2wfuprsuA4SIG9OBpWohzjQqKlEZTOeXtZRNbKAt9SgWzEcCgsiZ1Ee0CE933yDS5y4jHysfgd6AIsZFS0o4EdgplPOgeEUEnx65nC4zNq+45BRdfHmy/+wloO9QGDEGwwO9EYRJGy367ISu2buXWETNtZ+0p4eNo9ST5NuvdtFu2PRjP3Iz/G4GjeaeDqQ26B2gIr5IF5rA25yj4txSgNt5If5mZbZRFE7FJ5c0tO2ZlfsoneQfyI3TCMe7ZvHQWM5aeq31GmEyKGSKiC2X6tglqYLE/ST8vBMeFS5aRwIML7Io704El+cQy5FLTCooise5Wqh+KQ0yzIxeQUCOk5sAMHpM4b5bAoFApCfZKIGnHulVz8Acd6/gWQalnoKSCAgPK4Ycle+kuLpjW6RcQOvgDnwGHnP6E9cjaSnODTSdaCjl7Ki2hwFVG+6B6D8T+C1NoaX/3UR43cA1eznGL96ViNwNzignlo5EqVvlY41xoYm+hAoBc49jyXkJqplw+7JIldZolaiw7O5oITHmeXg0MJjwhq+DM4s+7uKfo0AtweN43e7rYdsjqIUVaKtn9GLEuJJ6PUd0FGw0mo8LtZuAUhVwjS4i4fN1p2Q0axVuUS+4c3+ACtDCQuY4ZXu/L8gr6CFQvUJNVYvAallDZoPcGkPaE6l+G86pOwnaEvo6gSwW5i9RTsTK2oLrEeoNix0Tw+NeHn2LkMmpYF7mvGpAQSFCL7w/Wf4bTrdW+URCrEea+gCTav4CkBG9o/kZsQsoMniI+A9AKY5W/Vv1rg+Xpei6EGBvA8e0x+Apl9OUl3aIMOWIeGsS/gSXwjcHWOkCTvY5jx2RtFM6ebBURD3bM8zpe3fVAPyu2Tf2IO/5Fa22Lv/qndgW/XJKBthDKyStlQDDxh/ooc7sxev0+YBPU6XwE5KPJidXBIiYx3JClVVWYxQ119QdR4CERBg+JIdM/WZr67aaTza6ckMMVauo4;
+        path=/; domain=.rogers.com; secure; HTTPOnly
+      - SMTRYNO=1; path=/; domain=.rogers.com; secure; HTTPOnly
+      - SMTRYNO=; expires=Thu, 17 Apr 2014 19:01:20 GMT; path=/; domain=.rogers.com;
+        secure; HTTPOnly
+      - sto-id-47873-%3FVFSIN_PUB%3Fsg_nhlweb_qa1_80=CAJGKIMAFAAA; Expires=Tue, 14-Oct-2014
+        19:33:36 GMT; Path=/
+      Cache-Control:
+      - no-store
+      Location:
+      - https://nhl-qa1.vf.rogers.com/secure/version01/loginsuccess?from=digital
+      Content-Length:
+      - '343'
+      Connection:
+      - close
+      Content-Type:
+      - text/html; charset=iso-8859-1
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+        <html><head>
+        <title>302 Found</title>
+        </head><body>
+        <h1>Found</h1>
+        <p>The document has moved <a href="https://nhl-qa1.vf.rogers.com/secure/version01/loginsuccess?from=digital">here</a>.</p>
+        <hr>
+        <address>Apache/2.2.3 (Red Hat) Server at nhl-qa1.vf.rogers.com Port 80</address>
+        </body></html>
+    http_version: 
+  recorded_at: Tue, 14 Oct 2014 19:18:37 GMT
+- request:
+    method: get
+    uri: https://nhl-qa1.vf.rogers.com/secure/version01/loginsuccess?from=digital
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Cookie:
+      - SMSESSION=1U8mGbS4FBMdzIPPu57H/sI7pcm5L3EUmcAOX2Vpa/pL4Q2gTeZF7XRAOGaHpjO6ErWih+VPkwvmvk7o8JocES7N83sEbQ5NWsGN4wKUp75ldQX5umqgybeHYjjSB4+/stkrXU+E7748nrMOzMUZLkIuOqg9QMHkZsbFW3gP9bvKPfUdsoml57u2Tgskilyyd576lKo9DXmL37EdV894fLZeFz2nv1ysRtozekekdsik+O+k3XqNBxd8HOH7X2KEYS+OvzOwyP/c1sQxrgNDRlvn8aNFsrxSXRyfkJKXEZHmklrv9DD6GjmaTcayv/Qxshj4ebLOuBrvHXh4yPPnbs75rp7FgcFom402KQ6+YnenGsgq+41r7ojw/ihHMwZxdEOVO1A43o9VZy3/XDQKW1dOePjCBDG/gMBi+PeXyhY263pcJCdwLhqUt7/q+dIkoRz6AYa2wfuprsuA4SIG9OBpWohzjQqKlEZTOeXtZRNbKAt9SgWzEcCgsiZ1Ee0CE933yDS5y4jHysfgd6AIsZFS0o4EdgplPOgeEUEnx65nC4zNq+45BRdfHmy/+wloO9QGDEGwwO9EYRJGy367ISu2buXWETNtZ+0p4eNo9ST5NuvdtFu2PRjP3Iz/G4GjeaeDqQ26B2gIr5IF5rA25yj4txSgNt5If5mZbZRFE7FJ5c0tO2ZlfsoneQfyI3TCMe7ZvHQWM5aeq31GmEyKGSKiC2X6tglqYLE/ST8vBMeFS5aRwIML7Io704El+cQy5FLTCooise5Wqh+KQ0yzIxeQUCOk5sAMHpM4b5bAoFApCfZKIGnHulVz8Acd6/gWQalnoKSCAgPK4Ycle+kuLpjW6RcQOvgDnwGHnP6E9cjaSnODTSdaCjl7Ki2hwFVG+6B6D8T+C1NoaX/3UR43cA1eznGL96ViNwNzignlo5EqVvlY41xoYm+hAoBc49jyXkJqplw+7JIldZolaiw7O5oITHmeXg0MJjwhq+DM4s+7uKfo0AtweN43e7rYdsjqIUVaKtn9GLEuJJ6PUd0FGw0mo8LtZuAUhVwjS4i4fN1p2Q0axVuUS+4c3+ACtDCQuY4ZXu/L8gr6CFQvUJNVYvAallDZoPcGkPaE6l+G86pOwnaEvo6gSwW5i9RTsTK2oLrEeoNix0Tw+NeHn2LkMmpYF7mvGpAQSFCL7w/Wf4bTrdW+URCrEea+gCTav4CkBG9o/kZsQsoMniI+A9AKY5W/Vv1rg+Xpei6EGBvA8e0x+Apl9OUl3aIMOWIeGsS/gSXwjcHWOkCTvY5jx2RtFM6ebBURD3bM8zpe3fVAPyu2Tf2IO/5Fa22Lv/qndgW/XJKBthDKyStlQDDxh/ooc7sxev0+YBPU6XwE5KPJidXBIiYx3JClVVWYxQ119QdR4CERBg+JIdM/WZr67aaTza6ckMMVauo4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 14 Oct 2014 19:01:20 GMT
+      Cache-Control:
+      - no-cache="Set-Cookie"
+      Content-Type:
+      - text/plain;charset=ISO-8859-1
+      X-Powered-By:
+      - Servlet/2.5 JSP/2.1
+      Set-Cookie:
+      - JSESSIONID=v8pkJ91WSkf997NlRN1T4VS61svVNBQ2bC5KwJ880bV1DvGxlQph!1598930489;
+        path=/
+      - sto-id-16671=GCJIKIMAEBBP; Expires=Tue, 14-Oct-2014 19:24:36 GMT; Path=/
+      - sto-id-47873-%3FVFSIN_PUB%3Fsg_nhlweb_qa1_8080=CAJGKIMAJABP; Expires=Tue,
+        14-Oct-2014 19:33:36 GMT; Path=/
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"status":{"resultCode":0,"developerMessage":"Login process is successful"},"data":{"userid":"gladAPITest334@rogers.com","guid":"9e74a8e5-d454-4417-a381-0cdf0d9c58aa","emailAddress":"gladAPITest334@rogers.com","language":"en"}}'
+    http_version: 
+  recorded_at: Tue, 14 Oct 2014 19:18:37 GMT
+- request:
+    method: get
+    uri: https://nhl-qa1.vf.rogers.com/secure/version01/entitlements?apiKey=JeE/5I%5B%22$?4CvA!(Z6hU0qWHKX6,K%5E&guid=9e74a8e5-d454-4417-a381-0cdf0d9c58aa&ipAddress=&productList=&scenario=1&serviceName=&stub=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Esf-User-Guid:
+      - 9e74a8e5-d454-4417-a381-0cdf0d9c58aa
+      Esf-User-Id:
+      - gladAPITest334@rogers.com
+      Esf-User-Lang:
+      - en
+      Esf-User-Mail:
+      - gladAPITest334@rogers.com
+      Params:
+      - ESF_USER_MAIL=gladAPITest334@rogers.com
+      Cookie:
+      - SMSESSION=1U8mGbS4FBMdzIPPu57H/sI7pcm5L3EUmcAOX2Vpa/pL4Q2gTeZF7XRAOGaHpjO6ErWih+VPkwvmvk7o8JocES7N83sEbQ5NWsGN4wKUp75ldQX5umqgybeHYjjSB4+/stkrXU+E7748nrMOzMUZLkIuOqg9QMHkZsbFW3gP9bvKPfUdsoml57u2Tgskilyyd576lKo9DXmL37EdV894fLZeFz2nv1ysRtozekekdsik+O+k3XqNBxd8HOH7X2KEYS+OvzOwyP/c1sQxrgNDRlvn8aNFsrxSXRyfkJKXEZHmklrv9DD6GjmaTcayv/Qxshj4ebLOuBrvHXh4yPPnbs75rp7FgcFom402KQ6+YnenGsgq+41r7ojw/ihHMwZxdEOVO1A43o9VZy3/XDQKW1dOePjCBDG/gMBi+PeXyhY263pcJCdwLhqUt7/q+dIkoRz6AYa2wfuprsuA4SIG9OBpWohzjQqKlEZTOeXtZRNbKAt9SgWzEcCgsiZ1Ee0CE933yDS5y4jHysfgd6AIsZFS0o4EdgplPOgeEUEnx65nC4zNq+45BRdfHmy/+wloO9QGDEGwwO9EYRJGy367ISu2buXWETNtZ+0p4eNo9ST5NuvdtFu2PRjP3Iz/G4GjeaeDqQ26B2gIr5IF5rA25yj4txSgNt5If5mZbZRFE7FJ5c0tO2ZlfsoneQfyI3TCMe7ZvHQWM5aeq31GmEyKGSKiC2X6tglqYLE/ST8vBMeFS5aRwIML7Io704El+cQy5FLTCooise5Wqh+KQ0yzIxeQUCOk5sAMHpM4b5bAoFApCfZKIGnHulVz8Acd6/gWQalnoKSCAgPK4Ycle+kuLpjW6RcQOvgDnwGHnP6E9cjaSnODTSdaCjl7Ki2hwFVG+6B6D8T+C1NoaX/3UR43cA1eznGL96ViNwNzignlo5EqVvlY41xoYm+hAoBc49jyXkJqplw+7JIldZolaiw7O5oITHmeXg0MJjwhq+DM4s+7uKfo0AtweN43e7rYdsjqIUVaKtn9GLEuJJ6PUd0FGw0mo8LtZuAUhVwjS4i4fN1p2Q0axVuUS+4c3+ACtDCQuY4ZXu/L8gr6CFQvUJNVYvAallDZoPcGkPaE6l+G86pOwnaEvo6gSwW5i9RTsTK2oLrEeoNix0Tw+NeHn2LkMmpYF7mvGpAQSFCL7w/Wf4bTrdW+URCrEea+gCTav4CkBG9o/kZsQsoMniI+A9AKY5W/Vv1rg+Xpei6EGBvA8e0x+Apl9OUl3aIMOWIeGsS/gSXwjcHWOkCTvY5jx2RtFM6ebBURD3bM8zpe3fVAPyu2Tf2IO/5Fa22Lv/qndgW/XJKBthDKyStlQDDxh/ooc7sxev0+YBPU6XwE5KPJidXBIiYx3JClVVWYxQ119QdR4CERBg+JIdM/WZr67aaTza6ckMMVauo4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 14 Oct 2014 19:13:25 GMT
+      Set-Cookie:
+      - JSESSIONID=tTBpJ91W8FjLG9q7TM1KgQxhyBpp6zJQTYlJgT8ncvTyzKnV5yHB!1598930489;
+        path=/
+      - SMSESSION=HDs58hqVtlI5MGoq2tfss5gH8kFol8F4IfA2U/pYU0ZXmCNOam3n/RvHYixt7NUDqivaiquGA+Zq0yK0zPxYnYpZCYStHVbWydn+kJ+wAZAgMYmF0WgPQQIKRiyF+07hz0ChB0TCuBcDrEXccYN9jBvvhcDxhHudj1oBtntimiOJStWFn/3/Y9m+qRieSQ7ZpymTe3MPqiE3EsHkblLkyXY4YRfo7asXVXU8DCDsD9fqyzexG7ue1bxeiQUnloQML+u2tCJmcrpNC5LA+mddudg+RrpKgCgwFlY9Bo0DYpNVjWbfRoZbPcfjjf49OQmFL+5ccFXDfKQrfu4MOU+XC4Fr3xdjxfilU3AsdTOsk2lRZzNYjUeUj2weocuDJb4oa5Qy4OiSNHM2PGvC8vwheJCVBLDOtrbqKclU9ealra8jgD8tcKG2HV1SSltBnpR7+iTWnej5VXZMPPkA2lGNjhHYMMbuaNidhBDjyzJimM+i/+zceqkk031E+eXnCZI5Za54gCpcS1C+3QCokgVEmbOfJc9h7QVyjqoT7H8g+RUFV8ijKhsRmW2BS92gqAPfPkM8diCyh+olg58qHWiALY1X9ynQNrneruQq1qKBtACW5b7Of5F712xl9E6FNqAR/srYTG/TWZ1YGNXGc8tHGrvqEGtD1TklPwYzOtuUEVFq6zuPYolrwHC+J/s496pG6w3QLsjZ6mzV3FL3OpUUS6KXPXkf6nb2wKJzFj2zOwqZmhtslBl5QbOKFeT0T7epFBehpKOiKqtg7A7lPAgJKRJ1XY5H1y6uPjIt0mdHzJ2zyo1tUbRnslIcFztKrFQSbb6ElkQ5Vi+8fs8im+Nhv8kM+QTnDRpTNL1ppSNj2z1b+QjrP06i6VzT4rfDZLrCTqr7YKl2cCLBlx6YqZhTRNKkkVFQZj0YRBslijaYxBRxjRpubfVUaJrRORpSY93fKjreC48d1NGJPbKw2ZeKQ+uVVJxJgmpAF42kxnUdWiA4HU1yL0uxWvs0F6q/fsoYJCCRyFItRJieCKyqzf0d6UzJKCeazmlVUmDslkv+xI5EvKU/Vth0Y00w285fcXmWWD4Yl8KeL9Ks78MtOOz9rqyST3L2f7LgWPOAYo+d4609Bn+Csg4w9Um9iS1Dw0hWh+rDvaD4IVPMZn9n9EgxoZnKD56sT1C2BQJQtxyioLzc8E9PBBxIGYFvnwZ8hQJrzaBsOTBQYaMJEKvugiIPkMdIQkGmMli5nJBlOQz8Ca35jqu5+lAhWj5LxEyZVcs11jzIaPgilRIag8WIo5IbAxU0IxEkUnjUhEPj2jokKDcscGuCL3V76rtAHYEmScimi4Cr1tIBXOCXIO6pVMdWjQqT6W6yYHQXBg33kBIQItqotgvYJ37J4ELIKrW5xJ8Nvfj1gAXfs4tVx/0cC8iTfjUKQMmAALWc;
+        path=/; domain=.rogers.com; secure; HTTPOnly
+      - sto-id-16671=GCJIKIMAEBBP; Expires=Tue, 14-Oct-2014 19:24:38 GMT; Path=/
+      - sto-id-47873-%3FVFSIN_PUB%3Fsg_nhlweb_qa1_8080=BPJGKIMAJABP; Expires=Tue,
+        14-Oct-2014 19:33:38 GMT; Path=/
+      Cache-Control:
+      - no-cache="Set-Cookie"
+      Content-Type:
+      - text/plain;charset=ISO-8859-1
+      X-Powered-By:
+      - Servlet/2.5 JSP/2.1
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"status":{"resultCode":0,"data":{"entitlements":[{"entitlement":"shomi","level":"eligible","code":"1"}],"accounts":[{"rogersAccountToken":"CAN:230314689702|PROVINCE:ON|TYPE:Cable|FIRSTNAME:NHLBILFF|LASTNAME:BILLINGHHHH","rogersAccountDescriptionEn":"230314689702(Cable)","rogersAccountDescriptionFr":"230314689702(Cable)","rogersAccountTypeEn":"Cable","rogersAccountTypeFr":"Cable"}]}}'
+    http_version: 
+  recorded_at: Tue, 14 Oct 2014 19:18:38 GMT
+- request:
+    method: get
+    uri: https://nhl-qa1.vf.rogers.com/secure/version01/account?GUID=9e74a8e5-d454-4417-a381-0cdf0d9c58aa&accountNumberOnBill=230314689702&accountPIN=&apiKey=JeE/5I%5B%22$?4CvA!(Z6hU0qWHKX6,K%5E&dateOfBirth=&emailAddress=&firstName=&lastName=&phone=&postalCode=M3B%203B6&product=shomi&serviceName=shomi
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Esf-User-Guid:
+      - 9e74a8e5-d454-4417-a381-0cdf0d9c58aa
+      Esf-User-Id:
+      - gladAPITest334@rogers.com
+      Esf-User-Lang:
+      - en
+      Esf-User-Mail:
+      - gladAPITest334@rogers.com
+      Params:
+      - ESF_USER_MAIL=gladAPITest334@rogers.com
+      Cookie:
+      - SMSESSION=1U8mGbS4FBMdzIPPu57H/sI7pcm5L3EUmcAOX2Vpa/pL4Q2gTeZF7XRAOGaHpjO6ErWih+VPkwvmvk7o8JocES7N83sEbQ5NWsGN4wKUp75ldQX5umqgybeHYjjSB4+/stkrXU+E7748nrMOzMUZLkIuOqg9QMHkZsbFW3gP9bvKPfUdsoml57u2Tgskilyyd576lKo9DXmL37EdV894fLZeFz2nv1ysRtozekekdsik+O+k3XqNBxd8HOH7X2KEYS+OvzOwyP/c1sQxrgNDRlvn8aNFsrxSXRyfkJKXEZHmklrv9DD6GjmaTcayv/Qxshj4ebLOuBrvHXh4yPPnbs75rp7FgcFom402KQ6+YnenGsgq+41r7ojw/ihHMwZxdEOVO1A43o9VZy3/XDQKW1dOePjCBDG/gMBi+PeXyhY263pcJCdwLhqUt7/q+dIkoRz6AYa2wfuprsuA4SIG9OBpWohzjQqKlEZTOeXtZRNbKAt9SgWzEcCgsiZ1Ee0CE933yDS5y4jHysfgd6AIsZFS0o4EdgplPOgeEUEnx65nC4zNq+45BRdfHmy/+wloO9QGDEGwwO9EYRJGy367ISu2buXWETNtZ+0p4eNo9ST5NuvdtFu2PRjP3Iz/G4GjeaeDqQ26B2gIr5IF5rA25yj4txSgNt5If5mZbZRFE7FJ5c0tO2ZlfsoneQfyI3TCMe7ZvHQWM5aeq31GmEyKGSKiC2X6tglqYLE/ST8vBMeFS5aRwIML7Io704El+cQy5FLTCooise5Wqh+KQ0yzIxeQUCOk5sAMHpM4b5bAoFApCfZKIGnHulVz8Acd6/gWQalnoKSCAgPK4Ycle+kuLpjW6RcQOvgDnwGHnP6E9cjaSnODTSdaCjl7Ki2hwFVG+6B6D8T+C1NoaX/3UR43cA1eznGL96ViNwNzignlo5EqVvlY41xoYm+hAoBc49jyXkJqplw+7JIldZolaiw7O5oITHmeXg0MJjwhq+DM4s+7uKfo0AtweN43e7rYdsjqIUVaKtn9GLEuJJ6PUd0FGw0mo8LtZuAUhVwjS4i4fN1p2Q0axVuUS+4c3+ACtDCQuY4ZXu/L8gr6CFQvUJNVYvAallDZoPcGkPaE6l+G86pOwnaEvo6gSwW5i9RTsTK2oLrEeoNix0Tw+NeHn2LkMmpYF7mvGpAQSFCL7w/Wf4bTrdW+URCrEea+gCTav4CkBG9o/kZsQsoMniI+A9AKY5W/Vv1rg+Xpei6EGBvA8e0x+Apl9OUl3aIMOWIeGsS/gSXwjcHWOkCTvY5jx2RtFM6ebBURD3bM8zpe3fVAPyu2Tf2IO/5Fa22Lv/qndgW/XJKBthDKyStlQDDxh/ooc7sxev0+YBPU6XwE5KPJidXBIiYx3JClVVWYxQ119QdR4CERBg+JIdM/WZr67aaTza6ckMMVauo4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 14 Oct 2014 19:13:38 GMT
+      Set-Cookie:
+      - JSESSIONID=gXQCJ91CyLdTK3YSGSLwgBDPMQT9h2Vcb22v9lM5WGYs3TxnrGb2!1598930489;
+        path=/
+      - SMSESSION=+NAhPFixM9ONepTOjZe3iNevp79wzj9udN4J0tWOqIY/eLC2hefNjjEY7tY8LC1Ei0XQFhKInsgCLhqjudQlfOjGWRAIJ5E+jX+2I15S/aiTyvnD+Y+kPjBk+XBJsZANCJjHVxti8UL0TfgSXKqVAUp1lXl6F9sgnjsvJFjE1MvSbT5FXmbIgsXdtoEWPCiXhIjr34HittfTWcPqai2qrK4fQQALIio9K+9SzFYU2bMy+45y6r9+E72aV98xT0gZHa+5XfqYMMyGr6udSjmqIDdZ/bVE09TmfiONZkRpZbLQP3JP1u8TtspXB2N0vlbp5tL8SKN1mZL9jJIwkFP1Wf1948LxE7D3qfHDJcYd0MYaOTU1EKXxa+gG2yhQpVisFxsQElqm7yFcTTOP2XXHs90pFTlfTaaPosydeGbFffpAP1JdR0kn4eo2HGFPjPDV1IO+IojnSPW1PpxR0mx3yP/H4Aw9ujX4kXgOmzmoMff/bLqKU4xbEd0dqFHFqcjCHKKjO3yDRirL5XIyTJkH5XEkB3wNUBbeMlpjxKa6LeYM6jBAaPacj5pw6tlEw3/IX9jKcxVy/ckRNEIiTggBJoop/6sR6kDBK47JYQTbFc98nvSG0mdgs2zHVvYwUYB8sCSCzJnV9QQ6Xhq+rNjoVknxeMuWdRcjUh+mUKhiFyqjWK5POJzCme5S5UPvhcH72qEPFk73Lfm2mewuEkzplLQGgXs6LxLs4iL83FixfvcfSUdU5QtGZf7zUHLHpldobHprVvGMVpJ9MrmwZBJ9pD+nDZILX2W0iW6Lbi3vrHfUUOLhUDnGAxKY8GywFnehJOvukSO6LB8L8BlDIxyXoxis0hEnNNQluHz73H8s6m1R6VF6F8hreAOQuR4WzCeWpEFCo0pgh0prKI2K/dKBYkrFXXGQZUBsfhZVANHZ2LP36BXPVQrQcFK2hac2TATRqO6jkm/h20b0RFBgpM9u/i+BcllfsqMYdF6NVv9lMnagAkT4N2Qsau/rtg1cCfnh7mO5pMS9Njdcaq3uF5tQubmJfT2josPPiiqs/UEwPgmx0ydyNmiXX4n5HGBfjrO+qGMCBSUTxvFXAAEo4Fit+WcyMCcs/BEX+wpAgMcDR4ysKTdgXFFd5pxDMAntkidikiNNkX4L/evsuUz9gPu5LHVGKPCH6Im8vKjtnCUK4XN8HNW7SM4+snDknsZq+fz41SzyYPhOh2ViONLNOJWoL84SgMgfbaf/6Em3mEHslVGAnEJ52O3MALbKnCfHxo4lNq4hlz/GsKxNBlQmlV72f+oJcQ85NDhwr06CMceJUsbu4msPg6gkw4VyaVqRwiWQ0tTTu5dgUfcK14SyfJHG3MvueWKcm9/iHNIUnaUDmDMy7SGullgtqV6Gb+Vcjr6yaqA0dUxJ9MPDKSYNECfVCeyGwDdMrcKg;
+        path=/; domain=.rogers.com; secure; HTTPOnly
+      - sto-id-16671=GCJIKIMAEBBP; Expires=Tue, 14-Oct-2014 19:24:49 GMT; Path=/
+      - sto-id-47873-%3FVFSIN_PUB%3Fsg_nhlweb_qa1_8080=BPJGKIMAJABP; Expires=Tue,
+        14-Oct-2014 19:33:49 GMT; Path=/
+      Cache-Control:
+      - no-cache="Set-Cookie"
+      Content-Type:
+      - text/plain;charset=ISO-8859-1
+      X-Powered-By:
+      - Servlet/2.5 JSP/2.1
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"status":{"resultCode":0}, "data" : {"numberOfResults": 1, "tokenFound":
+        true, "rogersAccount": [{"rogersAccountToken": "1234123", "rogersAccountNumber"
+        : "230314694609"}]}}'
+    http_version: 
+  recorded_at: Tue, 14 Oct 2014 19:18:50 GMT
+- request:
+    method: get
+    uri: https://nhl-qa1.vf.rogers.com/auth/common/version01/offers?apiKey=JeE/5I%5B%22$?4CvA!(Z6hU0qWHKX6,K%5E&postalCode=&productList=&provinceOfResidence=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Esf-User-Lang:
+      - EN
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 14 Oct 2014 20:18:39 GMT
+      Cache-Control:
+      - no-cache="Set-Cookie"
+      Content-Type:
+      - text/plain;charset=ISO-8859-1
+      X-Powered-By:
+      - Servlet/2.5 JSP/2.1
+      Set-Cookie:
+      - JSESSIONID=j1jHJ9Gf2BrykJZ6nysCJsNskYvzzM2QGHW8RTZcnjyQjZwvqBg5!1598930489;
+        path=/
+      - sto-id-16671=GCJIKIMAEBBP; Expires=Tue, 14-Oct-2014 20:29:53 GMT; Path=/
+      - sto-id-47873-%3FVFSIN_PUB%3Fsg_nhlweb_qa1_8080=BPJGKIMAJABP; Expires=Tue,
+        14-Oct-2014 20:38:53 GMT; Path=/
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"status":{"resultCode":0,"developerMessage":"Offers received successfully"},"data":{"offers":[{"productCode":"shomi",
+        "offerId":"2c92c0f848a2eacf0148a44a73be59b3","price":8.99,"descriptionEn":"Shomi for Paying Customers; includes a 1 month Free Trial",
+        "descriptionFr":"Passe de la saison de RGCL","frequency":"onetime","taxes":0.0},{"productCode":"shomi",
+        "offerId":"2c92c0f948bfe18b0148d235a0127d38","price":8.99,"descriptionEn":"Shomi for Paying Customers; Does NOT include a 1 month Free Trial",
+        "descriptionFr":"Passe del la mi-saison de RGCL","frequency":"onetime","taxes":0.0}]}}'
+    http_version: 
+  recorded_at: Tue, 14 Oct 2014 20:23:53 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,31 @@
+<% content_for :title, t('orders.review_order') %>
+
+<%= render "pay_details_#{@order.billing_option}" %>
+
+<%= simple_form_for @order, remote: true do |f| %>
+  <%= f.input :auto_renew, as: :hidden %>
+  <%= f.input :billing_option, as: :hidden %>
+  <%= f.input :birthdate, as: :hidden %>
+  <%= f.input :cc_token, as: :hidden %>
+  <%= f.input :cc_type, as: :hidden %>
+  <%= f.input :city, as: :hidden %>
+  <%= f.input :first_name, as: :hidden %>
+  <%= f.input :full_name, as: :hidden %>
+  <%= f.input :last_name, as: :hidden %>
+  <%= f.input :masked_cc, as: :hidden %>
+  <%= f.input :offer_id, as: :hidden %>
+  <%= f.input :optin_email, as: :hidden %>
+  <%= f.input :phone_number, as: :hidden %>
+  <%= f.input :postal_code, as: :hidden %>
+  <%= f.input :promo_code, as: :hidden %>
+  <%= f.input :code_type, as: :hidden %>
+  <%= f.input :province, as: :hidden %>
+  <%= f.input :rogers_account_token, as: :hidden %>
+  <%= f.input :street, as: :hidden %>
+  <%= f.input :tos, as: :hidden %>
+  <%= f.input :tos2, as: :hidden %>
+  <%= f.input :optin, as: :hidden %>
+  <%= f.input :optin_account_token, as: :hidden %>
+
+  <p><%= link_to t('btn.cancel'), profiles_path, class: 'btn btn-cancel' %> <%= f.button :submit, t('orders.submit'), data: { disable_with: t('pages.index.please_wait') } %></p>
+<% end %>

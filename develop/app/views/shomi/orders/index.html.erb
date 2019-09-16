@@ -1,0 +1,65 @@
+<% content_for :body_start do %>
+  <div id="track2"></div>
+  <div id="track3"></div>
+<% end %> 
+
+<%= render 'buy' %>
+
+<section class="content-wrapper submit-wrapper">
+
+	<h2 class="h-r size-L"><%= t('orders.payment_method').html_safe %></h2>
+
+<%= render 'rogers_bill' %>
+
+<% content_for :support_module_class, 'hidden' %>
+
+</section>
+
+<aside id="footnote" class="footnote clear" role="complementary">
+    <h3><%= t('legal.title').html_safe %></h3>
+    <p><%= t("legal.terms1").html_safe %></p>
+    <p><%= t("legal.terms2").html_safe %></p>
+</aside>
+
+<%# START: Inject these scripts into the Footer %>
+<% content_for :footer do %>
+    <script>
+        var track2js = '', track3js = '';
+        var axel = Math.random() + "", a = axel * 10000000000000; track2js += '<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=buI1julI;ord=' + a + '?" class="hidden"></iframe>';
+        var axel = Math.random() + "", a = axel * 10000000000000; track3js += '<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger004;ord=' + a + '?" class="hidden"></iframe>';
+
+        document.getElementById('track2').innerHTML = track2js;
+        document.getElementById('track3').innerHTML = track3js;
+    </script>
+
+    <%# Facebook / Twitter Conversion Code for Registration Pixel - Place After My Rogers Login %>
+    <script>
+        window._fbq.push(['track', '6021840383737', {'value':'0.01','currency':'CAD'}]);
+        twttr.conversion.trackPid('l5170');
+    </script>
+
+    <%# <script>twttr.conversion.trackPid('l5170');</script> %>
+    <noscript>
+        <!-- track1 --><iframe class="hidden" src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=buI1julI;ord=1"></iframe>
+        <!-- track2 --><iframe class="hidden" src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger004;ord=1"></iframe>
+
+        <img class="hidden" height="1" width="1" alt="" src="https://www.facebook.com/tr?ev=6021840383737&amp;cd[value]=0.01&amp;cd[currency]=CAD&amp;noscript=1">
+        <img class="hidden" height="1" width="1" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l5170&amp;p_id=Twitter">
+        <img class="hidden" height="1" width="1" alt="" src="//t.co/i/adsct?txn_id=l5170&amp;p_id=Twitter">
+    </noscript>
+
+<% end %>
+
+<%#
+<script>
+    var track2js = '';
+    var axel = Math.random() + "", a = axel * 10000000000000; track2js += '<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=buI1julI;ord=' + a + '?" class="hidden"></iframe>';
+    document.getElementById('track2').innerHTML = track2js;
+</script>
+
+<script>
+    var track3js = '';
+    var axel = Math.random() + "", a = axel * 10000000000000; track3js += '<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger004;ord=' + a + '?" class="hidden"></iframe>';
+    document.getElementById('track3').innerHTML = track3js;
+</script>
+%>

@@ -1,0 +1,44 @@
+
+
+.app-button-list{
+    display: table;
+    font-family: $fonts-light;
+    list-style: none;
+    margin: 0 auto 2em;
+    overflow: hidden;
+    padding: 0;
+    table-layout: fixed;
+    text-align: left;
+    }
+.app-button-list li{
+    display: table-cell;
+    margin-bottom: 5px;
+    padding-right: 10px;
+    vertical-align: middle;
+    height: 51px;
+    }
+
+#app-buttons {
+    display: none;
+    }
+
+.app-devices {
+    background: transparent asset-url('/assets/content/devices.png') no-repeat scroll 50% 4.5em;
+    text-align: center;
+    width: 85%;
+    margin: 0 auto;
+
+    img {
+        max-width: 100%;
+        margin-bottom: 2em;
+    }
+
+}
+
+.app-devices .wfl{ margin-top: 9em }
+
+// buttons within content
+.content-buttons{
+    padding: .7em 0 1em 2em;
+    margin: 1em 0 0;
+    }

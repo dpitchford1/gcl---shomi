@@ -1,0 +1,133 @@
+<% content_for :title, t('titles.home').html_safe %>
+
+<% content_for :body_start do %>
+	<div id="track1"></div>
+	<div id="track2"></div>
+	<div id="track3"></div>
+	<div id="track4"></div>
+<% end %>
+
+<% content_for :footer do %>
+	<!-- track1 -->
+	<script>
+		var track1js = '';
+		var axel = Math.random() + "", a = axel * 10000000000000; track1js += '<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=2j82ymEC;ord=' + a + '?" class="hidden"></iframe>';
+		document.getElementById('track1').innerHTML = track1js;
+	</script>
+	<noscript><iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=2j82ymEC;ord=1?" class="hidden"></iframe></noscript>
+
+	<!-- track2 -->
+	<script>
+		var track2js = '';
+		var axel = Math.random() + "", a = axel * 10000000000000; track2js += '<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=VFwljxQ8;ord=' + a + '?" class="hidden"></iframe>';
+		document.getElementById('track2').innerHTML = track2js;
+	</script>
+	<noscript><iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=VFwljxQ8;ord=12?" class="hidden"></iframe></noscript>
+
+	<!-- track3 -->
+	<script>
+		var track3js = '';
+		var axel = Math.random() + "", a = axel * 10000000000000; track3js += '<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger003;ord=' + a + '?" class="hidden"></iframe>';
+		document.getElementById('track3').innerHTML = track3js;
+	</script>
+	<noscript><iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger003;ord=12?" class="hidden"></iframe></noscript>
+
+	<!-- track4 -->
+	<script>
+		var track4js = '';
+		var axel = Math.random() + "", a = axel * 10000000000000; track4js += '<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=shomi00;ord=' + a + '?" class="hidden"></iframe>';
+		document.getElementById('track4').innerHTML = track4js;
+	</script>
+	<noscript><iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=shomi00;ord=12?" class="hidden"></iframe></noscript>
+
+<% end %>
+
+<main class="region hero cf" role="main">
+	<%= render 'module_hero_main' %>
+</main>
+
+<% if !@current_session.logged? %>
+<section class="fancy-promos span-of-3 has--ul-fancy fluid">
+	<h2 class="center size-XL rogers-red h-l"><%= t("promos.heading").html_safe %></h2>
+
+	<%= render 'promo_signin' %>
+
+	<%= render 'promo_getrogers' %>
+
+	<div class="region promo-code-full has--fancy-bot" id="enter-promo-code">
+		<%= render 'profiles/promo_code_form', use_styling: "landing_page"%>
+	</div>
+
+	<%= section(:nextbox) do %>
+		<h2 class="center size-L h-l"><%= t("promos.nextbox").html_safe %></h2>
+	<%end%>
+	
+</section>
+<% end %>
+
+
+
+<%# START: Complementary Content %>
+<aside class="app-devices fluid" role="complementary">
+	<%# START: App downloads %>
+	<%= render 'module_app_download' %>
+</aside>
+
+<section id="footnote" class="footnote fluid">
+	<h3><%= t('legal.title').html_safe %></h3>
+	<p><%= t("legal.terms1").html_safe %></p>
+	<p><%= t("legal.terms2").html_safe %></p>
+</section>
+
+<% content_for :link_account_faq_content do %>
+  <%= render "layouts/link_account_faq" %>
+<% end %>
+
+<% content_for :live_chat_content do %>
+  <%= render "layouts/live_chat" %>
+<% end %>
+
+<!--[if lte IE 8]>
+<div id="ltie8" class="ltie8">
+    <a id="closeIE" href="#main-content" class="ico i-m i--close float-l" style="margin-right:15px;" data-dismiss="ltie8" role="button"><%= t("btn.close") %></a>
+    <p><%= t("legal.browser_warning").html_safe %></p>
+    <script>
+    $('main').addClass('fluid');	
+	addLoadEvent(function() {
+	    $('#closeIE').on('click', function(){
+	        $('#ltie8').hide();
+	        return false;
+	    });
+	});
+</script>
+</div>
+<![endif]-->
+
+<!-- Google Code for Shomi.rogers.com Landing Page Conversion Page -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 964214869;
+var google_conversion_language = "en";
+var google_conversion_format = "2";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "9GsqCO-41lYQ1YDjywM";
+var google_conversion_value = 1.00;
+var google_conversion_currency = "CAD";
+var google_remarketing_only = false;
+/* ]]> */
+</script>
+<div style="display: none">
+	<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+</div>	
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/964214869/?value=1.00&amp;currency_code=CAD&amp;label=9GsqCO-41lYQ1YDjywM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+<!-- Twitter pixel for Shomi.rogers.com -->
+<script src="//platform.twitter.com/oct.js" type="text/javascript"></script>
+<script type="text/javascript">
+twttr.conversion.trackPid('l57ex');</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l57ex&p_id=Twitter" />
+<img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=l57ex&p_id=Twitter" /></noscript>

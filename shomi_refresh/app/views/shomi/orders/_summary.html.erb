@@ -1,0 +1,29 @@
+<% show_promo ||= false %>
+<% if @offer && !@order.optin %>
+
+<h3 class="h-med sizes-M w-ul xlg-m"><%= t('orders.summary.subscription_details') %></h3>
+<table class="order-table" summary="Review your order">
+    <caption class="hide-text"><%= t('orders.summary.here_is_what_is_going_to_happen') %></caption>
+    <tbody>
+        <tr class="t-row">
+            <td class="tleft sizes-XSM">
+                <p><strong class="wfm">shomi</strong></p>
+                <small><%= t('orders.first_thirty_days') %></small>
+            </td>
+            <td class="tright sizes-XSM h-lgt">
+                <%= t('orders.included') %>
+            </td>    
+        </tr>  
+        <tr class="t-row">
+            <td class="tleft sizes-XSM">
+              <p><strong class="wfm">shomi</strong></p>
+              <small><%= t('orders.date_onward', date: l(Date.today, format: :long)) %></small>
+            </td>
+            <td class="tright sizes-XSM h-lgt">
+              <p><%= number_to_currency(@offer.price, separator: '.', delimiter: ',', unit: '$') %> <%= t('orders.per_month_text') %></p>
+              <small><%= t('orders.plus_applicable_taxes') %></small>
+            </td>    
+        </tr>
+    </tbody>
+</table>
+<% end %>

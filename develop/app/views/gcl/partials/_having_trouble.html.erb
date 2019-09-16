@@ -1,0 +1,14 @@
+<div class="having-trouble">
+	<h3 class="sizes-S"><%= t("helpers.chat.heading").html_safe %></h3>
+
+	<div class="info info-lg info--tertiary">
+		<h4 class="h-sb sizes-XSM"><%= t("helpers.chat.title").html_safe %></h4>
+		<p class="copy-L lg-m"><%= t("helpers.chat.description").html_safe %></p>
+
+		<% if I18n.locale == I18n.default_locale %>
+    	<p><a class="btn btn-secondary" href="http://rogershelp.com/customerserv/livechatsupport/index.php?source=701&lctc=701%7C01%7Cws%7CGCL_portal_Support_en" rel="external"><%= t("text.live_chat").html_safe %></a></p>
+    <% else %>
+    	<p><a class="btn btn-secondary" href="http://rogershelp.com/customerserv/livechatsupport/index.php?source=751&lctc=751%7C01%7Cws%7CGCL_portal_Support_fr" rel="external"><%= t("text.live_chat").html_safe %></a></p>
+    <%end%>
+	</div>
+</div>

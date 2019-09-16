@@ -1,0 +1,52 @@
+<% content_for :title, t('orders.review_order') %>
+
+<%= render partial: "orders/pay_details_#{@order.billing_option}" %>
+
+<%= simple_form_for @order, remote: true do |f| %>
+    <%= f.input :authenticity_token, as: :hidden, input_html: { value: form_authenticity_token } %>
+    <%= f.input :auto_renew, as: :hidden %>
+    <%= f.input :billing_option, as: :hidden %>
+
+  <% if !@current_session.try(:latest_order).try(:order_attributes).nil? %>
+    <%= f.input :order_id, as: :hidden, input_html: {value: @current_session.latest_order.order_attributes.fetch(:order, {}).fetch(:order_id, nil)} %>
+  <% end %>
+
+    <%= f.input :operation, as: :hidden %>
+    <%= f.input :offer_type, as: :hidden %>
+    <%= f.input :birthdate, as: :hidden %>
+    <%= f.input :cc_token, as: :hidden %>
+    <%= f.input :cc_type, as: :hidden %>
+    <%= f.input :city, as: :hidden %>
+    <%= f.input :first_name, as: :hidden %>
+    <%= f.input :full_name, as: :hidden %>
+    <%= f.input :last_name, as: :hidden %>
+    <%= f.input :masked_cc, as: :hidden %>
+    <%= f.input :offer_id, as: :hidden %>
+    <%= f.input :optin_email, as: :hidden %>
+
+    <%= f.input :phone_number, as: :hidden  %>
+    <%= f.input :postal_code, as: :hidden %>
+    <%= f.input :promo_code, as: :hidden %>
+    <%= f.input :code_type, as: :hidden %>
+    <%= f.input :desc, as: :hidden %>
+    <%= f.input :province, as: :hidden %>
+    <%= f.input :rogers_account_token, as: :hidden %>
+    <%= f.input :street, as: :hidden %>
+    <%= f.input :address2, as: :hidden %>
+    <%= f.input :tos, as: :hidden %>
+    <%= f.input :tos2, as: :hidden %>
+    <%= f.input :campaign_identifier, as: :hidden, input_html: { value: session[:cid] } %>
+
+  <%= f.input :loyalty_code, as: :hidden %>
+  <%= f.input :membership_number, as: :hidden %>
+  <%= f.input :term_type, as: :hidden %>
+  <%= f.input :membership_type, as: :hidden %>
+
+
+  <div class="general-form">
+    <div class="tos-width"><%= f.button :submit, t('orders.submit') %></div>
+    <div class="submission"><%= link_to t('btn.cancel'), new_order_path(order: @order.attributes), class: 'btn btn-cancel' %></div>
+  </div>
+<% end %>
+
+

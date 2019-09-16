@@ -1,0 +1,41 @@
+<section class="span-of-4 lazy-img" id="gcl-features">
+    <h2 class="h-lgt sizes-L text-center useless-layout1"><%= t("promos.features.features_heading").html_safe %></h2>
+
+    <article class="feature is--promo">
+        <span class="feature-img img--isPromo" aria-hidden="true" data-src="<%= asset_path 'content/feature-1.jpg' %>" data-alt="<%= t("promos.features.feature1.heading") %>" data-width="220" data-height="119"></span>
+        
+        <div class="feature-body">
+            <h3 class="sizes-SM"><%= t("promos.features.feature1.heading").html_safe %></h3>
+            <p class="promo-excerpt"><%= t("promos.features.feature1.copy").html_safe %></p>
+        </div>
+    </article>
+    <article class="feature is--promo">
+        <span class="feature-img img--isPromo" aria-hidden="true" data-src="<%= asset_path 'content/feature-2.jpg' %>" data-alt="<%= t("promos.features.feature2.heading") %>" data-width="200" data-height="119"></span>
+        
+        <div class="feature-body">
+            <h3 class="sizes-SM"><%= t("promos.features.feature2.heading").html_safe %></h3>
+            <p class="promo-excerpt"><%= t("promos.features.feature2.copy").html_safe %></p>
+        </div>
+    </article>
+    <article class="feature is--promo">
+    <% if I18n.locale == I18n.default_locale %>
+        <span class="feature-img img--isPromo" aria-hidden="true" data-src="<%= asset_path 'content/feature-3.png' %>" data-alt="<%= t("promos.features.feature3.heading").html_safe %>" data-width="200" data-height="119"></span>
+    <% else %>
+        <span class="feature-img img--isPromo" aria-hidden="true" data-src="<%= asset_path 'content/feature-3-fr.jpg' %>" data-alt="<%= t("promos.features.feature3.heading").html_safe %>" data-width="200" data-height="119"></span>
+    <% end %>
+        
+        <div class="feature-body">
+            <h3 class="sizes-SM"><%= t("promos.features.feature3.heading").html_safe %></h3>
+            <p class="promo-excerpt"><%= t("promos.features.feature3.copy").html_safe %></p>
+        </div>
+    </article>
+    <article class="feature is--promo">
+        <span class="feature-img img--isPromo" aria-hidden="true" data-src="<%= asset_path 'content/feature-4.jpg' %>" data-alt="<%= t("promos.features.feature4.heading") %>" data-width="200" data-height="119"></span>
+        
+        <div class="feature-body">
+            <h3 class="sizes-SM"><%= t("promos.features.feature4.heading").html_safe %></h3>
+            <p class="promo-excerpt"><%= t("promos.features.feature4.copy").html_safe %></p>
+        </div>
+    </article>
+    <p class="clear copy-S"><%= t("promos.features.features_footer").html_safe %></p>
+</section>

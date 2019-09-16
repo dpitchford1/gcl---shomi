@@ -1,0 +1,79 @@
+.alert.is-animated {
+        opacity: 0;
+        animation: fadeInOut 8s;
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        }
+@keyframes fadeInOut {
+        0%  { opacity: 0; }
+        15% { opacity: 1; }
+        95% {
+            opacity: 1;
+            -webkit-transform: translate3d(-50%, 0);
+            transform: translate(-50%, 0);
+            }
+        100% {
+            opacity: 0;
+            -webkit-transform: translate(-50%, -50px);
+            transform: translate(-50%, -50px);
+            }
+    }
+
+.alert.is-persistent {
+    opacity: 1;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    }
+
+/* $ 0.0 Document setup
+====================================================================== */
+    html{
+        text-rendering: optimizeLegibility;
+        }
+    /* tweaks */
+    @media (max-width: 33.333333em){ /* 480px */
+        html{ 
+            -webkit-overflow-scrolling: touch; 
+            -webkit-tap-highlight-color: #ebebeb; 
+            }
+    }
+    body{  
+        min-height:100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        position: relative; 
+        z-index: 0;
+        }
+        .no-js .page-bg{
+            background-size: 100% auto;
+            }
+
+    /* Global Setup
+    ---------------------------------------------- */
+    div, header, footer, aside, nav, section, article{ overflow: hidden; position: relative; }
+
+    /* Global Headings Setup
+    ---------------------------------------------- */
+    h1, h2, h3, h4, h5, h6{ font-weight: normal; margin-top: 0; margin-bottom: 0; } 
+    h1 small, h2 small, h3 small, h4 small, h5 small, h6 small{ font-family: $font-reg; font-style: normal; text-transform: none; }
+
+    /* Links & Cursors
+    ---------------------------------------------- */
+    /* Cursors 
+    ---------------------------------------------- */
+    label, select, .pointer, button, html input[type="button"], .submit, input[type="reset"], input[type="submit"]{ cursor: pointer; }
+
+
+    /* Links
+    ---------------------------------------------- */
+    a           { background: transparent; text-decoration: none; color: $link-color; }
+    a:hover     { text-decoration: underline; }
+    a:focus     { text-decoration: underline; outline: none; color: $callout; }
+    a:active    { color: inherit; background-color: transparent; }
+
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{ display: block; color: $body-color; text-decoration: none; }
+    h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover{ color: $callout; }
+

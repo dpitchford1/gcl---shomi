@@ -1,0 +1,178 @@
+/* ===========================================================================
+
+	debug.css
+	* Helps you finding classes, that are not necessary.
+	* Extends with basic html element, attribute & definition help.
+
+	Note: This plugin will be of no use in in *Internet Explorer*, or any 
+	 browser versions prior to the following, as they doesn't support outline.
+	 * Firefox 1.0
+	 * Opera 7.0
+	 * Konquerer 3.4
+	 * Safari 1.2
+
+=========================================================================== */
+
+/* ----------------------------------------------------
+	Critical Elements
+	 outlined cyan
+	 not valid or empty
+---------------------------------------------------- */
+
+	/*
+	Invalid nesting of block level elements
+	*/
+	p ul,p ol,p li,p address,p blockquote,p center,p dir,p div,p dl,p fieldset,p form,p h1,p h2,p h3,p h4,p h5,p h6,p isindex,p menu,p noframes,p p,p pre,p table
+	{ outline: 1px solid cyan; }
+	
+	/*
+	Invalid usage of universal attributes
+	*/
+	base[class],basefont[class],head[class],meta[class],param[class],script[class],style[class],title[class],
+	base[id],head[id],meta[id],script[id],style[id],title[id],
+	base[style],basefont[style],head[style],meta[style],param[style],script[style],style[style],title[style],
+	base[title],basefont[title],head[title],meta[title],param[title],script[title],style[title],title[title],
+	/* Int. handlers */
+	applet[dir],base[dir],basefont[dir],br[dir],frame[dir],frameset[dir],hr[dir],iframe[dir],param[dir],script,
+	applet[lang],base[lang],basefont[lang],br[lang],frame[lang],frameset[lang],hr[lang],iframe[lang],meta[lang],param[lang],script[lang],
+	/* Even handlers */
+	applet[onclick],base[onclick],basefont[onclick],bdo[onclick],br[onclick],font[onclick],frame[onclick],frameset[onclick],head[onclick],html[onclick],iframe[onclick],isindex[onclick],param[onclick],script style[onclick],title[onlick],
+	applet[ondblclick],base[ondblclick],basefont[ondblclick],bdo[ondblclick],br[ondblclick],font[ondblclick],frame[ondblclick],frameset[ondblclick],head[ondblclick],html[ondblclick],iframe[ondblclick],isindex[ondblclick],param[ondblclick],script style[ondblclick],title[ondblclick],
+	applet[onmousedown],base[onmousedown],basefont[onmousedown],bdo[onmousedown],br[onmousedown],font[onmousedown],frame[onmousedown],frameset[onmousedown],head[onmousedown],html[onmousedown],iframe[onmousedown],isindex[onmousedown],param[onmousedown],script style[onmousedown],title[onmousedown],
+	applet[onmouseup],base[onmouseup],basefont[onmouseup],bdo[onmouseup],br[onmouseup],font[onmouseup],frame[onmouseup],frameset[onmouseup],head[onmouseup],html[onmouseup],iframe[onmouseup],isindex[onmouseup],param[onmouseup],script style[onmouseup],title[onmouseup],
+	applet[onmouseover],base[onmouseover],basefont[onmouseover],bdo[onmouseover],br[onmouseover],font[onmouseover],frame[onmouseover],frameset[onmouseover],head[onmouseover],html[onmouseover],iframe[onmouseover],isindex[onmouseover],param[onmouseover],script style[onmouseover],title[onmouseover],
+	applet[onmousemove],base[onmousemove],basefont[onmousemove],bdo[onmousemove],br[onmousemove],font[onmousemove],frame[onmousemove],frameset[onmousemove],head[onmousemove],html[onmousemove],iframe[onmousemove],isindex[onmousemove],param[onmousemove],script style[onmousemove],title[onmousemove],
+	applet[onmouseout],base[onmouseout],basefont[onmouseout],bdo[onmouseout],br[onmouseout],font[onmouseout],frame[onmouseout],frameset[onmouseout],head[onmouseout],html[onmouseout],iframe[onmouseout],isindex[onmouseout],param[onmouseout],script style[onmouseout],title[onmouseout],
+	applet[onkeypress],base[onkeypress],basefont[onkeypress],bdo[onkeypress],br[onkeypress],font[onkeypress],frame[onkeypress],frameset[onkeypress],head[onkeypress],html[onkeypress],iframe[onkeypress],isindex[onkeypress],param[onkeypress],script style[onkeypress],title[onkeypress],
+	applet[onkeydown],base[onkeydown],basefont[onkeydown],bdo[onkeydown],br[onkeydown],font[onkeydown],frame[onkeydown],frameset[onkeydown],head[onkeydown],html[onkeydown],iframe[onkeydown],isindex[onkeydown],param[onkeydown],script style[onkeydown],title[onkeydown],
+	applet[onkeyup],base[onkeyup],basefont[onkeyup],bdo[onkeyup],br[onkeyup],font[onkeyup],frame[onkeyup],frameset[onkeyup],head[onkeyup],html[onkeyup],iframe[onkeyup],isindex[onkeyup],param[onkeyup],script style[onkeyup],title[onkeyup]
+	{ outline: 1px solid cyan; }
+
+	/*
+	Missing Attributes
+	*/
+	/*img[alt][title],img[alt],img[alt],img[title],img[alt=""][title],img[alt][title=""],img[alt=""][title=""]
+	{ outline: 1px dashed cyan; }*/
+	
+	/*a[title],a[title=""],a[href="#"],a[href=""]
+	{ outline: 1px dashed cyan; }*/
+
+	/*
+	Empty Elements
+	
+	div:empty,span:empty,li:empty,p:empty,td:empty,th:empty{ outline: 1px dashed cyan; }*/
+	
+	
+	#devMenu{
+		background-color: #eee;
+		color: #666;
+		/*position: fixed;*/
+		right: 0;
+		bottom: 0;
+		left: 0;
+		font-size: 14px;
+		padding: 10px;
+		z-index: 1000;
+		-webkit-box-shadow:  0px -2px 10px 1px rgba(0, 0, 0, .7);
+		box-shadow:  0px -2px 10px 1px rgba(0, 0, 0, .7);
+		}
+	#devMenu #width, #devMenu span{
+		color: #237DAC;
+		}
+	#devMenu h6{
+		margin-bottom: .3em;
+		font-size: 18px;
+		}
+	.debug-info{
+		margin-bottom: 0;
+		}
+
+
+	
+
+
+
+
+
+		
+	@media only screen and (max-width: 820px){
+		
+		#devMenu{
+			position: relative;
+			}
+	}	
+	
+	
+	@media only screen and (min-width: 600px) and (max-width: 979px){
+    html::before{
+        content: "Tablet media query (600 < 820) fired";
+        font-weight: bold;
+        display: block;
+        text-align: center;
+        background: none rgba(255,255,0, 0.4);   /* Semi-transparent yellow */
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom:0;
+        z-index: 99;
+		}
+	}
+	@media only screen and (max-width: 599px){
+		html::before{
+			content: "Mobile media query (0 < 599) fired";
+			font-weight: bold;
+			display: block;
+			text-align: center;
+			background: rgba(255,0,0, 0.4);
+			position: fixed;
+			left: 0;
+			right: 0;
+			bottom:0;
+			z-index: 99;
+			}	
+	}
+
+
+/*.development{ background-color: #ddd; }
+
+.development .is--promo{ background-color: #eee; }
+
+.development form{ background-color: #ccc; }*/
+	
+/*.development .header{ background-color: #aaa; }
+.development .navigation-wrapper{ background-color: #ccc; }*/
+/* List - display inline with bullets
+---------------------------------------------- */
+.inline-bullet{
+    margin: 0 0 1.5em;
+    overflow: hidden;
+    padding: 0;
+    }
+.inline-bullet li{
+    float: left;
+    margin-bottom: 0;
+    padding-right: 1.562500em;
+    }
+.inline-bullet li:first-child{
+    list-style: none;
+    }
+
+.development .main-content-wrapper{ background-color: #aaa; }
+.development .main-features{ background-color: #eee; }
+.development .main-content{ background-color: lime; }
+
+/*.development [class*="span-"]{ background-color: #999; }
+.development :not([class*="span-of"]){ background-color: #aaa; }*/
+
+.development .span-1, .development .span-2, .development .span-3, .development .span-4, .development .span-5, .development .span-6{ background-color: #bbb; }
+
+.development .aside{ background-color: #ccc; }
+
+
+
+
+
+
+
+
+

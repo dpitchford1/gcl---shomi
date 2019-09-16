@@ -1,0 +1,163 @@
+    <% content_for :footer do  ajax_validation(:cc, verify_cc_path) end %>
+
+    <div class="promo-code-full">
+      <%= render "profiles/promo_code_form" if @current_session.profile.allowed_to_use_promo_code? %>
+    </div>
+
+    <%= simple_form_for(@credit_card, url: "#{CONFIG[:zuora_api_endpoint]}/apps/PublicHostedPaymentMethodPage.do", authenticity_token: false, data: {validate: 'cc'}, html: {class: 'general-form' }, method: :post) do |f| %>
+      <%= f.input :operation, as: :hidden, input_html: { name: 'operation', data: { serializable: true } } %>
+      <%= f.input :offer_type, as: :hidden, input_html: { name: 'offer_type', data: { serializable: true } } %>
+      <% unless params.fetch(:order, {}).fetch(:order_id, nil).blank? %>
+        <%= hidden_field_tag 'order[order_id]', params.fetch(:order, {}).fetch(:order_id, nil) %>
+      <% end %>
+        <input type="hidden" name="method" value="submitPage">
+        <%= f.input :id, as: :hidden, input_html: { name: 'id', value: ENV['zuora_page_id'] } %>
+        <%= f.input :tenantId, as: :hidden, input_html: { name: 'tenantId', value: ENV['zuora_tenant_id'] } %>
+        <%= f.input :timestamp, as: :hidden, input_html: { name: 'timestamp', value: @order.zuora_timestamp } %>
+        <%= f.input :token, as: :hidden, input_html: { name: 'token', value: @order.zuora_token } %>
+        <%= f.input :signature, as: :hidden, input_html: { name: 'signature', value: @order.zuora_signature } %>
+
+        <%= f.input_field :field_accountId, as: :hidden, name: 'field_accountId', value: '' %>
+        <%= f.input_field :field_gatewayName, as: :hidden, name: 'field_gatewayName', value: '' %>
+        <%= f.input_field :field_deviceSessionId, as: :hidden, name: 'field_deviceSessionId', value: '' %>
+        <%= f.input_field :field_ipAddress, as: :hidden, name: 'field_ipAddress', value: '' %>
+        <%= f.input_field :field_useDefaultRetryRule, as: :hidden, name: 'field_useDefaultRetryRule', value: '' %>
+        <%= f.input_field :field_paymentRetryWindow, as: :hidden, name: 'field_paymentRetryWindow', value: '' %>
+        <%= f.input_field :field_maxConsecutivePaymentFailures, as: :hidden, name: 'field_maxConsecutivePaymentFailures', value: '' %>
+        <%= f.input_field :field_passthrough1, as: :hidden, name: 'field_passthrough1' %>
+
+        
+
+        <fieldset class="content-wrapper">
+            <%= f.input :field_creditCardType,
+                        wrapper_class: 'hidden',
+                        input_html: {name: 'field_creditCardType', data: { serializable: true }}, collection: ['Visa', 'MasterCard', 'AmericanExpress'],
+                        as: :radio_buttons, item_wrapper_class: 'radio-inline', label: false %>
+
+          <% if session[:exclusive_creditcard] == 'amex' || session[:loyalty_code].try(:validation_type) == 'amex' %>
+            <div id="cc-types" class="inline-list cc-types single-cc-types" aria-hidden="true">
+              <span class="cc-icon amex" id="amex"></span>
+            </div>
+          <% elsif session[:exclusive_creditcard] == 'mastercard' || session[:loyalty_code].try(:validation_type) == 'mastercard' %>
+            <div id="cc-types" class="inline-list cc-types single-cc-types" aria-hidden="true">
+              <span class="cc-icon mastercard" id="mastercard"></span>
+            </div>
+          <% elsif session[:exclusive_creditcard] == 'visa' || session[:loyalty_code].try(:validation_type) == 'visa' %>
+            <div id="cc-types" class="inline-list cc-types single-cc-types" aria-hidden="true">
+              <span class="cc-icon visa" id="visa"></span>
+            </div>
+          <% else %>
+            <div id="cc-types" class="inline-list cc-types " aria-hidden="true">
+              <span class="cc-icon visa" id="visa"></span>
+              <span class="cc-icon mastercard" id="mastercard"></span>
+              <span class="cc-icon amex" id="amex"></span>
+            </div>
+          <% end %>
+
+            <%= f.input :field_creditCardNumber,
+                        label: false,
+                        required: true,
+                        input_html: { name: 'field_creditCardNumber', autofocus: true, maxlength: 16, value: '', placeholder: t('simple_form.placeholders.credit_card_number') } %>
+
+            <div class="form-row date-selection">
+            <%= f.input :field_creditCardExpirationMonth, as: :select,
+                        input_html: {name: 'field_creditCardExpirationMonth', data: { serializable: true }, class: 'select-list fancy-select-medium', style: '-moz-appearance: none;' },
+                        prompt: t('simple_form.prompts.credit_card.field_creditCardExpirationMonth'),
+                        collection: (1..12),
+                        label: false,
+                        wrapper: 'fancy_select_medium' %>
+            <%= f.input :field_creditCardExpirationYear, as: :select,
+                        input_html:  {name: 'field_creditCardExpirationYear', data: { serializable: true }, class: 'select-list', style: '-moz-appearance: none;' },
+                        prompt: t('simple_form.prompts.credit_card.field_creditCardExpirationYear'),
+                        collection: (Date.today.year..Date.today.year+20),
+                        label: false,
+                        wrapper: 'fancy_select_small' %>
+            
+            </div>
+
+          <div class="form-row">
+            <div class="security_text float-left">
+                <%= f.input :field_cardSecurityCode,
+                            as: :password, required: true,
+                            label: false,
+                            :wrapper => :append  do  %>
+                    <%= f.input_field :field_cardSecurityCode,
+                                      required: true,
+                                      placeholder: t('simple_form.placeholders.security_code'),
+                                      name: 'field_cardSecurityCode',
+                                      size: 4, maxlength: 4 %>
+              <% end %>
+
+            </div>
+
+            <%= image_tag asset_url('logos/norton.png'), class: 'norton', width: '120px', height: '40px' %>
+          </div>
+
+        </fieldset>
+
+        <fieldset class="content-wrapper">
+
+          <%= f.input :field_creditCardHolderName, label: false, required: true, input_html: { placeholder: t('simple_form.placeholders.cardholder_name'), name: 'field_creditCardHolderName', autocomplete: 'on', data: { serializable: true } }, wrapper: 'form_row_text' %>
+
+          <%= f.input :field_creditCardAddress1, required: true, label: false, input_html: { name: 'field_creditCardAddress1', autocomplete: 'on', data: { serializable: true }} %>
+
+          <% if Admin::FeatureFlag.feature_flag(:address_two) %>
+            <%= f.input :field_creditCardAddress2, required: false, label: false, input_html: { name: 'field_creditCardAddress2', autocomplete: 'on', data: { serializable: true }} %>
+          <% end %>
+
+          <%= f.input :field_creditCardCountry, as: :hidden, label: false, input_html:  { name: 'field_creditCardCountry', value: 'CAN', data: { serializable: true }, class: 'select-list'} %>
+
+          <div class="form-row province-selection">
+            <div class="city_text float-left sm-r-mg">
+              <%= f.input :field_creditCardCity, required: true, label: false, input_html: { name: 'field_creditCardCity', data: { serializable: true }}, wrapper: 'inline_text_medium' %>
+
+            </div>
+              <%= f.input :field_creditCardState, as: :select, label: false,
+                        required: true, input_html:  { id: 'field_creditCardState_ca', name: '', style: '-moz-appearance: none;',
+                                                       data: { serializable: true }, class: 'fancy-select-sm'},
+                        prompt: t("orders.province"),
+                        collection: Portal::ZUORA_CA_STATES[session[:lang].to_s].values,
+                        wrapper: 'fancy_select_small' %>
+          </div>
+
+            <%= f.input :field_creditCardPostalCode, label: false,
+                        input_html: { placeholder: t('simple_form.placeholders.postal_code'), name: 'field_creditCardPostalCode', data: { serializable: true }, size: 7, maxlength: 7,  class: 'uppercase', title: t('errors.attributes.postal_code.invalid'), required: true } %>
+
+          <%= render partial: 'orders/loyalty_code_form', locals: {loyalty: session[:loyalty_code], current_session: @current_session, offer: @offer, form: f, specify_name: true} %>
+        </fieldset>
+
+        <fieldset class="content-wrapper">
+
+          <% if @current_session.profile.accounts.any? %>
+            <div class="big-or uppercase"><%= t('orders.or') %></div>
+            <div class="text-center content-wrapper"><%= t('orders.bill_to') %>
+              <%= link_to t('orders.rogers_account') + '?', new_order_path({order: { billing_option: 'rogersbill', operation: params[:operation] } }), class: 'btn-blk' %>
+            </div>
+          <% end %>
+
+          <% if !@current_session.profile.eligible? || (@current_session.profile.can_top_up? && @offer.topup?) %>
+            <%= simple_format(@tos.try("tos_#{I18n.locale.to_s}").force_encoding('ISO-8859-1').encode('UTF-8')) if @tos.try("tos_#{I18n.locale.to_s}") %>
+
+            <div class="tos-width">
+              <%= f.input :tos, as: :boolean, required: true, input_html: { class: 'check-tos', name: 'tos', data: { serializable: true }}, :wrapper => :inline_checkbox,
+                          label: ("<span class='float-left'>#{t('simple_form.labels.accept')} #{link_to(t("orders.terms"), t('footer.terms_of_service_link'), target: '_blank', role: "button")}</span>").html_safe %>
+            </div>
+          <% else %>
+            <%= f.input :tos, as: :hidden, required: false, :input_html => { :value => "1", name: 'tos', data: { serializable: true } } %>
+            
+          <% end %>
+          <%= f.input :field_email, as: :hidden, input_html: { value: @current_session.username } %>
+          <%= f.input :promo_code, as: :hidden, input_html: { value: session[:promo_code].try(:code), name: 'promo_code', data: { serializable: true }} %>
+          <%= f.input :code_type, as: :hidden, input_html: { value: session[:promo_code].try(:code_type), name: 'code_type', data: { serializable: true }} %>
+          <%= f.input :desc, as: :hidden, input_html: { value: session[:promo_code].nil? ? '' : session[:promo_code].attributes[:description], name: 'desc', data: { serializable: true }} %>
+        </fieldset>
+
+        <%= f.button :submit, @current_session.profile.eligible? ? t('buttons.update') : t('buttons.place_order'), class: 'btn-light order_submit' %>
+    <% end %>
+
+<div class="hidden" id="session_id" data-session="<%= session.id %>"></div>
+<% content_for(:footer) do %>
+<%= javascript_include_tag "cc", defer: 'defer' %>
+<%= javascript_include_tag "aes", defer: 'defer' %>
+
+<% end %>

@@ -1,0 +1,25 @@
+<% content_for :title, t('titles.purchase_flow').html_safe %>
+
+<h2 class="h-lgt sizes-M w-ul"><%= t('titles.purchase_flow').html_safe %><sup>1</sup></h2>
+
+<%# Order summary %>
+<%= render 'summary', show_promo: true %>
+
+<section class="content-wrapper">
+	<h2 class="h-lgt sizes-M w-ul"><%= t('orders.payment_method').html_safe %></h2>
+
+	<% if @current_session.profile.collection.length > 0 %>	
+	<div class="content-wrapper">
+		<p><%= t("orders.select_payment") %></p>
+		<ol class="radio-inline-list inline-list">
+			<li>
+				<%= radio_button_tag :billing_option, 'rogersbill', params[:order][:billing_option] == 'rogersbill' ? true : false, data: {redirect: true, link: new_order_path(order: { billing_option: 'rogersbill'})}, class: 'radio-inline'  %>
+				<%= label_tag :billing_option_rogersbill, t('orders.rogers_account')  %>
+			</li>
+			<li>
+				<%= radio_button_tag :billing_option, 'cc', params[:order][:billing_option] == 'cc' ? true : false, data: {redirect: true, link: new_order_path(order: { billing_option: 'cc'})}, class: 'radio-inline'  %>
+				<%= label_tag :billing_option_cc, t('orders.credit_card')  %>
+			</li>
+		</ol>
+	</div>
+	<% end %>

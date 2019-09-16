@@ -1,0 +1,24 @@
+<% if @current_session.logged? && !@current_session.profile.eligible? %>
+
+<article class="feature is--fancy">
+	<%= section :getrogers_box, auto_generate: false do %>
+
+	<h3 class="h-sb sizes-S"><%= t("promos.promo_upgrade_plans.title").html_safe %></h3>
+
+	<div class="feature-body">
+		<p class="feature-excerpt yuck1"><%= t("promos.promo_upgrade_plans.heading").html_safe %></p>
+		<a class="btn btn-default btn-block" href="http://www.rogers.com/consumer/shop" target="blank"><%= t("btn.go_to_rogers").html_safe %></a>
+	</div>
+
+	<% end %>
+</article>
+
+<% else %>
+
+<article class="region text-center promo-upgrade">
+	<%= section :getrogers_box, auto_generate: false do %>
+	<h3 class="h-lgt sizes-M2"><%= t("promos.promo_upgrade_plans.heading").html_safe %></h3>
+	<% end %>
+</article>
+
+<% end %>

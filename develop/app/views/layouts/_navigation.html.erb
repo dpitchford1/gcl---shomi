@@ -1,0 +1,43 @@
+<%#= render 'layouts/messages' %>
+<div class="global-header" id="global-header" aria-expanded="true" aria-labelledby="menu-trigger">
+    <div class="header is--primary cf" id="header-primary">
+        <div class="site-wrapper">
+            <% if I18n.locale == I18n.default_locale %>
+            <p class="brand-link"><%= link_to "NHL.COM", "http://www.nhl.com", class: "block", :rel => "external", title: t('text.visit_nhl') %></p>
+            <% else %>
+            <p class="brand-link"><%= link_to "NHL.COM", "http://www.nhl.com/fr/index.html", class: "block", :rel => "external", title: t('text.visit_nhl') %></p>
+            <%end%>
+
+            <ul id="utility-menu" class="menu menu--primary">
+            <% if @current_session.logged? %>
+                <li class="welcome-id"><span class="welcome"><%= t("text.welcome") %> <%= "#{@current_session.username}" %></span></li>
+                <li><%= link_to t("menu.sign_out"), logout_path, method: 'delete', class: "signout" %></li>
+            <% else %>
+                <li><%= link_to t("menu.sign_in"), '#new_session_modal', role: "button", class: "signin", data: {toggle:'modal', target: '#new_session_modal' } %></li>
+                <li><%= link_to t("menu.register"), new_profile_path %></li>
+            <% end %>
+                <li>
+                <% if I18n.locale == I18n.default_locale %>
+                    <%= link_to "Français", :lang=>'fr'%>
+                <% else %>
+                    <%= link_to "English", :lang=>'en'%>
+                <%end%>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="header is--secondary cf" id="header-secondary">
+        <header class="site-wrapper is--tertiary" role="banner">
+        <% if @home_page %>
+            <p class="brand-fs float-l" id="logo"><span class="block"><%= t("titles.default").html_safe %></span></p>
+        <% else %>
+            <p class="brand-fs float-l" id="logo"><a class="block" href="/" rel="external" title="<%= t('menu.return') %>"><%= t("titles.default").html_safe %></a></p>
+        <% end %>
+            <nav class="navigation-wrapper float-r" role="navigation" aria-label="<%= t('menu.main_menu') %>">
+                <h2 class="hide-text"><%= t("menu.main_menu") %></h2>
+                <%# START: Main Menu %>
+                <%= render 'layouts/main_menu' %>
+          </nav>
+      </header>
+    </div>
+</div>

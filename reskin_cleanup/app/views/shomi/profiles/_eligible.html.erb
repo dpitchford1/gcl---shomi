@@ -1,0 +1,76 @@
+<% content_for :title, t('titles.confirmation').html_safe %>
+
+<% content_for :body_start do %>
+	<div id="track2"></div>
+	<div id="track3"></div>
+<% end %>
+
+<%# START: Inject these scripts into the Footer %>
+<% content_for :footer do %>
+
+  	<% if params[:order_id] %>
+  		<%# track2 %>
+	  	<script>
+			var track2js = '', track3js = '';
+			var axel = Math.random() + "", a = axel * 10000000000000; track2js += '<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=KpeiA7fF;ord=' + a + '?" class="hidden"></iframe>';
+			var axel = Math.random() + "", a = axel * 10000000000000; track3js += '<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger00;ord=' + a + '?" class="hidden"></iframe>';
+
+			document.getElementById('track2').innerHTML = track2js;
+			document.getElementById('track3').innerHTML = track3js;
+		</script>
+
+		<%# Facebook / Twitter Conversion Code for Checkout Pixel - Confirmation Page %>
+		<script>
+			window._fbq.push(['track', '6021840366937', {'value':'0.01','currency':'CAD'}]);
+			twttr.conversion.trackPid('l5175');
+		</script>
+
+		<%# noscript tracking pixels for above scripts %>
+		<noscript>
+			<!-- track2 --><iframe class="hidden" src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=KpeiA7fF;ord="></iframe>
+			<!-- track3 --><iframe class="hidden" src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger00;ord="></iframe>
+
+			<img class="hidden" height="1" width="1" alt="" src="https://www.facebook.com/tr?ev=6021840366937&amp;cd[value]=0.01&amp;cd[currency]=CAD&amp;noscript=1">
+			<img class="hidden" height="1" width="1" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l5175&amp;p_id=Twitter">
+			<img class="hidden" height="1" width="1" alt="" src="//t.co/i/adsct?txn_id=l5175&amp;p_id=Twitter">
+		</noscript>    
+	<% end %>
+
+<% end %>
+
+<% content_for :support_module_class, 'hidden' %>
+	
+<section class="hero-confirmation text-center congrats" id="confirmation-page">
+	<h2 class="h-r size-LG rogers-red"><%= t("profiles.purchased.congrats").html_safe %></h2>
+	<p class="congrats-blurb copy--L h-l">
+	<% if params[:order_id] %>
+		<%= t("profiles.purchased.congrats_pre").html_safe %>
+	<% end %>
+	</p>
+</section>
+
+<aside class="content-wrapper confirmation-aside" role="complementary">
+	<% if I18n.locale == I18n.default_locale %>
+	<p class="text-center"><a href="https://my.shomi.com/signin" class="btn btn-default" rel="external"><%= t("profiles.purchased.start_watching") %></a></p>
+	<% else %>
+	<p class="text-center"><a href="https://my.shomi.com/signin" class="btn btn-default" rel="external"><%= t("profiles.purchased.start_watching") %></a></p>
+	<%end%>
+</aside>
+
+<%#
+<!-- track2 -->
+<script>
+	var track2js = '';
+	var axel = Math.random() + "", a = axel * 10000000000000; track2js += '<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=KpeiA7fF;ord=' + a + '?" class="hidden"></iframe>';
+	document.getElementById('track2').innerHTML = track2js;
+</script>
+<noscript><iframe class="hidden" src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=KpeiA7fF;ord="></iframe></noscript>
+
+<!-- track3 -->
+<script>
+	var track3js = '';
+	var axel = Math.random() + "", a = axel * 10000000000000; track3js += '<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger00;ord=' + a + '?" class="hidden"></iframe>';
+	document.getElementById('track3').innerHTML = track3js;
+</script>
+<noscript><iframe class="hidden" src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger00;ord="></iframe></noscript>
+%>

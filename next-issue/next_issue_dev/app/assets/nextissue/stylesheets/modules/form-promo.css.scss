@@ -1,0 +1,99 @@
+/* PROMO CODE FORM TWEAKS */
+// .promo-code-full .promo-form{
+//     padding-bottom: 1.5em;
+//     }
+
+.promo-form .form-label{
+    font-family: $font-reg; font-style: normal;
+    }
+
+.promo-code-full .form-row{
+    float: left;
+    padding-top: 0;
+    }
+.promo-code-full .controls{
+    float: right;
+    padding-top: 0;
+    }
+.promo-code-full .form-label{
+    @include rem(font-size, 20px);
+    float: left;
+    margin-right: 1em;
+    padding-top: .2em;
+    }
+    [lang="fr-ca"] .promo-code-full .form-label{
+        @include rem(font-size, 18px);
+        // float: left;
+        // margin-right: 1em;
+        // padding-top: .2em;
+        }
+
+.promo-code-full .promo-row { width: 400px; margin-left:auto; margin-right:auto; }
+[lang="en-ca"] .promo-code-full .promo-row { width: 400px; }
+[lang="fr-ca"] .promo-code-full .promo-row { width: 460px; }
+
+.promo-code-full .text-field{
+    float: left;
+    width: 233px;
+    height: 45px;
+    background-color: #8f9da8;
+    color: #ffffff;
+    text-align: center;
+    }
+.promo-code-full .text-field::-webkit-input-placeholder { color: #ffffff; text-align: center; }
+.promo-code-full .text-field:-moz-placeholder { color: #ffffff; text-align: center; }
+.promo-code-full .text-field::-moz-placeholder {  color: #ffffff; text-align: center; }
+.promo-code-full .text-field:-ms-input-placeholder { color: #ffffff; text-align: center; }
+.promo-code-full input.text-field { border-radius: 15px; }
+
+.promo-code-full .btn {
+  font-size: 16px;
+    padding-top: .85em;
+    padding-bottom: .85em;
+    margin-left: 15px;
+    }
+/*.promo-code-full .btn-default{
+    background-color: #445057;
+    }
+.promo-code-full .btn-default:hover, .promo-code-full .btn-default:focus, .promo-code-full .btn-default:active {
+    background-color: #69757f;
+    } */
+.promo-code-full abbr{ display: none; }
+
+
+/* PROMO CODE WITHIN A PROMO BLOCK */
+.is--fancy .form-label abbr{ visibility: hidden; }
+.is--fancy legend{
+    line-height: 1.1;
+    width: 100%;
+    text-align: center;
+    }
+.is--fancy legend.size-L{
+    @include rem(font-size, 20px);
+    text-transform: uppercase;
+    }
+.is--fancy legend span{
+    display: block;
+    }
+.is--fancy .form-label{
+    @include rem(font-size, 20px);
+    }
+
+[lang="en-ca"] .is--fancy .form-label{ margin-bottom: 1.15em; }
+[lang="fr-ca"] .is--fancy .form-label{ margin-bottom: 2.35em; }
+
+.is--fancy .text-field{
+    width: 100%;
+    margin: .3em 0;
+    }
+.is--fancy .btn-default{
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    }
+.is--fancy .btn-secondary{
+    background-color: $color-primary;
+    }
+
+.info .promo-code-full .size-L{ font-size: 18px; text-indent: -1000em; }
+.info .promo-form{ padding-bottom: 0; }

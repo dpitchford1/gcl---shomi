@@ -1,0 +1,39 @@
+<div class="video-promo fluid" id="video-parent">
+    
+    <a class="flex-embed flex-embed--16by9 feature-video" tabindex="-1" aria-hidden="true" href="javascript:void(0)" id="video-play">
+        <span class="i-video-play is--icon" id="ico-play"> 
+            <span class="watch-text"><%= I18n.t('text.vid_play') %></span>
+            <span class="icon-play"></span>
+            
+        </span>
+        <noscript><%= t("text.nojs").html_safe %></noscript>
+        
+        <% if I18n.locale == I18n.default_locale %>
+        <div id="vid-wrap" class="vid-wrap hidden">
+            <object id="myExperience" class="BrightcoveExperience" name="home_video">
+                <param name="bgcolor" value="#FFFFFF">
+                <param name="width" value="100%">
+                <param name="height" value="100%">
+                <param name="secureConnections" value="true">
+                <param name="secureHTMLConnections" value="true">
+                <param name="playerID" value="1559148919001" />
+                <param name="playerKey" value="AQ~~,AAABKPKZu-k~,q4Oj9BD-DflOpGmzzmYXk4Yg1kGBi8Jp" />
+                <param name="isVid" value="true">
+                <param name="isUI" value="true">
+                <param name="htmlFallback" value="true">
+                <param name="dynamicStreaming" value="true">
+                <param name="@videoPlayer" value="3872539057001">
+                <param name="autoStart" value="true">
+                <param name="includeAPI" value="true">
+                <param name="templateLoadHandler" value="onTemplateLoad" />
+                <param name="templateReadyHandler" value="onTemplateReady" />
+                <param name="wmode" value="opaque">                  
+            </object>
+        </div>
+        <% else %>
+        <div id="vid-wrap" class="vid-wrap hidden">
+        </div>
+        <%end%>
+         <a aria-controls="video-close" href="#video-parent" id="video-close" aria-label="Close video" role="button" class="ico i-m i--close close-btn">Close video</a>
+    </a>
+</div>

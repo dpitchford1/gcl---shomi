@@ -1,0 +1,111 @@
+[lang="en-ca"].js .page-bg{
+    background: asset-url("content/shomi-bg-site-1400.jpg") no-repeat center 120px;
+    }
+
+[lang="fr-ca"].js .page-bg{
+    background: asset-url("content/shomi-bg-site-1400-fr.jpg") no-repeat center 120px;
+    }
+
+.hero-title {
+    display: none;
+}
+
+.site-wrapper{ width: 980px; max-width: 980px; }
+
+/* modals */
+.modal-dialog{ top:100px; width: 460px; }
+
+.modal-backdrop.fade {
+    filter: alpha(opacity=0);
+    }
+.modal-backdrop.in {
+    filter: alpha(opacity=75);
+    }
+
+.page-home #main-content {
+        padding-top: 610px;
+    }  
+
+#main-content, .support-module .container, .footer .site-wrapper {
+    width: 900px !important;
+    margin: 0 auto;
+    max-width: 980px;
+}       
+
+.ltie8{ 
+    position: absolute;
+    top: 0;
+    border: 1px solid #333;
+    font-size: 14px;
+    padding: 2% 25px;
+    width: 95%;
+    z-index: 3;
+    min-height: 40px;
+    background-color: #ddd;
+    color: #333;
+    margin: 0 auto;
+    overflow: visible;
+    text-align: center;
+    }
+
+.i-pl:before {
+    width: 45px;
+}    
+
+.i--helper {
+    width: 45px !important;
+    height: 25px !important;
+    top: 4px !important;
+}
+
+.i--helper:after {
+    z-index: 99999 !important;
+    margin-top: -20px !important;
+}
+
+.order-table tbody .tleft    { width: 55%; line-height: 1.1; padding-top: 0.5em }
+.order-table tbody .tright    { width: 15%; line-height: 1.1; padding-top: 0.5em; text-align: right; }
+.tos-wrapper { 
+    overflow: none; 
+    -moz-box-sizing: none; 
+    -webkit-box-sizing: none; 
+    box-sizing: none;
+    border: none;
+    height: 300px;
+    -webkit-overflow-scrolling: none;
+
+}
+
+.i-video-play {
+    display: none;
+    }
+.video-promo{ display: none; }
+
+.tos-frame {
+    height: 250px;
+    padding: 0;
+}
+
+.my-rogers-text, [lang="en-ca"] .i--logo-myrogers, [lang="fr-ca"] .i--logo-myrogers{ background-image: none !important; text-indent: 0 !important; font-style: italic; font-weight: bold; color: #d00c34; }
+
+.create-profile .i--logo-myrogers {
+    margin-right: 15px !important;
+}
+
+[lang="en-ca"] .modal-header .i--logo-myrogers, [lang="fr-ca"] .i--logo-myrogers {
+    height: auto !important;
+    margin-bottom: 0;
+    width: auto !important;
+    }
+
+[lang="en-ca"] .page-home .fancy-promos .is--fancy, [lang="en-fr"] .page-home .fancy-promos .is--fancy {
+    min-height: 430px;
+}
+
+[lang="en-ca"] .fancy-promos .is--fancy, [lang="en-fr"] .fancy-promos .is--fancy {
+    min-height: 330px;
+}
+
+[lang="en-ca"] .fancy-promos .is--fancy .my-rogers-text, [lang="en-fr"] .fancy-promos .is--fancy .my-rogers-text {
+    color: #FFFFFF !important;
+}

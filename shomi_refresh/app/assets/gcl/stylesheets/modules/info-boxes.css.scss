@@ -1,0 +1,27 @@
+/* Info Setup 
+---------------------------------------------- */
+.info {
+    min-height: 40px;
+    margin-bottom: 1.5em; 
+    }
+.info p:last-child {
+    margin-bottom: 0; 
+    }
+
+/* Info sizes 
+---------------------------------------------- */
+.info-sm {
+    padding: 6px;
+    }
+.info-m{
+    padding: 18px;
+    }
+.info-lg {
+    padding: 35px;
+    }
+
+/* Info BG's 
+---------------------------------------------- */
+.info--primary  { background-color: #eee; }
+.info--secondary{ background-color: #fbfbfb; }
+.info--tertiary { background-color: #f5f5f5; }

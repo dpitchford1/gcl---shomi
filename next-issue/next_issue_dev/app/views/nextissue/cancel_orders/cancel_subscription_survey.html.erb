@@ -1,0 +1,17 @@
+<% presenter = CancelSubscriptionHeader.new(@current_session, @survey_result, @question) %>
+
+<% content_for :below_navigation do  %>
+  <%= render partial: 'layouts/presenting_summary', locals: { p: presenter } %>
+<% end %>
+
+<%= simple_form_for @survey_result, url: cancel_subscription_path, remote: true, html: {class: 'general-form' }, method: :post do |f|  %>
+
+  <%= f.input :survey_id, as: :hidden %>
+  <%= f.input :question_id, as: :hidden %>
+  <%= f.input :option_id, as: :radio_buttons, required: false, collection: @options, label_method: "desc_#{I18n.locale.to_s}".to_sym, group_method: :option_id, value_method: :option_id, label: false %>
+
+  <%= f.input :comments, as: :text, required: false, label: t('cancel_order.comment_description') %>
+
+  <div class="tos-width"><%= f.button :submit, t('buttons.next') %></div>
+  <div class="submission"><%= link_to t('buttons.skip'), cancel_subscription_path({survey_result: {survey_id: @survey_result.survey_id, question_id: @survey_result.question_id}}), remote: true, class: 'btn btn-cancel' %></div>
+<% end %>

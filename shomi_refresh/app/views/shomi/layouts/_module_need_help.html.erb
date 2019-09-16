@@ -1,0 +1,14 @@
+<div class="region hero-support <%= yield :support_module_class %>">
+    <section class="fluid">
+        <h3 class="hide-text"><%= t("text.cant_find").html_safe %></h3>
+        <article class="hero-help cc-reverse">
+            <h4 class="h-lgt sizes-LG sm-m"><%= t("text.need_help").html_safe %></h4>
+            <ul class="bullet-list help-list">
+                <%#=<li> link_to t("help.wireless_go_here.text"), t("help.wireless_go_here.link").html_safe, class: "is-selected", :rel => "external", :target => "_blank", title: t("help.wireless_go_here.text") </li>%>
+                <li><%= link_to t("help.view_faq.text"), t("help.view_faq.link").html_safe, :rel => "external", :target => "_blank" %></li>
+                <%= yield :link_account_faq_content %>
+            </ul>
+        </article>
+        <%= yield :live_chat_content %>
+    </section>
+</div>

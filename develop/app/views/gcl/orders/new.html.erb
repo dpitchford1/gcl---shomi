@@ -1,0 +1,26 @@
+<% if @order.billing_option == 'cc' %>
+	<% content_for :body_start do %>
+		<div id="track3"></div>
+	<% end %>
+	<% content_for :footer do %>
+		<script>
+			var track3js = '', axel = Math.random() + "", a = axel * 10000000000000; track3js += '<iframe class="hidden" src="https://4498654.fls.doubleclick.net/activityi;src=4498654;type=invmedia;cat=LgypYxgM;ord=' + a + '?"></iframe>';
+			document.getElementById('track3').innerHTML = track3js;
+		</script>
+	<% end %>
+	<% content_for(:noscript) do %>
+	<iframe src="https://4498654.fls.doubleclick.net/activityi;src=4498654;type=invmedia;cat=LgypYxgM;ord=1?" class="hidden"></iframe>
+	<% end %>
+<% end %>
+
+<%= render 'buy' %>
+<% if @order.billing_option == 'rogersbill' %>
+  <%= render 'rogers_bill' %>
+<% elsif @order.billing_option == 'cc' %>
+  <%= render 'cc' %>
+<% end %>
+
+<%# START: GCL Footnotes Buy %>
+<% content_for :legal_footnotes do %>
+    <%= render 'partials/footnotes_buy' %>
+<% end %>

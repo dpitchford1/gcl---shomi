@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<% if I18n.locale == I18n.default_locale %>
+<html class="no-js no-touch" dir="ltr" lang="en-CA">
+<% else %>
+<html class="no-js no-touch" dir="ltr" lang="fr-CA">
+<%end%>
+<!--[if IE]><![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--[if IE]>
+    <meta http-equiv="imagetoolbar" content="false"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="cleartype" content="on">
+    <![endif]-->
+    <title><%= page_title %></title>
+    <%# prefetch dns connections for analytics scripts %>
+    <link rel="dns-prefetch" href="//analytics.rogersmedia.com">
+    <link rel="dns-prefetch" href="//assets.adobedtm.com">
+
+    <%# critical css %>
+    <style type="text/css"><%= Rails.application.assets["critical-styles"].to_s.html_safe %></style>
+
+    <%# quick app setup %>
+    <script id="loadcss"><%= Rails.application.assets["loaders"].to_s.html_safe %></script> 
+
+    <%# main css files %>
+    <%#= stylesheet_link_tag "font", media: "all" %>
+    <%#= stylesheet_link_tag "application", media: "all" %>
+    
+    <%# inject enjance with js %>
+    <%= javascript_include_tag "utils", async: "true" %>
+
+    <noscript><%= stylesheet_link_tag "fontz", media: "all" %><%= stylesheet_link_tag "application", media: "all" %></noscript>
+
+    <%# OLD IE CSS %>
+    <!--[if (lte IE 9)&(!IEMobile 7)]>
+    <%= stylesheet_link_tag "oldIE", media: "all" %>
+    <%= javascript_include_tag "utils/html5" %>
+    <![endif]-->
+
+    <%# MOBILE SPECIFIC %> 
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%# SEARCH AND SEO %>
+    <meta name=”referrer” content=”always”>
+    <meta name="googlebot" content="NOODP">
+    <meta name="robots" content="index,follow,archive">
+    <meta name="description" content="<%= t("legal.meta_desc").html_safe %>">
+
+    <%# APPLE SPECIFIC %> 
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="<%= t("legal.trademark_meta").html_safe %>">
+
+    <%# COPYRIGHTS %>
+    <meta name="copyright" content="All content presented in this domain may not be used by third parties without the prior written consent of Rogers Communications Inc.">
+    <meta name="copyright" content="<%= t("legal.copyright").html_safe %>">
+
+    <%# IE meta and pinning %>
+    <meta name="application-name" content="<%= t("legal.trademark_meta").html_safe %>">
+    <meta name="msapplication-tooltip" content="<%= t("legal.trademark_meta").html_safe %>">
+    <meta name="msapplication-starturl" content="<%= t("legal.trademark_meta").html_safe %>">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="<%= asset_path 'icons/favicon-rogers/favicon-144.png' %>">
+    <meta name="msapplication-navbutton-color" content="#fa1f00">
+
+    <meta name="msapplication-task" content="name=<%= t("legal.social_msapplication_name").html_safe %> on Twitter;action-uri=https://twitter.com/<%= t("legal.social_msapplication_name").html_safe %>;icon-uri=http://twitter.com/favicon.ico">
+    <meta name="msapplication-task" content="name=<%= t("legal.social_msapplication_name").html_safe %> on Facebook;action-uri=https://www.facebook.com/<%= t("legal.social_msapplication_name").html_safe %>;icon-uri=https://www.facebook.com/favicon.ico">
+    <meta name="msapplication-task" content="name=<%= t("legal.social_msapplication_name").html_safe %> on Google+;action-uri=https://plus.google.com/+<%= t("legal.social_msapplication_name").html_safe %>;icon-uri=https://ssl.gstatic.com/s2/oz/images/faviconr2.ico">
+
+    <%# ICONS %>
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<%= asset_path 'icons/favicon-rogers/favicon-152.png' %>">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<%= asset_path 'icons/favicon-rogers/favicon-144.png' %>">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<%= asset_path 'icons/favicon-rogers/favicon-120.png' %>">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<%= asset_path 'icons/favicon-rogers/favicon-114.png' %>">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="<%= asset_path 'icons/favicon-rogers/favicon-76.png' %>">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<%= asset_path 'icons/favicon-rogers/favicon-72.png' %>">
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="<%= asset_path 'icons/favicon-rogers/favicon-60.png' %>">
+    <link rel="apple-touch-icon-precomposed" href="<%= asset_path 'icons/favicon-rogers/favicon-57.png' %>">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= asset_path 'icons/favicon-rogers/favicon-16.png' %>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= asset_path 'icons/favicon-rogers/favicon-32.png' %>">
+    <link rel="icon" type="image/png" sizes="96x96" href="<%= asset_path 'icons/favicon-rogers/favicon-96.png' %>">
+    <link rel="icon" type="image/png" sizes="160x160" href="<%= asset_path 'icons/favicon-rogers/favicon-160.png' %>">
+    
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="http://www.rogers.com/favicon.ico"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.rogers.com/cms/rogers/images/favicon.ico">
+
+    <link rel="home" title="Home page" href="/">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+
+    <meta property="og:title" content="shomi&trade;">
+    <meta property="og:site_name" content="shomi&trade;">
+    <meta property="og:url" content="https://shomi.rogers.com">
+    <meta property="og:description" content="<%= t("legal.meta_desc").html_safe %>">
+    <meta property="og:image" content="https://shomi.rogers.com/assets/icons/favicon-rogers/favicon-160.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_ca">
+
+    <%# quick app setup %>
+    <%#= javascript_include_tag 'jquery' %>
+
+    <%= yield :head %>
+
+    __CROSS_SITE_REQUEST_FORGERY_PROTECTION_TOKEN__
+
+    <link rel="prerender" href="/signin">
+</head>
+
+<body class="<%= @home_page ? 'page-home page-bg' : 'page-site'%>" id="page-body">
+<%# START: quick links %>
+<a class="quick-links" href="/signin">Skip to Sign In</a>
+<a class="quick-links" href="/register">Skip to Register</a>
+<a class="quick-links" href="#main-content">Skip to Main Content</a>
+<a class="quick-links" href="#footer-secondary">Skip to Footer</a>
+
+<%= yield :body_start %>
+
+<h1 class="hide-text"><%= t("titles.default").html_safe %></h1>
+
+<%# START: site headers %>
+<%= render "layouts/navigation" %>
+<hr class="hide-divider">
+
+<%# START: main content %>
+<div class="<%= @home_page ? '' : 'fluid'%>" id="main-content">
+    <%= render 'layouts/messages' %>
+    <%= yield %>
+
+</div>
+<hr class="hide-divider">
+
+<%= render 'layouts/module_need_help' %>
+
+
+<!-- <p class="feedback-tab">
+    <a href="javascript:void(0)" onclick="javascript:FSR.popFeedback()"><span class="ico i--feedback"><%= t("help.feedback.text").html_safe %></span></a>
+</p> -->
+
+<%# START: Footer: Secondary %>
+<%= render 'layouts/footer_secondary' %>
+
+<%= render 'pages/background_job' %>
+
+<div class="ss-nav" id="ss-nav"></div>
+
+<%# load jquery %>
+<%= javascript_include_tag 'jquery', defer: "defer" %>
+
+<%# START: Global Scripts %>
+<%= javascript_include_tag "application", defer: "defer" %>
+
+
+<script>
+    addLoadEvent(function() {
+        <%= yield(:addload_ready) %>
+    });
+</script>
+
+<%# dtm header code start %>
+<% if (ENV["APP_NAME"] == 'shomi' && Rails.env.production?) %>
+    <%= javascript_include_tag "//assets.adobedtm.com/f1c13d6275d63bceda989e7eebe142edd7f1cda0/satelliteLib-ebf2d3072868816a930c17371ca9530231b067f2.js" %>
+<% else %>
+    <%= javascript_include_tag "//assets.adobedtm.com/f1c13d6275d63bceda989e7eebe142edd7f1cda0/satelliteLib-ebf2d3072868816a930c17371ca9530231b067f2-staging.js" %>
+<% end %>
+
+<%= yield(:footer) %>
+
+<%# dtm footer code start %>
+<script>
+rdm.dtm.defaults = {
+    brand : 'shomi',
+    options : {
+        confirmationType: '<%= session[:confirmation_type] %>'
+    },
+    pageURL : '<%= request.original_url %>',
+    contentName: '<%= session[:confirmation_type] ? 'Confirmation page' : page_name %>',
+    vmxC4 : 'ROGERS',
+    vmxC6 : 'SHOMI',
+    vmxEnabled : true
+};
+</script>
+
+<%# START: Campaign Analytics %>
+<%= javascript_include_tag "campaign.analytics", defer: "defer" %>
+<%= javascript_include_tag "//platform.twitter.com/oct.js", async: "async" %>
+
+<% content_for :analyticsfooter do %>
+<%# Facebook/Twitter Tracking Pixels %>
+<script>
+(function() {
+    var _fbq = window._fbq || (window._fbq = []);
+    if (!_fbq.loaded) {
+        var fbds = document.createElement('script'),
+            s = document.getElementsByTagName('script')[0];
+        fbds.async = true;
+        fbds.src = '//connect.facebook.net/en_US/fbds.js';
+        s.parentNode.insertBefore(fbds, s);
+        _fbq.loaded = true;
+    }
+    _fbq.push(['addPixelId', '356171487879149']);
+})();
+window._fbq = window._fbq || [];
+window._fbq.push(['track', 'PixelInitialized', {}]);
+
+<%# START: Twitter pixels for Shomi.rogers.com %>
+addLoadEvent(function() {
+    twttr.conversion.trackPid('l517a');
+    <% if @home_page %>       
+    twttr.conversion.trackPid('l57ex');
+    <% end %>
+    });
+</script>
+<% end %>
+
+<% content_for(:noscript) do %>
+<img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=356171487879149&amp;ev=PixelInitialized">
+<img height="1" width="1" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l517a&amp;p_id=Twitter">
+<img height="1" width="1" alt="" src="//t.co/i/adsct?txn_id=l517a&amp;p_id=Twitter">
+<% end %>
+
+<%# START: Campaign Analytics %>
+<%= yield(:analyticsfooter) %>
+
+<%# load foresee survey script %>
+<%#= javascript_include_tag "foresee/foresee-trigger", defer: "defer" %>
+
+<%# START: General noscript items %>
+<noscript>
+    <%= yield(:noscript) %>
+</noscript>
+
+</body>
+</html>

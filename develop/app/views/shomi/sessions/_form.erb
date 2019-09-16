@@ -1,0 +1,23 @@
+<% content_for :title, t("signin.page_heading_no_html").html_safe %>
+<% content_for :footer do ajax_validation(:session, nil, 'main') end %>
+
+<section class="region signin">
+	
+	<h2 class="h-sb size-L w-ul rogers-red"><%= t("signin.page_heading").html_safe %></h2>
+	
+	<%= render "sessions/form_error_header", object: @session %>
+	
+	<div class="having-trouble">
+		<h3 class="h-sb uc size-L3"><%= t("form.errors.having_trouble").html_safe %></h3>
+		<p class="copy-size-M"><%= t("live_chat.incorrect_password").html_safe %></p>
+	</div>
+	<%= simple_form_for(@session, remote: true, html: {class: 'general-form' }, data: {validate: 'session.main'}) do |f| %>
+		<%= f.input :username, label: t('activemodel.attributes.session.username_html'), input_html: {:title => t('errors.attributes.email_address.blank')} %>
+		<%= f.input :password, label: t('activemodel.attributes.session.password_html'), placeholder: t('activemodel.attributes.profile.password'), hint: false, input_html: {:autocomplete => 'off', :autocapitalize => 'off',  maxlength: 16 } %>
+		<p><%= f.button :submit, t('btn.signin') %></p>
+		
+		<p><%= t('text.forgot') %> <%= link_to t("text.username").downcase, CONFIG["forgot_username_#{session[:lang].to_s}".to_sym], title: t('sessions.will_be_taken') , rel: 'external' %> <%= t('text.or') %> <%= link_to t("text.password").downcase, forgot_password_path %>?</p>
+
+		<p><%= t("signin.new").html_safe %> <%= link_to t("signin.registernow").html_safe, new_profile_path %></p>
+	<% end %>
+</section>

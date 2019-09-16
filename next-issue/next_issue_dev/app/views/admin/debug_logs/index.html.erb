@@ -1,0 +1,36 @@
+<p>Logs:</p>
+
+<%= form_tag(request.path, method: :get) do |f| %>
+  <%= text_field_tag :email %>
+  <%= submit_tag('search') %>
+<% end %>
+
+<% unless @logs.empty? %>
+  <%= link_to 'Download csv', admin_download_csv_path(params.merge({format: "csv"})) %>
+<% end %>
+
+<table>
+  <body>
+    <tr>
+      <td>Row</td>
+      <td>Email</td>
+      <td>error_type</td>
+      <td>parameters</td>
+      <td>api_call</td>
+      <td>time</td>
+      <td>developer_message</td>
+    </tr>
+
+    <% @logs.each_with_index do |l, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= l.email %></td>
+        <td><%= l.error_type %></td>
+        <td title="<%= l.parameters %>"><%= l.parameters.to_s[0..70] %></td>
+        <td><%= l.api_call %></td>
+        <td><%= l.time %></td>
+        <td title="<%= l.developer_message %>"><%= l.developer_message.to_s[0..70] %></td>
+      </tr>
+    <% end %>
+  </body>
+</table>

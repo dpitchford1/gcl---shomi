@@ -1,0 +1,65 @@
+<% content_for :body_start do %>
+<div class="trackjs" id="track2" aria-hidden="true" hidden="true"></div><div class="trackjs" id="track3" aria-hidden="true" hidden="true"></div>
+<% end %>
+
+<%= render 'buy' %>
+
+<div class="content-wrapper">
+    <%# unless @order.optin %>
+    <!-- <h2 class="h-lgt sizes-M"><%= t('orders.payment_method').html_safe %></h2> -->
+    <%# end %>
+
+    <%= render 'rogers_bill' %>
+    <%# content_for :support_module_class, 'hidden' %>
+</div>
+<!--
+<aside id="footnote" class="footnote fluid">
+    <h4 class="footnote-title"><%= t('legal.title').html_safe %></h4>
+    <p><%= t("legal.terms1").html_safe %></p>
+    <p><%= t("legal.terms2").html_safe %></p>
+</aside>
+ -->
+
+<% content_for :analyticsfooter do %>
+<script>
+addLoadEvent(function() {
+    var track2js = '', track3js = '';
+    var axel2 = Math.random() + "", axel3 = Math.random() + "", a2 = axel2 * 10000000000000, a3 = axel3 * 10000000000000;
+
+    track2js += '<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=buI1julI;ord=' + a2 + '?" class="hidden" height="0" width="0" frameborder="0"></iframe>';
+    track3js += '<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger004;ord=' + a3 + '?" class="hidden" height="0" width="0" frameborder="0"></iframe>';
+
+    document.getElementById('track2').innerHTML = track2js;
+    document.getElementById('track3').innerHTML = track3js;
+
+    window._fbq.push(['track', '6021840383737', {'value':'0.01','currency':'CAD'}]);
+    twttr.conversion.trackPid('l5170');
+});
+</script>
+<% end %>
+
+<%# START: Analytics Noscript backups %>
+<% content_for(:noscript) do %>
+<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=buI1julI;ord=1" class="hidden" height="0" width="0" frameborder="0"></iframe>
+<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger004;ord=1" class="hidden" height="0" width="0" frameborder="0"></iframe>
+
+<img height="1" width="1" alt="" src="https://www.facebook.com/tr?ev=6021840383737&amp;cd[value]=0.01&amp;cd[currency]=CAD&amp;noscript=1">
+<img height="1" width="1" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l5170&amp;p_id=Twitter">
+<img height="1" width="1" alt="" src="//t.co/i/adsct?txn_id=l5170&amp;p_id=Twitter">
+<% end %>
+
+<%# Facebook Conversion Code for Registration Pixel - Place After My Rogers Login 
+<script>(function() {
+  var _fbq = window._fbq || (window._fbq = []);
+  if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+  }
+})();
+window._fbq = window._fbq || [];
+window._fbq.push(['track', '6021840383737', {'value':'0.01','currency':'CAD'}]);
+</script> %>

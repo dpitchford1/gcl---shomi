@@ -1,0 +1,109 @@
+select { padding: .5em 0 .5em .8em; letter-spacing: -1px; }
+
+/* FANCY SELECT MENU STYLES */
+.fancy-select {
+    border: 1px solid #cacdce;
+    background-color: #8F9DA8;
+    float: left;
+    position: relative;
+    }
+    .error .fancy-select, .error .controls select.date{
+        border-color: #dd3829;
+        }
+
+[lang="en-ca"] .form-row.date-selection.error { padding-bottom:0.9em }
+[lang="fr-ca"] .form-row.date-selection.error { padding-bottom:3.1em }
+[lang="en-ca"] .form-row.province-selection.error { padding-bottom:0.9em; }
+[lang="fr-ca"] .form-row.province-selection.error { padding-bottom:3.4em; }
+.form-row.province-selection.error .city_text, .form-row.province-selection.error .fancy-select-medium { overflow:visible; }
+.form-row.province-selection.error p.help-inline { position: absolute; top: 42px; left: 0px; }
+
+.form-row.answer-selection.error { padding-bottom:0.9em }
+[lang="fr-ca"] .form-row.answer-selection.error { padding-bottom:2.1em }
+.form-row.date-selection .controls, .form-row.date-selection .select, .form-row.province-selection .controls, .form-row.province-selection .select, .form-row.answer-selection .controls, .form-row.answer-selection .select {overflow:visible;}
+
+/* This hides native dropdown button arrow in IE */
+.fancy-select select::-ms-expand {
+    display: none;
+    }
+
+/* Custom arrow - could be an image, SVG, icon font, etc. */
+.fancy-select:after {
+    background: none;
+    color: #bbb;
+    content: "\25BC";
+    font-size: 12px;
+    padding: 0;
+    position: absolute;
+    right: 1em;
+    top: 25%;
+    //bottom: .3em;
+    z-index: 1;
+    /* This hack makes the select behind the arrow clickable in some browsers */
+    pointer-events: none;
+    }
+   
+/* Hover style - tricky because we're clipping the overflow */
+.fancy-select:hover {
+    border-color: #434a4f;
+    }
+    
+/* Focus style */
+.fancy-select select:focus, .fancy-select select:active {
+    outline: none;
+    border: none;
+    box-shadow: 0 0 1px 1px rgba(180,222,250, .85);
+    }
+    
+/* This hides focus around selected option in FF */
+.fancy-select select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+    }
+
+/* small select -- in a list */
+.fancy-select-sm{
+  width: 120px !important;
+  overflow: hidden;
+  //float: left;
+}
+.fancy-select-sm p{ width: 120px; }
+.fancy-select-medium{
+  width: 240px !important;
+  overflow: hidden;
+  //float: left;
+}
+.fancy-select-medium p{ width: 240px; }
+.fancy-select-sm .text-field {
+    width: 120px;
+    }
+.fancy-select-sm select {
+    padding: .5em 0 .5em .8em;
+    }
+
+
+.select.error .fancy-select{
+    overflow: visible;
+    }
+
+/* large select -- one in a block */
+.fancy-select-lg {
+    width: 375px;
+    max-width: 375px;
+    }
+.fancy-select-lg select {
+      /* Padding works surpringly well */
+      padding: .6em 0 .6em 0.8em;
+    }
+
+.redemption-text {
+  width: 100%;
+  padding: 5% 15% 0% 15%;
+}
+@media (max-width: 37.5em) { /* 600PX */
+  .redemption-text {
+    padding: 5% 0% 0% 0%;
+  }
+}
+
+.security_text, .security_text .text-field, .security_text p.help-inline, .city_text, .city_text .text-field, .city_text p.help-inline { width: 240px; }

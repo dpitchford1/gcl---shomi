@@ -1,0 +1,73 @@
+/* Main Hero with Video 
+---------------------------------------------- */
+.hero{
+    padding: 2em 0 1.5em;
+    }
+
+.video-loaded{
+    //background-color: #fff;
+    width: 100% !important;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    }
+
+.video-promo{
+    width: 33.3%;
+    margin: 0 auto 2em;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    }
+
+#vid-wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    }
+.vid-wrap{
+    height: 100%;
+    width: 100%;
+    }
+
+.close-btn{ position:absolute; top:0; right:0; z-index:30000; height:40px; width: 60px; opacity: .8; }
+
+
+/* Main feature video
+---------------------------------------------- */
+
+.is--icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto !important;
+    z-index: 12;        
+    }
+.no-js .feature-video{
+    //background: none;
+    padding: 1em 1em;
+    cursor: default;
+    }
+.no-js .feature-video:hover{
+    text-decoration: none;
+    }
+.video-active .is--icon, .no-js .is--icon{
+    display: none;
+    }
+.no-js .feature-video{ color: #fff; }
+.no-js .feature-video noscript{ background-color: #000; display: block; text-align: center; opacity: .8; font-size: 1.2em }
+
+
+/* Standard Hero wrapper
+---------------------------------------------- */
+.hero-standard{
+    //padding-bottom: 3em;
+    width: 100%;
+    }
+//.hero-standard .btn--lg{}
+
+//.hero-standard .congrats-preseason{ background: asset-url("content/bg-laptop-congrats.jpg") no-repeat center 0; margin: 2em auto 0; padding-bottom: 36.5%; width: 48%; }

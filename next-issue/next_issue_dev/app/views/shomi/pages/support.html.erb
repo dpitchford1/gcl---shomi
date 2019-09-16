@@ -1,0 +1,65 @@
+<% content_for :title, 'Support' %>
+
+<section class="content-wrapper">
+	<h2 class="h-sb size-L w-ul"><%= t("titles.support").html_safe %></h2>
+	<h3 class="hide-text"><%= t('pages.faq') %></h3>
+
+	<dl class="content-listing">
+		<dt class="h-sb" title="<%= t("support.question").html_safe %>" id="faq1"><%= t("support.heading1").html_safe %></dt>
+		<dd title="<%= t("support.answer").html_safe %>">
+			<p><%= t("support.copy1").html_safe %></p>
+		</dd>
+
+		<dt class="h-sb" title="<%= t("support.question").html_safe %>" id="faq2"><%= t("support.heading2").html_safe %></dt>
+		<dd title="<%= t("support.answer").html_safe %>">
+			<p><%= t("support.copy2_html") %></p>
+
+			<p><%= t("support.copy21_html") %></p>
+
+			<p><%= t("support.copy22_html") %></p>
+		</dd>
+
+		<dt class="h-sb" title="<%= t("support.question").html_safe %>" id="faq3"><%= t("support.heading3").html_safe %></dt>
+		<dd title="<%= t("support.answer").html_safe %>">
+			<p><%= t("support.copy3").html_safe %></p>
+		</dd>
+
+		<dt class="h-sb" title="<%= t("support.question").html_safe %>" id="faq4"><%= t("support.heading4").html_safe %></dt>
+		<dd title="<%= t("support.answer").html_safe %>">
+			<p><%= t("support.copy4").html_safe %></p>
+		</dd>
+
+		<dt class="h-sb" title="<%= t("support.question").html_safe %>" id="faq4"><%= t("support.heading5").html_safe %></dt>
+		<dd title="<%= t("support.answer").html_safe %>">
+			<p><%= t("support.copy5").html_safe %></p>
+		</dd>
+
+		<dt class="h-sb" title="<%= t("support.question").html_safe %>" id="faq5"><%= t("support.heading6").html_safe %></dt>
+		<dd title="<%= t("support.answer").html_safe %>">
+			<p><%= t("support.copy6").html_safe %></p>
+		</dd>
+
+		<dt class="h-sb" title="<%= t("support.question").html_safe %>" id="faq6"><%= t("support.heading7").html_safe %></dt>
+		<dd title="<%= t("support.answer").html_safe %>">
+			<p><%= t("support.copy7").html_safe %></p>
+		</dd>
+	</dl>	
+</section>
+
+<section class="content-wrapper">
+    <h2 class="h-sb size-L2"><%= t("text.need_help") %></h2>
+    <ul class="inline-list help-list">
+    <% if I18n.locale == I18n.default_locale %>
+	    <li><a href="http://rogershelp.com/customerserv/livechatsupport/index.php?source=701&lctc=701%7C01%7Cws%7CGCL_portal_Support_en" rel="external"><span class="i-inline i-pl i--livechat"><%= t("text.live_chat") %></span></a></li>
+	    <!--<li><a href="tel:+18447646459" rel="tel"><span class="i-inline i--call">1-844-764-6459</span></a></li>-->
+    <% else %>
+	    <li><a href="http://rogershelp.com/customerserv/livechatsupport/index.php?source=751&lctc=751%7C01%7Cws%7CGCL_portal_Support_fr" rel="external"><span class="i-inline i-pl i--livechat"><%= t("text.live_chat") %></span></a></li>
+	    <!--<li><a href="tel:+18447646459" class="i-inline i--call" rel="tel">1-844-764-6459</a></li>-->
+    <%end%>
+	</ul>
+</section>
+
+<aside id="footnote" class="footnote" role="complementary">
+	<h3 class="hide-text"><%= t("menu.terms").html_safe %></h3>
+	<%= t("support.footnote1").html_safe %>
+</aside>

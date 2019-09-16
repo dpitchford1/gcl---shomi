@@ -1,0 +1,29 @@
+<% content_for :footer do ajax_validation(:session) end %>
+
+<%= simple_form_for(@session, remote: true, html: {class: 'modal-form' }, data: {validate: 'session'}) do |f| %>
+<div class="modal m-fade" id="new_session_modal" tabindex="-1" role="dialog" aria-labelledby="SignInLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<a href="#main-content" class="icon-close sizes-S" data-dismiss="modal" role="button" title="Close"></a>
+		<div class="modal-header">
+			<!-- <h4 class="modal-title cc" id="SignInLabel"><%= t("modal.sign_in").html_safe %></h4> -->
+			<h4 class="h-lgt sizes-M w-ul cc" id="SignInLabel">Sign in to MyROGERS</h4>
+		</div>
+		<div class="modal-body cf">
+			<fieldset>
+				<legend class="hide-text"><%= t("form.legend.personal_details") %></legend>
+
+				<%= f.input :username, label: t('activemodel.attributes.session.username_html'), placeholder: false, input_html: {:autocomplete => 'off', :title => t('errors.attributes.email_address.blank')} %>
+				<%= f.input :password, label: t('activemodel.attributes.session.password_html'), placeholder: false, hint: false, input_html: {:autocomplete => 'off',  maxlength: 16 } %>
+
+				<p class="form-help"><%= t("text.forgot") %> <%= link_to t("text.username").downcase, CONFIG["forgot_username_#{session[:lang].to_s}".to_sym], title: t('sessions.will_be_taken'), rel: 'external' %> <%= t("text.or") %> <%= link_to t("text.password").downcase, forgot_password_path %>?</p>
+
+				<p>
+					<button type="button" class="btn btn-cancel" data-dismiss="modal"><%= t("btn.cancel") %></button>
+					<%= f.button :submit, t("btn.signin"), class: "btn-signin" %>
+				</p>
+			</fieldset>
+		</div>
+		<p class="modal-footer"><%= t("signin.new").html_safe %> <%= link_to t("signin.registernow").html_safe, new_profile_path %></p>
+	</div>
+</div>
+<% end %>

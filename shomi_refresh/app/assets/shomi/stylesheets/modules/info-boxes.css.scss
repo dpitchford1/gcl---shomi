@@ -1,0 +1,68 @@
+/* Info Setup 
+---------------------------------------------- */
+.info {
+    border: 1px solid $color-primary;
+    min-height: 9em;
+    margin-bottom: 2.5em; 
+    }
+.info p:last-child {
+    margin-bottom: 0; 
+    }
+
+/* Info sizes 
+---------------------------------------------- */
+.info-sm {
+    padding: 1.5%;
+    }
+.info-m{
+    padding: 2%;
+    }
+.info-lg {
+    padding: 2.5%;
+    }
+
+/* Info BG's 
+---------------------------------------------- */
+.info--primary  { border-radius: 20px 20px 0 20px; }
+.info--secondary{ border-radius: 18px 18px 0 18px; }
+.info--tertiary { border-radius: 14px 14px 0 14px; }
+
+
+.info-pullright--LRG{
+    float: right;
+    width: 50%;
+    }
+.info-pullright--LG{
+    float: right;
+    width: 60%;
+    }
+.info-pullright--L{
+    float: right;
+    width: 68%;
+    }
+
+.info-pullright--m{
+    float: right;
+    width: 70%;
+    }
+
+
+.info-pullright--SM{
+    float: right;
+    width: 80%;
+    }
+.info-pullright--S{
+    float: right;
+    width: 85%;
+    }
+.info-pullright--S2{
+    float: right;
+    width: 90%;
+    }
+
+.info-pullright--sm{
+    float: right;
+    width: 80%;
+    }
+
+.random-tv{ float: left; width: 27%; padding-bottom: 19%; }

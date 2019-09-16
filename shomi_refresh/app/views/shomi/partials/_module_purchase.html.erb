@@ -1,0 +1,18 @@
+<% link_accounts_link ||= false %>
+<% subscribe_to_shomi_link ||= false %>
+
+<div class="info info-lg info--primary">
+	<article class="info-pullright--m">
+		<h4 class="h-reg sizes-L sm-m cc"><%= t('profiles.ineligible.sign_up_now') %></h4>
+		<p class="wfm sizes-M2 sm-m"><%= t('profiles.ineligible.sign_up_free_trial') %></p>
+		<p class="wfr"><%= t('profiles.ineligible.low_price_cancel_anytime') %></p>
+
+    <% if subscribe_to_shomi_link %>
+		  <p><%= link_to t('profiles.ineligible.subscribe_to_shomi_now'), @current_session.logged? ? orders_path : new_profile_path, class: 'btn btn-shomi' %></p>
+    <% end %>
+    <% if link_accounts_link %>
+		  <p><%= link_to t("btn.link_accounts"), profiles_accounts_path,  class: 'btn btn-default btn--lg' %></p>
+    <% end %>
+	</article>
+	<div class="random-tv has-TV"></div>
+</div>

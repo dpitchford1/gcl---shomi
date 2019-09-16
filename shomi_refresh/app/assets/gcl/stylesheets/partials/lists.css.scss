@@ -1,0 +1,187 @@
+/* List - No Bullets
+---------------------------------------------- */
+
+/* gets rid of bullets */
+.no-bullet{
+    list-style: none; 
+    list-style-image: none; 
+    margin-left: 0;
+    padding-left: 0; 
+    }
+/* gets rid of bullets on child ul */
+.no-bullet .no-bullet{
+    margin-left: 15px !important; 
+    padding-left: 10px; 
+    }                   
+
+
+/* List - Inline display, set margin, fix boxmodel
+---------------------------------------------- */
+.inline-list{
+    margin: 0;
+    padding-left: 0;
+    overflow: hidden;
+    }                                           
+.inline-list li{
+    float: left;
+    margin: 0 1em 0 0;
+    list-style: none outside none;
+    }   
+.inline-list a{
+    display: block;
+    float: left;
+    margin: 0;
+    }
+
+
+/* List - lots of breathing room between items
+---------------------------------------------- */
+//.loose-list{}
+.loose-list li{ margin-bottom: .7em; }
+    
+
+/* List - change bullets to alpha or roman = <ul class="alpha-list">
+---------------------------------------------- */
+.alpha-list     { list-style-type: lower-alpha; } /* display ol list as letters a, b, c */
+.roman-list     { list-style-type: lower-roman; } /* display ol list as roman i, ii, iii */
+
+
+/* List - Q&A = <dl class="content-listing">
+---------------------------------------------- */
+//.content-listing{}
+.content-listing dt{ @include rem(font-size, 20px); margin-bottom: .6em; letter-spacing: -1px; line-height: 1.2; }
+.content-listing dt:nth-child(n+2){ margin-top: 2em; }
+.content-listing dd{ @include rem(font-size, 14px); margin-bottom: 1em; }
+
+.content-listing ol, .content-listing ul{ margin-bottom: 0; padding-top: .5em; }
+
+.content-listing ol .alpha-list, .content-listing ul .alpha-list{ margin-bottom: 1.2em; padding-top: 0; }
+
+
+/* List - plain content list pattern with '//' as separator
+---------------------------------------------- */
+.content-list{
+    margin: 0;
+    padding: 0 0 1em;
+    }
+.content-list li    { float: left; margin: 0 1em 0 0; list-style: none outside none; }
+.content-list a     { display: block; float: left; margin: 0; }
+
+.content-list li:before             { content: '|'; float: left; padding-right: 1em; }
+.content-list li:first-child:before { content: ''; padding-right: 0; }
+
+
+.help-list{ @include rem(font-size, 14px); }
+.help-list li{ padding-right: 10px;  }
+
+
+/* List - Content Table
+---------------------------------------------- */
+.content-table-group{ 
+    padding-top: 1.5em;
+    width: 100%;
+    }
+
+.content-table{
+    padding: 1em 1.7em;
+    margin-bottom: 0;
+    }
+.content-table-group .content-table:nth-child(odd){ background-color: #f5f5f5; }
+
+.content-table dt{ font-family: $font-semibold; }
+.content-table dd{ @include rem(font-size, 14px); margin-bottom: 0; }
+
+.content-table-footer{
+    border-top: 1px solid #dfdfdf;
+    clear: both;
+    @include rem(font-size, 14px);
+    padding-top: 1.5em;
+    }
+
+.content-table-group .indent{ 
+    padding: 1em 1.7em 0;
+    line-height: normal;
+    }
+
+.content-table-group .sizes-SM-alt{ margin-bottom: .5em; }
+.content-table-group .sizes-SM-alt small{ display: block; color: #000; }
+
+.content-table-group .h-reverse{ 
+    background-color: #c2c3c5;
+    padding: .5em 1.7em;
+    }
+
+
+
+// .styled-bullets li{
+//     line-height: normal;
+//     margin-bottom: .6em;
+//     padding-left: 15px;
+//     position: relative;
+//     }
+// .styled-bullets li:before{
+//     background: asset-url("icons/ui/i-chev-bullet.png") no-repeat left center;
+//     background-image: linear-gradient(transparent, transparent), asset-url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJJY29uIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDcuODcgMTUiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDcuODcgMTUiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIGZpbGw9IiMyMkIyQzkiIHBvaW50cz0iMS44MywwIDAsMC4zMSA1LjgyLDcuNyAwLjMzLDE0Ljc5IDIuMTUsMTUgNy44Nyw3LjcgIi8+PC9zdmc+");
+//     height: 12px;
+//     width: 8px;
+//     display: block;
+//     position: absolute;
+//     content: '';
+//     top: 7px;
+//     //margin-right: 8px;
+//     left: 0;
+//     }
+
+/* Icon Forward */
+.styled-bullets li {
+    display: block;
+    line-height: normal;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    position: relative;
+    margin-bottom: .6em;
+    padding-left: 17px;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    }
+.styled-bullets a {
+    display: block;
+    }
+
+.styled-bullets li:before {
+    background: asset-url("icons/ui/i-chev-bullet.png") no-repeat left center;
+    background-image: linear-gradient(transparent, transparent), asset-url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJJY29uIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDcuODcgMTUiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDcuODcgMTUiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIGZpbGw9IiMyMkIyQzkiIHBvaW50cz0iMS44MywwIDAsMC4zMSA1LjgyLDcuNyAwLjMzLDE0Ljc5IDIuMTUsMTUgNy44Nyw3LjcgIi8+PC9zdmc+");
+    content: " ";
+    height: 12px;
+    width: 8px;
+    position: absolute;
+    left: 0;
+    top: 7px;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    }
+
+.styled-bullets li:focus:before, .styled-bullets li:active:before {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+    }
+.no-touch .styled-bullets li:hover:before{
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+    }
+
+
+
+
+
+
+
+
+
+

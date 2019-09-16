@@ -1,0 +1,20 @@
+<article class="feature is--fancy">
+	<h3 class="h-l size-L3 center">
+		<span class="icon-mouse-icon size-LG2"></span><br/>
+		<%= t("profiles.ineligible.upgrade.heading") %>
+	</h3>
+	<div class="feature-body">
+		<p class="buy-excerpt h-l size-M2 center"><%= t("promo_buy.excerpt").html_safe %></p>
+		<% if I18n.locale == I18n.default_locale %>
+		<p class="view_btn">
+			<a class="btn btn-default btn-block btn--viewpackages" href="http://www.rogers.com/web/link/hispeedBrowseFlowDefaultPlans?setLanguage=en&asc_icid=shomiexisting_viewelgiblepkg_intpkgs_landing" target="_blank"><%= t("promo_buy.view_packages").html_safe %></a>
+		</p>
+		<% else %>
+		<p class="view_btn">
+			<a class="btn btn-default btn--viewpackages" href="http://www.rogers.com/web/Rogers.portal?_nfpb=true&_pageLabel=INTER_HISPEED&_nfls=true&setLanguage=fr&_eventName=hispeedBrowseFlowDefaultPlans&asc_icid=shomiexisting_viewelgiblepkg_intpkgs_landing" target="_blank"><%= t("promo_buy.view_packages").html_safe %></a>
+
+		</p>
+		<%end%>
+		<%#=<p class="small-text"><= t("promo_buy.plans") ></p>%>
+	</div>
+</article>

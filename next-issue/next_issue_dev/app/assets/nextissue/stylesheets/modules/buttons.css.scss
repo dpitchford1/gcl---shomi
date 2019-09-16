@@ -1,0 +1,287 @@
+/* BTN Setup
+---------------------------------------------- */
+.btn {
+    z-index: 100;
+    border: 0 solid transparent;
+    color: #fff;
+    display: inline-block;
+    font: 16px/1.2 $default-fonts;
+    margin-bottom: 0;
+    padding: .85em 2.3em;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+    /* btn behaviours */
+    .btn:hover, .btn:focus, .btn:active {
+        color: #fff;
+        text-decoration: none;
+        }
+    .btn:active, .btn.active {
+        outline: 0;
+        }
+    .btn:focus{
+        outline: thin dotted;
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-offset: -2px;
+        }
+    .btn:active:focus{
+        outline: 0 none;
+        }
+
+/* BTN COLOURS 
+---------------------------------------------- */
+/* Default - Red */
+.btn-default {
+    background-color: #78cfe2;
+    border-radius: 10px;
+    }
+.btn-light {
+//  background-color: #d6f2f6;
+  background-color: #78cfe2;
+}
+.btn-light:hover, .btn-light:focus, .btn-light:active { background-color: #d6f2f6 !important; }
+.btn-error { background-color: #ee0000; }
+.btn-error:hover, .btn-error:focus, .btn-error:active { background-color: #e73739 !important; }
+.btn-success { background-color: #4cb235; }
+.btn-success:hover, .btn-success:focus, .btn-success:active { background-color: #449e2f !important; }
+.btn-default:hover, .btn-default:focus, .btn-default:active {
+    background-color: #78cfe2;
+    color: #000000;
+    }
+
+/* Secondary Colour */
+.btn-secondary {
+    background-color: #445057;
+    }
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
+    background-color: #69757f;
+    }
+
+/* Tertiary Colour */
+.btn-tertiary {
+    background-color: #adb0af;
+    }
+.btn-tertiary:hover, .btn-tertiary:focus, .btn-tertiary:active {
+    background-color: #c7cac9;
+    }
+
+/* BTN Cancel 
+---------------------------------------------- */
+.btn-cancel.blue { color: #78cfe2; }
+.btn-cancel{
+    background: none transparent;
+    color: #f44d3a /*#1c85c2*/;
+    font-size: 14px;
+    }
+.btn-cancel:hover, .btn-cancel:focus{
+    color: #1c85c2;
+    text-decoration: underline;
+    }
+.btn-cancel:focus{
+    border: 1px solid #ccc;
+    }
+.btn-cancel.pr{
+    padding-right: 0;
+    }
+.btn-blk.lg { font-size: 1.05rem; }
+.btn-blk {
+  font-weight: normal;
+  background: none transparent;
+  color: #000000;
+  font-size: 14px;
+  text-decoration: underline;
+}
+.btn-blk:hover {
+  color: #333333;
+}
+.upgrade-left-margin { margin-left: 0.8em; }
+
+/* BTN MY Rogers Alternative 
+---------------------------------------------- */
+.btn--myrogers { 
+     padding: .55em 0 .25em !important;
+    }
+
+.btn--myrogers .my-rogers-text { 
+    //background-image: asset-url("logos/i-logo-myrogers-alt.svg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+    display: inline-block;
+    min-height: 33px;
+    line-height: 26px;
+    text-indent: -999em;
+    }
+
+[lang="en-ca"] .my-rogers-text{ 
+    background: asset-url("logos/i-logo-myrogers-en-alt-sm.png") no-repeat 0 0;
+    background-image: asset-url("logos/i-logo-myrogers-en-alt.svg"), none; width: 90px; 
+    }
+[lang="fr-ca"] .my-rogers-text{ 
+    background: asset-url("logos/i-logo-myrogers-fr-alt-sm.png") no-repeat 0 0;
+    background-image: asset-url("logos/i-logo-myrogers-fr-alt.svg"), none; width: 105px; 
+    }
+
+
+/* BTN Layout modifier - full width 
+---------------------------------------------- */
+.btn-block {
+    display: block;
+    margin-bottom: 5px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    }
+
+
+/* BTN Groups 
+---------------------------------------------- */
+.btn-group{ margin-bottom: 1em; }
+
+/* Button layout - group full width */
+.btn-group-wide{
+    display: table;
+    table-layout: fixed;
+    padding: 0;
+    margin-bottom: 1em;
+    width: 100%;
+    }
+.btn-group-wide li{
+    display: table-cell;
+    padding-left: 5px;
+    }
+.btn-group-wide li:first-child{
+    padding-left: 0;
+    }
+.btn-group-wide .btn{
+    display: block;
+    line-height: 1.1;
+    white-space: normal;
+    }
+[lang="fr-ca"] .btn-group-wide .btn{
+    @include rem(font-size, 14px);
+    }
+
+.btn-nextissue {
+  color: #000000;
+  background-color: #ffffff;
+  font-family: $default-fonts;
+  border: solid #c7ced4 1px;
+  border-radius: 15px;
+}
+.btn-nextissue:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+.btn-nextissue.active {
+  font-weight: bold;
+  text-decoration: underline;
+  background-color: #c7ced4;
+}
+
+.btn-nextissue-group {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.btn-nextissue-group .btn + .btn,
+.btn-nextissue-group .btn + .btn-nextissue-group,
+.btn-nextissue-group .btn-nextissue-group + .btn,
+.btn-nextissue-group .btn-nextissue-group + .btn-nextissue-group {
+  margin-left: -1px;
+}
+.btn-nextissue-group > .btn {
+  position: relative;
+  float: left;
+  /* responsive global header menu has z-index of 15
+     overall buttons have z-index of 100 to cover the header menu
+     nextissue toggle buttons need to be below 15 to
+     have the header dropdown cover them */
+  z-index: 2;
+}
+.btn-nextissue-group > .btn:hover,
+.btn-nextissue-group-vertical > .btn:hover,
+.btn-nextissue-group > .btn:focus,
+.btn-nextissue-group-vertical > .btn:focus,
+.btn-nextissue-group > .btn:active,
+.btn-nextissue-group-vertical > .btn:active,
+.btn-nextissue-group > .btn.active,
+.btn-nextissue-group-vertical > .btn.active {
+  z-index: 2;
+}
+.btn-nextissue-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: 0;
+}
+.btn-nextissue-group > .btn:first-child {
+  margin-left: 0;
+}
+.btn-nextissue-group > .btn:first-child:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn-nextissue-group > .btn:last-child:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn-nextissue-group > .btn-nextissue-group {
+  float: left;
+}
+.btn-nextissue-group > .btn-nextissue-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+.btn-nextissue-group > .btn-nextissue-group:first-child > .btn:last-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn-nextissue-group > .btn-nextissue-group:last-child > .btn:first-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+
+/* Nextissue select offer buttons */
+.nextissue-button {
+  display: inline-block;
+  border-radius: 10px;
+  border-width: 0 0 2px 0;
+  border-style: solid;
+  text-shadow: 0 -1px 0 black;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1;
+  color: #fff;
+  padding: 12px 20px;
+  margin-bottom: 1em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  border-color: #193b42;
+  background: #49adc2;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #49adc2), color-stop(100%, #307280));
+  background: -webkit-linear-gradient(top, #49adc2 0%, #307280 100%);
+  background: -moz-linear-gradient(top, #49adc2 0%, #307280 100%);
+  background: -ms-linear-gradient(top, #49adc2 0%, #307280 100%);
+  background: -o-linear-gradient(top, #49adc2 0%, #307280 100%);
+  background: linear-gradient(to bottom, #49adc2 0%, #307280 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF49ADC2', endColorstr='#FF307280', GradientType=0  );
+}
+.nextissue-button:hover {
+  color: #fff;
+}
+.nextissue-button:hover {
+  background: #49adc2;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #49adc2), color-stop(100%, #245966));
+  background: -webkit-linear-gradient(top, #49adc2 0%, #245966 100%);
+  background: -moz-linear-gradient(top, #49adc2 0%, #245966 100%);
+  background: -ms-linear-gradient(top, #49adc2 0%, #245966 100%);
+  background: -o-linear-gradient(top, #49adc2 0%, #245966 100%);
+  background: linear-gradient(to bottom, #49adc2 0%, #245966 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF49ADC2', endColorstr='#FF245966', GradientType=0 );
+}

@@ -1,0 +1,310 @@
+/* HTML TO USE 
+
+- first iteration uses countdown.js -- only displays days
+<%= javascript_include_tag "countdown", async: 'async' %>
+
+- this snippets requires the addloadevent snippet be present in the global scope
+<script>
+addLoadEvent(function() { new Countdown({ selector: '.countdown', dateEnd: new Date('Oct 8, 2014 19:00:00'), msgPattern : '<div class="countdown-inner"><span class="numbers">{days}</span></div> <h3 class="h-xb uc block"><%= t("new.puck_drop").html_safe %></h3>' }); });
+</script>
+
+
+
+- second iteration uses countdown2.js -- can display months, days, hours, minutes, seconds
+<%= javascript_include_tag "countdown2", async: 'async' %>
+<script>
+function displayTZCountDown(countdown, tzcd) {
+    if (countdown < 0) document.getElementById(tzcd).innerHTML = "The puck has dropped!";
+    else {
+        var secs = countdown % 60;
+        if (secs < 10) secs = '0' + secs;
+        var countdown1 = (countdown - secs) / 60;
+        var mins = countdown1 % 60;
+        if (mins < 10) mins = '0' + mins;
+        countdown1 = (countdown1 - mins) / 60;
+        var hours = countdown1 % 24;
+        if (hours < 10) hours = '0' + hours;
+        var days = (countdown1 - hours) / 24;
+        if (days < 10) days = '0' + days;
+        document.getElementById(tzcd).innerHTML = '<div class="numbers-group">' + '<span class="numbers">' + days + '</span>' + '<span class="h-b number-label"><%= t("new.day").html_safe %>' + (days == 1 ? '' : 's') + '</span>' + '</div>' + '<div class="numbers-group">' + '<span class="numbers">' + hours + '</span>' + '<span class="h-b number-label"><%= t("new.hours").html_safe %></span>' + '</div>' + '<div class="numbers-group">' + '<span class="numbers">' + mins + '</span>' + '<span class="h-b number-label"><%= t("new.minutes").html_safe %></span>' + '</div>' + '<h3 class="h-xb uc block"><%= t("new.puck_drop").html_safe %></h3>';
+        setTimeout('displayTZCountDown(' + (countdown - 1) + ',\'' + tzcd + '\');', 999);
+    }
+}
+</script>
+
+
+<div class="countdown text-center"></div>
+<div class="countdown2 has-more has--minutes" id="countdown2"></div>
+*/
+
+/* Countdown Clock
+---------------------------------------------- */
+.js .countdown2{ min-height: 180px; padding: 0 0 .5em; margin: 0 auto; text-align: center; }
+
+// .js .countdown{ min-height: 180px; padding: 0 0 .5em; }
+
+// /* Basic styling with BG */
+// .countdown-inner{
+//     //background: asset-url("content/bg-countdown.png") no-repeat 0 0;
+//     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALYAAABuCAMAAAC9Qxl0AAAAOVBMVEVMaXEjKCwEBQYEBQYUGBoEBQYjKCwjKCwEBQYjKCwEBQYUGBojKCwEBQYjKCwEBQYVGRsdISQJCwybKgjzAAAADnRSTlMA19YrBvwqkpP69gm8vLp3+0IAAAEUSURBVHja7dI7jsMwEARRfSiRlG0OpfsfdrFJw5mT6az6AIWHIZf/nXXtI2V9refyPV+/1JG6+pLX2C/vkbx3EdnXryN9VWZb/+z52a7/7errGKZzu/qrI7tK7ep3R7ZL7eoPy6Q29WHDhg0bNmzYsGHDhg0bNmzYsGHDhg0bNmzYsGHDhg0bNmzYsGHDhg0bNmzYsGHDhg0bNmzYsGHDhg0bNmzYsGHDhg0bNmzYv/u3o3pL7epPR3ZK7eo/juwjtasf03CMkNrVv+JO/3lxSe3qbxEz+xaxSe3qt4h45p12iflERJPa1d+PSN+xS23rt/xsWzRbv3yyq58is7Ff2pH6gu21aNb+3rak8rW1/Uts6/8BDQsHi3+47VwAAAAASUVORK5CYII=");
+//     background-repeat: no-repeat;
+//     background-position: 0 0;
+//     color: #fff;
+//     margin: 0 auto;
+//     min-height: 125px;
+//     width: 182px;
+//     }
+
+// /* style numbers */
+// .countdown-inner .numbers{
+//     display: block;
+//     font-family: $font-semibold;
+//     @include rem(font-size, 88px);
+//     letter-spacing: .5em;
+//     line-height: 1;
+//     overflow: hidden;
+//     padding-left: 19px;
+//     padding-top: 7px;
+//     text-shadow: -1px 5px 0 #000;
+//     }
+
+// /* Apply glossy overlay to numbers -- will not apply in IE8 */
+// .countdown-inner .numbers::before, .countdown-inner .numbers::after{
+//     background-color: #000;
+//     border-radius: 8px 8px 0 0;
+//     content: '';
+//     display: block;
+//     height: 55px;
+//     opacity: .2;
+//     position: absolute;
+//     top: 0;
+//     width: 86px;
+//     z-index: 3;
+//     }
+//     .countdown-inner .numbers::before{ left: 0; }
+//     .countdown-inner .numbers::after { right: 0; }
+
+// /* Modifier for "Days to puck drop" */
+// .countdown2 .h-xb{
+//     @include rem(font-size, 32px);
+//     letter-spacing: -1px;
+//     margin-bottom: 0;
+//     }
+
+
+/* Countdown Clock version 2
+---------------------------------------------- */
+.has--days      { width: auto; }
+.has--hours     { width: 413px; }
+.has--minutes   { width: 643px; }
+.has--seconds   { width: 875px; }
+
+/* Basic styling with BG */
+.numbers-group{
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF8AAABuCAMAAAB2tD/PAAAAM1BMVEVMaXEjKCwGBwcGBwcjKCwjKCwjKCwVGBsGBwcjKCwGBwcjKCwGBwcjKCwGBwcaHiANDxBf55qJAAAADXRSTlMAKivWj9eVBpP697y8czBmFAAAALZJREFUeNrt2rkRwzAMBVHel0SQ/VfrcQRLMTjjYLeAh18A3Defcp8m9Zy8e1XLNK3UJ39N467HgTLNK07z3d7vXv00D5TUzyf8rH4/4Xf155Hw8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fH/xV8n+KX+PuFv9WUdmC/qD1n2/FA/iixrXqL6TUT2MtS3iDT1gxwoOK3Z8839VG9r/n498DXj9dW9Ci0OG3vEFh70B+803yZdWxyFAAAAAElFTkSuQmCC");
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    float: left;
+    margin-left: 50px;
+    z-index: 3;
+    }
+.countdown2 .numbers-group:first-of-type{ margin-left: 0; }
+
+
+/* style numbers */
+.numbers-group .numbers{
+    color: #fff;
+    display: block;
+    font-family: $font-semibold;
+    @include rem(font-size, 84px);
+    letter-spacing: 49px;
+    line-height: 1;
+    min-height: 102px;
+    overflow: hidden;
+    padding-left: 19px;
+    padding-top: 8px;
+    text-shadow: -1px 5px 0 #000;
+    width: 162px;
+    }
+
+.numbers-group .number-label{
+    clear: both;
+    display: block;
+    @include rem(font-size, 30px);
+    padding-top: .2em;
+    text-transform: uppercase;
+    width: 100%;
+    }
+
+
+/* Apply glossy overlay to numbers -- will not apply in IE8 */
+.has-more .numbers::before, .has-more .numbers::after{
+    background-color: #000;
+    border-radius: 8px 8px 0 0;
+    content: '';
+    display: block;
+    height: 55px;
+    opacity: .4;
+    position: absolute;
+    top: 0;
+    width: 86px;
+    z-index: 6;
+    }
+    .has-more .numbers::before{ left: 0; }
+    .has-more .numbers::after { right: 0; }
+
+/* Modifier for "Days to puck drop" */
+.countdown2 .h-xb{
+    clear: both;
+    @include rem(font-size, 32px);
+    letter-spacing: -1px;
+    padding: .5em 0 0;
+    }
+
+
+@media (max-width: 37.5em) { /* 600PX */
+    /* Countdown 2
+    ------------------------ */
+    .js .countdown2{ min-height: 1px; }
+    .has--minutes{ width: 500px; }
+
+    /* Basic styling with BG */
+    .numbers-group{
+        margin-left: 20px;
+        width: 153px;
+        background-size: 52.5% auto;
+        }
+
+    /* style numbers */
+    .numbers-group .numbers{
+        @include rem(font-size, 68px);
+        letter-spacing: 38px;
+        min-height: 102px;
+        padding-left: 19px;
+        width: 141px;
+        }
+
+    .numbers-group .number-label{
+        @include rem(font-size, 24px);
+        }
+
+    /* Apply glossy overlay to numbers -- will not apply in IE8 */
+    .has-more .numbers::before{
+        height: 47px;
+        width: 72px;
+        }
+    .has-more .numbers::after{
+        height: 47px;
+        width: 72px;
+        }
+
+}
+
+
+
+
+@media (max-width: 30em) { /* 480PX */
+    // /* Countdown clock */
+    // .js .countdown {
+    //     min-height: 150px;
+    //     }
+    // .js .countdown-inner {
+    //     background-size: 100% auto;
+    //     min-height: 105px;
+    //     width: 162px;
+    //     }
+    // .js .countdown-inner .numbers {
+    //     @include rem(font-size, 78px);
+    //     letter-spacing: .48em;
+    //     padding-left: 20px;
+    //     padding-top: 6px;
+    //     }
+    // /* Apply glossy overlay to numbers -- will not apply in IE8 */
+    // .js .countdown-inner .numbers::before, .js .countdown-inner .numbers::after{
+    //     height: 45px;
+    //     width: 77px;
+    //     }
+
+        /* Countdown 2
+    ------------------------ */
+    .has--minutes{ width: 380px; }
+
+    /* Basic styling with BG */
+    .numbers-group{
+        margin-left: 12px;
+        width: 118px;
+        background-size: 52.5% auto;
+        }
+
+    /* style numbers */
+    .numbers-group .numbers{
+        @include rem(font-size, 50px);
+        letter-spacing: 34px;
+        min-height: 64px;
+        padding-left: 12px;
+        width: 107px;
+        }
+
+    /* Apply glossy overlay to numbers -- will not apply in IE8 */
+    .has-more .numbers::before{
+        height: 32px;
+        width: 56px;
+        }
+    .has-more .numbers::after{
+        height: 32px;
+        width: 56px;
+        }
+
+    .numbers-group .number-label{
+        @include rem(font-size, 22px);
+        padding-top: .2em;
+        }
+
+}
+
+@media (max-width: 23.75em) { /* 380PX */
+
+    /* Modifier for "Days to puck drop" */
+    // .js .countdown .h-xb{
+    //     @include rem(font-size, 24px);
+    //     }
+
+
+    /* Countdown 2
+    ------------------------ */
+    .has--minutes{ width: 290px; }
+
+    /* Basic styling with BG */
+    .numbers-group{
+        margin-left: 5px;
+        width: 88px;
+        background-size: 52.5% auto;
+        }
+
+    /* style numbers */
+    .numbers-group .numbers{
+        @include rem(font-size, 38px);
+        letter-spacing: 24px;
+        min-height: 47px;
+        padding-left: 11px;
+        width: 76px;
+        }
+
+    /* Apply glossy overlay to numbers -- will not apply in IE8 */
+    .has-more .numbers::before{
+        height: 28px;
+        width: 40px;
+        }
+    .has-more .numbers::after{
+        height: 28px;
+        width: 40px;
+        }
+
+    .numbers-group .number-label{
+        @include rem(font-size, 16px);
+        padding-top: .2em;
+        }
+
+
+
+}    

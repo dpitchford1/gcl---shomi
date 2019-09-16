@@ -1,0 +1,62 @@
+<% content_for :body_start do %>
+	<div id="track2"></div>
+	<div id="track3"></div>
+<% end %>
+<% content_for :footer do %>
+	
+
+  	<% if params[:order_id] %>
+  		<!-- track2 -->
+	  	<script>
+			var track2js = '';
+			var axel = Math.random() + "", a = axel * 10000000000000; track2js += '<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=KpeiA7fF;ord=' + a + '?" class="hidden"></iframe>';
+			document.getElementById('track2').innerHTML = track2js;
+		</script>
+	  	<noscript><iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=KpeiA7fF;ord=" class="hidden"></iframe></noscript>
+	
+  		<!-- track3 -->
+	  	<script>
+			var track3js = '';
+			var axel = Math.random() + "", a = axel * 10000000000000; track3js += '<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger00;ord=' + a + '?" class="hidden"></iframe>';
+			document.getElementById('track3').innerHTML = track3js;
+		</script>
+	  	<noscript><iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger00;ord=" class="hidden"></iframe></noscript>
+
+		<!-- Facebook Conversion Code for Checkout Pixel - Confirmation Page -->
+		<script>(function() {
+		  var _fbq = window._fbq || (window._fbq = []);
+		  if (!_fbq.loaded) {
+		    var fbds = document.createElement('script');
+		    fbds.async = true;
+		    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(fbds, s);
+		    _fbq.loaded = true;
+		  }
+		})();
+		window._fbq = window._fbq || [];
+		window._fbq.push(['track', '6021840366937', {'value':'0.01','currency':'CAD'}]);
+		</script>
+		<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6021840366937&amp;cd[value]=0.01&amp;cd[currency]=CAD&amp;noscript=1" /></noscript>
+
+		<script src="//platform.twitter.com/oct.js" type="text/javascript"></script>      <script type="text/javascript">      twttr.conversion.trackPid('l5175');      </script>      <noscript>      <img height="1" width="1" style="display:none;" alt=""        src="https://analytics.twitter.com/i/adsct?txn_id=l5175&amp;p_id=Twitter" />      <img height="1" width="1" style="display:none;" alt=""        src="//t.co/i/adsct?txn_id=l5175&amp;p_id=Twitter" />      </noscript>    
+	<% end %>
+
+  <% end %>
+
+<% content_for :title, t('titles.confirmation').html_safe %>
+<% content_for :support_module_class, 'hidden' %>
+	
+	<section class="hero-confirmation text-center congrats" id="confirmation-page">
+		<h2 class="h-r size-LG rogers-red"><%= t("profiles.purchased.congrats").html_safe %></h2>
+		<p class="congrats-blurb copy--L h-l">
+		<% if params[:order_id] %>
+			<%= t("profiles.purchased.congrats_pre").html_safe %>
+		<% end %>
+		</p>
+	</section>
+
+
+	<aside class="content-wrapper confirmation-aside" role="complementary">
+    <p class="text-center"><%= link_to t('profiles.purchased.start_watching'), t('profiles.purchased.start_watching_link'), class: 'btn btn-default', rel: 'external' %></p>
+	</aside>

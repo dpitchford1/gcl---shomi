@@ -1,0 +1,67 @@
+<% content_for :title, t('titles.home').html_safe %>
+
+<% content_for :body_start do %>
+	<div id="track1"></div>
+<% end %>
+<% content_for :footer do %>
+	<script>
+		var track1js = '';
+		var axel = Math.random() + "", a = axel * 10000000000000; track1js += '<iframe src="https://4498654.fls.doubleclick.net/activityi;src=4498654;type=invmedia;cat=jKeGnrDq;ord=' + a + '?" class="hidden"></iframe>';
+		document.getElementById('track1').innerHTML = track1js;
+	</script>
+	<noscript><iframe src="https://4498654.fls.doubleclick.net/activityi;src=4498654;type=invmedia;cat=jKeGnrDq;ord=1?" class="hidden"></iframe></noscript>
+<% end %>
+
+<main class="region hero cf" role="main">
+	<%= render 'module_hero_main' %>
+</main>
+
+<% if !@current_session.logged? %>
+<section class="fancy-promos span-of-3 has--ul-fancy">
+	<h2 class="hide-text h-b uc-center size-L"><%= t("promos_heading_eligible") %></h2>
+
+	<%= render 'promo_signin' %>
+
+	<%= render 'promo_getrogers' %>
+
+	<%= render 'promo_purchase_gcl' %>
+
+	<%= t("legal.data_overage").html_safe %>
+	
+</section>
+<% end %>
+
+<div class="region promo-code-full has--ul-fancy">
+	<%= render 'profiles/promo_code_form', use_styling: "landing_page"%>
+</div>
+
+<%# START: GCL Features %>
+<%= render 'gcl_features' %>
+
+<%# START: Complementary Content %>
+<aside class="app-downloads" role="complementary">
+	<%# START: App downloads %>
+	<%= render 'module_app_download' %>
+</aside>
+
+<section id="footnote" class="footnote">
+	<h3 class="hide-text"><%= t('menu.terms').html_safe %></h3>
+	<p><%= t("legal.terms1").html_safe %></p>
+	<p><%= t("legal.terms2").html_safe %></p>
+	<p><%= t("legal.terms3").html_safe %></p>
+</section>
+
+<!--[if lte IE 8]>
+<div id="ltie8" class="ltie8">
+    <a id="closeIE" href="#main-content" class="ico i-m i--close float-l" style="margin-right:15px;" data-dismiss="ltie8" role="button"><%= t("btn.close") %></a>
+    <p><%= t("legal.browser_warning").html_safe %></p>
+    <script>
+	addLoadEvent(function() {
+	    $('#closeIE').on('click', function(){
+	        $('#ltie8').hide();
+	        return false;
+	    });
+	});
+</script>
+</div>
+<![endif]-->

@@ -1,0 +1,63 @@
+<% show_promo ||= false %>
+<% if @offer %>
+<section class="info info-lg info--primary">
+    <h3 class="hide-text"><%= t('orders.order_summary') %></h3>
+
+    <table class="order-table" summary="Review your order">
+    	<caption class="h-b size-M uc"><%= ['callback', 'order_summary'].include?(params[:action]) ? t('orders.review_order') : t('orders.order_summary') %></caption>
+        <thead class="thead"><th><%= t('orders.gcl_full_package').html_safe %></th></thead>
+        <tbody>
+            <tr>
+                <th scope="col" class="uc th"><%= t('orders.subtotal') %></th>
+                <% if @order.billing_option == "free" %>
+                    <th scope="col" class="uc th"><%= t('orders.discount') %></th>
+                    <th scope="col" class="uc th"><%= t('orders.total') %></th>
+                <% elsif @order.taxes %>
+                    <th scope="col" class="uc th"><%= t('orders.taxes') %></th>
+                    <th scope="col" class="uc th"><%= t('orders.total') %></th>
+                <% end %>
+
+            </tr>
+            <tr>
+                <% if I18n.locale == I18n.default_locale %>
+                    <td class="td"><sup>$</sup><%= @offer.price %></td>
+                    <% if @order.billing_option == "free" %>
+                        <td class="td"><sup>$</sup><%= @offer.price %></td>
+                        <td class="td"><sup>$</sup>0</td>
+                    <% elsif @order.taxes %>
+                        <td class="td"><sup>$</sup><%= @order.taxes %></td>
+                        <td class="td"><sup>$</sup><%= @order.total %></td>
+                    <% end %>
+                <% else %>
+                    <td class="td"><%= @offer.price %> $</td>
+                    <% if @order.billing_option == "free" %>
+                        <td class="td"><%= @offer.price %> $</td>
+                        <td class="td">0 $</td>
+                    <% elsif @order.taxes %>
+                        <td class="td"><%= @order.taxes %> $</td>
+                        <td class="td"><%= @order.total %> $</td>
+                    <% end %>
+                <%end%>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="tfoot"><%= t('orders.gcl_earlybird_subpackage') %></td>
+            </tr>
+           
+            <% unless ['callback', 'order_summary'].include?(params[:action]) %>
+            <tr>
+                <td><small><%= t('orders.order_meta') %></small></td>
+            </tr>
+            <% end %>
+        </tfoot>
+    </table>
+
+    <% if show_promo %>
+    <div class="region promo-code-full">
+        <%= render 'profiles/promo_code_form' %>
+    </div>
+    <% end %>
+
+</section>
+<% end %>

@@ -1,0 +1,26 @@
+
+.order-table { margin-bottom: .5em; width: 100%; }
+.order-table tbody      { float: right; }
+.order-table .thead     { float: left; text-align: left; width: 80%; line-height: 1.1; padding-top: 1.1em }
+.order-table .thead th  { font-weight: normal; @include rem(font-size, 22px); }
+.order-table caption    { text-align: left; font-style: normal; }
+.order-table td         { text-align: left; font-style: normal; }
+.order-table .th        { @include rem(font-size, 14px); text-align: left; padding: 0 1.5em 0 0; }
+.order-table .tfoot     { padding: 1.2em 0 .4em; line-height: 1; }
+
+/* Summary Table
+---------------------------------------------- */
+.summary-table  { margin-bottom: 3em;
+  width: 100%;
+  margin-left:auto; margin-right:auto;
+}
+.summary-row    { border-bottom: 1px solid #ddd; }
+.summary-col    { padding: .4em 0; }
+
+.zebra-table tr:nth-child(even) { background-color: #ebebeb; }
+.zebra-table tr:nth-child(odd) { background-color: #ffffff; }
+.zebra-table td { padding: 15px; }
+.zebra-table {
+  margin-bottom: 0px;
+}
+.table-overflow { margin-bottom: 3em; overflow-x: hidden; }

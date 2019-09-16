@@ -1,0 +1,7 @@
+
+User-agent: *
+Allow: /
+Disallow: /gameplus_web
+Disallow: /style/
+Disallow: /dev/
+Disallow: /media/

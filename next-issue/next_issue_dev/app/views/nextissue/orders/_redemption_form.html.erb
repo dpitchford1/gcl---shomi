@@ -1,0 +1,33 @@
+<div class="promo-code-full">
+  <%= simple_form_for :promo_code, url: promo_code_path, remote: true, html: {class: 'promo-form cf', id: 'redemption_code_form'} do |f| %>
+    <%= hidden_field_tag :validate_redemption, true %>
+    <fieldset>
+      <div class="promo-row">
+        <p class="cc"><%= t('register.redemption.have_a_redemption_enter') %></p>
+
+        <%= f.input :code,
+                    input_html: { value: params[:redemption_code], placeholder: t('simple_form.placeholders.redemption_code'), maxlength: 15,
+                                  class: 'string required text-field'},
+                    label: false %>
+
+        <%= f.button :submit, t('buttons.apply'), class: 'btn-light' %>
+      </div>
+
+      <div class="promo-row">
+        <% if flash[:notice_is_promo_code] == 'expired' %>
+          <p class='cc'><%= I18n.t('register.redemption.expired') %></p>
+        <% elsif flash[:notice_is_promo_code] %>
+          <p class='cc'><%= I18n.t('register.redemption.invalid') %></p>
+        <% end %>
+      </div>
+
+      <div class="promo-row <%= flash[:notice_is_promo_code] ? 'hidden' : '' %>">
+        <%= render 'layouts/messages' %>
+      </div>
+
+      <p><%= simple_format(@tos.try("tos_#{I18n.locale.to_s}").force_encoding('ISO-8859-1').encode('UTF-8')) if @tos.try("tos_#{I18n.locale.to_s}") %></p>
+    </fieldset>
+  <% end %>
+</div>
+
+<%= render 'register/validateNotBlank', form_id: 'redemption_code_form', add_error_to_controls: false %>

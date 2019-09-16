@@ -1,0 +1,70 @@
+<% content_for :title, t('titles.confirmation').html_safe %>
+
+<% content_for :body_start do %>
+	<div id="track2"></div><div id="track3"></div>
+	<div class="trackjs" id="track2" aria-hidden="true" hidden="true"></div><div class="trackjs" id="track3" aria-hidden="true" hidden="true"></div>
+<% end %>
+
+<section class="hero-confirmation congrats" id="confirmation-page">
+	<header class="text-center">
+		<h2 class="h-reg sizes-LRG cc"><%= t("profiles.eligible.#{@current_session.must_optin? ? 'this_is_amazing' : 'hurrah'}") %></h2>
+		<p class="wfr sizes-M sm-m" style="word-spacing: -.05em"><%= t("profiles.eligible.#{@current_session.must_optin? ? 'service_includes_shomi' : 'you_are_subscribed'}").html_safe %></p>
+		<p class="wfl sizes-S xlg-m"><%= t('profiles.eligible.confirmation_sent') %></p>
+	</header>
+	<div class="info info-lg info--primary">
+		<article class="info-pullright--L">
+      <% if !@current_session.must_optin? %>
+			  <h3 class="wfr sizes-SM med-m"><%= t('profiles.eligible.email_sent_to', email: @current_session.username).html_safe %></h3>
+      <% end %>
+			<p class="wfr sizes-SM med-m"><%= t('profiles.eligible.to_start_watching').html_safe %></p>
+			<p><%= link_to t('profiles.eligible.take_me_there'), orders_path, class: 'btn btn-shomi' %></p>
+		</article>
+		<div class="random-tv has-TV"></div>
+	</div>
+
+</section>
+
+<aside class="content-wrapper confirmation-aside text-center" role="complementary">
+	<h3 class="h-lgt sizes-S"><%= t("profiles.eligible.download_to_watch") %></h3>
+
+	<ul class="app-button-list">
+	    <li><%= link_to t('promos.app_downloads.apple'), t('promos.app_downloads.apple_link'), class: 'ico i-apps i--apple', rel: 'external follow', target: 'itunes_store' %></li>
+	    <li><%= link_to t('promos.app_downloads.google'), t('promos.app_downloads.google_link'), class: 'ico i-apps i--google', rel: 'external follow', target: '_blank' %></li>
+	</ul>
+
+	<h4 class="h-lgt sizes-S"><%= t("profiles.eligible.watch_on_big_screen") %></h4>
+
+	<div class="cable-box has-cable-box"></div>
+</aside>
+
+<% content_for :analyticsfooter do %>
+<% if params[:order_id] %>
+
+<script>
+addLoadEvent(function() {
+	var track2js = '', track3js = '';
+	var axel2 = Math.random() + "", a2 = axel2 * 10000000000000, axel3 = Math.random() + "", a3 = axel3 * 10000000000000;
+
+	track2js += '<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=KpeiA7fF;ord=' + a + '?" class="hidden" height="0" width="0" frameborder="0"></iframe>';
+	track3js += '<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger00;ord=' + a + '?" class="hidden" height="0" width="0" frameborder="0"></iframe>';
+	document.getElementById('track2').innerHTML = track2js;
+	document.getElementById('track3').innerHTML = track3js;
+
+    window._fbq.push(['track', '6021840366937', {'value':'0.01','currency':'CAD'}]);
+    twttr.conversion.trackPid('l5175');
+});
+</script>
+
+<% end %>
+<% end %>
+
+<% content_for(:noscript) do %>
+<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=KpeiA7fF;ord=" class="hidden" height="0" width="0" frameborder="0"></iframe>
+<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger00;ord=" class="hidden" height="0" width="0" frameborder="0"></iframe>
+
+<img alt="" src="https://www.facebook.com/tr?ev=6021840366937&amp;cd[value]=0.01&amp;cd[currency]=CAD&amp;noscript=1">
+
+<img alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l5175&amp;p_id=Twitter">
+<img alt="" src="//t.co/i/adsct?txn_id=l5175&amp;p_id=Twitter">
+<% end %>
+<%# content_for :support_module_class, 'hidden' %>

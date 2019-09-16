@@ -1,0 +1,19 @@
+<footer class="footer is--f-primary cf" role="contentinfo" id="footer-primary">
+  <div class="f--contact-us text-center">
+      <p><%= t('footer.contact_us_description').html_safe %></p>
+    </div>
+
+  <div class="row">
+    <div class="col span-6 text-center">
+      <span class="icon-padding">
+        <%= link_to image_tag(asset_path('icons/ui/i-gray-email.png'), width: '35px;', height: '35px;'), t('footer.mail_to_support') %>
+      </span>
+      <span class="icon-padding">
+        <%= link_to image_tag(asset_path('icons/ui/i-livechat.gif'), width: '40px;', height: '40px;'), t('footer.contact_us_support_link') %>
+      </span>
+      <span class="icon-padding">
+        <%= link_to image_tag(asset_path('icons/ui/i-call.png'), width: '40px;', height: '40px;'), 'tel:+18663502522' %>
+      </span>
+    </div>
+  </div>
+</footer>

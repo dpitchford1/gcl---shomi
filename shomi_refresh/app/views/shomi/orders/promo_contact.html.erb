@@ -1,0 +1,48 @@
+<% content_for :footer do  ajax_validation(:order, order_summary_path) end %>
+<% content_for :title, t('titles.contact_infos').html_safe %>
+
+<section class="content-wrapper">
+  <h2 class="h-reg sizes-XLG cc"><%= t("profiles.ineligible.subscribe_to_shomi") %></h2>
+  <h3 class="h-med sizes-M w-ul xlg-m"><%= t("titles.contact_infos") %></h3>
+
+    <p><strong><%= t("orders.promo_code") %>:</strong> <%= session[:promo_code].code %></p>
+
+    <%= render "layouts/form_error_header", object: @order %>
+
+    <%= simple_form_for(@order, url: order_summary_path, html: {class: 'general-form' }, data: {validate: 'order'}, method: :post) do |f| %>
+        <fieldset class="fieldset fieldset--rows-inline">
+            <legend class="hide-text"><%= t('form.legend.personal_details') %></legend>
+            <%= f.input :first_name, required: true, input_html: { autofocus: true } %>
+            <%= f.input :last_name, required: true %>
+        </fieldset>
+
+        <fieldset class="fieldset fieldset--rows-inline">
+            <%= f.input :street, required: true %>
+            <%= f.input :city, required: true %>
+        </fieldset>
+
+        <fieldset class="fieldset fieldset--rows-inline">
+          <%= f.input :province, collection: Portal::ZUORA_CA_STATES[session[:lang]], prompt: t("orders.province"), required: true, wrapper: 'fancy_select', input_html: { class: 'text-field' } %>
+          <%= f.input :postal_code, required: true, input_html: { size: 7, maxlength: 7, class: 'uppercase', title: t("errors.attributes.postal_code.blank")} %>
+        </fieldset>
+
+        <fieldset class="content-wrapper">
+            <legend class="hide-text"><%= t("form.legend.purchase_agreements") %></legend>
+            <%= f.input :offer_id, as: :hidden %>
+
+            <%= render 'tos/modal', tos: @tos %>
+
+            <%= f.input :tos, as: :boolean, :wrapper => :inline_checkbox, label: t('orders.wfm_term1').html_safe %>
+
+            <%= f.input :tos2, as: :boolean, :wrapper => :inline_checkbox, :input_html => { :class => "check-tos" }, required: true, label: t('orders.wfm_term2').html_safe %>
+            
+            <%= f.input :billing_option, as: :hidden %>
+            <%= f.input :promo_code, as: :hidden %>
+            <%= f.input :code_type, as: :hidden %>
+        </fieldset>
+
+        <p class="order-submit btn-group-right"><%= link_to t('btn.cancel'), profiles_path(cancel_promo_code: true), class: 'btn btn-cancel' %> <%= f.button :submit, t('btn.continue') %></p>
+
+        <p class="clear text-right"><small><%= t('orders.opportunity_to_review') %></small></p>
+    <% end %>
+</section>

@@ -1,0 +1,23 @@
+<ul>
+<li><%= link_to 'Clean up Redis DB', admin_clean_up_path %></li>
+<li><%= link_to 'Partial clean up Redis DB', admin_clean_up_partial_path %></li>
+<li><%= link_to 'Clear cache', admin_clear_cache_path %></li>
+<li><%= link_to 'Clear CMS', admin_clear_cms_path %></li>
+<li><%= link_to 'Clear offers', admin_clear_offers_path %></li>
+
+</ul>
+
+
+<div style="padding-top: 200px">
+  <hr>
+
+  <%= link_to 'Export CMS', cms_sections_export_path %>
+
+  <br /><br />
+  <%= form_tag(cms_sections_import_path, multipart: true) do %>
+    Import CMS: <%= file_field_tag 'file' %>
+    <%= submit_tag('Import') %>
+  <% end %>
+
+
+</div>

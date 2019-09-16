@@ -1,0 +1,49 @@
+<%= cache(action_suffix: ['navigation', I18n.locale, @session.logged?, @current_session.username, @session.try(:profile).try(:level), @session.try(:profile).try(:code)].join(':')) do %>
+
+<div class="global-header is-hidden" id="global-header" aria-expanded="true" aria-labelledby="menu-trigger">
+    <div class="header is--primary cf" id="header-primary">
+        <div class="site-wrapper">
+            <%#= section :nav, auto_generate: false do %>
+
+            <ul id="utility-menu" class="menu menu--primary">
+            <% if @current_session.logged? %>
+                <li class="welcome-id"><span class="welcome"><%= t("text.welcome") %> <%= "#{@current_session.username}" %></span></li>
+
+                <% if @current_session.profile.purchased? %>
+                    <li><%= link_to_unless_current t("menu.billing").html_safe, billing_path, remote: true, :class => "" do link_to t("menu.billing").html_safe, billing_path, remote: true, :class => "is-selected" end %></li>
+                <% end %>
+
+                <li><%= link_to t("menu.sign_out"), logout_path, method: 'delete', class: "signout" %></li>
+            <% else %>
+                <li><%= link_to t("menu.sign_in"), '#new_session_modal', role: "button", class: "signin", data: {toggle:'modal', target: '#new_session_modal' } %></li>
+                <li><%= link_to t("menu.register"), new_profile_path %></li>
+            <% end %>
+                <li>
+                <% if I18n.locale == I18n.default_locale %>
+                    <%= link_to "Français", :lang=>'fr' %>
+                <% else %>
+                    <%= link_to "English", :lang=>'en'%>
+                <%end%>
+                </li>
+            </ul>
+            <%# end %>
+        </div>
+    </div>
+    <div class="header is--secondary cf" id="header-secondary">
+        <header class="site-wrapper is--tertiary" role="banner">
+        <% if @home_page %>
+            <p class="brand-fs float-l" id="logo"><span class="block"><%= t("titles.default").html_safe %></span></p>
+        <% else %>
+            <p class="brand-fs float-l" id="logo"><a class="block" href="/" rel="external" title="<%= t('menu.return') %>"><%= t("titles.default").html_safe %></a></p>
+        <% end %>
+            <nav class="navigation-wrapper float-r" role="navigation" aria-label="<%= t('menu.main_menu') %>">
+                <h2 class="hide-text"><%= t("menu.main_menu") %></h2>
+                <%# START: Main Menu %>
+                <ul class="menu menu--secondary cf">
+                <%= render 'layouts/main_menu' %>
+                </ul>
+          </nav>
+      </header>
+    </div>
+</div>
+<% end %>

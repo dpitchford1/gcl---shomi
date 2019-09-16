@@ -1,0 +1,155 @@
+/* Corrects font family set oddly in Safari 5 and Chrome.*/
+    /*code, kbd, pre, samp {
+        font-family: monospace, serif;
+        }*/
+
+    /* Improves readability of pre-formatted text in all browsers.*/
+    pre {
+        overflow: hidden !imporant;
+        white-space: pre;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        border-left: 7px lime solid;
+        }
+
+/* shared type styles */
+    code, var{ font-style: normal; font-weight: normal; font-size: 14px; text-transform: none; vertical-align: middle; }
+
+    code{
+        background-color: #eee;
+        border: 1px solid #ccc;
+        padding: .2em .2em 0;
+        color: #111;
+        }
+    code, samp, kbd {
+        font-family: "Courier New", Courier, monospace, sans-serif;
+        text-align: left;
+        
+        }
+    pre code {
+        line-height: 1.6em;
+        font-size: 12px;
+        }
+    pre {
+        background-color: #eee;
+        color: #666;
+        font-size: 13px;
+        padding: 1em;
+        border-left: 11px solid #ccc;
+        margin: 1.7em 0 1.7em 0.3em;
+        overflow: auto;
+        }
+    /* target IE7 and IE6 */
+        *:first-child+html pre {
+        padding-bottom: 2em;
+        overflow-y: hidden;
+        overflow: visible;
+        overflow-x: auto; 
+        }
+    * html pre { 
+        padding-bottom: 2em;
+        overflow: visible;
+        overflow-x: auto;
+        }
+
+        .class_name_demo { border-left: 3px solid #2586c0; padding-left: 1em; margin-top: 0 !important; font-size: 13px !important; }
+        .syntaxhighlighter {
+        	overflow: hidden !important;
+		    white-space: pre-wrap !important;
+		    word-wrap: break-word !important;
+		}
+		.syntaxhighlighter .plain, .syntaxhighlighter .plain a, .syntaxhighlighter .string, .syntaxhighlighter .string a {
+		    
+		    overflow: hidden;
+		    white-space: pre-line;
+		    word-wrap: break-word;
+		}
+
+
+/* Style Guide Patterns
+================================================================================ */
+/* block wrapper for each section */
+.sg-pattern {
+    margin-bottom: 2em;
+    overflow: hidden;
+	}
+/*.style-menu-1{}*/
+.style-menu-1 a	{ color: #cc0000; }
+.style-menu-2	{ border-bottom: 1px dotted #cc0000; }
+
+/* style guide colors structure */
+.sg-colors		{ overflow: hidden; margin-left: 0; padding-left: 0;  }
+.sg-colors li	{ float: left; width: 6em; }
+.sg-colors li{
+    border: 1px solid #ddd;
+    margin: 0 0.2em 0.2em 0;
+    overflow: hidden;
+    padding: 0.3em;
+	}
+/* color swatches */
+.sg-swatch{
+    height: 5em;
+    margin-bottom: 0.2em;
+    width: 100%;
+	}
+.sg-swatch	{ display: block; }
+.sg-label	{ line-height: 1; font-size: 14px; /*font-size: .75rem;*/ }
+
+/* Style Guide Headings */
+.sg-heading{
+	background-color: #434a4f;
+	border-radius: 8px;
+	color: #fff;
+	font-size: 16px; font-size: 1rem;
+	margin-bottom: 0;
+	padding: .5em;
+	/*text-transform: uppercase;*/
+	}
+.sg-subheading{
+	background-color: #e4e6e5;
+	border-bottom: 1px dotted #434a4f;
+	color: #434a4f;
+	font-size: 12px; font-size: .75rem;
+	margin-bottom: .9375em;
+	margin-top: 2em;
+	padding: .3em .5em;
+	text-transform: uppercase;
+	}
+.sg-title{
+	color: #666;
+	font-size: 16px; /*font-size: .75rem;*/
+	margin-bottom: .2em;
+	}
+.sg-tileheading{
+	color: #666;
+	font-size: 11px; /*font-size: .75rem;*/
+	margin-bottom: .5em;
+	text-transform: uppercase;
+	}
+	
+.sg-toggler{
+	clear: both;
+	}
+.sg-toggler a{
+	float: right;
+	}
+
+.sg-heading a{
+	color: #fff;
+	font-size: 12px;
+}
+
+
+
+
+.s-guide .i-logos{ height: 5em; }
+
+
+/* LOCALIZE LOGOS and/or IMG'S -- for styleguide */
+.s-guide .i--logo-myrogers, [lang="en-ca"] .s-guide .i--logo-myrogers-alt{ width: 14.5rem; }
+.s-guide .i--logo-myrogers, [lang="fr-ca"] .s-guide .i--logo-myrogers-alt, .s-guide .fr .i--logo-myrogers{ width: 15.5rem; }
+
+/*.s-guide .sizes-M .i--logo-myrogers{ height: 1.55rem; width: 4.5rem; }
+.s-guide .sizes-M .i--logo-myrogers{ height: 1.3rem; width: 4.7rem; }*/
+
+

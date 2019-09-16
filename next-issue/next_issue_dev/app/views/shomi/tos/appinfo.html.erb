@@ -1,0 +1,25 @@
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<style>
+	body { font-family: Helvetica, Arial; color: #000000; margin: 0; }
+	h2 { color: #cc0033; font-size: 50px; font-weight: 500; margin: 0 0 8px 0; }
+	h4 { font-size: 23px; font-weight: 600; margin: 0; }
+	p { font-weight: 100; line-height: 35px; font-size: 23px; }
+	.container { width: 52%; padding-left: 7%; padding-top: 11%; }
+	#rogers-logo { max-width: 100%; width: 119px; margin-bottom: 40px; }
+
+	@media (max-width: 660px) {
+	  .container { width: 80%; }
+	  h2 { font-size: 35px; }
+	  h4 { font-size: 16px; }
+	  p { font-size: 17px; line-height: 25px; }
+	}
+</style>
+
+<section class="container">
+	<img id="rogers-logo" src="/assets/images/logos/rogers-logo-red.png"/>
+	<h2><%= t("app_info.page_heading").html_safe %></h2>
+	<h4><%= t("app_info.sub_heading").html_safe %></h4>
+	<p>
+		<%= t("app_info.excerpt").html_safe %>
+	</p>	
+</section>

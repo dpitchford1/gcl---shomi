@@ -1,0 +1,24 @@
+<% order ||= nil %>
+<% profile ||= nil %>
+
+<div class="modal m-fade" id="cancel_subscription" tabindex="-1" role="dialog" aria-labelledby="CancelSubscription" aria-hidden="true">
+  <div class=" transparent-modal-dialog">
+    <a href="#main-content" class="icon-close size-M" data-dismiss="modal" role="button"></a>
+    <div class="modal-body cf">
+      <% if profile.try(:has_redemption?) %>
+        <p><%= t('header.cancel_subscription_to_redemption', description: subscription_desc).html_safe %></p>
+      <% else %>
+        <p><%= t('header.cancel_subscription_to', description: subscription_desc).html_safe %></p>
+      <% end %>
+
+      <% order = order.respond_to?(:cancellation_reason) ? order : Order.new(order_id: order.try(:order_id)) %>
+
+      <%= simple_form_for(order, url: cancel_order_path, remote: true, method: :post, authenticity_token: false, html: { id: 'cancel_order_form', class: 'general-form' }) do |f| %>
+        <%= f.input :order_id, as: :hidden %>
+
+        <%= f.button :submit, t("simple_form.yes"), class: "btn-signin btn-default" %>
+        <a href="#main-content" class="btn btn-default" data-dismiss="modal" role="button"><%= t('profiles.latest_purchase.no') %></a>
+      <% end %>
+    </div>
+  </div>
+</div>

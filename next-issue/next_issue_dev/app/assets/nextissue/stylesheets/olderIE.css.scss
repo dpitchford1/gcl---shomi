@@ -1,0 +1,52 @@
+
+.js .page-bg{
+    background: asset-url("content/bg-site-1920.jpg") no-repeat center 120px;
+    }
+.site-wrapper, .fluid{ width: 980px; max-width: 980px; }
+
+.i-video-play {
+    display: none;
+    }
+.video-promo{ width: 20%; }
+
+/* modals */
+.modal-dialog{ top:100px; width: 460px; }
+
+.modal-backdrop.fade {
+    filter: alpha(opacity=0);
+    }
+.modal-backdrop.in {
+    filter: alpha(opacity=75);
+    }
+
+// less than ie8 message
+.ltie8{ 
+    position: absolute;
+    top: 0;
+    border: 1px solid #333;
+    font-size: 14px;
+    padding: 2% 25px;
+    width: 95%;
+    z-index: 3;
+    min-height: 40px;
+    background-color: #ddd;
+    color: #333;
+    }
+
+// MyRogers logo
+[lang="en-ca"] .i--logo-myrogers, [lang="fr-ca"] .i--logo-myrogers{ background-image: none !important; text-indent: 0 !important; font-style: italic; font-weight: bold; color: #de2a41; }
+
+[lang="en-ca"] .modal-header .i--logo-myrogers, [lang="fr-ca"] .i--logo-myrogers {
+    height: auto !important;
+    margin-bottom: 0;
+    width: auto !important;
+    }
+
+// revert styled select dropdowns
+.fancy-select:after { content: " " !important; }
+.fancy-select-lg select {
+    max-width: 365px !important;
+    min-width: 365px !important;
+    padding: 0.5em 0 0.7em 10px;
+    width: 365px !important;
+    }

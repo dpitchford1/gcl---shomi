@@ -1,0 +1,8 @@
+<h2 class="h-lgt sizes-M w-ul"><%= t('orders.buy').html_safe %></h2>
+
+<%# Order summary %>
+<%= render 'summary' %>
+<section class="content-wrapper">
+	<h3 class="h-sb sizes-M2 lg-m"><%= t('orders.payment_details') %></h3>
+  	<%= render "pay_details" %>
+</section>

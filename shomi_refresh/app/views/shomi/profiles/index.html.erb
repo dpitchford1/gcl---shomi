@@ -1,0 +1,26 @@
+<% unless @order %>
+  <% content_for :body_start do %>
+  <% end %>
+	<% content_for :footer do %>
+  <% end %>
+<% end %>
+
+<% @session.errors.full_messages.each do |msg| %>
+  <p class="error-copy"><%= msg %></p>
+<% end %>
+
+<% if @current_session.try(:profile).try(:eligible?) %>
+  <%= render 'profiles/eligible' %>
+<% elsif @current_session.try(:profile).try(:cannot_buy?) %>
+  <%= render 'profiles/cannot_buy' %>
+<% else %>
+  <%= render 'profiles/ineligible' %>
+<% end %>
+
+<% content_for :link_account_faq_content do %>
+  <% render "layouts/link_account_faq" %>
+<% end %>
+
+<% content_for :live_chat_content do %>
+  <% render "layouts/live_chat" %>
+<% end %>

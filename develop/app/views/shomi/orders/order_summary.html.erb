@@ -1,0 +1,11 @@
+<h2 class="h-r size-LG w-ul rogers-red"><%= t('titles.purchase_flow').html_safe %></h2>
+<%# Order summary %>
+<%= render 'order_summary' %>
+
+<section class="content-wrapper">
+	<h3 class="h-r size-L2"><%= t('orders.payment_details') %></h3>
+	
+  	<%= render "pay_details" %>
+
+</section>
+<% content_for :support_module_class, 'hidden' %>

@@ -1,0 +1,8 @@
+<% content_for :title, t('titles.purchase_flow_title') %>
+
+<% unless @order.optin %>
+  <h2 class="h-r size-LG w-ul rogers-red"><%= t('titles.purchase_flow').html_safe %></h2>
+<% end %>
+
+<%# Order summary %>
+<%= render 'summary' %>

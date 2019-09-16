@@ -1,0 +1,31 @@
+<% existing_offer_type ||= 'basic' %>
+
+<% if ENV['redemption_top_up'] && @current_session.profile.can_top_up? %>
+  <% update_offer_id = ENV["topup_offer_id"] %>
+<% else %>
+  <% update_offer_id = existing_offer_type == 'basic' ? ENV['premium_offer_id'] : ENV['basic_offer_id'] %>
+<% end %>
+
+<div class="modal m-fade" id="update_subscription" tabindex="-1" role="dialog" aria-labelledby="UpdateSubscription" aria-hidden="true">
+  <div class=" transparent-modal-dialog">
+    <a href="#main-content" class="icon-close size-M" data-dismiss="modal" role="button"></a>
+    <div class="modal-body cf">
+
+      <h3 class="sm-b-mg"><%= t("header.#{existing_offer_type}.update_subscription") %></h3>
+      <%= t("header.#{existing_offer_type}.update_subscription_confirmation").html_safe %>
+
+      <%= simple_form_for :order, url: update_order_offer_path, remote: true, method: :post, html: { id: 'update_order_form', class: 'general-form' } do |f| %>
+
+
+        <%= f.input :offer_id, as: :hidden, input_html: { value: update_offer_id } %>
+        <%= f.input :existing_offer_type, as: :hidden, input_html: { value: existing_offer_type } %>
+
+        <a href="#main-content" class="btn btn-default" data-dismiss="modal" role="button"><%= t("buttons.#{existing_offer_type}.cancel_update") %></a>
+        <%= f.button :submit, t("buttons.#{existing_offer_type}.update_modal"), class: "btn btn-default" %>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>
+

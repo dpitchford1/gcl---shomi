@@ -1,0 +1,44 @@
+<% loyalty ||= nil %>
+<% offer ||= nil %>
+<% current_session ||= nil %>
+<% form ||= nil %>
+<% specify_name ||= nil %>
+
+<% membership_number_defaults = specify_name ? { name: 'membership_number', placeholder: t('simple_form.placeholders.membership_number'), value: current_session.try(:latest_order).try(:membership_number), data: { serializable: true } } :
+                                               { placeholder: t('simple_form.placeholders.membership_number'), value: current_session.try(:latest_order).try(:membership_number), data: { serializable: true } } %>
+<% membership_type_defaults   = specify_name ? { name: 'membership_type', id: 'membership_type', value: current_session.try(:latest_order).try(:loyalty_partner), data: { serializable: true } } :
+                                               { id: 'membership_type', value: current_session.try(:latest_order).try(:loyalty_partner), data: { serializable: true } } %>
+<% loyalty_code_defaults   = specify_name ? { name: 'loyalty_code', data: { serializable: true } } :
+                                            { data: { serializable: true } } %>
+
+<% if loyalty.try(:display_loyalty_for_offer?, offer) && !current_session.profile.eligible? %>
+  <% if current_session.profile.disable_loyalty? && current_session.profile.try(:latest_order).try(:membership_number) %>
+
+    <%= form.input :membership_number, disabled: true, label: false, input_html: membership_number_defaults %>
+
+  <% else %>
+
+    <%= form.input :membership_type, as: :hidden, input_html: membership_type_defaults.merge({ value: loyalty.membership_type }) %>
+    <%= form.input :loyalty_code, as: :hidden, input_html: loyalty_code_defaults.merge({ value: loyalty.code + offer.loyalty_suffix }) %>
+
+    <% if loyalty.allow_membership_number? %>
+      <p>
+        <% if offer.basic? %>
+          <%= image_tag loyalty.try('offer_logo_basic', I18n.locale), alt: 'basic rewards logo' %>
+        <% else %>
+          <%= image_tag loyalty.try('offer_logo_premium', I18n.locale), alt: 'premium rewards logo' %>
+        <% end %>
+      </p>
+      
+      <%= t('orders.billing.loyalty_description').html_safe %>
+
+      <%= form.input :membership_number, required: true, label: false, input_html: membership_number_defaults %>
+    <% end %>
+  <% end %>
+<% elsif current_session.profile.try(:latest_order).try(:membership_number) %>
+
+  <%= form.input :membership_type, as: :hidden, input_html: membership_type_defaults %>
+
+  <%= form.input :membership_number, required: true, label: false, disabled: current_session.profile.disable_loyalty?, input_html: membership_number_defaults %>
+<% end %>
+

@@ -1,0 +1,54 @@
+/**
+ * For use with media embeds – such as videos, slideshows, or even images –
+ * that need to retain a specific aspect ratio but adapt to the width of their
+ * containing element.
+ *
+ * Example HTML:
+ *
+ * <div class="flex-embed flex-embed--4by3">
+ *   <iframe class="flex-embed-item" src="…"></iframe>
+ * </div>
+ *
+ * <div class="flex-embed flex-embed--16by9">
+ *   [iframe|object|embed]
+ * </div>
+ */
+
+.flex-embed {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    }
+
+/**
+ * The aspect-ratio hack is applied to a pseudo-element because it allows the
+ * component to respect `max-height`. Default aspect ratio is 1:1.
+ */
+
+.flex-embed:before {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+    width: 100%;
+    }
+
+/** Modifier: 16:9 aspect ratio */
+.flex-embed--16by9:before { padding-bottom: 56.25%; }
+
+.flex-embed--portrait:before { padding-bottom: 164%; }
+
+/**
+ * Works automatically for iframes, embeds, and objects to account for
+ * situations where you cannot modify the enbedded element's attributes (e.g.,
+ * 3rd party widget code).
+ */
+
+.flex-embed-item, .flex-embed iframe, .flex-embed embed, .flex-embed object, .flex-embed .vid-wrap iframe, .flex-embed .vid-wrap embed, .flex-embed .vid-wrap object {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    }
+

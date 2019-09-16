@@ -1,0 +1,118 @@
+<% content_for :title, t('titles.home').html_safe %>
+
+<% content_for :body_start do %>
+<div class="trackjs" id="track1" aria-hidden="true" hidden="true"></div><div class="trackjs" id="track2" aria-hidden="true" hidden="true"></div><div class="trackjs" id="track3" aria-hidden="true" hidden="true"></div><div class="trackjs" id="track4" aria-hidden="true" hidden="true"></div>
+<% end %>
+
+<div class="region hero-welcome">
+	<%= render 'partials/hero_welcome' %>
+</div>
+
+<div class="fluid cf ov">
+	<div class="region hero-welcome-bonus">
+		<%= render 'partials/hero_welcome_bonus' %>
+	</div>
+
+	<% if !@current_session.logged? %>
+	<div class="region hero-get-started">
+		<%= render 'partials/hero_get_started' %>
+	</div>
+
+	<% end %>
+
+	<div class="region hero-tv">
+		<%= render 'partials/hero_tv_movies' %>
+	</div>
+
+	<div class="region hero-kids">
+		<%= render 'partials/hero_kids' %>
+	</div>
+</div>
+
+<div class="region hero-collections">
+	<%= render 'partials/hero_collections' %>
+</div>
+
+<div class="region hero-devices">
+	<%= render 'partials/hero_watch' %>
+</div>
+
+<div class="fluid">
+	<% if !@current_session.logged? %>
+		<%= render 'partials/hero_get_started_plus' %>
+	
+		<section class="hero-SM has--border">
+			<h2 class="hide-text anchored" id="promo-code">Have a Promo Code?</h2>
+			<div class="region promo-code-full has--fancy-bot" id="enter-promo-code">
+				<%= render 'profiles/promo_code_form', use_styling: "landing_page"%>
+			</div>
+
+		</section>
+		<%= render 'partials/hero_get_started_options' %>
+	<% end %>
+
+	<aside id="footnote" class="footnote">
+		<h3 class="footnote-title"><%= t('legal.title').html_safe %></h3>
+		<p><%= t("legal.terms1").html_safe %></p>
+		<p><%= t("legal.terms2").html_safe %></p>
+	</aside>
+</div>
+
+<% content_for :link_account_faq_content do %>
+<%= render "layouts/link_account_faq" %>
+<% end %>
+
+<% content_for :live_chat_content do %>
+<%= render "layouts/live_chat" %>
+<% end %>
+
+<!--[if lte IE 8]>
+<div id="ltie8" class="ltie8">
+    <a id="closeIE" href="#main-content" class="ico i-m i--close float-l" style="margin-right:15px;" data-dismiss="ltie8" role="button"><%= t("btn.close") %></a>
+    <p><%= t("legal.browser_warning").html_safe %></p>
+    <script>
+    $('main').addClass('fluid');	
+	addLoadEvent(function() {
+	    $('#closeIE').on('click', function(){
+	        $('#ltie8').hide();
+	        return false;
+	    });
+	});
+</script>
+</div>
+<![endif]-->
+
+<% content_for :analyticsfooter do %>
+<script>
+addLoadEvent(function() {
+	// START: Tracking pixels
+	var track1js = '', track2js = '', track3js = '', track4js = '';
+	var axel1 = Math.random() + "", a1 = axel1 * 10000000000000, axel2 = Math.random() + "", a2 = axel2 * 10000000000000, axel3 = Math.random() + "", a3 = axel3 * 10000000000000, axel4 = Math.random() + "", a4 = axel4 * 10000000000000;
+
+	track1js += '<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=2j82ymEC;ord=' + a1 + '?" class="hidden" height="0" width="0" frameborder="0"></iframe>';
+	track2js += '<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=VFwljxQ8;ord=' + a2 + '?" class="hidden" height="0" width="0" frameborder="0"></iframe>';
+	track3js += '<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger003;ord=' + a3 + '?" class="hidden" height="0" width="0" frameborder="0"></iframe>';
+	track4js += '<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=shomi00;ord=' + a4 + '?" class="hidden" height="0" width="0" frameborder="0"></iframe>';
+
+	document.getElementById('track1').innerHTML = track1js;	document.getElementById('track2').innerHTML = track2js;	document.getElementById('track3').innerHTML = track3js;	document.getElementById('track4').innerHTML = track4js;
+
+	// START: Google Code for Shomi.rogers.com Landing Page Conversion Page
+	var google_conversion_id = 964214869, google_conversion_language = "en", google_conversion_format = "2", google_conversion_color = "ffffff", google_conversion_label = "9GsqCO-41lYQ1YDjywM", google_conversion_value = 1.00, google_conversion_currency = "CAD", google_remarketing_only = false;
+});
+</script>
+<%= javascript_include_tag "//www.googleadservices.com/pagead/conversion.js", async: "true" %>
+<% end %>
+
+<% content_for(:noscript) do %>
+<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=2j82ymEC;ord=1?" class="hidden" height="0" width="0" frameborder="0"></iframe>
+<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=VFwljxQ8;ord=12?" class="hidden" height="0" width="0" frameborder="0"></iframe>
+<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger003;ord=12?" class="hidden" height="0" width="0" frameborder="0"></iframe>
+<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=shomi00;ord=12?" class="hidden" height="0" width="0" frameborder="0"></iframe>
+<% end %>
+
+<%# START: Analytics Noscript backups %>
+<% content_for(:noscript) do %>
+<img height="1" width="1" alt="" src="//www.googleadservices.com/pagead/conversion/964214869/?value=1.00&amp;currency_code=CAD&amp;label=9GsqCO-41lYQ1YDjywM&amp;guid=ON&amp;script=0">
+<img height="1" width="1" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l57ex&p_id=Twitter">
+<img height="1" width="1" alt="" src="//t.co/i/adsct?txn_id=l57ex&p_id=Twitter">
+<% end %>

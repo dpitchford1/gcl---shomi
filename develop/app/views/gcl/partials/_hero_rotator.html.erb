@@ -1,0 +1,58 @@
+<div class="flexslider cf">
+    <h3 class="h-lgt sizes-L med-m"><%= t("pages.index.hero_rotator_slide1_heading").html_safe %></h3>
+    <div class="controlit"></div>
+    <ul class="slides">
+        <li class="slide slide-1">
+            
+            <div class="slide-content">
+                <div class="slide-screen" id="slide1-screen">
+
+                    <div class="slide-video-parent" id="slide1-parent">
+                        <a class="ico i-video-play is--icon" id="slide1-play" href="#myExperience" onclick="ga('beec4528a634c1272e86ba159d7b4b8e.send', 'event', 'Carousel Videos EN', 'Play', 'Laptop Video' , {'nonInteraction': 1});"><%= I18n.t('text.vid_play') %></a>
+
+                        <div class="flex-embed flex-embed--16by9 feature-video" tabindex="-1" aria-hidden="true" href="#myExperience" id="slide1-play">
+                            <noscript><%= t("text.nojs").html_safe %></noscript>
+
+                            <div id="slide1-video" class="slides-video-wrapper vid-wrap hidden">
+
+                                <object id="myExperience" class="BrightcoveExperience" name="home_video">
+                                    <param name="bgcolor" value="#FFFFFF">
+                                    <param name="width" value="100%">
+                                    <param name="height" value="100%">
+                                    <param name="secureConnections" value="true">
+                                    <param name="secureHTMLConnections" value="true">
+                                    <param name="playerKey" value="AQ~~,AAAAAK_PYqE~,dFX017llKTvR-0aVRsj29Uk2PLlG9hpJ">
+                                    <param name="isVid" value="true">
+                                    <param name="isUI" value="true">
+                                    <param name="htmlFallback" value="true">
+                                    <param name="dynamicStreaming" value="true">
+                                <% if I18n.locale == I18n.default_locale %>  
+                                    <param name="playerID" value="4078175593001">
+                                    <param name="@videoPlayer" value="4078175593001">
+                                <% else %>
+                                    <param name="playerID" value="4124210076001">
+                                    <param name="@videoPlayer" value="4124210076001">
+                                <% end %>
+                                    <param name="autoStart" value="true">
+                                    <param name="includeAPI" value="true">
+                                    <param name="templateLoadHandler" value="rogersAnalyticsBrightcoveLoadHandler">
+                                    <param name="wmode" value="transparent">                  
+                                </object>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!-- <li class="slide slide-2">
+            <div class="slide-content">
+                Another device
+            </div>
+        </li>
+        <li class="slide slide-3">
+            <div class="slide-content">
+                yet another
+            </div>
+        </li> -->
+    </ul>
+</div>

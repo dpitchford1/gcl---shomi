@@ -1,0 +1,10 @@
+<% home_page ||= false %>
+<% path_prepend = home_page ? '' : root_path %>
+
+<li><%= link_to 'TV &amp; Movies'.html_safe, "#{path_prepend}#tv-movies", class: 'nav-ico i-tv' %></li>
+<li><%= link_to 'Kids &amp; Family'.html_safe, "#{path_prepend}#kids-family", class: 'nav-ico i-family' %></li>
+<li><%= link_to 'Collections'.html_safe, "#{path_prepend}#collections", class: 'nav-ico i-stacked' %></li>
+<li><%= link_to 'Devices'.html_safe, "#{path_prepend}#devices", class: 'nav-ico i-games' %></li>
+<% if !@current_session.logged?  %>
+<li><%= link_to 'Promo Code'.html_safe, "#{path_prepend}#promo-code", class: 'nav-ico i-phone' %></li>
+<% end %>

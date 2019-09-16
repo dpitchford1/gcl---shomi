@@ -1,0 +1,78 @@
+<div class="log-in-widget" style="background-color: #ccc; 
+		font-size: 12px; 
+		position: fixed; 
+		top: 20%; 
+		left: 0; 
+		width: 175px; 
+		z-index: 300000; 
+		box-shadow: 0px 6px 5px 0px rgba(50, 50, 50, 0.75); 
+		padding: .5em;">
+    <%# if @current_session.profile.try(:eligible?) %>
+    <%#= @current_session.profile.eligible? %>
+    <%#= @current_session.profile.purchased? %>
+
+    <p><strong>Session States</strong></p>
+    <ul style="padding-left: 10px;">
+
+        <% if @current_session.logged? %>
+
+            <li>Logged in</li>
+            
+        <% else %>
+
+            <li>Logged out</li>
+
+        <% end %>
+
+    </ul>
+
+    <% if @current_session.logged? %>
+    <p><strong>Eligibility</strong></p>
+    <ul style="padding-left: 10px;">
+
+        <% if @current_session.profile.eligible? %>
+
+        <li>Eligible = <%= @current_session.profile.eligible? %></li>
+        <li>Purchased = <%= @current_session.profile.purchased? %></li>
+
+        <% elsif !@current_session.profile.eligible? %>
+
+        <li>Eligible = <%= @current_session.profile.eligible? %></li>
+        <li>Purchased = <%= @current_session.profile.purchased? %></li>
+
+        <% elsif @current_session.profile.purchased? %>
+
+        <li>Eligible = <%= @current_session.profile.eligible? %></li>
+        <li>Purchased = <%= @current_session.profile.purchased? %></li>
+
+        <% else %>
+
+        <li>Logged Out</li>
+        <li>Ineligible</li>
+        <li>Default State</li>
+
+        <% end %>
+    </ul>
+
+    <% end %>
+
+    <p><strong>Cookied States</strong></p>
+    <ul style="padding-left: 10px;">
+
+    <% if cookies[:portal_eligible] %>
+
+        <li>Eligible - <%= @current_session.profile.eligible? %></li>
+        <li>Purchased - <%= @current_session.profile.purchased? %></li>
+        <li><a href="/clear_eligible">clear cookie</a></li>
+
+    <% else %>
+
+        <li>Eligible - <%= @current_session.profile.try(:eligible?) %></li>
+        <li>Purchased - <%= @current_session.profile.try(:purchased?) %></li>
+        <li><a href="/clear_eligible">clear cookie</a></li>
+
+    <% end %>
+
+    </ul>
+
+</div>

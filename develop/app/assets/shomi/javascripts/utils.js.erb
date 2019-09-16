@@ -1,0 +1,47 @@
+﻿//var doc = window.document;
+
+/* ONLOAD -- function addLoadEvent(func)
+-------------------------------------------------------------------------------------------------------------------------- */
+// function addLoadEvent(func) {
+//   "use strict";
+//   var oldOnLoad = window.onload;
+//   if (typeof window.onload !== 'function') {
+//     window.onload = func;
+//   }
+//   else {
+//     window.onload = function() {
+//       oldOnLoad();
+//       func();
+//     };
+//   }
+// }
+
+var appSetup = appSetup || {};
+window.appSetup = (function( window, document, undefined ) {
+
+    // /* set up doc and main menu initial styles */
+    //(function quickSetup() {
+        // /* manipulate js/no-js class */
+        //doc.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js';
+        
+        // /* quick! hide the main menu! add hidden class to menu to hide on enhanced view */
+        //doc.getElementById('global-header').className += "is-hidden";
+    //})(this);
+    
+    /* FONT LOADING SCRIPT -- USES LOCALSTORAGE FOR CACHING
+    -------------------------------------------------------------------------------------------------------------------------- */
+    !function(){function e(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function t(e){return window.localStorage&&localStorage.font_css_cache&&localStorage.font_css_cache_file===e}function n(){if(window.localStorage&&window.XMLHttpRequest)if(t(o))a(localStorage.font_css_cache);else{var n=new XMLHttpRequest;n.open("GET",o,!0),e(n,"load",function(){4===n.readyState&&(a(n.responseText),localStorage.font_css_cache=n.responseText,localStorage.font_css_cache_file=o)}),n.send()}else{var c=document.createElement("link");c.href=o,c.rel="stylesheet",c.type="text/css",document.getElementsByTagName("head")[0].appendChild(c),document.cookie="font_css_cache"}}function a(e){var t=document.createElement("style");t.innerHTML=e,document.getElementsByTagName("head")[0].appendChild(t)}var o="<%= asset_path("font.css") %>";window.localStorage&&localStorage.font_css_cache||document.cookie.indexOf("font_css_cache")>-1?n():e(window,"load",n)}();
+
+    if (doc.querySelector && doc.addEventListener) {
+
+        /* IE10 Mobile bug fix
+        -------------------------------------------------------------------------------------------------------------------------- */
+        (function() { if (navigator.userAgent.match(/IEMobile\/10\.0/)) { var msViewportStyle = doc.createElement("style"); msViewportStyle.appendChild( doc.createTextNode("@-ms-viewport{width:auto!important}") ); doc.getElementsByTagName("head")[0].appendChild(msViewportStyle); } })();
+    }
+
+    /* matchMedia() polyfill  
+    Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas. Dual MIT/BSD license
+    -------------------------------------------------------------------------------------------------------------------------- */
+    window.matchMedia=window.matchMedia||function(e,t){"use strict";var n,r=e.documentElement,i=r.firstElementChild||r.firstChild,s=e.createElement("body"),o=e.createElement("div");o.id="mq-test-1";o.style.cssText="position:absolute;top:-100em";s.style.background="none";s.appendChild(o);return function(e){o.innerHTML='­<style media="'+e+'"> #mq-test-1 { width: 42px; }</style>';r.insertBefore(s,i);n=o.offsetWidth===42;r.removeChild(s);return{matches:n,media:e}}}(document);
+
+})(this, this.document);

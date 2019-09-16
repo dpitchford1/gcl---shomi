@@ -1,0 +1,45 @@
+<% last_promo_code_was_invalid = flash[:notice_is_promo_code] %>
+<% validate_redemption ||= false %>
+
+<%= simple_form_for :promo_code, url: promo_code_path, remote: true, html: {class: 'promo-form cf', id: 'promo_code_form'}  do |f| %>
+  <%= hidden_field_tag :billing_option, params.fetch(:order, {}).fetch(:billing_option, nil) %>
+  <%= hidden_field_tag :operation, params[:operation] || params.fetch(:order, {}).fetch(:operation, nil) %>
+  <%= hidden_field_tag :validate_redemption, validate_redemption %>
+	<fieldset>
+    <div class="promo-row <%= last_promo_code_was_invalid ? (session[:promo_code].try(:valid?) ? 'success' : 'error') : '' %>">
+		  <%= f.input :code, label: false,
+                          input_html: { placeholder: t('simple_form.placeholders.promo_code'),
+                                       value: session[:promo_code] ? session[:promo_code].code : '' } %>
+
+      <% if session[:promo_code] %>
+        <%= f.button :submit, t('buttons.success'), class: 'btn btn-default btn-success' %>
+      <% elsif last_promo_code_was_invalid %>
+        <%= f.button :submit, t('buttons.try_again'), class: 'btn btn-default btn-error' %>
+        <div class="hidden apply-text"><%= t('buttons.apply') %></div>
+      <% else %>
+        <%= f.button :submit, t('buttons.apply'), class: 'btn btn-default btn-light' %>
+      <% end %>
+    </div>
+
+    <% if session[:promo_code] %>
+      <div class="promo-row alert--notice">
+        <%= t('orders.notice.applied_promo_code_success') %>
+      </div>
+      <div class="hidden">
+        <%= render 'layouts/messages' %>
+      </div>
+    <% elsif last_promo_code_was_invalid %>
+      <div class="promo-row ">
+        <%= render 'layouts/messages' %>
+      </div>
+    <% end %>
+
+	</fieldset>
+<% end %>
+
+<% content_for :footer do %>
+  <%= javascript_include_tag "jquery.color", defer: 'defer' %>
+  <%= javascript_include_tag "promo_code_fader", defer: 'defer' %>
+<% end %>
+
+<%= render 'register/validateNotBlank', form_id: 'promo_code_form', add_error_to_controls: false %>

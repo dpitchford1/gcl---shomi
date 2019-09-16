@@ -1,0 +1,55 @@
+<%= render partial: 'layouts/form_error_header', locals: {object: @feature_flag} %>
+
+<% content_for :footer do  ajax_validation(:feature_flag) end %>
+
+<%= simple_form_for(@feature_flag, as: :feature_flag, remote: false, html: {class: 'general-form' }, data: {validate: 'feature_flag'}) do |f| %>
+  <%= hidden_field_tag request_forgery_protection_token.to_s, form_authenticity_token %>
+
+  <fieldset>
+
+    <%= hidden_field_tag :title, @feature_flag.title %>
+    <%= f.input :title, label: 'title', required: true %>
+    <%= f.input :active, label: 'active', required: false %>
+    <div class="sm-b-mg" style="margin-bottom: 10px;">
+      <% 5.times do |i| %>
+        <%= f.input :code, label: "code[#{i}]", required: false, input_html: {name: 'code[]', value: @feature_flag.code[i] || ''}, wrapper: 'inline_text_medium' %>
+      <% end %>
+    </div>
+    <p>The time is <%= Time.now %></p>
+    <div class="sm-b-mg" style="margin-bottom: 10px;">
+      <% 5.times do |i| %>
+        <%= f.input :turn_on_after, label: "turn_on_after[#{i}]", required: false, input_html: {name: 'turn_on_after[]', value: @feature_flag.turn_on_after[i] || ''}, wrapper: 'inline_text_medium' %>
+      <% end %>
+    </div>
+    <div class="sm-b-mg" style="margin-bottom: 10px;">
+      <% 5.times do |i| %>
+        <%= f.input :turn_off_after, label: "turn_off_after[#{i}]", required: false, input_html: {name: 'turn_off_after[]', value: @feature_flag.turn_off_after[i] || ''}, wrapper: 'inline_text_medium' %>
+      <% end %>
+    </div>
+
+    <% 4.times do |i| %>
+      <div style="margin-bottom: 10px;">
+        Option Key: <%= text_field_tag 'option_key', '', class: "#{i}" %>
+        Value: <%= text_field_tag 'options[]', '', class: 'optional feature_flag_options' %>
+      </div>
+    <% end %>
+  </fieldset>
+
+  <div class="submission"> <%= f.button :submit, 'Update' %></div>
+
+<% end %>
+
+<%= link_to 'Index', admin_feature_flags_path %>
+
+
+<script>
+  $(document).ready(function() {
+    if ($("input[name='option_key']")) {
+      $("input[name='option_key']").on('focusout', function(e, t) {
+        if ($('.feature_flag_options') && $('.feature_flag_options')[Number($(e.target).attr('class'))]) {
+          $($('.feature_flag_options')[Number($(e.target).attr('class'))]).attr('name', 'options[][' + $(e.target).val() + ']');
+        }
+      });
+    }
+  });
+</script>

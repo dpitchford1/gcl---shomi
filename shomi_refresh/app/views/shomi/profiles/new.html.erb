@@ -1,0 +1,32 @@
+<% content_for :title, t('titles.create_profile').html_safe %>
+
+<% content_for :body_start do %>
+<div class="trackjs" id="track5" aria-hidden="true" hidden="true"></div><div class="trackjs" id="track6" aria-hidden="true" hidden="true"></div>
+<% end %>
+<% content_for :analyticsfooter do %>
+<script>
+addLoadEvent(function() {
+	var track5js = '', track6js = '';
+	var axel5 = Math.random() + "", a5 = axel5 * 10000000000000, axel6 = Math.random() + "", a6 = axel6 * 10000000000000;
+
+	track5js += '<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=YmKFdqEM;ord=' + a5 + '?" class="hidden" height="0" width="0" frameborder="0"></iframe>';
+	track6js += '<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger002;ord=' + a6 + '?" class="hidden" height="0" width="0" frameborder="0"></iframe>';
+
+	document.getElementById('track5').innerHTML = track5js;
+	document.getElementById('track6').innerHTML = track6js;
+});
+</script>
+<% end %>
+
+<%# START: Analytics Noscript backups %>
+<% content_for(:noscript) do %>
+<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=YmKFdqEM;ord=1?" class="hidden" height="0" width="0" frameborder="0"></iframe>
+<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger002;ord=1?" class="hidden" height="0" width="0" frameborder="0"></iframe>
+<% end %>
+
+<section class="region create-profile">
+	<h2 class="h-reg sizes-XLG cc"><%= t('profiles.ineligible.subscribe_to_shomi') %></h2>
+	<h3 class="h-med sizes-M w-ul xlg-m"><%= t("profiles.create_rogers_profile").html_safe %></h3>
+	
+	<%= render "form" %>
+<%#= section wrapper closes in form.html %>

@@ -1,0 +1,147 @@
+/* NHL LINKK 
+---------------------------------------------- */
+/* NHL link */
+.brand-link{ 
+    background-image: asset-url('logos/rogers-logo.png');
+    background-position: 0 0.7em;
+    background-repeat: no-repeat;
+    text-indent: -9999em;
+    width: 90px;
+    height: 38px;
+    color: #fff; margin: 0; float: left; @include rem(font-size, 14px);
+     }
+.brand-link .block{ color: #fff; padding-top: .2em; }
+
+/* Site Logo -- fs==full-screen | ss==small-screen
+---------------------------------------------- */
+.brand-fs{ 
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    height: 56px; 
+    margin: 0;
+    position: relative; 
+    text-indent: -9999em;
+    width: 351px;
+    }
+    .brand-fs .block{ min-height: 39px; }
+
+
+/* LOGO - Localization switch setup
+---------------------------------------------- */
+[lang="en-ca"] .brand-fs{ background-image: asset-url('logos/logo-brand-fs.png'); }
+[lang="fr-ca"] .brand-fs{ background-image: asset-url('logos/logo-brand-fs.png'); }
+
+/* Only load small screen logo IF js enabled 
+---------------------------------------------- */
+.js[lang="en-ca"] .brand-ss{ background-image: asset-url('logos/logo-brand-fs.png'); }
+.js[lang="fr-ca"] .brand-ss{ background-image: asset-url('logos/logo-brand-fs.png'); }
+
+
+/* Header link focus styles */
+.header a:focus{ text-decoration: none; border-radius: 3px; }
+
+
+/* General menu structure
+---------------------------------------------- */
+.menu{
+    line-height: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    @include rem(font-size, 14px);
+    }
+[lang="fr-ca"] .menu { @include rem(font-size, 13px); } 
+.menu li{
+    float: left;
+    margin: 0;
+    padding: 0;
+    }
+.menu a, .menu .welcome{
+    display: block;
+    padding: 0.4em .1em;
+    }
+
+
+/* Primary Menu abstrction 
+---------------------------------------------- */
+.menu--primary{
+    float: right;
+    }
+.menu--primary li{
+    margin-left: 1.0em;
+    padding-top: 0.4em;
+    }  
+.menu--primary li:first-child {
+    margin-left: 0;
+}    
+.menu--primary a{
+    color: #fff;
+    }
+    .menu--primary a:hover{ color: #fff; }
+    .menu--primary a:focus{ background-color: #710000; }
+
+
+/* Secondary Menu abstrction 
+---------------------------------------------- */
+.menu--secondary{
+    font-family: $font-bold;
+    text-transform: uppercase;
+    }
+.menu--secondary li{
+    margin-left: 1.2em;
+    }
+    .is--f-primary .menu--secondary li:first-child{
+        margin-left: 0;
+        }
+.menu--secondary a{
+    border-bottom: 4px solid #e4e6e5; color: #3d4142;
+    }
+    .menu--secondary a:hover,  .menu--secondary .is-selected{ border-bottom-color: #aeb0af; text-decoration: none; }
+    .menu--secondary a:focus { background-color: #fff; color: #000; }
+    .menu--secondary a:active{ background-color: #eee; }
+
+
+/* Hide small screen menu wrap - content generated with js 
+---------------------------------------------- */
+.ss-nav{ display: none; }
+
+
+/* Footer secondary modifiers 
+---------------------------------------------- */
+.copyright, .footer-menu{ @include rem(font-size, 11px); margin: 0; padding-bottom: 0; }
+
+.footer-menu a{
+    color: #fff;
+    }
+
+// @media (max-width:51.250em){
+//     .js .ss-nav{ padding: 8px 3.5%; }
+// }
+
+@media (max-width: 37.5em) { /* 600PX */
+    /* LOGO - Has SVG and JS support */
+    .js .brand-ss{
+        background-position: right 0;
+        background-repeat: no-repeat;
+        background-size: contain;
+        float: right;
+        height: 36px;
+        margin: 0;
+        overflow: hidden;
+        text-indent: -100em;
+        width: 200px;
+        }
+    /* Small screen menu with JS enabled */
+    // .js .ss-nav{ background-color: #000; display: block; position: absolute; top: 0; left: 0; padding: 8px 3.5%; width: 100%; z-index: 20; } //padding: 8px 4.6875%;
+    // .js .ss-nav .i--menu { height: 24px; margin: 6px 0 0; width: 31px; }
+    // .js .ss-nav .i--close{ background-color: #000; background-size: 100% auto; height: 20px; width: 20px; margin-top: 6px; }
+    .js .menu-trigger{
+        color: #fff;
+        }
+}
+
+@media (max-width: 23.75em) { /* 380PX */
+    //.js .ss-nav{ padding: 8px 4.6875%; } 
+}

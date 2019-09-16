@@ -1,0 +1,12 @@
+<ul class="menu menu--secondary cf">
+<% if !@current_session.logged? %>
+    <%#=<li> link_to_unless_current t("menu.main"), root_path, :class => "" do link_to t("menu.main"), root_path, :class => "is-selected" end </li>%>
+<% end %>
+    <li><%= link_to_unless_current t("menu.gettingstarted"), get_started_path, :class => "" do link_to t("menu.gettingstarted"), get_started_path, :class => "is-selected" end %></li>
+
+    <li><%= link_to_unless_current t("menu.faq"), faq_path, :class => "" do link_to t("menu.faq"), faq_path, :class => "is-selected" end %></li>
+
+	<li><%= link_to_unless_current t("menu.gameplus"), gameplus_path, :class => "" do link_to t("menu.gameplus"), gameplus_path, :class => "is-selected" end %></li>
+	<li><%= link_to_unless_current t("menu.game_info"), blackouts_path, :class => "" do link_to t("menu.game_info"), blackouts_path, :class => "is-selected" end %></li>
+	<li><%= link_to_unless_current t("menu.devices"), devices_path, :class => "" do link_to t("menu.devices"), root_path, :class => "is-selected" end %></li>
+</ul>

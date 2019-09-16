@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<% if I18n.locale == I18n.default_locale %>
+<html class="no-js no-touch" dir="ltr" lang="en-CA">
+<% else %>
+<html class="no-js no-touch" dir="ltr" lang="fr-CA">
+<%end%>
+<!--[if IE]><![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--[if IE]>
+    <meta http-equiv="imagetoolbar" content="false"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="cleartype" content="on">
+    <![endif]-->
+    <title><%= page_title %></title>
+    <%# prefetch dns connections for analytics scripts %>
+    <link rel="dns-prefetch" href="//analytics.rogersmedia.com">
+    <link rel="dns-prefetch" href="//assets.adobedtm.com">
+    <link rel="dns-prefetch" href="//admin.brightcove.com">
+
+    <%# critical css %>
+    <style type="text/css"><%= Rails.application.assets["base-styles"].to_s.html_safe %></style>
+
+    <%# addLoad event & inject js class onto html %>
+    <script>var doc = window.document; function addLoadEvent(b){var a=window.onload;if(typeof window.onload!=="function"){window.onload=b}else{window.onload=function(){a();b()}}}; doc.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js';</script>
+
+    <%# main css files %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%#= stylesheet_link_tag "enhance", media: "only screen and (min-width: 10em)" %>
+
+    <%# inject enjance with js %>
+    <%= javascript_include_tag "setup", async: "true" %>
+
+    <%# OLD IE CSS and html5 structure %>
+    <!--[if (lte IE 9)&(!IEMobile 7)]>
+    <%= stylesheet_link_tag  "oldIE", media: "all" %>
+    <%= javascript_include_tag "utils/html5" %>
+    <![endif]-->     
+
+    <%# MOBILE SPECIFIC %> 
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%# SEARCH AND SEO %>
+    <meta name=”referrer” content=”always”>
+    <meta name="googlebot" content="NOODP">
+    <meta name="robots" content="index,follow,archive">
+    <meta name="description" content="<%= t("legal.meta_desc").html_safe %>">
+
+    <%# APPLE SPECIFIC %> 
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="NHL GameCenter Live&trade;">
+
+    <%# COPYRIGHTS %>
+    <meta name="copyright" content="All content presented in this domain may not be used by third parties without the prior written consent of Rogers Communications Inc.">
+    <meta name="copyright" content="NHL Enterprises, L.P. &copy; NHL">
+
+    <%# IE meta and pinning %>
+    <meta name="application-name" content="Rogers&trade; NHL GameCenter Live&trade;">
+    <meta name="msapplication-tooltip" content="Rogers&trade; NHL GameCentre Live&trade;">
+    <meta name="msapplication-starturl" content="http://gamecentrelive.rogers.com">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="<%= asset_path 'icons/favicon-rogers/favicon-144.png' %>">
+    <meta name="msapplication-navbutton-color" content="#fa1f00">
+
+    <meta name="msapplication-task" content="name=NHL on Twitter;action-uri=https://twitter.com/NHL;icon-uri=http://twitter.com/favicon.ico">
+    <meta name="msapplication-task" content="name=NHL on Facebook;action-uri=https://www.facebook.com/NHL;icon-uri=https://www.facebook.com/favicon.ico">
+    <meta name="msapplication-task" content="name=NHL on Google+;action-uri=https://plus.google.com/+NHL;icon-uri=https://ssl.gstatic.com/s2/oz/images/faviconr2.ico">
+
+    <%# ICONS %>
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<%= asset_path 'icons/favicon-rogers/favicon-152.png' %>">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<%= asset_path 'icons/favicon-rogers/favicon-144.png' %>">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<%= asset_path 'icons/favicon-rogers/favicon-120.png' %>">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<%= asset_path 'icons/favicon-rogers/favicon-114.png' %>">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="<%= asset_path 'icons/favicon-rogers/favicon-76.png' %>">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<%= asset_path 'icons/favicon-rogers/favicon-72.png' %>">
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="<%= asset_path 'icons/favicon-rogers/favicon-60.png' %>">
+    <link rel="apple-touch-icon-precomposed" href="<%= asset_path 'icons/favicon-rogers/favicon-57.png' %>">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= asset_path 'icons/favicon-rogers/favicon-16.png' %>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= asset_path 'icons/favicon-rogers/favicon-32.png' %>">
+    <link rel="icon" type="image/png" sizes="96x96" href="<%= asset_path 'icons/favicon-rogers/favicon-96.png' %>">
+    <link rel="icon" type="image/png" sizes="160x160" href="<%= asset_path 'icons/favicon-rogers/favicon-160.png' %>">
+    
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="/faviconn.ico?v=1234"> -->
+    <link type="image/x-icon" href="https://www.rogers.com/cms/rogers/images/favicon.ico" rel="shortcut icon">
+
+    <link rel="home" title="Home page" href="/">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+
+    <meta property="og:title" content="Rogers NHL GameCentre LIVE&trade;">
+    <meta property="og:site_name" content="Rogers NHL GameCentre LIVE&trade;">
+    <meta property="og:url" content="https://gamecentrelive.rogers.com">
+    <meta property="og:description" content="<%= t("legal.meta_desc").html_safe %>">
+    <meta property="og:image" content="https://gamecentrelive.rogers.com/assets/icons/favicon/favicon-160.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_ca">
+
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="Rogers NHL GameCentre LIVE&trade;" >
+    <meta property="twitter:description" content="<%= t("legal.meta_desc").html_safe %>">
+    <meta property="twitter:creator" content="@rogersbuzz">
+    <meta property="twitter:url" content="https://gamecentrelive.rogers.com">
+    <meta property="twitter:image" content="https://gamecentrelive.rogers.com/assets/content/gcl-sharing.jpg">
+    <meta name="twitter:image:src" content="https://gamecentrelive.rogers.com/assets/content/gcl-sharing.jpg">
+
+    <%= yield :head %>
+    __CROSS_SITE_REQUEST_FORGERY_PROTECTION_TOKEN__
+    <%# dtm header code start %>
+    
+    <noscript><%= stylesheet_link_tag "fontz", media: "all" %></noscript>
+</head>
+
+<body class="<%= @home_page ? 'page-home page-bg' : 'page-site'%>" id="page-body">
+<%# START: quick links %>
+<a class="quick-links" href="#new_session"><%= t("text.skip1").html_safe %></a>
+<a class="quick-links" href="#main-content"><%= t("text.skip2").html_safe %></a>
+<a class="quick-links" href="#footer-primary"><%= t("text.skip3").html_safe %></a>
+
+<h1 class="hide-text"><%= t("titles.default").html_safe %></h1>
+
+<%# START: site headers %>
+<%= render "layouts/navigation" %>
+
+<%# render partials for the start of body %>
+<%= yield :body_start %>
+
+<%# IF: the hompage, render no wrappers, load index & gateway %>
+<% if @home_page %>
+    <%#= render 'layouts/messages' %>
+<%= yield %>
+
+<% unless @current_session.logged? %>
+    <%= render 'sessions/modal_form' %>
+<% end %>
+
+<%# ELSE: LOAD INNER PAGES WITH WRAPPER STRUCTURE %>
+<% else %>
+
+<%# START: main content %>
+<div class="fluid" id="main-content">
+    <%= render 'layouts/messages' %>
+
+    <%= yield %>
+
+    <% unless @current_session.logged? %>
+        <%= render 'sessions/modal_form' %>
+    <% end %>
+    
+</div>
+
+<%end%>
+<%# END IF ELSE TEMPLATE LOADING %>
+
+<hr class="hide-divider">
+
+<div class="basic-hero">
+    <div class="fluid">
+        <p class="footnote-basic lg-m"><%= t("legal.nhl_legend").html_safe %></p>
+    </div>
+</div>
+
+<%# START: Footer: Primary %>
+<%= render 'layouts/footer_primary' %>
+
+<%# START: Footer: Secondary %>
+<%#= render 'layouts/footer_secondary' %>
+
+<% if I18n.locale == I18n.default_locale %>
+<p class="feedback-tab"><a href="https://www.research.net/s/gamecentrelivefeedback" target="blank" rel="external nofollow" onclick="ga('beec4528a634c1272e86ba159d7b4b8e.send', 'event', 'Feedback', 'Clicked', 'English Tab', {'nonInteraction': 1});"><span class="ico i--feedback">Feedback</span></a></p>
+<% else %>
+<p class="feedback-tab"><a href="https://fr.research.net/s/gamecentrelivefeedbackFR" target="blank"rel="external nofollow" onclick="ga('beec4528a634c1272e86ba159d7b4b8e.send', 'event', 'Feedback', 'Clicked', 'French Tab', {'nonInteraction': 1});"><span class="ico i--feedback">Commentaires</span></a></p>
+<%end%>
+
+<%= render 'pages/background_job' %>
+
+<% if @home_page %>
+    <%# if !@current_session.profile.eligible? %>
+    <%= render 'partials/video_bg' %>
+    <%# end %>
+<% end %>
+
+<div class="ss-nav" id="ss-nav"></div>
+
+<%# load jquery %>
+<%= javascript_include_tag 'jquery', defer: "defer" %>
+
+<%# START: Global Scripts %>
+<%= javascript_include_tag "application", defer: "defer" %>
+
+<%# START: site wide init snippets %>
+<script>
+    addLoadEvent(function() {
+        <%= yield(:addload_ready) %>
+    });
+</script>
+
+<%# dtm header code start %>
+<% if (ENV["APP_NAME"] == 'gcl' && Rails.env.production?) %>
+<%= javascript_include_tag "//assets.adobedtm.com/f1c13d6275d63bceda989e7eebe142edd7f1cda0/satelliteLib-d6e7db8f23228c503813e3679e078e1e84802b6e.js" %>
+<% else %>
+<%= javascript_include_tag "//assets.adobedtm.com/f1c13d6275d63bceda989e7eebe142edd7f1cda0/satelliteLib-d6e7db8f23228c503813e3679e078e1e84802b6e-staging.js" %>
+<% end %>
+
+<%= yield(:footer) %>
+
+<%# dtm footer code start %>
+<script>
+rdm.dtm.dl = new RdmDtmDataLayer({
+    brand : 'gcl',
+    options : {
+        confirmationType: '<%= session[:confirmation_type] %>'
+    },
+    pageURL : '<%= request.original_url %>',
+    contentName: '<%= session[:confirmation_type] ? 'Confirmation page' : page_name %>',
+    vmxC4 : 'ROGERS',
+    vmxC6 : 'GCL',
+    vmxEnabled : true
+}, this);
+_satellite.pageBottom();
+</script>
+
+<%# START: General noscript items %>
+<noscript>
+    <% if @home_page %>
+    <style type="text/css">.hero-welcome{background: #000 url("bg/hero1-fallback-1440.jpg") no-repeat 50% 0; background-size: 100% auto; }</style>
+    <% end %>
+    <%= yield(:noscript) %>
+</noscript>
+
+<%# START: CMS Editor %>
+<% if session[:can_edit] %>
+    <div style="position:fixed; left:0; top:0; z-index:999999999; ">
+        <%= link_to "Edit Page", "/editor/" + request.path, class: "btn btn-secondary" %>
+    </div>
+<% end %>
+
+<%# START: development workflow %>
+<% if (ENV["APP_NAME"] == 'gcl' && Rails.env.production?) %>
+<% else %>
+<!--[if !IE]><!-->
+<%= stylesheet_link_tag "_dev/debug.css", media: "all" %>
+<div id="devMenu">    
+    <h6>Window Width: <span id="width"></span> px</h6>
+    <div id="debug-features"> for debug output of features </div>
+</div> 
+<%= javascript_include_tag "_dev/working.js" %>
+<!--<![endif]-->
+<% end %>
+</body>
+</html>

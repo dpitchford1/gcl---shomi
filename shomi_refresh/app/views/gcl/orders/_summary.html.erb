@@ -1,0 +1,96 @@
+<% show_promo ||= false %>
+<% if @offer %>
+<section class="info info-lg info--primary">
+    <h3 class="hide-text"><%= t('orders.order_summary') %></h3>
+
+    <table class="order-table">
+    	<caption class="h-sb sizes-SM"><%= ['callback', 'order_summary'].include?(params[:action]) ? t('orders.review_order') : t('orders.order_summary') %></caption>
+    <% if @offer.product_code == 'rdsgames' %>
+        <thead class="thead"><th><%= t('orders.rdsgames_title').html_safe %></th></thead>
+    <%else %>
+        <thead class="thead"><th><%= t('orders.gcl_full_package').html_safe %></th></thead>
+    <% end %>
+        <tbody>
+            <tr>
+                <th scope="col" class="uc th"><%= t('orders.subtotal') %></th>
+                <% if @order.billing_option == "free" %>
+                    <th scope="col" class="uc th"><%= t('orders.discount') %></th>
+                    <th scope="col" class="uc th"><%= t('orders.total') %></th>
+                <% elsif @order.taxes %>
+                    <th scope="col" class="uc th"><%= t('orders.taxes') %></th>
+                    <th scope="col" class="uc th"><%= t('orders.total') %></th>
+                <% end %>
+
+            </tr>
+            <tr>
+                <% if I18n.locale == I18n.default_locale %>
+                    <td class="td"><sup>$</sup><%= @offer.price %></td>
+                    <% if @order.billing_option == "free" %>
+                        <td class="td"><sup>$</sup><%= @offer.price %></td>
+                        <td class="td"><sup>$</sup>0</td>
+                    <% elsif @order.taxes %>
+                        <td class="td"><sup>$</sup><%= @order.taxes %></td>
+                        <td class="td"><sup>$</sup><%= @order.total %></td>
+                    <% end %>
+                <% else %>
+                    <td class="td"><%= @offer.price %> $</td>
+                    <% if @order.billing_option == "free" %>
+                        <td class="td"><%= @offer.price %> $</td>
+                        <td class="td">0 $</td>
+                    <% elsif @order.taxes %>
+                        <td class="td"><%= @order.taxes %> $</td>
+                        <td class="td"><%= @order.total %> $</td>
+                    <% end %>
+                <%end%>
+            </tr>
+        </tbody>
+        <tfoot>
+           
+            <% unless ['callback', 'order_summary'].include?(params[:action]) %>
+            <tr>
+                <td class="tfoot">
+                <small>
+                    <%= t('orders.order_meta') %>
+                    <%= section :package_toggle_link, auto_generate: false do %>
+                    <br />
+                    <% if session[:user_region] %>
+                        <%= t('orders.toggle_full') %> <%= link_to t('btn.click_here'), reset_frenchpackage_path %><br />
+                    <% else %>
+                        <%#= t('orders.toggle_french') %> <%#= link_to t('btn.click_here'), frenchpackage_path %>
+                    <% end %>
+                <% end %>
+                </small></td>
+            </tr>
+            <% end %>
+        </tfoot>
+    </table>
+
+    <% if @offer.product_code != 'rdsgames' %>
+    <% if show_promo %>
+    <div class="region promo-code-full">
+        <%= render 'profiles/promo_code_form' %>
+    </div>
+    <% end %>
+    <% end %>
+
+    <% if @order.billing_option == 'cc' %>
+        <% content_for :body_start do %>
+            <div id="track35"></div>
+        <% end %>
+        <% content_for :footer do %>
+            <script>
+                var track35js = '', axel3 = Math.random() + "", a3 = axel3 * 10000000000000; track35js += '<iframe class="hidden" src="https://1662408.fls.doubleclick.net/activityi;src=1662408;type=invmedia;cat=LgypYxgM;ord=' + a3 + '?"></iframe>';
+                document.getElementById('track35').innerHTML = track35js;
+
+                <%= Rails.application.assets["utils/fb-script-loader"].to_s.html_safe %>
+                window._fbq.push(['track', '6022576913030', {'value':'0.00','currency':'CAD'}]);
+            </script>
+        <% end %>
+        <% content_for(:noscript) do %>
+        <iframe src="https://1662408.fls.doubleclick.net/activityi;src=4498654;type=invmedia;cat=LgypYxgM;ord=1?" class="hidden"></iframe>
+        <img class="hidden" src="https://www.facebook.com/tr?ev=6022576913030&amp;cd[value]=0.00&amp;cd[currency]=CAD&amp;noscript=1">
+        <% end %>
+    <% end %>
+
+</section>
+<% end %>

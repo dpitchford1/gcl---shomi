@@ -1,0 +1,5 @@
+<% presenter = RedemptionSummaryHeader.new(@current_session, flash) %>
+
+<% content_for :below_navigation do  %>
+  <%= render partial: 'layouts/presenting_summary', locals: { p: presenter } %>
+<% end %>

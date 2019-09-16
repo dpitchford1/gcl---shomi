@@ -1,0 +1,21 @@
+<article class="feature is--fancy">
+<%= section :purchase_box, auto_generate: false do %>
+	<h3 class="h-sb sizes-S"><%= t("promos.promo_offers_nonrogers.heading").html_safe %></h3>
+	<div class="feature-body">
+		<p class="feature-excerpt yuck1">
+			<%= t("promos.promo_offers_nonrogers.excerpt").html_safe %>
+			<!--span class="buy-price">
+				<span class="price wfsb">
+					<% if I18n.locale == I18n.default_locale %>
+					<sup class="wfsb">$</sup><%= @offer.price_dollars %><sup><%= @offer.price_cents %></sup>
+					<% else %>
+					<%= @offer.price_dollars %><sup><%= @offer.price_cents %></sup> $
+					<%end%>
+				</span>
+			</span-->
+		</p>
+		<!-- DISABLE THE BUTTON FOR THE OFFSEASON p><%= link_to t("btn.subscribe"), @current_session.logged? ? orders_path : new_profile_path, class: 'btn btn-quad btn-block' %></p-->
+		<p class='btn btn-quad-disabled btn-block'><%= t("btn.subscribe") %></p>
+	</div>
+<% end %>
+</article>

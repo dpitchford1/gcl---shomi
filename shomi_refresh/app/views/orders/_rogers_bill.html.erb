@@ -1,0 +1,29 @@
+	
+	<h3 class="h-sb size-L4"><%= t('text.my_rogers').html_safe %> <%= t('text.account') %></h3>
+
+	<%= render "layouts/form_error_header", object: @order %>
+
+	<%= simple_form_for(@order, url: order_summary_path, html: {class: 'general-form' }) do |f| %>
+		<fieldset class="content-wrapper">
+    		<legend class="hide-text"><%= t("form.legend.account_info") %></legend>
+			<%= f.input :rogers_account_token, collection: @current_session.profile.collection, required: true, prompt: t('simple_form.prompts.order.rogers_account_token') %>
+	  	</fieldset>
+	  	<fieldset class="content-wrapper">
+    		<legend class="h-sb legend-visible"><%= t('orders.contact_info') %></legend>
+			<%= f.input :phone_number, required: true, as: :tel, placeholder: '555-555-5555' %>
+			<%= f.input :billing_option, as: :hidden %>
+			<%= f.input :offer_id, as: :hidden %>
+			<%= f.input :birthdate, as: :date, icon: { content: '', class: "i--helper dob-helper", data: {title: t('orders.need_dob')} }, hint: t('orders.need_dob'), :wrapper_class => 'form-row form-info', prompt: { day: t('text.day'), month: t('text.month'), year: t('text.year')}, start_year: Date.today.year - 90, end_year: Date.today.year - 12, required: true %>
+		</fieldset>
+		<fieldset class="content-wrapper">
+    		<legend class="hide-text"><%= t("form.legend.purchase_agreements") %></legend>
+			<%= f.input :auto_renew, as: :boolean, :wrapper => :inline_checkbox, label: t('activemodel.attributes.credit_card.auto_renew_html'), hint: t('orders.next_renewal_date') %>
+
+			<%= render 'tos/modal', tos: @tos %>
+
+			<%= f.input :tos, as: :boolean, :wrapper => :inline_checkbox, :input_html => { :class => "check-tos" }, required: true, label: t('profiles.optin_accept').html_safe %>
+
+	  		<p><%= link_to t('btn.cancel'), profiles_path, class: 'btn btn-cancel' %> <%= f.button :submit, t('orders.submit') %></p>
+	  	</fieldset>
+	<% end %>
+</section>

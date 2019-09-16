@@ -1,0 +1,23 @@
+<%= simple_form_for :promo_code, url: promo_code_path, remote: true, html: {class: 'general-form', id: 'redemption_code_form'} do |f| %>
+  <%= hidden_field_tag :validate_redemption, true %>
+  <fieldset>
+    <div class="promo-row">
+      <%= f.input :code,
+                  input_html: { value: params[:redemption_code], placeholder: t('simple_form.placeholders.redemption_code'), maxlength: 15,
+                                class: 'string required text-field', autofocus: true},
+                  label: false %>
+
+      <div class="large-submission"> <%= f.button :submit, t('btn.continue'), class: 'btn-light' %></div>
+      <div class="submission"><%= link_to t('buttons.go_back'), 'http://www.nextissue.ca', class: 'btn btn-cancel' %> </div>
+
+      <div class="redemption-text">
+        <% unless @current_session.try(:logged?) %>
+          <p><%= t('register.redemption.stacking_description').html_safe %></p>
+        <% end %>
+        <p><%= simple_format(@tos.try("tos_#{I18n.locale.to_s}").force_encoding('ISO-8859-1').encode('UTF-8')) if @tos.try("tos_#{I18n.locale.to_s}") %></p>
+      </div>
+    </div>
+  </fieldset>
+<% end %>
+
+<%= render 'register/validateNotBlank', form_id: 'redemption_code_form', add_error_to_controls: true %>

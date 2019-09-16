@@ -1,0 +1,15 @@
+<section class="hero-M has--border">
+	<h2 class="hide-text anchored" id="getting-started"><%= t('profiles.main.hero_get_started.getting_started') %></h2>
+	<div class="simple-grid">
+		<div class="random-tv has-TV l-m-bump"></div>
+
+		<article class="three-fifths">
+
+			<h3 class="h-reg sizes-M lg-m"><%= t('profiles.main.hero_get_started.conveniently_watch_on_big_screen').html_safe %></h3>
+
+			<p><%= link_to t("profiles.main.get_started"), new_session_path, class: "btn btn-default" %></p>
+
+			<p><%= t('profiles.already_have_account').html_safe %> <%= link_to t("profiles.signin_here"), new_session_path, class: "cc" %>.</p>
+		</article>
+	</div>
+</section>

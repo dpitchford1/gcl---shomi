@@ -1,0 +1,11 @@
+<%= cache(action_suffix: ['promo_code', I18n.locale].join(':')) do %>
+<%= simple_form_for :promo_code, url: promo_code_path, remote: true, html: {class: 'promo-form cf'}  do |f| %>
+	<fieldset>
+		<legend class="h-lgt sizes-L text-center"><%= t("promos.promo_code.heading").html_safe %></legend>
+
+		<label for="promo_code_code" class="form-label text-center"><%= t("promos.promo_code.label").html_safe %></label>
+		<%= f.input :code, label: false %>
+		<%= f.button :button, t("btn.submit") %>
+	</fieldset>
+<% end %>
+<% end %>

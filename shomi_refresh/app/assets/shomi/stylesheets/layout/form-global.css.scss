@@ -1,0 +1,279 @@
+/* GLOBAL STRUCTURES & WRAPPERS
+---------------------------------------------- */
+.general-form, .alternative-form{ 
+    overflow: hidden;
+    margin-bottom: 2em;
+    }
+.promo-form{ width: 100%; }
+
+//.signin-form{ width: 40%; margin: 0 auto; text-align: center; }
+.sign-in-set label{ visibility: hidden; height: 1px; }
+.sign-in-set .legend-visible{ width: 100%; }
+
+
+.create-set{}
+.subscribe-set .form-label{ float:left; padding-top: .7em; width: 60%; }
+.subscribe-set .form-row{ margin-bottom: .5em; }
+.subscribe-set .controls{ float:right; width: 30%; }
+
+.form-sm-centered{ width: 50%; margin: 0 auto; text-align: center; }
+
+
+//.fieldset--rows-inline{}
+//.fieldset--rows-stacked{}
+.form-row { margin: 0 0 1.3em; }
+.fieldset--rows-inline .form-row{ float: left; width: 37%; }
+
+.fieldset--rows-inline .text-field{ width: 87%; }
+.fieldset--rows-inline .fancy-select {  width: 87%; max-width: 87%; }
+
+/* GLOBAL FORM ELEMENTS
+---------------------------------------------- */
+label { color: $color-primary; font: 16px/1.42857143 $fonts-reg; }
+
+form abbr[title]{ text-decoration: none; }
+
+/* Styled legend tag */
+.legend-visible{ @include rem(font-size, 21px); line-height: normal; margin-bottom: 1.2em; font-family: $fonts-light; }
+
+.fieldset{ border-bottom: 1px solid $color-tertiary; padding-bottom: 1.3em; margin-bottom: 3.3em;  }
+
+
+/* Radio Buttons and Checkboxes */
+.radio-inline{ border: 1px solid $color-tertiary; float: left; margin-right: 50px; padding: .7em 1em .6em; width: 32.5%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+//.radio-inline:checked{ border: 1px solid $cc-primary; }
+
+.radio-inline .radio_buttons, .radio-inline .collection_radio_buttons{ float: left; @include rem(font-size, 21px); }
+.radio-inline .collection_radio_buttons{ width: 90%; }
+.radio-inline .radio_buttons{ margin-top: 7px; }
+
+input[type=radio]:checked + label {
+    color: $cc-primary;
+    font-style: normal;
+    } 
+
+// .radio-inline-list li   { padding-right: 2em; }
+// .radio-inline-list label{ float: left; padding: 0; }
+// .radio-inline-list .radio-inline{ margin-top: .3em }
+
+.checkbox abbr{ display: none; }
+//.checkbox .form-label{ @include rem(font-size, 12px); }
+
+.form-label input[type="checkbox"]{ float:left; margin-top: 4px; margin-bottom: 20px; }
+.form-label .check-label{ float: left; line-height: 1.4; margin-bottom: 1em; width: 70%;  }
+
+
+
+/* GENERAL FORM STYLES
+---------------------------------------------- */
+// .general-form .text-field{
+//     border-radius: 14px;
+//     width: 87%;
+//     width: 350px;
+//     }
+
+.default-form .text-field{ width: 350px; }
+
+.profile_answer .text-field{
+    width: 70%;
+    }
+
+
+/* LABELS */
+.form-label{ margin-bottom: 0.5em; }
+//.alt-label { font-family: $font-semibold; color: $color-primary; margin-bottom: 0; }
+
+
+/* TEXT FIELDS */
+.text-field[type="text"], .text-field[type="password"], .text-field[type="email"], .text-field[type="tel"], select{ 
+    border: 1px solid $color-primary; 
+    border-radius: 14px;
+    @include rem(font-size, 21px); 
+    padding: 0.8em 1.3em; 
+    }
+
+.text-field{ margin-bottom: 1px; }
+.field-inline{ margin-right: 15px; }
+
+.text-field[type="text"], .text-field[type="password"], .text-field[type="email"], .text-field[type="tel"]{ -webkit-appearance: none; }
+.text-field:focus{ background-color: $white; outline: none; }
+
+
+/* C.C modifiers */
+.general-form .cc-cvv{ width: 75px; }
+
+/* select lists in C.C form */
+label .controls.select{ float: left; margin-right: 15px; width: auto; }
+label .text-field.select-list{ width: auto; }
+
+
+/* PLACEHOLDER STYLING
+---------------------------------------------- */
+.text-field::-webkit-input-placeholder {
+    color: #414042;
+    }
+  
+.text-field:-moz-placeholder { /* Firefox 18- */
+    color: #414042;
+    }
+
+.text-field::-moz-placeholder {  /* Firefox 19+ */
+    color: #414042;
+    }
+
+.text-field:-ms-input-placeholder {  
+    color: #414042;
+    }
+
+.text-field:focus::-webkit-input-placeholder {
+     opacity: .2;
+    }
+  
+.text-field:focus:-moz-placeholder { /* Firefox 18- */
+     opacity: .2;  
+    }
+  
+.text-field:focus::-moz-placeholder {  /* Firefox 19+ */
+     opacity: .2; 
+    }
+  
+.text-field:focus:-ms-input-placeholder {  
+     opacity: .2;  
+    }
+
+
+/* ERRORS AND ERROR LISTS
+---------------------------------------------- */
+.form-errors{
+    padding: 1em 0 .5em;
+    }
+.error-listing{
+    color: $cc-primary;
+    @include rem(font-size, 14px);
+    }
+.error .text-field{
+    border-color: $cc-primary;
+    border-left-width: 7px; 
+    }
+
+.error .help-inline, .error-label{
+    @include rem(font-size, 16px);
+    clear: left;
+    color: $cc-primary;
+    margin-bottom: 0;
+    padding-top: .2em;
+    }
+
+
+
+.submit-group{
+    float: right;
+    margin-right: 30%;
+    }
+.submit-group .btn{
+    margin-left: 20px;
+    }
+
+.btn-group-right{
+    float: right;
+    text-align: right;
+    }
+
+
+// .order-submit, .register-submit {
+//     float: right;
+//     margin-right: 5em;
+//     margin-top: 1.5em;
+//     }
+
+
+/* HELP AND HINTS and INFORMATION
+---------------------------------------------- */
+.help-block {
+    background-color: $cc-secondary;
+    border-radius: 7px 7px 7px 0;
+    display: inline-block;
+    margin-top: 12px;
+    margin-left: 5px;
+    height: 15px;
+    width: 15px;
+    }
+
+/* C.C modifier */
+.credit_card_auto_renew .help-block, .order_auto_renew .help-block{ padding-left: 22px; }
+
+    // fancy select menus error messages
+    .controls.select.error {
+        padding-bottom: 2.2em;
+        }
+    .select.error .text-field{ border: 0 none; }
+    .form-row.select.error {
+        padding-bottom: 1.5em;
+        }
+    .select .help-inline{
+        left: 0;
+        position: absolute;
+        top: 52px;
+        }
+
+    // select menus inline e.g month/year CC dropdowns
+    .controls.select .help-inline {
+        @include rem(font-size, 14px);
+        line-height: 1.1;
+        }
+
+.general-form .form-help{ font-size: 90%; margin-bottom: 2.5em; }
+
+.modal-form .form-help{ margin-bottom: 1.3em; }
+
+.simple_form input.boolean {
+    margin-left: 2px;
+    }
+
+.link-account > .form-row, .link-account > .form-row .controls{ overflow: visible; }
+.link-account > .form-row + .form-row { margin-bottom: 4em; }
+
+
+
+
+
+/* NO TOUCH DEVICES SEE ICON -- TOUCH DEVICES DEFAULT TO VISIBLE */
+.form-info .controls    { clear: left; }
+.form-info .form-label  { float: left; }
+.form-info .i--helper{
+    display: block;
+    float: left;
+    height: 15px;
+    margin-left: 15px;
+    position: relative;
+    width: 15px;
+    top: 11px;
+    font-style: normal;
+    @include rem(font-size, 12px);
+    cursor: pointer;
+    }
+.form-info .i--helper:hover:after, .form-info .i--helper:focus:after{
+    background: #666;
+    background: rgba(0,0,0,.8);
+    border-radius: 5px;
+    color: #fff;
+    content: attr(data-title);
+    line-height: 1.1;
+    padding: 5px 10px;
+    position: absolute;
+    margin-left: 25px;
+    z-index: 98;
+    margin-left: 25px;
+    top: -5px;
+    pointer-events: none;
+    }
+.form-info .dob-helper:after{
+    height: 50px;
+    width: 300px;
+    }
+
+.touch .form-info .i--helper    { display: none; }
+.no-touch .form-info .help-block{ display: none; }
+
+
+

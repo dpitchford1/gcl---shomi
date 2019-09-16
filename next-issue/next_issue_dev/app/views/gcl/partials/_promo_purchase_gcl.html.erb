@@ -1,0 +1,20 @@
+<article class="feature is--fancy">
+<%= section :purchase_box, auto_generate: false do %>
+	<h3 class="h-sb sizes-M3"><%= t("promos.promo_offers.heading").html_safe %></h3>
+	<div class="feature-body">
+		<p class="feature-excerpt yuck2">
+			<%= t("promos.promo_offers.excerpt2").html_safe %>
+			<span class="buy-price">
+				<span class="price wfsb">
+					<% if I18n.locale == I18n.default_locale %>
+					<sup class="wfsb">$</sup><%= @offer.price_dollars %><sup><%= @offer.price_cents %></sup>
+					<% else %>
+					<%= @offer.price_dollars %><sup><%= @offer.price_cents %></sup> $
+					<%end%>
+				</span>
+			</span>
+		</p>
+		<p><%= link_to t("btn.subscribe_today"), @current_session.logged? ? orders_path : new_profile_path, class: 'btn btn-quad btn-block' %></p>
+	</div>
+<% end %>
+</article>

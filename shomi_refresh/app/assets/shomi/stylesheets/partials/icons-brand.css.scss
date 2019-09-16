@@ -1,0 +1,89 @@
+/* APP STORE BUTTONS */
+[lang="en-ca"] .i-apps{ background-image: asset-url("logos/logo-appstore-both.png"); background-size: auto; height: 32px; }
+[lang="fr-ca"] .i-apps{ background-image: asset-url("logos/logo-appstore-both-fr.png"); background-size: auto; height: 32px; }
+.i--apple    { background-position: -112px 0; margin-left: 20px; width:108px; }
+.i--google   { background-position: 0 0; width: 92px; }
+
+
+.feedback-tab{ position: fixed; right: 0px; top: 140px; margin: 0; }
+.feedback-tab:hover, .feedback-tab:focus{ right: 0; }
+
+.i--feedback {
+    height: 110px;
+    width: 40px;
+    }
+[lang="en-ca"] .i--feedback {
+    background-image: asset-url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAABuCAMAAABiIaEuAAAAQlBMVEUBAgI9QUHOz89ucXEBAgL///+ZmZlMaXEBAgIBAgKeoKDa29vz8/OGiYmys7NJTU3Cw8NVWVliZWWSlJTn5+d6fX1n5qH0AAAACnRSTlMT////If//AAMJyGuelwAAAWRJREFUeNrtl9tuwzAMQ0tpbTdbvib9/1+dY9R9DPPgoR0QAkaA5EAIRSuXy/3753K5cXXw63alOsET/FhwtXHa+11QyvN6hOyDSJ1cQMBrAOLVFFiYmQi4gpS565yA6plrE5GImtvBiJkhYsbrS35SMsvTrjz2K0YMEHEXdJABujlgRhhR5n3XBc565WT7YAagmoDIsvaKpkI2xch7PT4zFg9F6EOCUNBiAVBYRQnYxMysBcAjK5gZQdoazkEPoEZPweEEMAKO3iAFY2AvW8H7OMqyPq5bpeg8u8cIJK+g28yAmirCArAnRWjr0UaBmOkztS1HwSB9BcgbH1KzQHMVqM4YaBVd1QgY+uzngkDAlPrwrymRURgvogWeRth0LMKmfxMhd61Ld81B6HvAoVng/D56jc1IW1H95/axqCKplll9NHnJJu/HLu56KhhEUOVvvh/P35QT/Hjwcgxs5CHwvoFcv4DRWcwG5feIAAAAAElFTkSuQmCC");
+    }
+[lang="fr-ca"] .i--feedback {
+    background-image: asset-url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAABuCAMAAABiIaEuAAAAQlBMVEUBAgLOz89ucXGeoKD///+ZmZk9QUEBAgIBAgIBAgLn5+e2t7fa29vz8/OSlJRJTU1VWVl6fX2GiYmqrKxiZWXCw8MHf/SeAAAACnRSTlMB////////ChQh/qUbpwAAAbxJREFUeNrlmEmO6zAMRENJqeRrnnz/q37IMKBlceF2L7qAwJsXWhxSFPJ6vT6f75trgd9/b0f142A4nEsdNTCwZOcyaoEnIKxLqClisIjGWYT1BQJmADW5RCO6Ybp3Llp/W3mCS5KcpxGNcQJZn+dBXGJgNpfibWMmVlaVjBBQAIRc+Bl7OSxQrXe8PA5NcUYzRdBFJN1Vx2Av6cdMHfGuM0ZZYllveRs14NH4q1ewCtTMXi0NwITwFqKFJCqw9EjAnUhBIODOZup6fTTemXiFVVjK1j1gIQZAxuyJM4bdE82E3/+7NhxcEkOX5pLvJ0bAhRWbNHVEyb/rFPyMOZ8LM5r4/C6cMjBkQP6G2W9/VLUwTGCeTs8Hd0zu4Xt6IRyMmRnppoZXbYVNPXxBet6kdta66cmrfaK5xKXQgNIPAm5WFODRC0DqeFEtJM1iPykO3r3itjjoRTSgVAAl06wF6NZOGAa2cqbbacGRz0eCZeAFUHDWM42Bg4ABNYhkVFqejKUZFSYVrBWF4w7lHbfkK+txV3lKPx+eRuyQs5O0hb6g2VzRaHmiAQA6ZktJ5Lm/Hz5fHfjSg58313+7pFAV2OF49gAAAABJRU5ErkJggg==");
+    }
+
+
+// .nav-ico:before{
+//     background-position: 0 0;
+//     }
+
+/* MQ 820- tablets & small screens
+================================================================================ */
+@media (max-width:51.250em){
+
+    /* inline but pull it to the left and right */
+    .nav-ico:before{
+        content: "";
+        float: left;
+        height: 25px;
+        margin-right: 15px;
+        width: 25px;
+        }
+    // .nav-ico:hover:before{
+    //     background-position: 0 0 ;
+    //     }
+
+    .i-tv:before{
+        background: transparent asset-url("/assets/icons/ui/icon-tv.png") no-repeat center center;
+        background-image: linear-gradient(transparent, transparent), url("/assets/icons/ui/icon-tv.svg");
+        background-size: 100% auto;
+        }
+    .i-stacked:before{
+        background: transparent asset-url("/assets/icons/ui/icon-stacked.png") no-repeat center center;
+        background-image: linear-gradient(transparent, transparent), url("/assets/icons/ui/icon-stacked.svg");
+        background-size: 100% auto;
+        }
+    .i-family:before{
+        background: transparent asset-url("/assets/icons/ui/icon-family.png") no-repeat center center;
+        background-image: linear-gradient(transparent, transparent), url("/assets/icons/ui/icon-family.svg");
+        background-size: auto 100%;
+        }
+    .i-phone:before{
+        background: transparent asset-url("/assets/icons/ui/icon-phone.png") no-repeat center center;
+        background-image: linear-gradient(transparent, transparent), url("/assets/icons/ui/icon-phone.svg");
+        background-size: auto 100%;
+        }
+    .i-games:before{
+        background: transparent asset-url("/assets/icons/ui/icon-games.png") no-repeat center center;
+        background-image: linear-gradient(transparent, transparent), url("/assets/icons/ui/icon-games.svg");
+        background-size: 100% auto;
+        }
+
+}
+
+.has-i-wireless{ 
+    background: transparent asset-url('/assets/icons/ui/icon-wireless.png') no-repeat scroll 6% center;
+    }
+.has-i-laptop{ 
+    background: transparent asset-url('/assets/icons/ui/icon-laptop.png') no-repeat scroll 5% center;
+    }
+
+.has-TV{ 
+    background: transparent asset-url('/assets/content/TV.jpg') no-repeat scroll 5% top;
+    //background: transparent asset-url('/assets/content/TV.png') no-repeat scroll 5% top;
+    background-size: 100% auto;
+    }
+
+.cable-box { margin-left: auto; margin-right: auto; width: 317px; height: 190px }
+.has-cable-box{
+    background: transparent asset-url('/assets/content/cable-box.png') no-repeat scroll 5% top;
+    background-size: 100% auto;
+    background-position: 0 -74px;
+    }

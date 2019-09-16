@@ -1,0 +1,172 @@
+/* 
+    Global Headings setup
+---------------------------------------------- */
+h1, h2, h3, h4, h5, h6{ font-weight: normal; margin-top: 0; margin-bottom: 0; } 
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small{ font-family: $font-reg; font-style: normal; /*font-size: 80%;*/ text-transform: none; }
+
+
+/* Primary Heading selectors setup 
+---------------------------------------------- */
+.h-l    { font-family: $font-light; font-weight: 100;  }
+.h-xb   { font-family: $font-extrabold; letter-spacing: -1px; font-weight: 700; }
+.h-b    { font-family: $font-bold; font-weight: 700;  }
+.h-sb   { font-family: $font-semibold; font-weight: 600; }
+.h-r    { font-family: $font-reg; font-weight: 400; }
+.rogers-red { color: $rogers-red; }
+
+
+/* Heading sizes setup
+---------------------------------------------- */
+.size-XLG{
+  @include rem(font-size, 40px); 
+  line-height: 1; 
+  margin-bottom: .4em; 
+  }
+.size-XL    { @include rem(font-size, 48px); line-height: 1.1; }  
+.size-LG    { @include rem(font-size, 38px); line-height: 1.1; }
+.size-LG2   { @include rem(font-size, 32px); line-height: 1.3; margin-bottom: .2em; }
+.size-L     { @include rem(font-size, 28px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+.size-L2    { @include rem(font-size, 26px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+.size-L3    { @include rem(font-size, 24px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+.size-L4    { @include rem(font-size, 22px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+
+.size-M     { @include rem(font-size, 18px); line-height: normal; }
+.size-M2    { @include rem(font-size, 20px); line-height: 29px; margin-bottom: 0.8em; }
+.size-M-alt { @include rem(font-size, 20px); line-height: 1.1; margin-bottom: .3em; }
+
+.size-S     { @include rem(font-size, 16px); line-height: normal; }
+.size-SM    { @include rem(font-size, 14px); line-height: normal; margin-bottom: .5em; }
+.size-XSM   { @include rem(font-size, 12px); line-height: normal; }
+
+.size-hm   { @include rem(font-size, 28px); }
+
+
+
+[lang="en-ca"] .size-L .i--logo-myrogers{ height: 1.75em; width: 5em; }
+[lang="fr-ca"] .size-L .i--logo-myrogers{ height: 1.4em; width: 5.5em; }
+
+
+@media (max-width:51.250em){
+
+/* Headings & Titles
+---------------------------------------------- */
+.size-LG    { @include rem(font-size, 32px); }
+.size-L     { @include rem(font-size, 26px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+.size-L2    { @include rem(font-size, 24px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+.size-L3    { @include rem(font-size, 22px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+.size-L4    { @include rem(font-size, 20px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+
+.size-M     { @include rem(font-size, 16px); line-height: normal; }
+.size-M2    { @include rem(font-size, 18px); line-height: 25px; }
+.size-M-alt { @include rem(font-size, 18px); line-height: 1.1; margin-bottom: .3em; }
+
+.size-hm   { @include rem(font-size, 16px); }
+
+
+// .size-S     { @include rem(font-size, 16px); line-height: normal; }
+// .size-SM    { @include rem(font-size, 14px); line-height: normal; margin-bottom: .5em; }
+// .size-XSM   { @include rem(font-size, 12px); line-height: normal; }
+
+}
+
+
+
+/* Mega setup - general huge style 
+---------------------------------------------- */
+.mega-reverse{
+    @include rem(font-size, 65px);
+    color: #fff;
+    letter-spacing: -3px;
+    line-height: .95;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 5px #000;
+    }
+.mega-reverse .block{
+    @include rem(font-size, 34px);
+    text-transform: none;
+    letter-spacing: -1px;
+    }
+
+
+/* Heading Styling modifiers 
+---------------------------------------------- */
+.uc-center{
+    text-transform: uppercase;
+    text-align: center;
+    }
+.center {
+  text-align: center;
+}    
+.uc{ text-transform: uppercase; }
+
+.w-ul{ border-bottom: 1px solid #DCDCDC; padding-bottom: .6em; margin-bottom: 0; }
+
+.lg-m{ margin-bottom: 1.8em; }
+
+
+/* specific modifiers */
+.promo-form .size-L{ margin-bottom: .1rem; }
+
+
+/* Messaging & Copy
+---------------------------------------------- */
+// .copy{}
+// .copy-size-LG {  }
+.copy--L      { @include rem(font-size, 22px); }
+.copy--LG     { @include rem(font-size, 20px); line-height: 1.2; }
+.copy-size-M  { @include rem(font-size, 18px); margin: .3em 0 1.8em; }
+.copy-size-M2 { @include rem(font-size, 18px); margin: .3em 0 1.3em; }
+.copy-size-S  { @include rem(font-size, 14px); margin: 0; }
+// .copy-size-SM {  }
+
+/* legal footnotes */
+.footnote{ @include rem(font-size, 11px); border-top: 1px solid #cbd5d8; padding-top: 2em; margin-top: .5em; }
+.footnote-basic{ border-top: 1px solid #ccc; @include rem(font-size, 11px); padding-top: 1em; margin-top: 1.5em; }
+.footnote h3 { margin-bottom: 1em; }
+/* legal & branding TM's */
+.tm{ font-size: 50%; padding: 0; top: 0.2em; }
+
+.already-have{ 
+  @include rem(font-size, 13px); 
+  float: right; padding: .3em .6em; 
+  border: 1px solid #dcdcdc; 
+  width: 250px;
+  background-color: #FFF;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px #C1C1C1;
+  margin-right: 30px;
+
+    a {
+      font-weight: 600;
+    }
+}
+//.already-have-LG{ @include rem(font-size, 18px); float: right; padding-top: .3em; }
+//.already-have-LG .ico{ text-indent: none; }
+
+.congrats-blurb{ padding: .4em 5% 0; }
+
+
+/* Links & Cursors
+====================================================================== */
+
+/* Cursors 
+---------------------------------------------- */
+label, select, .pointer, button, html input[type="button"], .submit, input[type="reset"], input[type="submit"]{ cursor: pointer; }
+
+
+/* Links
+---------------------------------------------- */
+a           { background: transparent; text-decoration: none; color: #0a5498; }
+a:hover     { text-decoration: underline; }
+a:focus     { text-decoration: underline; outline: none; color: #ee0000; }
+a:active    { color: inherit; background-color: transparent; }
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{ display: block; color: #434a4f; text-decoration: none; }
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover{ color: #ee0000; }
+
+
+/* If needed, modifier selector for callout colour
+---------------------------------------------- */
+.cc        { color: #000; }
+//.cc:hover  { text-decoration: underline; }
+

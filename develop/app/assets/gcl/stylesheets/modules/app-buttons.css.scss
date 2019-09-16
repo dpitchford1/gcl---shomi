@@ -1,0 +1,60 @@
+
+
+.app-button-list{
+    display: table;
+    font-family: $font-light;
+    list-style: none;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0;
+    table-layout: fixed;
+    text-align: left;
+    }
+.app-button-list li{
+    display: table-cell;
+    margin-bottom: 5px;
+    padding-right: 10px;
+    vertical-align: middle;
+    height: 51px;
+    }
+
+//[lang="en-ca"] .app-button-list .badge-bg, [lang="en-ca"] .nhl-badge{ width: 295px; }
+[lang="en-ca"] .nhl-badge{ font-size: 19px; }
+
+//[lang="fr-ca"] .app-button-list .badge-bg, [lang="fr-ca"] .nhl-badge{ width: 295px; }
+[lang="fr-ca"] .nhl-badge{ font-size: 14px; }
+
+
+.app-button-list .badge-bg{
+    background-color: #000;
+    border-radius: 7px;
+    padding-right: 0;
+    width: 295px;
+    }
+.nhl-badge{
+    color: $white;
+    display: table-cell;
+    font-size: 19px;
+    line-height: 1.1;
+    height: 51px;
+    vertical-align: middle;
+    width: 295px;
+    }
+.nhl-badge:hover, .nhl-badge:focus{
+    color: $callout-alt;
+    text-decoration: none;
+    }
+.nhl-badge span{
+    //display: block;
+    //padding-top: 12px;
+    vertical-align: middle;
+    line-height: 2;
+    }
+.nhl-badge .i-pl:before{ height: 35px; width: 35px; padding: 0; margin: 0 3% 0 5%; }
+
+
+// buttons within content
+.content-buttons{
+    padding: .7em 0 1em 2em;
+    margin: 1em 0 0;
+    }

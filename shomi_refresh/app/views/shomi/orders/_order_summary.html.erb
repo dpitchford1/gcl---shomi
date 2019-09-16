@@ -1,0 +1,48 @@
+<% 
+if @order.billing_option == "free" || @order.optin
+    total_amount = 0
+else
+    total_amount = @order.total 
+end
+%>
+<% show_promo ||= false %>
+
+<% if @offer %>
+<h3 class="h-med sizes-M w-ul"><%= t('orders.summary.subscription') %></h3>
+
+<table class="order-table" summary="Review your order">
+    <caption class="hide-text"><%= t('orders.summary.here_is_what_is_going_to_happen') %></caption>
+    <tbody>
+        <% if !@order.optin %>
+        <tr class="t-row">
+            <td class="tleft sizes-XSM">
+                <p><strong class="wfm">shomi</strong></p>
+                <small><%= t('orders.first_thirty_days') %></small>
+            </td>
+            <td class="tright sizes-XSM h-lgt"><%= t('orders.included') %></td>
+        </tr>
+        <tr class="t-row">
+            <td class="tleft sizes-XSM">
+                <p><strong class="wfm">shomi</strong></p>
+                <small><%= t('orders.date_onward', date: (Date.today + 30.days).strftime('%B %d %Y')) %></small>
+            </td>
+            <td class="tright sizes-XSM h-lgt">
+                <strong class="wfm"><%= number_to_currency(@offer.price, separator: '.', delimiter: ',', unit: '$') %> per month</strong>
+            </td>
+        </tr>
+        <tr class="t-row">
+            <td class="tleft sizes-XSM"><%= t('orders.applicable_taxes_hst').html_safe %></td>
+            <td class="tright sizes-XSM h-lgt"><%= number_to_currency(@order.taxes, separator: '.', delimiter: ',', unit: '$') %></td>
+        </tr>
+        <% end %>
+        <tr>
+            <td class="tleft sizes-XSM">
+                <strong class="wfm"><%= t('orders.total_no_colon') %></strong>
+            </td>
+            <td class="tright sizes-XSM h-lgt">
+                <strong class="wfm"><%= number_to_currency(total_amount, separator: '.', delimiter: ',', unit: '$') %> <%= t('orders.per_month_text') %></strong>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<% end %>

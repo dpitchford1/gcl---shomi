@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<% if I18n.locale == I18n.default_locale %>
+<html class="no-js no-touch" dir="ltr" lang="en-CA">
+<% else %>
+<html class="no-js no-touch" dir="ltr" lang="fr-CA">
+<%end%>
+<!--[if IE]><![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--[if IE]>
+    <meta http-equiv="imagetoolbar" content="false"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="cleartype" content="on">
+    <![endif]-->
+
+    <title><%= page_title %></title>
+
+    <%# prefetch dns connections for analytics scripts %>
+    <link rel="dns-prefetch" href="//analytics.rogersmedia.com">
+    <link rel="dns-prefetch" href="//admin.brightcove.com">
+
+    <%# critical css %>
+    <style type="text/css">html{font-family:"regular","Helvetica",Arial,sans-serif;font-style:normal}.wfr{font-family:"regular","Helvetica",Arial,sans-serif;font-weight:normal}.wfsb{font-family:"semibold","Helvetica",Arial,sans-serif;font-weight:normal}body,div,object,iframe,fieldset,form,legend,article,aside,details,figcaption,footer,header,main,nav,section,summary{margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,main,nav,section,summary{display:block}[hidden],template{display:none}div,fieldset,form,article,aside,footer,header,menu,nav,section,summary,ul,ol,li,dl,dt,dd,hr,.text-field{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}iframe{overflow:hidden}html{background-color:#fff}html{font-size:1em;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{color:#434a4f;line-height:1.5;z-index:0}h1{font-size:2em}address,caption,cite{font-style:normal;font-weight:normal;font-size:14px;font-size:.875rem;text-transform:none;vertical-align:middle}del{text-decoration:line-through}abbr[title],acronym[title],dfn[title]{border-bottom:0}sup,sub{font-size:10px;line-height:0;position:relative;font-family:"regular","Helvetica",Arial,sans-serif}sup{vertical-align:super;padding:0 0 0 .1em;top:0;letter-spacing:0;font-family:Arial}sub{vertical-align:sub;bottom:-0.25em}caption,cite,dfn,em,i{font-style:italic}b,strong{font-weight:bold}p{margin:0 0 .825em;word-spacing:.125em}small{font-size:75%}.small-text{font-size:80%}hr{height:0;overflow:hidden}.intro:first-line {font-variant:small-caps}.drop:first-letter {float:left;font-size:3em;margin:-.0em 1px .3125em 0}.lead{font-size:18px;font-size:1.125rem;font-weight:300;line-height:1.4em;margin-bottom:.75em}q{quotes:"\201C" "\201D" "\2018" "\2019"}blockquote{font-size:18px;font-size:1.125rem;line-height:1.3;margin:.6667em 0;padding:0 2.2222em .6667em 0;float:left;width:33%}blockquote p{margin-top:.3333em;margin-bottom:.6667em}img{border:0;color:#c00;height:auto}svg:not(:root){overflow:hidden}figure{margin:0 0 .625em;padding:0}figcaption{font-weight:normal;color:#000}object,embed,video{max-width:100%;height:auto}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}ul,ol,dl{margin-top:0;margin-bottom:1.625em}ul{list-style-type:disc}ul li{margin-bottom:.3em}ol{list-style-type:decimal;list-style-position:outside}ol li{margin-bottom:.3em}ul ul,ul ol,ol ol,ol ul{margin:.6em 0 .6em 1em;padding-left:30px}dt{font-weight:normal}dl dd{margin:0 0 .5125em}dialog dd{margin-bottom:.5em;line-height:normal}ul dl,ol dl{margin:0 0 0 .625em}table{border-collapse:collapse;border-spacing:0;table-layout:fixed}th summary{font-weight:normal;margin:0 0 .625em 0}td,th{padding:0}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0;margin-right:10px}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{margin:0}legend{border:0;font-weight:normal}textarea{overflow:auto}optgroup{font-weight:bold}select{background-color:white;border-radius:0;-webkit-appearance:menulist;-webkit-box-align:center;-webkit-rtl-ordering:logical}</style>
+
+    <%# quick app setup %>
+    <script>var doc = window.document; function addLoadEvent(b){var a=window.onload;if(typeof window.onload!=="function"){window.onload=b}else{window.onload=function(){a();b()}}}; doc.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js';</script> 
+
+    <%# main css files %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%#= stylesheet_link_tag "enhance", media: "only screen and (min-width: 10em)" %>
+
+    <%# OLD IE CSS %>
+    <!--[if (lte IE 8)&(!IEMobile 7)]>
+    <%= stylesheet_link_tag  "oldIE", media: "all" %>
+    <![endif]-->
+
+    <%# inject enjance with js %>
+    <%= javascript_include_tag "utils", async: "true" %>
+
+    <!--[if lt IE 9]>
+    <%= javascript_include_tag "html5" %>
+    <![endif]-->  
+
+    <%# MOBILE SPECIFIC %> 
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%# SEARCH AND SEO %>
+    <meta name="googlebot" content="NOODP">
+    <meta name="robots" content="index,follow,archive">
+    <meta name="description" content="<%= t("legal.meta_desc").html_safe %>">
+    <% if I18n.locale == I18n.default_locale %>
+    <meta http-equiv="Content-Language" content="en">
+    <% else %>
+    <meta http-equiv="Content-Language" content="fr">
+    <%end%>
+
+    <%# APPLE SPECIFIC %> 
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="NHL GameCenter Live&trade;">
+
+    <%# COPYRIGHTS %>
+    <meta name="copyright" content="All content presented in this domain may not be used by third parties without the prior written consent of Rogers Communications Inc.">
+    <meta name="copyright" content="NHL Enterprises, L.P. &copy; NHL">
+
+    <%# IE meta and pinning %>
+    <meta name="application-name" content="Rogers&trade; NHL GameCenter Live&trade;">
+    <meta name="msapplication-tooltip" content="Rogers&trade; NHL GameCentre Live&trade;">
+    <meta name="msapplication-starturl" content="http://gamecentrelive.rogers.com">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="/assets/icons/favicon/favicon-144.png">
+    <meta name="msapplication-navbutton-color" content="#fa1f00">
+
+    <meta name="msapplication-task" content="name=NHL on Twitter;action-uri=https://twitter.com/NHL;icon-uri=http://twitter.com/favicon.ico">
+    <meta name="msapplication-task" content="name=NHL on Facebook;action-uri=https://www.facebook.com/NHL;icon-uri=https://www.facebook.com/favicon.ico">
+    <meta name="msapplication-task" content="name=NHL on Google+;action-uri=https://plus.google.com/+NHL;icon-uri=https://ssl.gstatic.com/s2/oz/images/faviconr2.ico">
+
+    <%# ICONS %>
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/icons/favicon/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/icons/favicon/favicon-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/assets/icons/favicon/favicon-120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/icons/favicon/favicon-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/assets/icons/favicon/favicon-76.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/icons/favicon/favicon-72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/assets/icons/favicon/favicon-60.png">
+    <link rel="apple-touch-icon-precomposed" href="/assets/icons/favicon/favicon-57.png">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="/assets/icons/favicon/favicon-160.png">
+    
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="https://gamecentrelive.nhl.com/favicon.ico"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="http://www.rogers.com/favicon.ico">
+
+    <link rel="home" title="Home page" href="/">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+
+    <%= yield :head %>
+    <%= csrf_meta_tags %>
+    <%# dtm header code start %>
+    
+    <noscript><%= stylesheet_link_tag "font", media: "all" %></noscript> 
+</head>
+
+<body class="<%= @home_page ? 'page-home page-bg' : 'page-site'%>" id="page-body">
+<% if session[:can_edit] %>
+    <span style="float:left; position:fixed; left:0; right:0; z-index:999999999; background-color:white; width: 90px">
+        <%= link_to "Edit Page", "/editor/" + request.path %>
+    </span>
+
+<% end %>
+
+
+<%= yield :body_start %>
+
+<%# START: quick links %>
+<a class="quick-links" href="#new_session"><%= t("text.skip1").html_safe %></a>
+<a class="quick-links" href="#main-content"><%= t("text.skip2").html_safe %></a>
+<a class="quick-links" href="#footer-primary"><%= t("text.skip3").html_safe %></a>
+
+<h1 class="hide-text"><%= t("titles.default").html_safe %></h1>
+
+<%# START: site headers %>
+<%= render "layouts/navigation" %>
+<hr class="hide-divider">
+
+<%# START: main content %>
+<div class="fluid" id="main-content">
+    <%= render 'layouts/messages' %>
+    <%= yield %>
+
+    <% unless @current_session.logged? %>
+        <%= render 'sessions/modal_form' %>
+    <% end %>    
+
+    <p class="footnote-basic lg-m"><%= t("legal.nhl_legend").html_safe %></p>
+
+</div>
+<hr class="hide-divider">
+
+<% if I18n.locale == I18n.default_locale %>
+<p class="feedback-tab"><a href="https://www.research.net/s/gamecentrelivefeedback" target="blank"><span class="ico i--feedback">Feedback</span></a></p>
+<% else %>
+<p class="feedback-tab"><a href="https://fr.research.net/s/gamecentrelivefeedbackFR" target="blank" class="cc uc"><span class="ico i--feedback">Commentaires</span></a></p>
+<%end%>
+
+<%# START: Footer: Primary %>
+<%= render 'layouts/footer_primary' %>
+
+<%# START: Footer: Secondary %>
+<%= render 'layouts/footer_secondary' %>
+
+<div class="ss-nav" id="ss-nav"></div>
+
+<%# START: Global Scripts %>
+<%= javascript_include_tag "jquery", defer: "defer" %>
+<%= javascript_include_tag "application", defer: "defer" %>
+
+<%# START: if homepage --- game clock swap %>
+<% if @home_page %>
+    <noscript><style type="text/css">.page-bg{background: url("content/bg-site-1920.jpg") no-repeat center 120px; background-size: 100% auto; }</style></noscript>
+<% end %>
+
+
+<% if @background_job %>
+    <%= render 'pages/background_job' %>
+
+    <script>
+    WEB_SOCKET_SWF_LOCATION = "WebSocketMain.swf";
+
+    function BgWs() {
+      this.ws = $.gracefulWebSocket('ws://l:8080/?s=<%= session.id %>', {
+        'fallbackPollURL': 'http://l:8080/?s=<%= session.id %>',
+        'fallbackPollInterval': 1000
+      });
+      this.ws.onopen = function(evt) {
+        console.log('onopen called');
+        processMessage(evt.data);
+      };
+      this.ws.onclose = function() {
+        console.log('onclose called');
+      };
+      this.ws.onmessage = function(evt) {
+        console.log('onmessage called');
+        processMessage(evt.data);
+      }
+
+      processMessage = function(data) {
+        if (!data) { return }
+        json = JSON.parse(data);
+        console.log(json);
+      };
+    }
+
+    var bg_ws = new BgWs();
+    </script>
+<% end %>
+
+<%= yield(:footer) %>
+
+<%= javascript_include_tag "//assets.adobedtm.com/f1c13d6275d63bceda989e7eebe142edd7f1cda0/satelliteLib-d6e7db8f23228c503813e3679e078e1e84802b6e.js" %>
+
+<%# dtm footer code start %>
+<script>
+rdm.dtm.dl = new RdmDtmDataLayer({
+    brand : 'gcl',
+    options : {
+        confirmationType: '<%= session[:confirmation_type] %>'
+    },
+    pageURL : '<%= request.original_url %>',
+    contentName: '<%= session[:confirmation_type] ? 'Confirmation page' : page_name %>',
+    vmxC4 : 'ROGERS',
+    vmxC6 : 'GCL',
+    vmxEnabled : true
+}, this);
+_satellite.pageBottom();
+</script>
+
+<%# START: development workflow 
+<link rel="stylesheet" href="/style/media/css/debug.css" media="all">
+<div id="devMenu">    
+    <h6>Window Width: <span id="width"></span> px</h6>
+    <div id="debug-features"> for debug output of features </div>
+</div> 
+<script src="/style/media/js/working.js"></script>
+<script>
+    function widthSetter() { document.getElementById("width").innerHTML = window.innerWidth; }
+    widthSetter();
+    window.addEventListener("resize", widthSetter);
+</script>%>
+</body>
+</html>

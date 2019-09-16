@@ -1,0 +1,13 @@
+<div class="hero-enhance hero-welcome-alt welcome-bg" id="hero-welcome">
+	<%= render 'layouts/messages' %>
+    <section class="fluid-lg text-center">
+        <h2 class="h-lgt mega-reversed"><%= t("pages.index.hero_welcome_eligible_heading").html_safe %></h2>
+        <p class="wfl copy-mega"><%= t("pages.index.hero_welcome_eligible_copy").html_safe %></p>
+        <p class="wfl copy-M xlg-m"><%= t("pages.index.hero_welcome_contest").html_safe %></p>
+
+        <div class="app-downloads" role="complementary">
+			<%= render 'partials/hero_app_download' %>
+		</div>
+    </section>
+
+</div>

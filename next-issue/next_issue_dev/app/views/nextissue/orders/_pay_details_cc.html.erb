@@ -1,0 +1,51 @@
+<table class="summary-table" summary="Review order details">
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.payment_method') %>:</strong></td>
+		<td class="summary-col"><%= t('orders.credit_card') %></td>
+	</tr>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.name') %>:</strong></td>
+		<td class="summary-col"><%= "#{@order.full_name}" %></td>
+	</tr>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.cc_type') %>:</strong></td>
+		<td class="summary-col"><%= @order.cc_type %></td>
+	</tr>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.card_number') %>:</strong></td>
+		<td class="summary-col"><%= @order.masked_cc %></td>
+	</tr>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.street') %>:</strong></td>
+		<td class="summary-col"><%= @order.street %><%= @order.address2.present? ? ", #{@order.address2}" : '' %></td>
+	</tr>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.city') %>:</strong></td>
+		<td class="summary-col"><%= @order.city %></td>
+	</tr>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.province') %>:</strong></td>
+		<td class="summary-col"><%= @order.province %></td>
+	</tr>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.postal_code') %>:</strong></td>
+		<td class="summary-col uc"><%= @order.postal_code %></td>
+	</tr>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.purchase_date') %>:</strong></td>
+		<td class="summary-col"><%= l Date.today, :format => :long %></td>
+	</tr>
+	<% if !@order.promo_code.blank? %>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.promo_code') %>:</strong></td>
+		<td class="summary-col"><%= @order.promo_code %></td>
+	</tr>
+	<% end %>
+	<% if !@order.membership_number.blank? %>
+	<tr class="summary-row">
+		<td class="summary-col"><strong><%= t('orders.membership_number') %>:</strong></td>
+		<td class="summary-col"><%= @order.membership_number %></td>
+	</tr>
+	<% end %>
+
+</table>

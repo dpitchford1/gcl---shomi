@@ -1,0 +1,48 @@
+<% @override_header_margin = true %>
+<% content_for :navigation do  %>
+  <div class="site-wrapper no-print">
+    <div class="btn-nextissue-group btn-group">
+      <div class="btn btn-nextissue toggle_btn"><%= t('buttons.your_activity') %></div>
+      <div class="btn btn-nextissue toggle_btn"><%= t('buttons.latest_purchase') %></div>
+    </div>
+  </div>
+<% end %>
+
+<% if ENV['redemption_top_up'] && @current_session.profile.can_top_up? %>
+  <% presenter = WelcomeTopupSummaryHeader.new(@current_session, @order, flash, session) %>
+
+<% else %>
+  <% presenter = WelcomeUserSummaryHeader.new(@current_session, @order, flash) %>
+
+<% end %>
+
+<% content_for :below_navigation do  %>
+  <%= render partial: 'layouts/presenting_summary', locals: { p: presenter } %>
+<% end %>
+
+<div class="toggle_view activity_view printing-visible">
+  <%= render 'orders/your_activity' %>
+</div>
+
+<div class="toggle_view latest_purchase_view printing-visible">
+  <%= render 'orders/latest_purchase', order: @current_session.profile.try(:user_orders).try(:first) %>
+</div>
+
+<%= render 'orders/redemption_form' %>
+
+<% content_for(:footer) do %>
+    <%= javascript_include_tag 'toggle_views', defer: 'defer' %>
+<% end %>
+
+<% if flash[:notice] == t('orders.notice.success') && @current_session.latest_order.try(:status).to_s.downcase == 'new' %>
+
+  <% content_for :head do %>
+    <script>
+      var MasterTmsUdo = { 'CJ' : { 'CID': '<%= ENV['commission_junction_company_id'] %>', 'TYPE': '<%= ENV['commission_junction_action_type_id'] %>', 'OID': '<%= @current_session.latest_order.order_id %>', 'CURRENCY' : '<%= ENV['commission_junction_currency'] %>', PRODUCTLIST : [{ 'ITEM' : '<%= @current_session.latest_order.existing_offer_type %>', 'AMT' : '<%= @current_session.latest_order.offer.try(:price).to_f %>', 'QTY' : '1' }] } };
+    </script>
+
+    <!-- CJ code start -->
+    <script>/*DO NOT ALTER *** New Site*/(function(e){var t="907",n=document,r,i,s={http:"http://cdn.mplxtms.com/s/MasterTMS.min.js",https:"https://secure-cdn.mplxtms.com/s/MasterTMS.min.js"},o=s[/\w+/.exec(window.location.protocol)[0]];i=n.createElement("script"),i.type="text/javascript",i.async=!0,i.src=o+"#"+t,r=n.getElementsByTagName("script")[0],r.parentNode.insertBefore(i,r),i.readyState?i.onreadystatechange=function(){if(i.readyState==="loaded"||i.readyState==="complete")i.onreadystatechange=null}:i.onload=function(){try{e()}catch(t){}}})(function(){});</script>
+    <!-- CJ code End -->
+  <% end %>
+<% end %>

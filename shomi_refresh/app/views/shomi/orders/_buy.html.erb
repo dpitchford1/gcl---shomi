@@ -1,0 +1,13 @@
+<% content_for :title, t('titles.purchase_flow_title') %>
+<main>
+  <% if flash[:notice] == t("profiles.notice.success_linked") %>
+    <h2 class="h-reg sizes-XLG cc"><%= t("orders.hurrah_linked_account") %></h2>
+
+    <p><%= t("orders.linked_account_description") %></p>
+  <% else %>
+    <h2 class="h-reg sizes-XLG cc"><%= t("profiles.ineligible.#{@order.optin ? 'hurrah_you_have_shomi' : 'subscribe_to_shomi'}") %></h2>
+  <% end %>
+
+<%# Order summary %>
+<%= render 'summary' %>
+</main>

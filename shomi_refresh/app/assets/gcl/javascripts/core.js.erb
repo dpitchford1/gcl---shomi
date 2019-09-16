@@ -1,0 +1,436 @@
+﻿//= require vendor/bootstrap-custom
+//= require hideShowPassword
+//= require jquery-plugins/jquery.flexslider-min
+
+/* application wrapper
+-------------------------------------------------------------------------------------------------------------------------- */
+var gcl = gcl || {};
+window.gcl = (function (window, document, gclwrapper) {
+
+    /* load up a couple helpers
+    ---------------------------------------------- */
+    /* load script and callback */
+    <%= Rails.application.assets["utils/load-scripts-callback"].to_s.html_safe %>
+
+    /* set atributes */
+    <%= Rails.application.assets["utils/set-attributes"].to_s.html_safe %>
+    
+
+    /* Animate fixed header
+    ---------------------------------------------- */
+    $(window).on("scroll touchmove", function () {
+        $('#page-body, #ss-nav').toggleClass('is-sticky', $(document).scrollTop() > 120);
+    });
+
+
+    /* Small screen menu
+    ---------------------------------------------- */
+    (function (win) {
+        "use strict";
+        var menu = doc.querySelector('#global-header'),
+            menulinks = doc.querySelector('#ss-nav'),
+            fragment = doc.createDocumentFragment(),
+            toggler = fragment.appendChild(doc.createElement('a')),
+            ssLogo = fragment.appendChild(doc.createElement('a'));
+
+        setAttributes(menu, {
+            "aria-labelledby": "menu-trigger"
+        });
+
+        // toggler link
+        setAttributes(toggler, {
+            "aria-controls": "global-header",
+            "href": "#global-header",
+            "id": "menu-trigger",
+            "aria-label": "<%= I18n.t('menu.main_menu') %>",
+            "role": "button",
+            "class": "menu-trigger ico i-sm i--menu"
+        });
+        // create ss logo
+        setAttributes(ssLogo, {
+            "class": "ico brand-ss",
+            "href": "/",
+            "id": "menu-trigger"
+        });
+
+        toggler.innerHTML = 'Menu';
+        ssLogo.innerHTML = 'Rogers NHL GameCentre Live';
+
+        if (window.matchMedia('only screen and (max-width: 600px)').matches) {
+            menu.setAttribute('aria-expanded', 'false');
+        }
+
+        if (doc.querySelector && doc.addEventListener) {
+
+            menulinks.appendChild(fragment);
+            //menu.className += ' is-hidden';
+
+            toggler.addEventListener('click', function (e) {
+                e.preventDefault();
+                toggler.className = (toggler.className === 'menu-trigger ico i-sm i--menu') ? 'menu-trigger open ico i-m i--close' : 'menu-trigger ico i-sm i--menu';
+
+                menu.className = (menu.className === 'global-header is-hidden') ? 'global-header is-visible' : 'global-header is-hidden';
+                menu.setAttribute('aria-expanded', menu.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+            });
+        }
+
+    }(this));
+    // end small screen menu
+
+
+    /* set up for lazyloading images and video on small screens
+    ---------------------------------------------- */
+  var Utils = {
+    q : function (q, res) {
+      if (doc.querySelectorAll) {
+        res = doc.querySelectorAll(q);
+      } else {
+        a = doc.styleSheets[0] || doc.createStyleSheet();
+        a.addRule(q, 'f:b');
+        for (var l = d.all, b = 0, c = [], f = l.length;b < f;b++)
+        l[b].currentStyle.f && c.push(l[b]);
+  
+        a.removeRule(0);
+        res = c;
+      }
+      return res;
+    }
+  };
+    function initImages() {
+        "use strict";
+        var lazy = Utils.q('[data-src]'),
+            imgAlt = Utils.q('[data-alt]'),
+            imgWidth = Utils.q('[data-width]'),
+            imgHeight = Utils.q('[data-height]');
+        
+        for (var i = 0; i < lazy.length; i++) {
+            var source = lazy[i].getAttribute('data-src'),
+                alt = imgAlt[i].getAttribute('data-alt'),
+                width = imgWidth[i].getAttribute('data-width'),
+                height = imgHeight[i].getAttribute('data-height'),
+                img = new Image();
+            
+            //create the image & alt
+            img.src = source;
+            img.alt = alt;
+            img.width = width;
+            img.height = height;
+            //insert it inside of the span
+            lazy[i].insertBefore(img, lazy[i].firstChild);
+            imgAlt[i].appendChild(img);
+            imgWidth[i].appendChild(img);
+            imgHeight[i].appendChild(img);
+        }
+    }
+    // end lazy images
+
+
+    /* video onclick, do this and that
+    ---------------------------------------------- */
+    if (doc.querySelector && doc.addEventListener) {
+
+        function videoInit(url, callback) {
+            'use-strict';
+            var videoPlay = doc.getElementById('video-play'),
+                parentWrap = doc.getElementById('video-parent'),
+                vidWrap = doc.getElementById('vid-wrap'),
+                layerToggle = doc.getElementById('hero-device3'),
+                layerBG = doc.getElementById('hero-device2'),
+
+                fragment = doc.createDocumentFragment(),
+                playClose = fragment.appendChild(doc.createElement('a'));
+
+            // close btn
+            setAttributes(playClose, {
+                "aria-controls": "video-play",
+                "href": "#video-parent",
+                "id": "video-close",
+                "aria-label": "Close Video",
+                "role": "button",
+                "class": "hidden close-btn"
+            });
+            playClose.innerHTML = 'Close';
+
+            
+            playClose.addEventListener('click', function (v) {
+                setAttributes(vidWrap, { "class": "vid-wrap hidden" });
+                setAttributes(parentWrap, { "class": "video-promo" });
+                setAttributes(videoPlay, { "href": "#myExperience", "class": "flex-embed flex-embed--16by9 feature-video" });
+                setAttributes(playClose, { "class": "hidden ico i-m i--close close-btn" });
+                setAttributes(layerToggle, { "class": "hero-device hero--device3" });
+                setAttributes(layerBG, { "class": "hero-device2-screen" });
+
+                ga('beec4528a634c1272e86ba159d7b4b8e.send', 'event', 'Hero Video EN', 'Closed', {'nonInteraction': 1});
+                v.preventDefault();
+            });
+
+            videoPlay.addEventListener('click', function (e) {
+                loadScript("https://sadmin.brightcove.com/js/BrightcoveExperiences.js", function () {
+                    setAttributes(vidWrap, { "class": "vid-wrap block" });
+
+                    videoPlay.removeAttribute('href');
+
+                    parentWrap.className += " video-loaded";
+                    //setAttributes(parentWrap, { "class": "video-loaded" });
+
+                    videoPlay.className += " video-active";
+                    layerToggle.className += " shift-layer";
+                    layerBG.className += " no-bg";
+                    videoPlay.onclick = null;
+                    brightcove.createExperiences();
+                    parentWrap.appendChild(fragment);
+
+                    setAttributes(playClose, { "class": "ico i-m i--close close-btn" });
+
+                    ga('beec4528a634c1272e86ba159d7b4b8e.send', 'event', 'Hero Video EN', 'Played', {'nonInteraction': 1});
+
+                });
+                e.preventDefault();
+            });
+            
+        }
+
+    };
+    // end videoInit
+
+    /* Carousel Videos
+    ---------------------------------------------- */
+    <%= Rails.application.assets["video-carousel"].to_s.html_safe %> 
+
+    // if (doc.querySelector && doc.addEventListener) {
+
+    //     if (doc.getElementById("slide1-play")) {
+    
+
+    //         function videoRotator(url, callback) {
+    //             'use-strict';
+
+    //             // global vars
+    //             var
+    //                 // create close button fragment
+    //                 fragment = doc.createDocumentFragment(),
+    //                 playClose = fragment.appendChild(doc.createElement('a'));
+
+
+    //             // Slide 1 vars
+    //             var 
+    //                 // video module wrapper
+    //                 slide1Parent = doc.getElementById('slide1-parent'),
+
+    //                 // play button
+    //                 slide1Play = doc.getElementById('slide1-play'),
+                    
+    //                 // video wrapper
+    //                 slide1Video = doc.getElementById('slide1-video'),
+
+    //                 // device screenshot
+    //                 layer1BG = doc.getElementById('slide1-screen')
+
+    //             // close btn attributes
+    //             setAttributes(playClose, {
+    //                 "aria-controls": "slide1-play",
+    //                 "href": "#slide1-parent",
+    //                 "id": "videos-close",
+    //                 "aria-label": "Close",
+    //                 "role": "button",
+    //                 "class": "hidden close-btn"
+    //             });
+    //             playClose.innerHTML = 'Close';
+
+    //             // close button events
+    //             playClose.addEventListener('click', function (w) {
+    //                 setAttributes(slide1Video, { "class": "slides-video-wrapper hidden" });
+    //                 setAttributes(slide1Parent, { "class": "slide-video-parent" });
+    //                 setAttributes(slide1Play, { "href": "#myExperience", "class": "ico i-video-play is--icon" });
+    //                 setAttributes(playClose, { "class": "hidden ico i-m i--close close-btn" });
+    //                 setAttributes(layer1BG, { "class": "slide-screen" });
+    //                 w.preventDefault();
+    //             });
+
+    //             // play button events
+    //             slide1Play.addEventListener('click', function (j) {
+    //                 loadScript("https://sadmin.brightcove.com/js/BrightcoveExperiences.js", function () {
+
+    //                     setAttributes(slide1Video, { "class": "slides-video-wrapper block" });
+    //                     slide1Play.removeAttribute('href');
+    //                     slide1Parent.className += " video-loaded";
+    //                     slide1Play.className += " video-active";
+    //                     layer1BG.className += " hide-bg";
+    //                     slide1Play.onclick = null;
+    //                     brightcove.createExperiences();
+    //                     slide1Parent.appendChild(fragment);
+    //                     setAttributes(playClose, { "class": "ico i-m i--close close-btn" });
+    //                 });
+    //                 j.preventDefault();
+    //             });
+
+    //         }
+
+    //     };
+
+    // };
+    // end videoInit
+
+    // function vidscroll() {
+    //     var vid = document.getElementById("bg-video");
+
+    //     window.onscroll = function () {
+    //         vid.pause();
+    //     };
+    // };
+    // vidscroll();
+
+    function bgVideo() {
+        //var vid = document.getElementById("bg-video");
+        var herowelcome  = document.getElementById('hero-welcome'),
+            bgVideo      = document.getElementById('bg-video'),
+            addVideo     = document.getElementById('js-addvideo');
+            overlayVideo = document.getElementById('bg-video-overlay'),
+            fragment = doc.createDocumentFragment(),
+            vidsource = fragment.appendChild(doc.createElement('source'));
+
+        setAttributes(herowelcome, { "class": "hero-enhance hero-welcome" });
+        setAttributes(vidsource, {
+            "src": "/assets/content/bg-hockey-780.mp4",
+            "type": "video/mp4",
+            "id": "js-addvideo",
+        });
+
+        if (doc.getElementById("video-play")) { bgVideo.appendChild(fragment); };
+        $('video').on('ended', function () {
+            this.load();
+            this.play();
+        });
+          
+    };
+
+
+    /* touch - pointer check
+    ---------------------------------------------- */
+    function touchEvents() {
+    
+        var supportsTouch = false;
+        if ('ontouchstart' in window) {
+            //iOS & android
+            supportsTouch = true;
+
+            doc.documentElement.className = doc.documentElement.className.replace(/\bno-touch\b/g, '') + ' touch';
+            //alert('boing! iOS & Android');
+
+            /* A fix for the iOS orientationchange zoom bug. Script by @scottjehl, rebound by @wilto. MIT / GPLv2 License.  */
+            (function () {
+
+                // This fix addresses an iOS bug, so return early if the UA claims it's something else.
+                var ua = navigator.userAgent;
+                if (!(/iPhone|iPad|iPod/.test(navigator.platform) && /OS [1-5]_[0-9_]* like Mac OS X/i.test(ua) && ua.indexOf("AppleWebKit") > -1)) {
+                    return;
+                }
+
+                if (!doc.querySelector) { return; }
+
+                var meta = doc.querySelector("meta[name=viewport]"),
+                    initialContent = meta && meta.getAttribute("content"),
+                    disabledZoom = initialContent + ",maximum-scale=1",
+                    enabledZoom = initialContent + ",maximum-scale=10",
+                    enabled = true,
+                    x, y, z, aig;
+
+                if (!meta) { return; }
+
+                function restoreZoom() {
+                    meta.setAttribute("content", enabledZoom);
+                    enabled = true;
+                }
+
+                function disableZoom() {
+                    meta.setAttribute("content", disabledZoom);
+                    enabled = false;
+                }
+
+                function checkTilt(e) {
+                    aig = e.accelerationIncludingGravity;
+                    x = Math.abs(aig.x);
+                    y = Math.abs(aig.y);
+                    z = Math.abs(aig.z);
+
+                    // If portrait orientation and in one of the danger zones
+                    if ((!w.orientation || w.orientation === 180) && (x > 7 || ((z > 6 && y < 8 || z < 8 && y > 6) && x > 5))) {
+                        if (enabled) {
+                            disableZoom();
+                        }
+                    }
+                    else if (!enabled) {
+                        restoreZoom();
+                    }
+                }
+
+                w.addEventListener("orientationchange", restoreZoom, false);
+                w.addEventListener("devicemotion", checkTilt, false);
+
+            })(this);
+            // end orientation fix
+
+        } else if (window.navigator.msPointerEnabled) {
+            //Win8
+            supportsTouch = true;
+
+            doc.documentElement.className = doc.documentElement.className.replace(/\bno-touch\b/g, '') + ' touch';
+            //alert('bang!!! windows8');
+
+        } else if (supportsTouch === false) {
+            //alert('cool beans! do not support touch');
+
+            doc.documentElement.className = doc.documentElement.className.replace(/\bno-touch\b/g, '') + ' no-touch';
+
+            if (doc.querySelector && doc.addEventListener && window.matchMedia('only screen and (min-width: 1280px)').matches) {
+                if (doc.getElementById("video-play")) { 
+                    addLoadEvent(bgVideo);
+                };
+                
+            };      
+        }
+    }
+    // end touchEvents
+
+
+    /* load'em up & execute
+    -------------------------------------------------------------------------------------------------------------------------- */
+
+    $("#toggle-footnotes").click(function () {
+        var footy = doc.querySelector('#footnotes');
+
+        $(".footnotes").toggleClass("hidden");
+        footy.setAttribute('aria-expanded', footy.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+        ga('beec4528a634c1272e86ba159d7b4b8e.send', 'event', 'Legal', 'View Details', 'Clicked' , {'nonInteraction': 1});
+        return false
+    });
+
+
+    /* if video-play is found... */
+    if (doc.getElementById("video-play")) {
+        videoInit();
+        //videoRotator();
+    }
+    if (doc.getElementById("slide1-screen")) {
+        if (window.matchMedia('only screen and (min-width: 768px)').matches) {
+            addLoadEvent(carouselVideos);
+        }
+        //videoInit();
+        //videoRotator();
+    }
+    /* always load touch events */
+    touchEvents();
+
+    if (doc.querySelectorAll('.lazy-img')) {
+
+        if (window.matchMedia('only screen and (min-width: 299px)').matches) {
+            addLoadEvent(initImages);
+        }
+
+    }
+
+  ///* inject analytics scripts
+  //---------------------------------------------- */
+  //addLoadEvent(loadAnalytics);
+
+})(this, this.document);

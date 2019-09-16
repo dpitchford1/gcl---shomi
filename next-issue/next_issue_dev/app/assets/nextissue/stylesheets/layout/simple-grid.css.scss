@@ -1,0 +1,288 @@
+/* = IMPORTANT GLOBALS = only to be used as trailing class (the last class) on elements..
+		- .no-ss === no small screen === display none for small screens
+		- .no-ws === no wide screen === display none for wide screens
+		- target browsers: IE9+ FF6+ Chrome 11+ Safari5+ Opera11+
+		*/
+
+/* TEMPLATE
+	0.0 media wrappers
+	0.1 media structure
+	0.2 media items modifiers
+	0.3 promo item modifiers
+		- span of 2 --- 2 items in a horizontal list
+		- span of 3 --- 3 items in a horizontal list
+		- span of 4 --- 4 items in a horizontal list
+		- span of 5 --- 5 items in a horizontal list
+		- 
+	0.4 media images
+	0.5 media content 
+
+---------------------------------------------- */
+
+
+ /* $ Reusable column setup 
+======================================================================
+====================================================================== */
+.col {
+    //background-color: #ccc;
+    float:left;
+    /*-moz-background-clip: padding-box !important;
+    -webkit-background-clip: padding-box !important;
+    background-clip: padding-box !important;*/
+    }
+.row{ margin-bottom: 1em; }
+.row .col:first-of-type {
+            margin-left:0;
+            }
+.span-6 {
+        margin-left:0;
+        width:100%;
+        }
+        
+.col {
+    margin-left:3.125%;
+    }
+
+/*.row .col:first-child {
+    margin-left:0;
+}*/
+
+.span-1 {
+    width:14.0625%;
+    }
+.span-2 {
+    width:31.25%;
+    }
+.span-3 {
+    width:48.4375%;
+    }
+.span-4 {
+    width:65.625%;
+    }
+.span-5 {
+    width:82.8125%;
+    }
+/*.span-6 {
+    margin-left:0;
+    width:100%;
+    }*/
+
+
+/* 1. 6 Column Grid 0px - 379px 
+----------------------------------------------------------------------------- 
+
+Span 1:    14.4736916667%
+Span 2:    31.5789533333%
+Span 3:    48.684215%
+Span 4:    65.7894766667%
+Span 5:    82.8947383333%
+Span 6:    100%
+
+----------------------------------------------------------------------------- */
+
+    //@media (max-width: 23.75em){ /* 380px */
+        
+        // .col {
+        //     margin-left:2.63157%;
+        //     }
+        /*
+        Add your semantic classnames in alongside their corresponding spans here. e.g.
+        
+        .span_3,
+        .my_semantic_class_name {
+            ...
+        }
+        */
+        
+        // .span-1 {
+        //     width:14.4736916667%;
+        //     }
+        // .span-2 {
+        //     width:31.5789533333%;
+        //     }
+        // .span-3 {
+        //     width:48.684215%;
+        //     }
+        // .span-4 {
+        //     width:65.7894766667%;
+        //     }
+        // .span-5 {
+        //     width:82.8947383333%;
+        //     }
+        /*.span-6 {
+            margin-left:0;
+            width:100%;
+            }*/
+    //}
+
+
+
+
+/* 2. 6 Column Grid 380px - 979px 
+----------------------------------------------------------------------------- 
+
+Span 1:    14.9659866667%
+Span 2:    31.9727893333%
+Span 3:    48.979592%
+Span 4:    65.9863946667%
+Span 5:    82.9931973333%
+Span 6:    100%
+
+----------------------------------------------------------------------------- */
+
+@media (max-width: 61.25em) { /* 980px */
+
+        .col {
+            margin-left: 2.040816%;
+            }
+        
+        /*.row .col:first-child {
+            margin-left:0;
+        }*/
+        
+        .span-1 {
+            width: 14.9659866667%;
+            }
+        .span-2 {
+            width: 31.9727893333%;
+            }
+        .span-3 {
+            width: 48.979592%;
+            }
+        .span-4 {
+            width: 65.9863946667%;
+            }
+        .span-5 {
+            width: 82.9931973333%;
+            }
+        /*.span-6 {
+            margin-left:0;
+            width:100%;
+            }*/
+    }
+
+
+/* 3. 6 Column Grid 980px - 1279px 
+----------------------------------------------------------------------------- 
+
+Span 1:    14.0625%
+Span 2:    31.25%
+Span 3:    48.4375%
+Span 4:    65.625%
+Span 5:    82.8125%
+Span 6:    100%
+
+----------------------------------------------------------------------------- */
+
+@media (min-width: 61.25em) { /* 980px */
+
+        .col {
+            margin-left:3.125%;
+            }
+        
+        /*.row .col:first-child {
+            margin-left:0;
+        }*/
+        
+        .span-1 {
+            width:14.0625%;
+            }
+        .span-2 {
+            width:31.25%;
+            }
+        .span_-3 {
+            width:48.4375%;
+            }
+        .span-4 {
+            width:65.625%;
+            }
+        .span-5 {
+            width:82.8125%;
+            }
+        /*.span-6 {
+            margin-left:0;
+            width:100%;
+            }*/
+    }
+
+/* 4. 6 Column Grid 1280px - Infinity 
+----------------------------------------------------------------------------- 
+
+Span 1:    14.0625%
+Span 2:    31.25%
+Span 3:    48.4375%
+Span 4:    65.625%
+Span 5:    82.8125%
+Span 6:    100%
+
+----------------------------------------------------------------------------- */
+
+//@media (min-width: 80em) { /* 1280 */
+
+        /*.col {
+            margin-left:3.125%;
+            }
+        
+        .row .col:first-child {
+            margin-left:0;
+        }
+        
+        .span-1 {
+            width:14.0625%;
+            }
+        .span-2 {
+            width:31.25%;
+            }
+        .span-3 {
+            width:48.4375%;
+            }
+        .span-4 {
+            width:65.625%;
+            }
+        .span-5 {
+            width:82.8125%;
+            }
+        .span-6 {
+            margin-left:0;
+            width:100%;
+            }*/
+ //   }
+
+
+//@media (min-width: 120em) { /* 1280 */
+        
+        //.site-wrapper{ padding: 0 3%; max-width: 100em;  /*1280px */ }
+
+        // .js .page-bg{
+        //     background: asset-url("content/bg-site-XLG.jpg") no-repeat center 7em;
+        //     background-size: 100% auto;
+        //     }
+
+        /*.col {
+            margin-left:3.125%;
+            }
+        
+        .row .col:first-child {
+            margin-left:0;
+        }
+        
+        .span-1 {
+            width:14.0625%;
+            }
+        .span-2 {
+            width:31.25%;
+            }
+        .span-3 {
+            width:48.4375%;
+            }
+        .span-4 {
+            width:65.625%;
+            }
+        .span-5 {
+            width:82.8125%;
+            }
+        .span-6 {
+            margin-left:0;
+            width:100%;
+            }*/
+//    }

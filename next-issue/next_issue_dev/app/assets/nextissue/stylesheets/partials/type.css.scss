@@ -1,0 +1,126 @@
+.wfr    { font-family: $font-reg; font-weight: normal; }
+.wfsb   { font-family: $font-semibold; font-weight: normal; }
+// .wfb    { font-family: $font-bold; font-weight: normal; margin-top: 0; }
+// .wfeb  { font-family: $font-extrabold; font-weight: normal; margin-top: 0; }
+
+/* Primary Heading selectors setup 
+---------------------------------------------- */
+.h-xb   { font-family: $font-extrabold; letter-spacing: -1px; }
+.h-b    { font-family: $font-bold;  }
+.h-sb   { font-family: $font-semibold; }
+.h-r    { font-family: $font-reg; }
+
+.h-reverse{
+    color: #fff;
+    }
+
+/* Heading sizes setup
+---------------------------------------------- */
+.size-XLG{
+  @include rem(font-size, 40px); 
+  line-height: 1; 
+  margin-bottom: .4em; 
+  }
+.size-LG    { @include rem(font-size, 38px); line-height: 1.1; }
+.size-LG2   { @include rem(font-size, 32px); line-height: 1.1; margin-bottom: .3em; }
+.size-L     { @include rem(font-size, 28px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+.size-L2    { @include rem(font-size, 26px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+.size-L3    { @include rem(font-size, 24px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+.size-L4    { @include rem(font-size, 22px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+
+.size-M     { @include rem(font-size, 18px); line-height: normal; }
+.size-M-alt { @include rem(font-size, 20px); line-height: 1.1; margin-bottom: .3em; }
+
+.size-S     { @include rem(font-size, 16px); line-height: normal; }
+.size-SM    { @include rem(font-size, 14px); line-height: normal; margin-bottom: .5em; }
+.size-XSM   { @include rem(font-size, 12px); line-height: normal; }
+
+
+[lang="en-ca"] .size-L .i--logo-myrogers{ height: 1.75em; width: 5em; }
+[lang="fr-ca"] .size-L .i--logo-myrogers{ height: 1.4em; width: 5.5em; }
+
+
+@media (max-width:51.250em){
+
+/* Headings & Titles
+---------------------------------------------- */
+.size-LG    { @include rem(font-size, 32px); }
+.size-L     { @include rem(font-size, 26px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+.size-L2    { @include rem(font-size, 24px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+.size-L3    { @include rem(font-size, 22px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+.size-L4    { @include rem(font-size, 20px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+
+// .size-M     { @include rem(font-size, 18px); line-height: normal; }
+// .size-M-alt { @include rem(font-size, 20px); line-height: 1.1; margin-bottom: .3em; }
+
+// .size-S     { @include rem(font-size, 16px); line-height: normal; }
+// .size-SM    { @include rem(font-size, 14px); line-height: normal; margin-bottom: .5em; }
+// .size-XSM   { @include rem(font-size, 12px); line-height: normal; }
+
+}
+
+
+
+/* Mega setup - general huge style 
+---------------------------------------------- */
+.mega-reverse{
+    @include rem(font-size, 65px);
+    color: #fff;
+    letter-spacing: -3px;
+    line-height: .95;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 5px #000;
+    }
+.mega-reverse .block{
+    @include rem(font-size, 34px);
+    text-transform: none;
+    letter-spacing: -1px;
+    }
+
+
+/* Heading Styling modifiers 
+---------------------------------------------- */
+.uc-center{
+    text-transform: uppercase;
+    text-align: center;
+    }
+.uc{ text-transform: uppercase; }
+
+.w-ul{ border-bottom: 1px solid #adb0af; padding-bottom: .3em; }
+
+.lg-m{ margin-bottom: 1.8em; }
+
+
+/* specific modifiers */
+.promo-form .size-L{ margin-bottom: .1rem; }
+
+
+/* Messaging & Copy
+---------------------------------------------- */
+// .copy{}
+// .copy-size-LG {  }
+.copy--L      { @include rem(font-size, 22px); }
+.copy--LG     { @include rem(font-size, 20px); line-height: 1.2; }
+.copy-size-M  { @include rem(font-size, 18px); margin: .3em 0 1.8em; }
+.copy-size-M2 { @include rem(font-size, 18px); margin: .3em 0 1.3em; }
+.copy-size-S  { @include rem(font-size, 14px); margin: 0; }
+// .copy-size-SM {  }
+
+/* legal footnotes */
+.footnote{ @include rem(font-size, 11px); /*background: asset-url("content/bg-ul-fancy.gif") no-repeat center top;*/ padding-top: 3em; margin-top: .5em; }
+.footnote-basic{ border-top: 1px solid #ccc; @include rem(font-size, 11px); padding-top: 1em; margin-top: 1.5em; }
+
+/* legal & branding TM's */
+.tm{ font-size: 50%; padding: 0; top: 0.2em; }
+
+.already-have{ @include rem(font-size, 14px); float: right; padding-top: .9em; }
+
+.congrats-blurb{ padding: .4em 5% 0; }
+
+
+/* If needed, modifier selector for callout colour
+---------------------------------------------- */
+.cc        { color: #ee0000; }
+.cc.small-padding { padding: 5px; }
+//.cc:hover  { text-decoration: underline; }
+

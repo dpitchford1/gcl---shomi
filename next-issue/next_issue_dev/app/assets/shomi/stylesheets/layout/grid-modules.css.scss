@@ -1,0 +1,216 @@
+/* = IMPORTANT GLOBALS = only to be used as trailing class (the last class) on elements..
+		- .no-ss === no small screen === display none for small screens
+		- .no-ws === no wide screen === display none for wide screens
+		- target browsers: IE9+ FF6+ Chrome 11+ Safari5+ Opera11+
+		*/
+
+/* TEMPLATE
+	0.0 media wrappers
+	0.1 media structure
+	0.2 media items modifiers
+	0.3 promo item modifiers
+		- span of 2 --- 2 items in a horizontal list
+		- span of 3 --- 3 items in a horizontal list
+		- span of 4 --- 4 items in a horizontal list
+		- span of 5 --- 5 items in a horizontal list
+		- 
+	0.4 media images
+	0.5 media content 
+
+---------------------------------------------- */
+
+/* main list = category list / search results list / tag list */
+/* 2 items in a list = related articles = inline block items = 30px margin between the 2 */
+/* 2 items in a row = block items = 30px margin between the 2 */
+/* 3 items in a row = related articles = inline block items */
+/* 4 items in a row = related articles = inline block items */
+
+
+/* 0.0 media wrappers
+---------------------------------------------- */
+.list-of-features{
+	margin-bottom: 1.875em;
+	width: 100%;
+	}
+
+
+/* 0.1 feature structure setup
+---------------------------------------------- */
+.is--Listing{
+	//border-bottom: 1px solid #e5e5e5;
+	//padding-top: 1.95em;
+	//margin-bottom: 1.15em;
+	}
+.list-of-features .is--Listing:nth-of-type(even){
+background: rgb(255,255,255); /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjcxJSIgc3RvcC1jb2xvcj0iI2Y1ZjVmNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(245,245,245,1) 71%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(71%,rgba(245,245,245,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(245,245,245,1) 71%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(245,245,245,1) 71%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(245,245,245,1) 71%,rgba(255,255,255,1) 100%); /* IE10+ */
+background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(245,245,245,1) 71%,rgba(255,255,255,1) 100%); /* W3C */
+
+	}
+.is--Listing .feature-body{
+	padding-top: 2.5em;
+	}
+
+.feature-img{
+	display: block;
+	margin-bottom: .625000em;
+	}
+.feature-img img{
+	width: 100%;
+	}
+// .feature-headline{
+// 	@include rem(font-size, 18px);
+// 	}
+.feature-excerpt{ line-height: 1.5; @include rem(font-size, 17px); letter-spacing: -1px; margin-bottom: 1em; min-height: 3.5em; }
+.buy-excerpt{ 
+	//min-height: 7.5em;
+	width: 74%; 
+	margin: 0.5em auto;
+	margin-bottom: 25.5%;
+	 }
+[lang="fr-ca"] .buy-excerpt{ 
+	margin-bottom: 23%;
+}
+
+
+.feature-confirm{ line-height: 1.5; @include rem(font-size, 17px); letter-spacing: -1px; margin-bottom: 0.5em; }
+.promo-excerpt	{ @include rem(font-size, 15px); line-height: 1.2; margin-top: 1.7em; }
+.list-excerpt	{ @include rem(font-size, 14px); margin-bottom: 1.5em; }
+
+
+/* 0.2 media items modifiers
+---------------------------------------------- */
+
+/* item in a list - img left, content right -- LRG */
+//.is--mainFeature{}
+
+/* items in a list style - img left, content right */
+.is--featureListing{
+	border-top: 0 none;
+	padding-top: 0;
+	}
+//.is--Listing{}
+
+/* items in a block style - img above, content below */
+.is--promo{	float: left; }
+
+.is--fancy{ display: inline-block; width: 46%; 
+			background-color: #fbfbfb; }
+
+
+
+/* 0.3 promo item modifiers
+---------------------------------------------- */
+
+/* 2 in a row */
+.span-of-2 .is--promo{
+	width: 47.6562%;
+	}
+.span-of-2 > .is--promo + .is--promo{
+	margin-left: 4.6875%;
+	}
+
+/* 3 in a row */
+.span-of-3 .is--promo{
+	width: 31.25%;
+	}
+.span-of-3 > .is--promo + .is--promo{
+	margin-left: 3.125%;
+	}
+	
+/* 4 in a row */
+.span-of-4 .is--promo{
+	width: 22.5%;
+	}
+.span-of-4 > .is--promo + .is--promo{
+	margin-left: 3.125%;
+	}
+
+/* 5 in a row */
+.span-of-5 .is--promo{
+	width: 19.111111%;
+	}
+.span-of-5 > .is--promo + .is--promo{
+	margin-left: 1.111111%;
+	}
+
+
+
+/* 0.4 media images
+---------------------------------------------- */
+//.img--isMainFeature{}
+	
+.js .img--isPromo{ margin-bottom: 1em; overflow: hidden; min-height: 113px; }
+// .no-js .img--isPromo{ margin-bottom: 1em; overflow: hidden; min-height: 113px; }
+
+.img--isFeatureListing{
+	float: left;
+	margin-bottom: 1.5625em;
+	margin-right: 3.125%;
+	width: 57.5%;
+	}
+.img--isListing{
+	float: right;
+	margin-left: 5.313%;
+	margin-bottom: 0;
+	//width: 340px;
+	width: 42.5%;
+	min-height: 250px;
+	}
+
+
+/* 0.5 media content
+---------------------------------------------- */
+.is--mainFeature .feature-headline{
+	margin-bottom: 2em;
+	}
+
+.is--featureListing .feature-body {
+    padding-top: 30px;
+    padding-top: 1.875rem;
+	}
+
+.support-module {
+	border-top: 1px solid #cbd5d8;
+	width: 100%;
+	padding: 1.5em 2%;
+
+	h2 {
+		margin-bottom: 0.5em;
+	}
+
+	.box-left {
+		display: inline-block;
+		margin-right: 2em;
+	}
+
+	.box-right {
+		display: inline-block;
+	}
+}
+
+.gateway {
+	color: #2D2C2C;
+
+	.bookmark {
+		width: 60%;
+		margin: 0 auto;
+	}
+
+	h2 {
+		margin: 0 auto 1em;
+		width: 75%;
+	}
+
+	p, aside {
+		margin: 1.5em auto;
+		padding: 0 2%;
+	}
+}
+

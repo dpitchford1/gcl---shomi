@@ -1,0 +1,366 @@
+/* GLOBAL STRUCTURES & WRAPPERS
+---------------------------------------------- */
+.general-form, .modal-form, .alternative-form{ 
+    overflow: hidden;
+    margin-bottom: 0;
+    }
+.promo-form{ width: 100%; }
+
+
+.form-row { margin: 0 0 .5em; padding-top: .5em; }
+.form-row .form-row { margin: 0; padding-top: 0; }
+
+
+/* GLOBAL FORM ELEMENTS
+---------------------------------------------- */
+.fieldset { padding: 0; border: 0 none; }
+
+/* Styled legend tag */
+.legend-visible{ @include rem(font-size, 22px); line-height: normal; letter-spacing: -1px; margin-bottom: .2em; }
+
+
+/* Labels */
+.alt-label  { font-family: $font-semibold; color: #2c2c2c; margin-bottom: 0; }
+// .form-label { margin-bottom: .3em; }
+
+
+/* Text Fields */
+.text-field[type="text"], .text-field[type="password"], .text-field[type="email"], .text-field[type="tel"]{
+    border: 1px solid #cacdce; 
+    float: left; 
+    font-size: 14px; 
+    padding: .63em .8em; 
+    appearance: none; 
+    -webkit-appearance: none; 
+    }
+.text-field:focus{ 
+    border: 1px solid #434a4f; 
+    background-color: #f9f9f9; 
+    outline:none; 
+    }
+
+.field-inline{ margin-right: 15px; }
+
+
+/* Radio Buttons and Checkboxes */
+.checkbox abbr{ display: none; }
+.checkbox .form-label{ @include rem(font-size, 13px); font-family: $font-reg; }
+
+.form-label input[type="checkbox"]{ float:left; margin-top: 4px; }
+.form-label .check-label{ float: left; width: 90%; line-height: 1.3; }
+
+.radio-inline{ float: left; margin-right: 20px; padding-left: 2px; }
+
+.radio-inline-list li{ padding-right: 2em; }
+.radio-inline-list label{ float: left; padding: 0; }
+.radio-inline-list .radio-inline{ margin-top: .3em }
+
+.radio-squares > input[type="radio"]{
+  display: none;
+}
+
+.radio-squares > input[type="radio"] + label {
+  color: #000000;
+  font-family:Arial, sans-serif;
+  font-size:14px;
+}
+.radio-squares > input[type="radio"] + label {
+  display: inline-block;
+}
+.radio-squares > input[type="radio"] + label span{
+  display:inline-block;
+  padding-top: 20px;
+  width: 60px;
+  height: 40px;
+  margin:-1px 4px 0 0;
+  cursor:pointer;
+  -moz-border-radius:  0%;
+  border-radius:  0%;
+  outline: #000000 none 0px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.radio-squares > input[type="radio"] + label span {
+  background-color:#c7ced4;
+}
+
+.radio-squares > input[type="radio"]:checked + label span{
+  background-color:#d6f2f6;
+}
+.radio-squares > input[type="radio"] + label span,
+.radio-squares > input[type="radio"]:checked + label span {
+  -webkit-transition:background-color 0.4s linear;
+  -o-transition:background-color 0.4s linear;
+  -moz-transition:background-color 0.4s linear;
+  transition:background-color 0.4s linear;
+}
+
+/* GENERAL FORM STYLES
+---------------------------------------------- */
+.general-form .warning input { border-color: #edea3d; }
+.general-form input:disabled { background: #dfe2e7; color: #000000; }
+.general-form input[type="submit"]:disabled { background: #78cfe2; /* #d6f2f6; */ color: #000000; }
+.general-form .completed-field { background: #dfe2e7 !important; color: #000000 !important; }
+.general-form { text-align:center; }
+.general-form .centered-text-field { margin-left:auto;margin-right:auto;width:375px; }
+.general-form .text-field {
+  height: 45px;
+  width: 375px;
+  background-color: #8f9da8;
+  color: #ffffff;
+}
+.general-form .cancel-or-allow-cancellation { width: 465px; margin-left:auto; margin-right:auto; }
+[lang="fr-ca"] .general-form .cancel-or-allow-cancellation { width: 500px; margin-left:auto; margin-right:auto; }
+.general-form .cancel-or-allow-cancellation a { margin: 10px; }
+.general-form .submission { width: 150px; margin-left:auto; margin-right:auto; }
+[lang="fr-ca"] .general-form .submission { width: 155px; }
+[lang="fr-ca"] .general-form .submission.sign_up { width: 175px; }
+.general-form .cc-types { width: 160px; margin-left:auto; margin-right:auto; }
+.general-form .single-cc-types { width: 42px; }
+.general-form .large-submission { width: 170px; margin-left:auto; margin-right:auto; }
+[lang="en-ca"] .general-form .large-submission { width: 170px; }
+[lang="fr-ca"] .general-form .large-submission { width: 210px; }
+
+.tos-width .controls, .tos-width .form-row { overflow:visible; }
+.general-form .tos-width { width: 220px; margin-left:auto; margin-right:auto; overflow: visible; }
+[lang="fr-ca"] .general-form .tos-width { width: 230px; }
+.general-form .tos-width p.help-inline { width: 390px; margin-left:auto; margin-right:auto; overflow: visible; position: relative; left: -20%; }
+[lang="fr-ca"] .general-form .tos-width p.help-inline { width: 450px; }
+.form-row p.help-inline { width: 375px; }
+.form-row.province-selection .select p.help-inline,  { width: 120px; }
+.form-row.date-selection .help-inline.field_creditCardExpirationMonth { width: 240px; }
+.form-row.date-selection .help-inline.field_creditCardExpirationYear { width: 120px; }
+
+.general-form .form-row { width: 400px; margin-left:auto; margin-right:auto; }
+.general-form .larger-form-row { width: 500px; margin-left:auto; margin-right:auto; }
+
+.no-select-margin .controls.select { margin: 0; }
+.show-select-errors .controls { overflow: visible; }
+
+.general-form textarea.text-field { max-width: 400px; height: 80px; }
+.general-form .text-field::-webkit-input-placeholder {
+  color: #ffffff;
+  text-align: center;
+}
+
+.general-form .text-field:-moz-placeholder { /* Firefox 18- */
+  color: #ffffff;
+  text-align: center;
+}
+
+.general-form .text-field::-moz-placeholder {  /* Firefox 19+ */
+  color: #ffffff;
+  text-align: center;
+}
+
+.general-form .text-field:-ms-input-placeholder {
+  color: #ffffff;
+  text-align: center;
+}
+
+.general-form input.text-field{
+  border-radius: 15px;
+  text-align: center;
+    }
+
+.general-form .radio_buttons label.radio { text-align: left; padding-left: 2px; }
+
+.general-form .btn{ margin-top: .8em; }
+.general-form .controls .date{
+    margin-right: 15px;
+    width: 90px;
+    appearance: menulist;
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist; /* Ugly Firefox way of doing it */
+    border: 1px solid #cacdce;
+    padding: .3em 0 .3em .5em;
+    }
+
+/* Modal Form Tweaks */
+.modal-form .text-field{
+    width: 100%;
+    }
+/* Alernative form tweaks */
+.alternative-form .form-row{
+    margin-bottom: .8em;
+    }
+.alternative-form .form-label{
+    margin-bottom: 1em;
+    }
+.alternative-form .btn{
+    width: 375px;
+    }
+
+/* C.C modifiers */
+.general-form .cc-cvv{ width: 75px; }
+
+/* select lists in C.C form */
+.controls.select{ float: left; margin-right: 15px; margin-top: .2em; position: relative; }
+.controls.fancy-select-medium { margin-right: 15px; }
+
+
+
+/* PLACEHOLDER STYLING
+---------------------------------------------- */
+.text-field::-webkit-input-placeholder {
+    color: #999;
+    font-style: italic;
+    }
+  
+.text-field:-moz-placeholder { /* Firefox 18- */
+    color: #999;
+    font-style: italic;
+    }
+
+.text-field::-moz-placeholder {  /* Firefox 19+ */
+    color: #999;
+    font-style: italic;
+    }
+
+.text-field:-ms-input-placeholder {  
+    color: #999;
+    font-style: italic;
+    }
+
+.text-field:focus::-webkit-input-placeholder {
+     opacity: .2;
+    }
+  
+.text-field:focus:-moz-placeholder { /* Firefox 18- */
+     opacity: .2;  
+    }
+  
+.text-field:focus::-moz-placeholder {  /* Firefox 19+ */
+     opacity: .2; 
+    }
+  
+.text-field:focus:-ms-input-placeholder {  
+     opacity: .2;  
+    }
+
+
+
+/* ERRORS AND ERROR LISTS
+---------------------------------------------- */
+.form-errors{
+    padding: 1em 0 .5em;
+    }
+.error-listing{
+    color: #dd3829;
+    @include rem(font-size, 14px);
+    }
+.error .text-field{
+    border-color: #dd3829;
+    }
+.error .help-inline, .error-label{
+    @include rem(font-size, 14px);
+    clear: left;
+    color: #dd3829;
+    margin-bottom: 0;
+    }
+.success .text-field { border-color: #4cb235; }
+
+/* HELP AND HINTS and INFORMATION
+---------------------------------------------- */
+.help-block{
+    clear: left;
+    display: block;
+    padding-top: .2em;
+    }
+
+/* C.C modifier */
+.credit_card_auto_renew .help-block, .order_auto_renew .help-block{ padding-left: 22px; }
+
+// inline dropdown menus
+//.controls.select { float: left; margin-right: 10px; }
+
+    // fancy select menus error messages
+    .controls.select.error {
+        padding-bottom: 2.2em;
+        }
+    .select .help-inline{
+        left: 0;
+        position: absolute;
+        top: 42px;
+        }
+
+    // select menus inline e.g month/year CC dropdowns
+    .controls.select .help-inline {
+        @include rem(font-size, 12px);
+        line-height: 1.1;
+        }
+
+.form-help{ font-size: 90%; margin-bottom: 2.5em; }
+
+
+/* Touch devices default to visible, no touch devices show the icon and tooltip */
+.form-info .controls    { clear: left; }
+.form-info .form-label  { float: left; }
+.form-info .i--helper{
+    display: block;
+    float: left;
+    height: 20px;
+    margin-left: 15px;
+    position: relative;
+    width: 20px;
+    font-style: normal;
+    @include rem(font-size, 12px);
+    cursor: pointer;
+    }
+.form-info .i--helper:hover:after, .form-info .i--helper:focus:after{
+    background: #666;
+    background: rgba(0,0,0,.8);
+    border-radius: 5px;
+    color: #fff;
+    content: attr(data-title);
+    line-height: 1.1;
+    padding: 5px 15px;
+    position: absolute;
+    margin-left: 25px;
+    z-index: 98;
+    margin-left: 25px;
+    top: -5px;
+    pointer-events: none;
+    width: 15em;
+    }
+.form-info .dob-helper:after{
+    height: 60px;
+    width: 300px;
+    }
+
+.touch .form-info .i--helper    { display: none; }
+.no-touch .form-info .help-block{ display: none; }
+
+
+
+/* SHOW HIDE PASSWORD CHECKBOX
+---------------------------------------------- */
+::-ms-reveal,
+::-ms-clear {
+    display: none !important;
+    }
+
+.no-js .password-toggle{ display: none; }
+
+.password-toggle{
+    background-color: #f9f9f9;
+    margin-top: -8px;
+    padding: 8px 0 5px;
+    width: 375px;
+    line-height: normal;
+    }
+.modal-form .password-toggle{
+    margin-top: -8px;
+    margin-bottom: .5em;
+    width: 100%;
+    }
+.password-toggle .checkbox{
+    float: left;
+    margin-left: 10px;
+    height: 16px;
+    }
+.password-toggle .form-label{ @include rem(font-size, 13px); font-family: $font-reg; line-height: 1.1; }
+
+
+

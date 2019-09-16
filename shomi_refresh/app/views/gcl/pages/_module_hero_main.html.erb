@@ -1,0 +1,53 @@
+<!-- <h2 class="h-xb mega-reverse uc-center"><%= t("pages.index.watch").html_safe %></h2> -->
+
+<div class="video-promo" id="video-parent">
+    
+    <a class="flex-embed flex-embed--16by9 feature-video" tabindex="-1" aria-hidden="true" href="#myExperience" id="video-play">
+        <span class="ico i-video-play is--icon" id="ico-play"><%= I18n.t('text.vid_play') %></span>
+        <noscript><%= t("text.nojs").html_safe %></noscript>
+        
+        <%# if I18n.locale == I18n.default_locale %>
+        <div id="vid-wrap" class="vid-wrap hidden">
+            <object id="myExperience" class="BrightcoveExperience" name="home_video">
+                <param name="bgcolor" value="#FFFFFF">
+                <param name="width" value="100%">
+                <param name="height" value="100%">
+                <param name="secureConnections" value="true">
+                <param name="secureHTMLConnections" value="true">
+                <param name="playerID" value="2321945814001">
+                <param name="playerKey" value="AQ~~,AAAAAK_PYqE~,dFX017llKTvR-0aVRsj29Uk2PLlG9hpJ">
+                <param name="isVid" value="true">
+                <param name="isUI" value="true">
+                <param name="htmlFallback" value="true">
+                <param name="dynamicStreaming" value="true">
+                <param name="@videoPlayer" value="4072270276001">
+                <param name="autoStart" value="true">
+                <param name="includeAPI" value="true">
+                <param name="templateLoadHandler" value="rogersAnalyticsBrightcoveLoadHandler">
+                <param name="wmode" value="transparent">                  
+            </object>
+        </div>
+        <%# else %>
+        <!-- <div id="vid-wrap" class="vid-wrap hidden">
+            <object id="myExperience" class="BrightcoveExperience" name="home_video">
+                <param name="bgcolor" value="#FFFFFF">
+                <param name="width" value="100%">
+                <param name="height" value="100%">
+                <param name="secureConnections" value="true">
+                <param name="secureHTMLConnections" value="true">
+                <param name="playerID" value="3646295550001">
+                <param name="playerKey" value="AQ~~,AAAAAK_PYqE~,dFX017llKTt58ZjNeoGbptzLfExwpkm9">
+                <param name="isVid" value="true">
+                <param name="isUI" value="true">
+                <param name="htmlFallback" value="true">
+                <param name="dynamicStreaming" value="true">
+                <param name="@videoPlayer" value="3849210633001" />
+                <param name="autoStart" value="true">
+                <param name="includeAPI" value="true">
+                <param name="templateLoadHandler" value="rogersAnalyticsBrightcoveLoadHandler">
+                <param name="wmode" value="transparent">                  
+            </object>
+        </div> -->
+        <%# end %>
+    </a>
+</div>

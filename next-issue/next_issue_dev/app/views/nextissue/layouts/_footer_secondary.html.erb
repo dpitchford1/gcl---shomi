@@ -1,0 +1,46 @@
+<%= cache(action_suffix: ['footer-secondary', I18n.locale].join(':')) do %>
+    <footer class="footer is--f-secondary cf" role="contentinfo" id="footer-secondary">
+
+      <div class="row content-wrapper">
+        <div class="col span-1">
+          <div><%= link_to t('footer.redeem'), redemption_path %></div>
+          <div><%= link_to t('footer.subscribe'), t('footer.subscribe_link') %></div>
+          <div><%= link_to t("menu.sign_in"), new_session_path, :class => "" %></div>
+        </div>
+        <div class="col span-1">
+          <div><%= link_to t('footer.contact_us'), t('footer.contact_us_support_link'), target: '_blank' %></div>
+          <div><%= link_to t('footer.faq'), t('footer.faq_link'), target: '_blank' %></div>
+          <div><%= link_to t('footer.blog'), t('footer.blog_link'), target: '_blank' %></div>
+        </div>
+        <div class="col span-1">
+          <div><%= link_to t('footer.legal'), t('footer.legal_link'), target: '_blank' %></div>
+          <% if t('footer.press_link') != 'na' %>
+            <div><%= link_to t('footer.press'), t('footer.press_link'), target: '_blank' %></div>
+          <% end %>
+        </div>
+        <div class="col span-3">
+          <ul class="menu icon_separation float-right">
+
+            <li><%= link_to '', t('footer.facebook_link'), :class => "facebook-icon", target: '_blank' %></li>
+            <li><%= link_to '', t('footer.twitter_link'), :class => "twitter-icon", target: '_blank' %></li>
+            <li><%= link_to '', t('footer.pinterest_link'), :class => "pinterest-icon", target: '_blank' %></li>
+            <li><%= link_to '', t('footer.instagram_link'), :class => "instagram-icon", target: '_blank' %></li>
+            <li><%= link_to '', t('footer.youtube_link'), :class => "youtube-icon", target: '_blank' %></li>
+
+          </ul>
+        </div>
+      </div>
+
+      <div class="row content-wrapper">
+        <div class="col span-2">
+          <div>
+            <%= image_tag asset_url("logos/rogers-logo-#{I18n.locale.to_s}.png"), alt: 'rogers logo', width: '148px', height: '26px' %>
+          </div>
+        </div>
+        <div class="col span-4">
+          <div class="float-right"><%= t('footer.copyright').html_safe %> <%= link_to t('footer.privacy_policy'), t('footer.privacy_policy_link'), target: '_blank' %> <%= link_to t('footer.terms'), t('footer.terms_of_service_link'), target: '_blank' %></div>
+        </div>
+      </div>
+
+    </footer>
+<% end %>

@@ -1,0 +1,3 @@
+<% presenter = ProfileSummaryHeader.new(@current_session, @offer, session) %>
+
+<%= render partial: 'layouts/presenting_summary', locals: { p: presenter } %>

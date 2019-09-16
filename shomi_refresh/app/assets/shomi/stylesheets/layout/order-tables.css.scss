@@ -1,0 +1,30 @@
+
+.order-table { margin-bottom: 1.5em; width: 100%; }
+//.order-table tbody { display: table; }
+.order-table tbody td 	{ padding: 1em .8em .8em; /*display: table-cell;*/ vertical-align: top; line-height: 1.2; }
+
+.order-table .t-row		{ border-bottom: 1px solid #ddd; }
+
+.order-table .tleft    	{ width: 95%; }
+[lang="fr-ca"] .tleft 	{ width: 15%; }
+.order-table .tright    { width: 5%; text-align: right; }
+//.order-table .taxes 	{ vertical-align: top; padding-top: 1em; }
+.order-table .total td 	{ background-color: #f8f8f8; padding-bottom: 1em; padding-top: 0.3em;  }
+
+.order-table .thead th  { font-weight: normal; @include rem(font-size, 22px); }
+.order-table caption    { 
+	text-align: left; 
+	font-style: normal;
+    //background-color: #434a4f;
+    //color: #fff;
+    //padding: 0.3em 0.5em;    
+	 }
+.order-table td         { text-align: left; font-style: normal; }
+.order-table .th        { @include rem(font-size, 18px); text-align: left; padding: 0 1.5em 0 0; }
+.order-table .tfoot     { padding: .4em 0 1.2em; }
+
+/* Summary Table
+---------------------------------------------- */
+.summary-table  { margin-bottom: 3em; width: 60%; }
+.summary-row    { border-bottom: 1px solid #ddd; }
+.summary-col    { padding: .4em 0; }

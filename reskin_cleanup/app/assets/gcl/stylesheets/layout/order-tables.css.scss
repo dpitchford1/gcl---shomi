@@ -1,0 +1,15 @@
+
+.order-table { margin-bottom: .5em; width: 100%; }
+.order-table tbody      { float: right; }
+.order-table .thead     { float: left; text-align: left; width: 80%; line-height: 1.1; padding-top: 1.1em }
+.order-table .thead th  { font-weight: normal; @include rem(font-size, 24px); font-family: $font-light; }
+.order-table caption    { text-align: left; font-style: normal; }
+.order-table td         { text-align: left; font-style: normal; }
+.order-table .th        { @include rem(font-size, 14px); text-align: left; padding: 0 1.5em 0 0; }
+.order-table .tfoot     { padding: 1.2em 0 .4em; line-height: 1; }
+
+/* Summary Table
+---------------------------------------------- */
+.summary-table  { margin-bottom: 3em; width: 60%; }
+.summary-row    { border-bottom: 1px solid #ddd; }
+.summary-col    { padding: .4em 0; }

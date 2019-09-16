@@ -1,0 +1,32 @@
+<% content_for :title, t('titles.confirmation').html_safe %>
+<% content_for :support_module_class, 'hidden' %>
+
+<%= cache(action_suffix: ['gateway', I18n.locale, @session.logged?, @session.try(:profile).try(:level), @session.try(:profile).try(:code),  @order.try(:id)].join(':')) do %>
+
+<section class="gateway text-center congrats" id="gateway">
+	<h2 class="h-r size-L"><%= t("profiles.gateway.title").html_safe %></h2>
+	
+	<p class="size-M h-r"><%= t("profiles.gateway.having_trouble").html_safe %></p>
+
+	<aside class="content-wrapper confirmation-aside" role="complementary">
+		<% if I18n.locale == I18n.default_locale %>
+		<p class="text-center"><a href="https://my.shomi.com/signin" class="btn btn-default" rel="external"><%= t("profiles.gateway.shomi").html_safe %></a></p>
+		<% else %>
+		<p class="text-center"><a href="https://my.shomi.com/signin" class="btn btn-default" rel="external"><%= t("profiles.gateway.shomi").html_safe %></a></p>
+		<%end%>
+	</aside>
+
+	<p class="bookmark text-center size-L3 h-r span-4"><%= t("profiles.gateway.bookmark").html_safe %></p>
+
+	<%= section(:app_buttons) do %>
+	<aside id="app-buttons">
+		<p class="app-buttons">
+			<a href="<%= t("profiles.gateway.google_play").html_safe %>" class="ico i-apps i--google" rel="external" target="blank">Android App on Google Play</a> 
+			<a href="<%= t("profiles.gateway.app_store").html_safe %>" class="ico i-apps i--apple" rel="external" target="blank">Download on the App Store</a>
+		</p>
+	</aside>
+	<%end%>
+
+</section>
+
+<% end %>

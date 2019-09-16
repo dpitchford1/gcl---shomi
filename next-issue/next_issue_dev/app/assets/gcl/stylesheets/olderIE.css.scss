@@ -1,0 +1,92 @@
+.js .hero-welcome{ 
+    background: #000 asset-url("bg/hero1-fallback-1920.jpg") no-repeat 50% 0;
+    background-size: 100% auto; 
+    }
+
+.site-wrapper, .fluid{ width: 980px; max-width: 980px; }
+
+.i-video-play {
+    display: none;
+    }
+.video-promo{ width: 20%; }
+
+/* modals */
+.modal-dialog{ top:100px; width: 460px; }
+
+.modal-backdrop.fade {
+    filter: alpha(opacity=0);
+    }
+.modal-backdrop.in {
+    filter: alpha(opacity=75);
+    }
+
+// less than ie8 message
+.ltie8{ 
+    position: absolute;
+    top: 0;
+    border: 1px solid #333;
+    font-size: 14px;
+    padding: 2% 25px;
+    width: 95%;
+    z-index: 3;
+    min-height: 40px;
+    background-color: #ddd;
+    color: #333;
+    }
+
+// MyRogers logo
+[lang="en-ca"] .i--logo-myrogers, [lang="fr-ca"] .i--logo-myrogers{ background-image: none !important; text-indent: 0 !important; font-style: italic; font-weight: bold; color: #de2a41; }
+
+[lang="en-ca"] .modal-header .i--logo-myrogers, [lang="fr-ca"] .i--logo-myrogers {
+    height: auto !important;
+    margin-bottom: 0;
+    width: auto !important;
+    }
+
+// revert styled select dropdowns
+.fancy-select:after { content: " " !important; }
+.fancy-select-lg select {
+    max-width: 365px !important;
+    min-width: 365px !important;
+    padding: 0.5em 0 0.7em 10px;
+    width: 365px !important;
+    }
+
+
+
+// HOMEPAGE HEROS
+
+.hero-1-devices{ background: transparent asset-url("bg/hero1-full.png") no-repeat center bottom; background-size: 99% auto; min-height: 450px;  }
+.hero-1-devices .hero-device{ display: none; }
+
+
+.hero-rotator{ 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3a454b', endColorstr='#15191b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    //padding: 2em 0;
+    }
+
+
+.hero-devices{ 
+    background: #000 asset-url("bg/hero-devices-1920.jpg") no-repeat 50% 0;
+    background-size: 100% auto;
+    min-height: auto;
+    padding: 160px 0;
+    }
+
+.hero-appdownload{ 
+    //background-color: #222;
+
+    background: #222 asset-url("bg/hero-appdownload-1920.jpg") no-repeat 50% 50%;
+    background-size: 100% auto;
+    min-height: auto;
+
+    padding: 120px 0;
+    }
+
+.js .img--isPromo{ min-height: 0;}
+
+
+.flex-direction-nav .flex-disabled { filter: alpha(opacity=.3); }
+.flex-control-nav li { zoom: 1; display: inline; }
+

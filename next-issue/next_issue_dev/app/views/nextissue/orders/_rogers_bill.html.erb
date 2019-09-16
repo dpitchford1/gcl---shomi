@@ -1,0 +1,52 @@
+<% content_for :footer do  ajax_validation(:order, order_summary_path) end %>
+
+<div class="promo-code-full">
+  <%= render "profiles/promo_code_form" if @current_session.profile.allowed_to_use_promo_code? %>
+</div>
+<%= simple_form_for(@order, url: order_summary_path, data: {validate: 'order'}, html: {class: 'general-form' }, method: :post) do |f| %>
+  <%= f.input :operation, as: :hidden %>
+  <% unless params.fetch(:order, {}).fetch(:order_id, nil).blank? %>
+    <%= f.input :order_id, as: :hidden %>
+  <% end %>
+    <fieldset class="content-wrapper">
+
+      <div class="form-row answer-selection">
+        <%= f.input :rogers_account_token, input_html: { style: '-moz-appearance: none;' },
+                    collection: @current_session.profile.collection,
+                    required: true,
+                    label: false,
+                    prompt: t('orders.billing.select_rogers'),
+                    wrapper: 'fancy_select' %>
+      </div>
+
+      <div class="content-wrapper"><p><%= t('orders.billing.having_trouble').html_safe %></p></div>
+
+      <%= f.input :billing_option, as: :hidden, input_html: { value: "rogersbill" } %>
+      <%= f.input :offer_id, as: :hidden %>
+      <%= f.input :promo_code, as: :hidden, input_html: { value: session[:promo_code].try(:code) } %>
+      <%= f.input :code_type, as: :hidden, input_html: { value: session[:promo_code].try(:code_type) } %>
+      <%= f.input :desc, as: :hidden, input_html: { value: session[:promo_code].nil? ? '' : session[:promo_code].attributes[:description] } %>
+
+      <%= render partial: 'orders/loyalty_code_form', locals: {loyalty: session[:loyalty_code], current_session: @current_session, offer: @offer, form: f} %>
+
+      <div class="big-or uppercase"><%= t('orders.or') %></div>
+      <div class="text-center content-wrapper"><%= t('orders.bill_to_female') %>
+        <%= link_to t('orders.credit_card') + '?', new_order_path({order: { billing_option: 'cc', operation: params[:order][:operation] } }), class: 'btn-blk' %>
+      </div>
+
+      <% if !@current_session.profile.eligible? || (@current_session.profile.can_top_up? && @offer.topup?) %>
+        <%= simple_format(@tos.try("tos_#{I18n.locale.to_s}").force_encoding('ISO-8859-1').encode('UTF-8')) if @tos.try("tos_#{I18n.locale.to_s}") %>
+
+        <div class="tos-width">
+          <%= f.input :tos, as: :boolean, required: true, input_html: { class: 'check-tos', data: { serializable: true }}, :wrapper => :inline_checkbox,
+                      label: ("<span class='float-left'>#{t('simple_form.labels.accept')} #{link_to(t("orders.terms"), t('footer.terms_of_service_link'), target: '_blank', role: "button")}</span>").html_safe %>
+        </div>
+      <% else %>
+        <%= f.input :tos, as: :hidden, required: false, :input_html => { :value => "1", data: { serializable: true } } %>
+      <% end %>
+
+    </fieldset>
+    <fieldset class="content-wrapper">
+        <%= f.button :submit, @current_session.profile.eligible? ? t('buttons.update') : t('buttons.place_order'), class: 'btn-light order_submit' %>
+    </fieldset>
+<% end %>

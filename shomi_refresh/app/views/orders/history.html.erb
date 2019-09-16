@@ -1,0 +1,28 @@
+<% content_for :title, t('menu.billing') %>
+
+<section class="region">
+	<h2 class="h-lgt sizes-M w-ul"><%= t('menu.billing').html_safe %></h2>
+
+<% if @order_history && @order_history[:orders].try(:any?) %>
+	
+	<% @order_history[:orders].each do |order| %>
+		<% if order[:billing_option] == "cc" %>
+			<p><%= t('orders.payment_method') %>: <%= t('order.credit_card') %></p>
+			<p>
+			<%= t('orders.credit_card') %>
+		<% elsif order[:billing_option] == "rogersbill" %>
+			<%= t('orders.billed_to') %> <%= order[:billing_account] %>
+		<% elsif order[:billing_option] == "free" %>
+			<%= t('orders.promo_code') %>
+		<% end %>
+
+		<%= order["desc_#{session[:lang]}".to_sym] %>
+
+	<% end %>
+
+	</p>
+
+<% else %>
+	<%= t('orders.no_billing') %>
+<% end %>
+</section>

@@ -1,0 +1,35 @@
+<% show_promo ||= false %>
+<% if @offer %>
+<section class="info info-lg info--primary w-ul">
+    <h3 class="hide-text"><%= t('orders.order_summary') %></h3>
+
+    <table class="order-table" summary="Review your order">
+        <caption class="h-r size-L3"><%= t('orders.place_order') %></caption>
+        <tbody>
+            <tr>
+                <td class="tleft size-M2">
+                    <%= t('offers.description.'+@offer.offer_id).html_safe %>
+                </td>
+                <td class="tright size-M2 h-l">
+                    <%= t('offers.price.per_month.'+@offer.offer_id).html_safe %>
+                </td>    
+            </tr>    
+            <tr>
+                <td class="tleft">
+                    <small><%= t('orders.order_start').html_safe %> <%= l Date.today, :format => :long %>.</small>
+                    <small><%= t('orders.order_cancel_anytime').html_safe %></small>
+                    <small><%= t('orders.order_meta').html_safe %></small>
+                </td>
+                 <td class="tright taxes">
+                    <small><%= t('orders.plus_taxes') %></small>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="region promo-code-full has--fancy-bot" id="enter-promo-code">
+        <%= render 'profiles/promo_code_form', use_styling: "landing_page"%>
+    </div>
+
+</section>
+<% end %>

@@ -1,0 +1,1313 @@
+/* General enhancements only if media queries supported 
+======================================================================
+====================================================================== */
+
+/* Headings & Titles
+---------------------------------------------- */
+
+/* Global Wrappers
+---------------------------------------------- */
+
+/* Headers - Navigations - Footers
+---------------------------------------------- */
+
+/* Global Menus
+---------------------------------------------- */
+
+/* Custom Content Structure
+---------------------------------------------- */
+    /* Hero Homepage
+    ------------------------ */
+
+    /* Feature and Promos
+    ------------------------ */
+
+    /* 3 Custom Promos
+    ------------------------ */
+
+    /* UI Helpers
+    ------------------------ */
+
+    /* App Downloads
+    ------------------------ */
+
+    /* Promo Form
+    ------------------------ */
+
+
+/* Modules
+---------------------------------------------- */
+    /* Modals
+    ------------------------ */
+    /* Alerts
+    ------------------------ */
+    /* Info Boxes
+    ------------------------ */
+
+/* VIEWPORT SETUP
+---------------------------------------------- */
+/* VIEWPORT SETUP
+---------------------------------------------- */
+
+
+
+
+@media only screen{
+
+    /* VIEWPORT SETUP
+    ---------------------------------------------- */
+    @-webkit-viewport   { width: device-width; }
+    @-moz-viewport      { width: device-width; }
+    @-ms-viewport       { width: device-width; }
+    @-o-viewport        { width: device-width; }
+    @viewport           { width: device-width; }
+
+
+    /* GLOBAL BACKGROUND IMAGE ATTRIBUTES
+    ---------------------------------------------- */
+    .js .page-bg{
+        background-position: center 120px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        }
+
+    /* MODAL ANIMATIONS
+    ---------------------------------------------- */
+    .js .m-fade .modal-dialog {
+        -webkit-transform: scale(0.7);
+        -moz-transform: scale(0.7);
+        -ms-transform: scale(0.7);
+        transform: scale(0.7);
+        opacity: 0;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+        }
+    .js .in .modal-dialog {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+        }
+
+    /* ALERT ANIMATIONS - moved to top of css file because of IE 11
+    ---------------------------------------------- */
+
+    // @keyframes fadeInOut {
+    //     0%  { opacity: 0; }
+    //     15% { opacity: 1; }
+    //     95% {
+    //         opacity: 1;
+    //         -webkit-transform: translate3d(-50%, 0, 0);
+    //         -ms-transform: translate3d(-50%, 0, 0);
+    //         transform: translate3d(-50%, 0, 0);
+    //         }
+    //     100% {
+    //         opacity: 0;
+    //         -webkit-transform: translate3d(-50%, -50px, 0);
+    //         -ms-transform: translate3d(-50%, -50px, 0);
+    //         transform: translate3d(-50%, -50px, 0);
+    //         }
+    // }
+    // .alert.is-animated {
+    //     opacity: 0;
+    //     //transition-delay: 8s;
+    //     -webkit-animation: fadeInOut 8s;
+    //     -ms-animation: fadeInOut 8s;
+    //     -moz-animation: fadeInOut 8s;
+    //     animation: fadeInOut 8s;
+    //     position: absolute;
+    //     top: 5px;
+    //     left: 50%;
+    //     //transform: translate(-50%,0);
+    //     }
+}
+
+
+/* BG IMAGES
+================================================================================ */
+
+/* BG IMG -- max width 380px and below
+---------------------------------------------- */
+// @media (max-width: 23.5em) { }
+
+/* BG IMG -- min width 980px ++
+---------------------------------------------- */
+
+@media (min-width: 61.25em) {
+
+    .js .page-bg{
+        background-image: asset-url("content/shomi-bg-site-1400-bl.jpg");
+        background-size: 100% auto;
+        }
+
+    // html[lang="fr-CA"] .page-bg{
+    //     background-image: asset-url("content/shomi-bg-site-1400-bl.jpg");
+    //     }    
+}
+
+/* BG IMG -- min width 1600px ++
+---------------------------------------------- */
+@media (min-width: 100em) {
+        
+    .js .page-bg{
+        //background-image: asset-url("content/hero-main-1400.jpg");
+        //background-position: center 80px;
+        //background-position-x: 0; 
+        //background-size: 97% auto;
+        }
+}
+
+/* BG IMG -- min width 1920px ++
+---------------------------------------------- */
+@media (min-width: 120em) {
+        
+    .js .page-bg{
+        background-position: center 120px;
+        }
+}
+
+/* BG IMG -- min width 2100px ++
+---------------------------------------------- */
+@media (min-width: 131.25em) {
+        
+    .js .page-bg{
+        //background-image: asset-url("content/bg-site-2560.jpg");
+        //background-position: center 120px;
+        }
+}
+
+/* BG IMG -- max width 980px
+---------------------------------------------- */
+@media (max-width: 80em) {
+
+    .js .page-bg{
+        background-image: asset-url("content/shomi-bg-site-1400-bl.jpg");
+        background-size: 100% auto;
+        background-position: center 120px;
+        }
+     // html[lang="fr-CA"] .page-bg{
+     //    background-image: asset-url("content/shomi-bg-site-1400-fr.jpg");
+     //    }     
+
+    .hero-standard .congrats-preseason{ background-size: 100% auto }
+}
+
+/* BG IMG -- max width 820px
+---------------------------------------------- */
+@media (max-width: 51.25em) {
+
+    .js .page-bg{
+        //background-size: 100% auto;
+        background-position: center 120px;
+        }
+}
+
+/* BG IMG -- max width 660px
+---------------------------------------------- */
+@media (max-width: 41.25em) {
+
+    .js .page-bg{
+        //background-size: 121% auto;
+        background-position: center 120px;
+        }
+}
+
+/* BG IMG -- max width 660px
+---------------------------------------------- */
+@media (max-width: 37.5em) {
+
+    .js .page-bg{
+        //background-size: 121% auto;
+        background-image: asset-url("content/shomi-bg-site-660-bl.jpg");
+        background-position: center 72px;
+        }
+    // html[lang="fr-CA"] .page-bg{
+    //     background-image: asset-url("content/shomi-bg-site-660-fr.jpg");
+    //     }    
+
+    .page-home #main-content {
+       // padding-top: 122%;
+    } 
+
+}
+
+/* BG IMG -- max width 480px
+---------------------------------------------- */
+@media (max-width: 30em) {
+
+    .js .page-bg{
+        background-image: asset-url("content/shomi-bg-site-660-bl.jpg");
+        background-position: center 72px;
+        }
+    // html[lang="fr-CA"] .page-bg{
+    //     background-image: asset-url("content/shomi-bg-site-660-fr.jpg");
+    //     }    
+}
+
+/* BG IMG -- max width 380px
+---------------------------------------------- */
+@media (max-width: 23.75em) {
+
+    .js .page-bg{
+        background-image: asset-url("content/shomi-bg-site-660-bl.jpg");
+        background-position: center 72px;
+        }
+    // html[lang="fr-CA"] .page-bg{
+    //     background-image: asset-url("content/shomi-bg-site-660-fr.jpg");
+    //     }    
+}
+
+/* ============================================================================================================================================
+ START GLOBAL MEDIA QUERY STRUCTURE 
+============================================================================================================================================ */
+
+
+/* MQ 980++ MIN WIDTH
+================================================================================ */
+@media (min-width: 61.25em) {
+
+/* Headings & Titles
+---------------------------------------------- */
+
+/* Global Wrappers
+---------------------------------------------- */
+    .site-wrapper{ max-width: 61.25em;  }
+
+
+/* Headers - Navigations - Footers
+---------------------------------------------- */
+
+/* Custom Content Structure
+---------------------------------------------- */
+    /* Hero Homepage
+    ------------------------ */
+    /* Feature and Promos
+    ------------------------ */
+    /* 3 Custom Promos
+    ------------------------ */
+    /* UI Helpers
+    ------------------------ */
+    /* App Downloads
+    ------------------------ */
+    /* Promo Form
+    ------------------------ */
+
+/* Modules
+---------------------------------------------- */
+    /* Modals
+    ------------------------ */
+    /* Alerts
+    ------------------------ */
+    /* Info Boxes
+    ------------------------ */
+    
+
+}
+
+/* MQ 660++ MIN WIDTH
+================================================================================ */
+@media (min-width: 41.25em) {
+
+/* Headings & Titles
+---------------------------------------------- */
+
+/* Global Wrappers
+---------------------------------------------- */
+
+/* Headers - Navigations - Footers
+---------------------------------------------- */
+
+/* Custom Content Structure
+---------------------------------------------- */
+    /* Hero Homepage
+    ------------------------ */
+
+    /* Feature and Promos
+    ------------------------ */
+
+    /* 3 Custom Promos
+    ------------------------ */
+    /* Apply gradients to 1 and 3 */
+    .fancy-promos .is--fancy {
+
+    }
+    .fancy-promos .is--fancy:first-of-type{
+
+        }
+    .fancy-promos .is--fancy:last-of-type{
+        margin-right: 0;
+    }
+
+
+    /* UI Helpers
+    ------------------------ */
+    /* App Downloads
+    ------------------------ */
+    /* Promo Form
+    ------------------------ */
+
+/* Modules
+---------------------------------------------- */
+    /* Modals
+    ------------------------ */
+    /* Alerts
+    ------------------------ */
+    /* Info Boxes
+    ------------------------ */
+}
+
+
+
+/* MQ 820- tablets & small screens
+================================================================================ */
+@media (max-width:51.250em){
+
+/* Headings & Titles
+---------------------------------------------- */
+/* Headings & Titles
+---------------------------------------------- */
+.size-XL    { @include rem(font-size, 38px); }
+.size-LG    { @include rem(font-size, 32px); }
+.size-L     { @include rem(font-size, 26px); }
+.size-L2    { @include rem(font-size, 24px); }
+.size-L3    { @include rem(font-size, 22px); }
+.size-L4    { @include rem(font-size, 20px); }
+
+.footnote{ background-size: 100% auto; }
+
+#tos_modal .modal-title { 
+    @include rem(font-size, 22px); 
+    // line-height: 1.25; 
+    // margin-bottom: .7em; 
+    // padding-bottom: .4em; 
+    }
+
+/* Global Wrappers
+---------------------------------------------- */
+    .fluid          { padding: 0 3.5%; }
+    .site-wrapper   { padding: 0 3.5%; }
+
+
+/* Headers - Footers
+---------------------------------------------- */
+    .navigation-wrapper{
+        width: 65%;
+        }
+    html[lang="en-ca"] .brand-fs{ background-image: asset-url('logos/logo-brand-fs.png'); }
+    html[lang="fr-ca"] .brand-fs{ background-image: asset-url('logos/logo-brand-fs.png'); }
+
+    .brand-fs{
+        //background-size: 97% auto;
+        //width: 30%;
+        }
+
+    .is--f-primary{ display: none; }
+    .copyright, .footer-menu{ @include rem(font-size, 14px); }
+
+
+/* Global Menus
+---------------------------------------------- */
+    .menu--secondary li{
+        margin-left: 2%;
+        }
+        .menu--secondary li:first-child{
+            margin-left: 0;
+            }
+    a.signin {
+        width: 50px;
+    }
+
+   html[lang="fr-ca"] a.signin { width: 70px; }              
+
+/* Custom Content Structure
+---------------------------------------------- */
+    /* Hero Homepage
+    ------------------------ */
+    /* Feature and Promos
+    ------------------------ */
+    /* sub features */
+    .is--Listing .feature-body{
+        padding-top: 1.5em;
+        }
+    .img--isListing{
+        //float: left;
+        margin-right: 2.4193548%;
+        width: 35%;
+        }
+        
+    /* sub features */
+    .main-features .is--promo{
+        float: none;
+        margin: 0 0 1em;
+        width: 100%;
+        }
+
+    /* 3 Custom Promos
+    ------------------------ */
+    .fancy-promos .is--fancy{
+        //min-height: 325px;
+        //padding: 0 2%;
+        } 
+    [lang="fr-ca"] .fancy-promos .is--fancy{
+        min-height: 465px;
+        }
+    .overages{ bottom: 10px; }
+
+    /* UI Helpers
+    ------------------------ */
+    .has--ul-fancy{
+        background-size: 110% auto ;
+        }
+
+    /* App Downloads
+    ---------------------------------------------- */
+    // .app-downloads .size-L{
+    //     @include rem(font-size, 24px);
+    //     }
+    .app-downloads .h-b{
+        width: 65%;
+        }
+    .app-buttons{ margin-left: 0; }
+
+
+    /* Promo Form
+    ------------------------ */
+    .promo-code-full .form-label{
+        @include rem(font-size, 18px);
+        }
+    .promo-code-full .text-field{
+        padding: .4em .8em;
+        width: 240px;
+        }
+
+.hero-standard {
+    width: 100%;
+    float: none;
+
+    p {
+        margin: 6% 0;
+    }
+
+}
+
+.profiles.fancy-promos {
+    width: 80%;
+    margin: 0 auto;
+    float: none;
+    padding: 3%;
+
+    .buy-excerpt {
+            margin: 4% auto;
+            min-height: 0;
+    } 
+
+    .feature .btn-default {
+                width: 40%;
+    } 
+
+}
+
+.link-account.fancy-promos {
+    padding-top: 20px;
+}
+/* Modules
+---------------------------------------------- */
+    
+    .btn{ @include rem(font-size, 14px); font-family: $font-bold; padding: 0.7em 1.8em; white-space: normal; }
+    .btn-group-wide .btn{ padding: 0.7em 3em; }
+
+    /* Modals
+    ------------------------ */
+    /* Alerts
+    ------------------------ */
+    /* Info Boxes
+    ------------------------ */
+    .info-lg {
+        padding: 20px;
+        }
+}
+
+
+/* MQ 768- tablets & small screens
+================================================================================ */
+@media (max-width: 48em) { /* 768px */
+
+/* Headings & Titles
+---------------------------------------------- */
+/* Global Wrappers
+---------------------------------------------- */
+/* Headers - Navigations - Footers
+---------------------------------------------- */
+    .navigation-wrapper{
+        width: 69%;
+        }
+    .brand-fs{
+        //background-size: 100% auto;
+        //width: 28%;
+        }
+
+
+    .fancy-promos.eligible, .hero-eligible {
+        width: 90%;
+        margin: 0 auto 0.5em;
+    }
+
+    .eligible.fancy-promos .is--fancy {
+        height: initial;
+
+        .btn-default {
+            width: 50%;
+        }
+    }
+
+
+/* Custom Content Structure
+---------------------------------------------- */
+    /* Hero Homepage
+    ------------------------ */
+    .mega-reverse{
+        @include rem(font-size, 55px);
+        }
+    .mega-reverse .block{
+        @include rem(font-size, 30px);
+        }
+
+    /* Feature and Promos
+    ------------------------ */
+    /* 3 Custom Promos
+    ------------------------ */
+    /* UI Helpers
+    ------------------------ */
+    /* App Downloads
+    ------------------------ */
+    /* Promo Form
+    ------------------------ */
+    .fancy-promos .promo-signin {
+        margin-right: 0;
+    }
+
+     .fancy-promos .is--fancy {
+        padding: 3% 2.5%;
+        margin-top: 1em;
+        float: none;
+        width: 85%;
+        min-height: 0 !important;
+
+        .buy-excerpt {
+            min-height: 0em;
+            margin-bottom: 1em;
+        }
+    }
+
+    /* Promo Form
+    ------------------------ */
+    .promo-code-full .controls {
+        width: 60%;
+    }
+    .promo-code-full .text-field {
+        width: 100%;
+        }
+    .promo-code-full .form-row{
+        width: 80%;
+        }
+    .promo-code-full .form-label{
+        width: 100%;
+        }
+
+    .promo-code-full .btn{
+        padding-left: 1em;
+        padding-right: 1em;
+        margin: 1em auto;
+        width: 49%;
+        }
+
+
+/* Modules
+---------------------------------------------- */
+    /* Modals
+    ------------------------ */
+    /* Alerts
+    ------------------------ */
+    /* Info Boxes
+    ------------------------ */
+
+}
+
+
+/* MQ 600- tablets & small screens
+================================================================================ */
+@media (max-width: 37.5em) { /* 600PX */
+
+/* Headings & Titles
+---------------------------------------------- */
+//.size-LG    { @include rem(font-size, 28px); }
+.size-XL    { @include rem(font-size, 30px); }
+.size-LG2    { @include rem(font-size, 22px); line-height: 1.2; margin-bottom: 1em; }
+.size-LG    { @include rem(font-size, 28px); }
+.size-L     { @include rem(font-size, 24px); }
+.size-L2    { @include rem(font-size, 22px); line-height: 1.2; margin-bottom: 0em; }
+.size-L3    { @include rem(font-size, 20px); }
+.size-L4    { @include rem(font-size, 18px); }
+.size-hm    { @include rem(font-size, 14px); }
+
+.already-have{ float: none; line-height: 1.1; margin-bottom: 2em; }
+
+
+.confirmation-aside {
+    .btn {
+        font-size: 16px;
+        padding: 0.45em 1em; 
+    }
+}
+
+#tos_modal .modal-title { 
+    //@include rem(font-size, 22px); 
+    // line-height: 1.25; 
+    margin-bottom: 1em; 
+    padding-bottom: .7em; 
+    padding-right: 30px;
+    }
+
+/* Global Wrappers
+---------------------------------------------- */
+    /* body - homepage */
+    //.page-home{ padding-top: 2em; }
+    //.page-site{ padding-top: 2.5em; }
+
+    /* global header SS */
+    // .global-header { 
+    //     background-color: #000; 
+    //     font-family: $font-semibold; 
+    //     padding: .5em 0 0;
+    //     width: 100%;
+    //     z-index: 15;
+    //     }
+
+    // /* Global Header Enhanced with Animation */
+    // .js .global-header{ 
+    //     -moz-transform: translateZ(0); -ms-transform: translateZ(0); -o-transform: translateZ(0); -webkit-transform: translateZ(0); transform: translateZ(0);
+    //     position: absolute; 
+    //     -webkit-transition: all 0.3s;
+    //     -moz-transition: all 0.3s;
+    //     transition: all 0.3s;
+    //     top: -480px;
+    //     }
+    .js .is-hidden {
+        //top: -480px;
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        }
+    .js .is-visible {
+        top: 0px;
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        }
+
+
+/* Headers - Navigations - Footers
+---------------------------------------------- */
+
+    /* Header navigation reset */
+    // .global-header .header, 
+    // .global-header .site-wrapper    { padding: 0; }
+    // .is--primary, .is--secondary    { background-color: transparent; }
+    // .is--secondary .site-wrapper    { position: static; }
+
+    // .navigation-wrapper{ padding: 0; width: 100%; }
+
+    // /* grouped styles */
+    // .brand-link, .menu a, .menu--secondary a:hover,  .menu--secondary .is-selected, .menu .welcome{
+    //     border-bottom: 1px solid #474747;
+    //     }
+    // .brand-link, .menu{
+    //     @include rem(font-size, 18px);
+    //     line-height: normal;
+    //     margin: 0;
+    //     }
+
+    // .brand-link .block:hover, .menu a:hover,  .menu .is-selected  { background-color: #2c2c2c; }
+    // .brand-link .block a:focus,  .brand-link .block:active, .menu a:focus,  .menu a:active{ background-color: #333; }
+
+    // /* NHL link set to look like main nav */
+    // .brand-link{
+    //     float: none;
+    //     }
+    // .brand-link .block{
+    //     padding: .625em 5%;
+    //     }
+    // .brand-link .block:hover{
+    //     text-decoration: none;
+    //     }
+
+    .copyright, .footer-menu{ width: 100%; padding-bottom: .3em; }
+    .is--f-secondary{ padding: 1.2em 0; }
+
+    /* Default state - no js
+    ---------------------------------------------- */
+    // .no-js .brand-fs {
+    //     background-size: contain;
+    //     margin: 0;
+    //     position: absolute;
+    //     top: 15px;
+    //     right: 2.5%;
+    //     width: 65%;
+    //     }
+
+    /* Enhanced state - JS Enabled
+    ---------------------------------------------- */
+    //.js .brand-link { margin-top: 45px; }
+    .is--secondary{ padding: 0.4em 0 0; }
+    .js .brand-fs { 
+        background-size: contain;
+        height: 24px;
+        width: 100%;
+    }
+
+    // /* LOGO - Has SVG and JS support */
+    // .js .brand-ss{
+    //     background-position: right 0;
+    //     background-repeat: no-repeat;
+    //     background-size: contain;
+    //     float: right;
+    //     height: 35px;
+    //     margin: 0;
+    //     overflow: hidden;
+    //     text-indent: -100em;
+    //     width: 70%;
+    //     }
+
+
+/* Global Menus
+---------------------------------------------- */
+    /* General Menu structures */
+    // .menu{
+    //     padding: 0;
+    //     width: 100%;
+    //     }
+    // .menu li{
+    //     margin: 0;
+    //     width: 100%;
+    //     }
+    // .menu a, .menu .welcome{
+    //     padding: .625em 5%;
+    //     }
+
+    // /* Primary Menu abstraction */
+    // .menu--primary a{
+    //     color: #fff;
+    //     text-transform: uppercase;
+    //     }
+    // .menu--primary a:hover { color: #fff; text-decoration: none; }
+
+    /* Secondary Menu abstraction */
+    .menu--secondary a{
+        color: #fff;
+        }
+    .menu--primary .welcome-id, .menu--secondary li:first-child{
+        display: none;
+        }
+
+    // /* Small screen menu with JS enabled */
+    // .js .ss-nav{ background-color: #000; display: block; position: absolute; top: 0; left: 0; padding: 10px 4.6875% 5px; width: 100%; z-index: 20; }
+    // .js .ss-nav .i--menu { height: 24px; margin: 6px 0 0; width: 31px; }
+    // .js .ss-nav .i--close{ background-color: #000; background-size: 100% auto; height: 20px; width: 20px; /*padding: 6px 12px 6px 6px;*/ margin-top: 6px; }
+    // .js .menu-trigger{
+    //     color: #fff;
+    //     }
+
+
+/* Custom Content Structure
+---------------------------------------------- */
+    /* Hero Homepage
+    ------------------------ */
+    .mega-reverse{
+        @include rem(font-size, 48px);
+        }
+    .mega-reverse .block{
+        @include rem(font-size, 26px);
+        }
+
+
+    /* Feature and Promos
+    ------------------------ */
+    .feature-excerpt {
+        min-height: 1.1em;
+        }
+
+    .span-of-3 .feature-img, .span-of-4 .feature-img, .span-of-5 .feature-img{
+        float: left;
+        margin-right: 2.4193548%;
+        max-width: 40%;
+        }
+    
+    /* General List */
+    .is--Listing .size-L3{
+        @include rem(font-size, 22px);
+        line-height: 1.1;
+        }
+
+    /* items in a block style - img above, content below */
+    .span-of-2 .is--promo, .span-of-3 .is--promo, .span-of-4 .is--promo, .span-of-5 .is--promo{ 
+        float: none; margin: 0 0 1em; width: 100%;
+        }
+    .span-of-2 > .is--promo + .is--promo, .span-of-3 > .is--promo + .is--promo, .span-of-4 > .is--promo + .is--promo, .span-of-5 > .is--promo + .is--promo{ 
+        margin-left: 0; 
+        }
+
+
+    /* 3 Custom Promos
+    ------------------------ */
+    .has--ul-fancy {
+        padding-top: 1.3em;
+
+        h2 {
+            //margin-bottom: 0.5em;
+        }
+    }
+    .has--ul-fancy .is--promo{
+        padding-bottom: 0;
+        }
+    .has--ul-fancy .size-L{
+        line-height: 1.1;
+        }
+    // .is--fancy .i-inline.i-pt {
+    //     padding: 4em 0 0;
+    //     }
+
+    .fancy-promos .is--fancy{
+        padding: 1.5em 3% 1em;
+        margin-top: 1em;
+        float: none;
+        width: 93%;
+        }
+    .is--fancy .buy-excerpt {
+        min-height: 0;
+    }  
+
+    [lang="en-ca"] .fancy-promos .is--fancy{
+        min-height: 0;
+        }
+    [lang="fr-ca"] .fancy-promos .is--fancy{
+        min-height: 0;
+        }
+        /* Apply borders between the promos */
+        // .fancy-promos .is--fancy:nth-child(3){
+        //     background-color: #fbfbfb;
+        //     background-image: none; 
+        //     }
+    .overages{ position: relative; margin-top: 1em; }
+
+    /* UI Helpers
+    ------------------------ */
+    /* App Downloads
+    ------------------------ */
+    .app-downloads .size-L{
+        @include rem(font-size, 19px);
+        }
+    .app-downloads small{
+        @include rem(font-size, 16px);
+        }
+    .app-downloads .h-b{
+        width: 53%;
+        }
+    .app-buttons .i--apple{ margin-left: 15px; }
+
+
+/* Modules
+---------------------------------------------- */
+    /* Modals
+    ------------------------ */
+    .modal-open{
+        overflow: hidden;
+        }
+    .modal-dialog {
+        width: 100%;
+        margin: 0;
+        //height: 100%;
+        overflow-y: auto;
+        padding: 4%;
+        }
+    #background_job_modal .modal-dialog{
+        height: auto !important;
+        }
+
+    /* Alerts
+    ------------------------ */
+    .alert{ width: 90%; }
+    .alert.is-animated{ top: 20px; }
+
+    .having-trouble{
+        float: none;
+        padding: 2.5% 1.5%;
+        margin: .5em 0 1.5em 2%;
+        width: 95%;
+        }
+    .having-trouble .copy-size-M{ padding-top: .8em; margin-bottom: 0; @include rem(font-size, 16px); }
+
+
+    /* Feedback tab */
+    // .feedback-tab{ right: 10px; bottom: 75px; top: auto; margin: 0; z-index: 2; }
+    // .feedback-tab:hover, .feedback-tab:focus{ bottom: 81px; right: 10px; }
+
+    // .i--feedback {
+    //     height: 40px;
+    //     width: 110px;
+    //     }
+    // [lang="en-ca"] .i--feedback {
+    //     background-image: asset-url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG4AAAAoCAMAAAAohD+4AAAASFBMVEUAAAABAgIBAgIBAgIBAgIBAgKZmZn////a29vOz8/z8/Pn5+fCw8OeoKC2t7ducXE9QUFJTU2GiYlVWVmSlJRiZWWqrKx6fX24dYVuAAAABnRSTlMAAwkPFCE9lbL9AAABX0lEQVR4AbzBAQEAQQjDsML2nH/H76IJtjExsyJ2k1pC2k9TTsU90d9eGSS5DsJAdNkCI2jAOPe/6RCZUJlZkfrZfXoRqUSrHjLG2bh/0caJewreggDOdNflzeJf+YGhoBoPiK04Ky/gEp+Cs5AAmkY9Fz8tEV2erANW2XUi0QGF1a/iiqrCsfYQAVK77vqZ2fydFvIAcDHT2ZRkcS4Ew/WqYBVn7Y4JJvKtflTqSJv5KpXlXtbpC6TgGzgEtjt1OdtMzZMesN/huzIj1nFdaZydAhbT3MY8xiYACi88eI3dzX7FB7iW0gnHnFKys+vx/IMr+mACfKYgsP7GNVaPLz9MFEZE2wspOJhnf2iT/b1X5aSi8Vaxd2b6JPP8DLdyEUSYvU3cQyCL67L+QMaPcAvX/EJhwVOVEYiZXY/X6JQl3PgILX3EhhViCz6oXjKK5v0f/xE2buM2buM2buN+AN/ofMJiFAODAAAAAElFTkSuQmCC");
+    //     }
+    // [lang="fr-ca"] .i--feedback {
+    //     background-image: asset-url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG4AAAAoCAMAAAAohD+4AAAASFBMVEUBAgIBAgL///8BAgIBAgJMaXH///89QUHOz89ucXGeoKDn5+e2t7fz8/Pa29uSlJRJTU1VWVl6fX2GiYliZWWqrKzCw8OZmZnlCmbOAAAABnRSTlMKAwAUIQAfLUBoAAAB10lEQVR4XrzCAREAIBDDsD57NMy/U1DRXDgq7pj4ZdEAyWpCVfS1Uy87d4NADIC7sof7LUnf/01rkeQHqftuGi+YgzLDJ4R08A/zcXs+7uPCqKwRiAfZDYBzDkpxLt8LEJ2LWpSC7FyANjm6mTxHDEB+mobNac2ozsMXlyuHLycKm9c3eSQvIKkYHFkAHKSH5yEORg5oY+JYJ3eRHYA9TXUOTu6k8+XaOCdBCWxJNhtAVwcQ2SfXGxDYJzc7jZXh2dBBQa+d4eVMuhcH5SmLS+xTjYxQBoO4UYHe/OQiM07GyZ1mQVypY+cQOPR9cfegmSUM+rS4u0WZLU+hi7wSy80FFhyHTU7x4rysnfPMie3llAhxiiE0sqSdK39ziSPSbg5HC/S2386n5nauVbOD18ONzoL3dkixcSwObNjYo0Iceu0VD3dyMNv+dh6RbnEXZ/rDmfjt0ZAaN66wByDg4Ik0WCYXyfFygWz4uV2eHBoX1xnNrDGst4v37QJyQq5t41Kn4pEbFZcml8jr5XCwrGdxNxcXF3hAKfQvF+jEkespFwfk059Z9fJeBTCt2YBg6acmC6pKnj8Bs/S0hrlXR76bEmCmQUVbnR3+m//Mj/u4j/u4j/u4P8AadqKrMJR/AAAAAElFTkSuQmCC");
+    //     }
+
+    /* Info Boxes
+    ------------------------ */
+    .hero-standard .congrats-preseason{ padding-bottom: 48.5%; width: 70%; }
+
+    /* BTN */
+    .btn-group-wide .btn{ padding: 0.7em 1.6em; }
+
+    .popover #howToFindMyAccount {
+      width: 215px;
+      height: 136px;
+    }
+    .popover #howToFindMyAccount img {
+      width: 206px;
+    }
+
+}
+
+
+/* MQ 480- small screens
+================================================================================ */
+@media (max-width: 30em) { /* 480PX */
+
+/* Headings & Titles
+---------------------------------------------- */
+//.size-LG    { @include rem(font-size, 24px); }
+.size-XL    { @include rem(font-size, 26px); }
+.size-LG    { @include rem(font-size, 24px); }
+.size-L     { @include rem(font-size, 22px); }
+ .size-L2    { @include rem(font-size, 20px); }
+
+// .size-L3    { @include rem(font-size, 18px); }
+// .size-L4    { @include rem(font-size, 16px); }
+
+#tos_modal .modal-title { 
+    @include rem(font-size, 18px); 
+    // line-height: 1.25; 
+    // margin-bottom: 1em; 
+    // padding-bottom: .7em; 
+    // padding-right: 30px;
+    }
+
+/* Global Wrappers
+---------------------------------------------- */
+    
+
+
+/* Headers - Navigations - Footers
+---------------------------------------------- */
+    .copyright, .footer-menu{ @include rem(font-size, 12px); }
+
+    .footnote{ @include rem(font-size, 10px); background: none; border-top: 2px solid #ddd; padding-top: 1.5em; margin-top: 1em; }
+
+    .general-form .text-field{
+        width: 98%;
+        }
+/* Global Menus
+---------------------------------------------- */
+
+/* Custom Content Structure
+---------------------------------------------- */
+    /* Hero Homepage
+    ------------------------ */
+    .mega-reverse{
+        @include rem(font-size, 36px);
+        font-family: $font-extrabold;
+        letter-spacing: -2px;
+        }
+    .mega-reverse .block{
+        @include rem(font-size, 26px);
+        }
+
+    //.video-promo{ width: 50%; }
+
+    /* Countdown clock */
+    .js .countdown {
+        min-height: 150px;
+        }
+    .js .countdown-inner {
+        background-size: 100% auto;
+        min-height: 105px;
+        width: 162px;
+        }
+    .js .countdown-inner .numbers {
+        //font-size: 78px;
+        @include rem(font-size, 78px);
+        letter-spacing: .48em;
+        padding-left: 20px;
+        padding-top: 6px;
+        }
+    /* Apply glossy overlay to numbers -- will not apply in IE8 */
+    .js .countdown-inner .numbers::before, .js .countdown-inner .numbers::after{
+        height: 45px;
+        //opacity: .5;
+        width: 77px;
+        }
+
+    /* Feature and Promos
+    ------------------------ */
+    .has--ul-fancy .size-L{
+        @include rem(font-size, 24px);
+        }
+    .is--fancy .i-inline.i-pt {
+        padding: 3em 0 0;
+        }
+
+    /* 3 Custom Promos
+    ------------------------ */
+    /* UI Helpers
+    ------------------------ */
+    //.fancy-promos{ margin: 0; }
+    .has--ul-fancy{ background-image: none; }
+
+    /* App Downloads
+    ------------------------ */
+    .app-downloads .size-L{
+        @include rem(font-size, 22px);
+        margin-bottom: .3em;
+        }
+    .app-downloads{
+        padding: 1em 0 .5em;
+        margin-bottom: 1.5em;
+        //border-bottom: 1px solid #ddd;
+        }
+    .app-downloads .h-b{
+        float: none;
+        width: 100%;
+        text-align: center;
+        }
+    .app-buttons{ float: none; margin: 0 auto; text-align: center; }
+    .app-buttons .i--apple{ margin-left: 20px; }
+
+
+    /* Promo Form
+    ------------------------ */
+    .promo-code-full {
+        padding: 0 6%;
+    }
+    .promo-code-full legend, .promo-code-full .form-row, .promo-code-full .controls, .promo-code-full .form-label, .promo-code-full .text-field, .promo-code-full .btn{
+        width: 100%;
+       // padding: 0 5%;
+        }
+
+    .promo-code-full legend{
+        text-align: center;
+        }
+    .promo-code-full .form-label{
+        font-size: 20px;
+        margin-right: 0;
+        padding-top: .2em;
+        text-align: center;
+        }
+    .promo-code-full .btn{
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        }
+
+/* Modules
+---------------------------------------------- */
+    /* Modals
+    ------------------------ */
+    /* Alerts
+    ------------------------ */
+    /* Info Boxes
+    ------------------------ */
+    .info-lg {
+        padding: 12px;
+        }
+
+}
+
+
+/* MQ 380- small screens
+================================================================================ */
+@media (max-width: 23.75em) { /* 380PX */
+
+/* Headings & Titles
+---------------------------------------------- */
+//.size-LG    { @include rem(font-size, 22px); }
+.size-XL    { @include rem(font-size, 25px); }
+.size-LG    { @include rem(font-size, 22px); }
+.size-L     { @include rem(font-size, 20px); }
+.size-L2    { @include rem(font-size, 18px); }
+.size-L3    { @include rem(font-size, 18px); letter-spacing: 0; line-height: 1.2; margin-bottom: 1em; }
+.size-L4    { @include rem(font-size, 16px); }
+
+.already-have  { margin-bottom: 1.5em; }
+.already-have a{ display: block; }
+
+
+/* Global Wrappers
+---------------------------------------------- */
+    .fluid{ padding: 0 5%; }
+
+
+/* Headers - Navigations - Footers
+---------------------------------------------- */
+    .copyright, .footer-menu{ width: 100%; padding-bottom: 1em; }
+    .is--f-secondary{ padding: .8em 0 .2em; }
+
+
+/* Forms
+---------------------------------------------- */
+    /* GENERAL FORM STYLES */
+    .general-form .text-field{
+        width: 98%;
+        }
+
+/* Custom Content Structure
+---------------------------------------------- */
+    /* Hero Homepage
+    ------------------------ */
+    .mega-reverse{
+        @include rem(font-size, 28px);
+        letter-spacing: -1px;
+        }
+    .mega-reverse .block{
+        @include rem(font-size, 20px);
+        letter-spacing: normal;
+        }
+
+  //  .video-promo{ width: 50%; }
+
+    /* Modifier for "Days to puck drop" */
+    .js .countdown .h-xb{
+        @include rem(font-size, 24px);
+        }
+
+
+    /* Feature and Promos
+    ------------------------ */
+    .feature-body{ overflow: hidden; width: 100%; }
+    /* sub features */
+    .span-of-3 .feature-img, .span-of-4 .feature-img, .span-of-5 .feature-img{
+        margin-right: 0;
+        max-width: none;
+        width: 100%;
+        }
+
+
+    /* 3 Custom Promos
+    ------------------------ */
+    .fancy-promos .is--fancy{
+        //padding: 1.5em 0 1em;
+        }
+    .is--fancy .i-pt:before {
+        height: 45px;
+        }
+
+    /* UI Helpers
+    ------------------------ */
+    /* App Downloads
+    ------------------------ */
+    /* Promo Form
+    ------------------------ */
+
+/* Modules
+---------------------------------------------- */
+    /* Modals
+    ------------------------ */
+    /* Alerts
+    ------------------------ */
+    /* Info Boxes
+    ------------------------ */
+    .hero-standard .congrats-preseason{ background-image: asset-url("content/bg-laptop-congrats-sm.jpg"); padding-bottom: 62.5%; width: 90%; }
+
+
+    /* BTN */
+    .btn-group-wide li {
+        display: block;
+        padding: 0;
+        width: 100%;
+        }
+    
+    .content-list li{ margin-right: 5px; }
+    .content-list li:before {
+        padding-right: 5px;
+        }
+        .content-list li:last-child {
+            display: block;
+            width: 100%;
+            }
+        .content-list li:last-child:before {
+            content: '';
+            padding-right: 0;
+            }
+}
+
+
+/* MQ 320- small screens
+================================================================================ */
+@media (max-width: 20em) { /* 320PX */
+
+/* Headings & Titles
+---------------------------------------------- */
+/* Global Wrappers
+---------------------------------------------- */
+
+/* Headers - Navigations - Footers
+---------------------------------------------- */
+    .copyright, .footer-menu{ width: 100%; padding-bottom: 1em; }
+    .is--f-secondary{ padding: .8em 0 .2em; }
+
+
+/* Forms
+---------------------------------------------- */
+    /* GENERAL FORM STYLES */
+    .general-form .text-field{
+        width: 98%;
+        }
+
+/* Custom Content Structure
+---------------------------------------------- */
+    /* Hero Homepage
+    ------------------------ */
+    .mega-reverse{
+        @include rem(font-size, 24px);
+        }
+    // .mega-reverse .block{
+    //     @include rem(font-size, 20px);
+    //     letter-spacing: normal;
+    //     }
+
+
+    /* Feature and Promos
+    ------------------------ */
+    /* 3 Custom Promos
+    ------------------------ */
+
+    /* UI Helpers
+    ------------------------ */
+    /* App Downloads
+    ------------------------ */
+    /* Promo Form
+    ------------------------ */
+
+/* Modules
+---------------------------------------------- */
+    /* Modals
+    ------------------------ */
+    /* Alerts
+    ------------------------ */
+    /* Info Boxes
+    ------------------------ */
+}

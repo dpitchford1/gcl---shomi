@@ -1,0 +1,35 @@
+<% content_for :below_navigation do render 'profiles/profile_summary' end %>
+
+<% content_for :forgot_password_section do %>
+  <p>
+    <%= link_to t("buttons.forgot_password").downcase, forgot_password_path, class: 'btn-blk' %>
+  </p>
+<% end %>
+
+
+<%= render "layouts/form_error_header", object: @profile %>
+
+<fieldset>
+  <div class="content-wrapper">
+    <div class="general-form">
+      <div class="form-row"><%= t('profiles.profile_form.email_exists_notice') %></div>
+
+      <div class="form-row controls centered-text-field warning">
+        <%= text_field_tag :display_email, params[:email_address], disabled: true, class: 'string required text-field' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col span-3 ">
+      <%= render 'profiles/sign_in_form', sign_in_note: t('profiles.profile_form.sign_in_note'), email_address_placeholder: t('simple_form.placeholders.rogers_id') %>
+    </div>
+
+
+    <div class="sign-in-or-up-circle big-or uppercase"><%= t('orders.or') %></div>
+    <div class="col span-3 ">
+      <%= render 'profiles/email_check_form', email_placeholder: t('simple_form.placeholders.email_already_exists'), email_check_form_note: '', try_again: true %>
+    </div>
+  </div>
+</fieldset>
+</section>

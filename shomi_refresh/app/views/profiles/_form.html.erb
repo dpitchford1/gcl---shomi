@@ -1,0 +1,44 @@
+    <% content_for :footer do  ajax_validation(:profile) end %>
+    <%= render "layouts/form_error_header", object: @profile %>
+
+    <%= simple_form_for(@profile, remote: true, html: {class: 'general-form' }, data: {validate: 'profile'}) do |f| %>
+        <fieldset>
+            <legend class="hide-text"><%= t('form.legend.personal_details') %></legend>
+            <%#= f.input :first_name, required: true %>
+            <%#= f.input :last_name, required: true %>
+            <%= f.input :email_address, required: true, input_html: {:title => t('errors.attributes.email_address.blank')}, hint: session[:promo_code] && session[:promo_code].code_type == 'business'  ? t('simple_form.hints.promo.business_username') : nil %>
+            <%= f.input :email_address_confirmation, required: true, input_html: { :title => t('errors.attributes.email_address_confirmation.blank')} %>
+            <%= f.input :phone, required: false, input_html: {:title => t('errors.attributes.phone.blank')} %>
+        </fieldset>
+
+        <fieldset class="content-wrapper">
+            <legend class="hide-text"><%= t('form.legend.security_details') %></legend>
+            <%= f.input :question, collection: Question.collection(session[:lang]), as: :select, prompt: t('simple_form.prompts.profile.question'), error: 'big', wrapper: 'fancy_select' %>
+
+            <%= f.input :answer, input_html: { maxlength: 40 } %>
+
+            <%= f.input :password, input_html: { maxlength: 16, :autocomplete => 'off', :title => t('errors.attributes.password.blank')}, :hint => @profile.errors.include?(:password) ? "" : t('simple_form.hints.profile.password').html_safe %>
+            <%= f.input :password_confirmation, input_html: { :autocomplete => 'off', :title => t('errors.attributes.password_confirmation.blank')} %>
+            <div class="password-toggle cf">
+                <input class="checkbox" type="checkbox" id="show-password"> <label class="form-label" for="show-password"><%= t('sessions.password_toggle_show').html_safe %></label>
+            </div>
+        </fieldset>
+
+        <fieldset class="content-wrapper">
+            <legend class="hide-text"><%= t('form.legend.language_details') %></legend>
+            <p class="alt-label"><%= t('activemodel.attributes.profile.lang_pref') %></p>
+            <%= f.input :lang_pref, collection: { "English" => :en, "Français" => :fr}, as: :radio_buttons, item_wrapper_class: 'radio-inline', label: false, checked: params[:profile] ? params[:profile][:lang_pref] : session[:lang] %>
+
+            <%= render 'tos/modal', tos: @tos %>
+            
+            <%= f.input :tos, as: :boolean, :wrapper => :inline_checkbox, :input_html => { :class => "check-tos" }, label: t('profiles.optin_accept').html_safe %>
+        </fieldset>
+
+        <p><%= link_to t('btn.cancel'), root_path, class: 'btn btn-cancel' %> <%= f.button :submit, t('profiles.create_profile') %></p>
+
+    <% end %>
+</section>
+<% content_for :addload_ready do %>
+<%# show hide password %>
+$('#show-password').change(function(){ $('#profile_password, #profile_password_confirmation').hideShowPassword($(this).prop('checked')); });
+<% end %>

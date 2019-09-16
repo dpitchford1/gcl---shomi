@@ -1,0 +1,120 @@
+    <% content_for :footer do  ajax_validation(:cc, verify_cc_path) end %>
+
+    <%= render "layouts/form_error_header", object: @credit_card %>
+
+    <%= simple_form_for(@credit_card, url: "#{CONFIG[:zuora_api_endpoint]}/apps/PublicHostedPaymentMethodPage.do", authenticity_token: false, data: {validate: 'cc'}, html: {class: 'general-form' }) do |f| %>
+        <input type="hidden" name="method" value="submitPage">
+        <%= f.input :id, as: :hidden, input_html: { name: 'id', value: ENV['zuora_page_id'] } %>
+        <%= f.input :tenantId, as: :hidden, input_html: { name: 'tenantId', value: ENV['zuora_tenant_id'] } %>
+        <%= f.input :timestamp, as: :hidden, input_html: { name: 'timestamp', value: @order.zuora_timestamp } %>
+        <%= f.input :token, as: :hidden, input_html: { name: 'token', value: @order.zuora_token } %>
+        <%= f.input :signature, as: :hidden, input_html: { name: 'signature', value: @order.zuora_signature } %>
+
+        <%= f.input_field :field_accountId, as: :hidden, name: 'field_accountId', value: '' %>
+        <%= f.input_field :field_gatewayName, as: :hidden, name: 'field_gatewayName', value: '' %>
+        <%= f.input_field :field_deviceSessionId, as: :hidden, name: 'field_deviceSessionId', value: '' %>
+        <%= f.input_field :field_ipAddress, as: :hidden, name: 'field_ipAddress', value: '' %>
+        <%= f.input_field :field_useDefaultRetryRule, as: :hidden, name: 'field_useDefaultRetryRule', value: '' %>
+        <%= f.input_field :field_paymentRetryWindow, as: :hidden, name: 'field_paymentRetryWindow', value: '' %>
+        <%= f.input_field :field_maxConsecutivePaymentFailures, as: :hidden, name: 'field_maxConsecutivePaymentFailures', value: '' %>
+        <%= f.input_field :field_passthrough1, as: :hidden, name: 'field_passthrough1' %>
+
+        <fieldset class="content-wrapper">
+            <legend class="h-sb legend-visible"><%= t("form.legend.cc_details") %></legend>
+            <%# card type %>
+            <%= f.input :field_creditCardType, wrapper_class: 'hidden', input_html: {name: 'field_creditCardType', data: { serializable: true }}, collection: ['Visa', 'MasterCard', 'AmericanExpress'], as: :radio_buttons, item_wrapper_class: 'radio-inline', label: false %>
+
+            <div id="cc-types" class="inline-list cc-types" aria-hidden="true">
+                <span class="cc-icon visa" id="visa"></span>
+                <span class="cc-icon mastercard" id="mastercard"></span>
+                <span class="cc-icon amex" id="amex"></span>
+            </div>
+
+            <%# card number %>
+            <%= f.input :field_creditCardNumber, required: true, input_html: { name: 'field_creditCardNumber', value: '' } %>
+
+            <%# card expiration %>
+            <div class="form-row">
+            <%= f.label :field_creditCardExpirationMonth do %><span class="required block"><abbr title="<%= t("simple_form.required.text").html_safe %>">*</abbr> <%= t('activemodel.attributes.credit_card.field_creditCardExpiration') %></span><% end %>
+            <%= f.input :field_creditCardExpirationMonth, as: :select, input_html: {name: 'field_creditCardExpirationMonth', data: { serializable: true }, class: 'select-list'}, prompt: t('simple_form.prompts.credit_card.field_creditCardExpirationMonth'), collection: (1..12), label: false, wrapper: 'inline_select'  %>
+            <%= f.input :field_creditCardExpirationYear, as: :select, input_html:  {name: 'field_creditCardExpirationYear', data: { serializable: true }, class: 'select-list'}, prompt: t('simple_form.prompts.credit_card.field_creditCardExpirationYear'), collection: (Date.today.year..Date.today.year+20), label: false, wrapper: 'inline_select'  %>
+            
+            </div>
+
+            <%# card security code %>
+            <div class="form-row">
+            <%= f.label :field_cardSecurityCode, required: true %>
+            <%= f.input :field_cardSecurityCode, as: :password, required: true, label: false, :wrapper => :append  do  %>
+            <%= f.input_field :field_cardSecurityCode, name: 'field_cardSecurityCode', class: "cc-cvv", size: 4, maxlength: 4 %>
+            <div id="cvv" class="cvv"></div>
+            <% end %>
+            </div>
+
+            <%# card name %>
+            <%= f.input :field_creditCardHolderName, required: true, input_html: { name: 'field_creditCardHolderName', autocomplete: 'on', data: { serializable: true } } %>
+        </fieldset>
+
+        <fieldset class="content-wrapper">
+            <legend class="h-sb legend-visible"><%= t('form.legend.billing_info') %></legend>
+            <%# card country %>
+            <%= f.input :field_creditCardCountry, as: :select, required: true, input_html:  { name: 'field_creditCardCountry', data: { serializable: true }, class: 'select-list'}, prompt: t('simple_form.prompts.credit_card.field_creditCardCountry'), collection: Portal::ZUORA_COUNTRIES[session[:lang].to_s], wrapper: 'fancy_select' %>
+
+            <div data-state="text">
+            <%= f.input :field_creditCardState, input_html: { id: 'field_creditCardState_text', name: 'field_creditCardState', data: { serializable: true }} %>
+            </div>
+            <div data-state="us" style="display:none">
+            <%= f.input :field_creditCardState, as: :select, required: true, input_html:  { id: 'field_creditCardState_us', name: '', data: { serializable: true }}, prompt: t("orders.state"), collection: Portal::ZUORA_US_STATES[session[:lang].to_s], wrapper: 'fancy_select' %>
+            </div>
+            <div data-state="ca" style="display:none">
+            <%= f.input :field_creditCardState, as: :select, required: true, input_html:  { id: 'field_creditCardState_ca', name: '', data: { serializable: true }}, prompt: t("orders.province"), collection: Portal::ZUORA_CA_STATES[session[:lang].to_s], wrapper: 'fancy_select' %>
+            </div>
+
+            <%# card address %>
+            <%= f.input :field_creditCardAddress1, required: true, input_html: { name: 'field_creditCardAddress1', autocomplete: 'on', data: { serializable: true }} %>
+
+            <%# card city %>
+            <%= f.input :field_creditCardCity, required: true, input_html: { name: 'field_creditCardCity', data: { serializable: true }} %>
+
+            <%# card postal code %>
+            <%= f.input :field_creditCardPostalCode, input_html: { name: 'field_creditCardPostalCode', data: { serializable: true }, size: 7, maxlength: 7,  class: 'uppercase', title: t('errors.attributes.postal_code.invalid'), required: true } %>
+
+        </fieldset>
+
+        <fieldset class="content-wrapper">
+            <legend class="h-sb legend-visible"><%= t('form.legend.contact_info') %></legend>
+            <%# card phone %>
+            <%= f.input :field_phone, required: true, input_html: { name: 'field_phone', data: { serializable: true }}, placeholder: '555-555-5555' %>
+
+            <%# card email %>
+            <%= f.input :field_email, required: true, input_html: { name: 'field_email', autocomplete: 'on', data: { serializable: true }}%>
+
+            <%# card DOB %>
+            <%#= f.input :birthdate, as: :date, prompt: { day: 'Day', month: 'Month', year: 'Year'}, :default => 1,  start_year: Date.today.year - 90, end_year: Date.today.year - 12, required: true, input_html: { name: 'birthdate', data: { serializable: true } } %>
+            <%= f.input :birthdate, as: :date, icon: { content: '', class: "i--helper dob-helper", data: {title: t('orders.need_dob') } }, hint: t('orders.need_dob'), :wrapper_class => 'form-row form-info', prompt: { day: t('text.day'), month: t('text.month'), year: t('text.year')}, start_year: Date.today.year - 90, end_year: Date.today.year - 12, required: true, input_html: {name: 'birthdate[]', data: { serializable: true } } %>
+
+        </fieldset>
+
+        <fieldset class="content-wrapper">
+            <legend class="hide-text"><%= t("form.legend.purchase_agreements") %></legend>
+
+            <%# card renew %>
+            <%= f.input :auto_renew, as: :boolean, input_html: { name: 'auto_renew', data: { serializable: true }}, label: t('activemodel.attributes.credit_card.auto_renew_html'), :wrapper => :inline_checkbox, hint: t('orders.next_renewal_date') %>
+            
+            <%= render 'tos/modal', tos: @tos %>
+
+            <%# card TOS %>
+            <%= f.input :tos, as: :boolean, input_html: { class: 'check-tos', name: 'tos', data: { serializable: true }}, :wrapper => :inline_checkbox, required: true, label: t('profiles.optin_accept').html_safe %>
+
+        </fieldset>
+
+        <%# card submit %>
+        <p><%= link_to t('btn.cancel'), profiles_path, class: 'btn btn-cancel' %> <%= f.button :submit, t('orders.submit') %></p>
+    <% end %>
+
+</section>
+<div class="hidden" id="session_id" data-session="<%= session.id %>"></div>
+<% content_for(:footer) do %>
+<%= javascript_include_tag "cc", defer: 'defer' %>
+<%= javascript_include_tag "aes", defer: 'defer' %>
+
+<% end %>

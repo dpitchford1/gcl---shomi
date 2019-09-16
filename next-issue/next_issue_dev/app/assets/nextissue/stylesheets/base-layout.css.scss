@@ -1,0 +1,251 @@
+/* = IMPORTANT GLOBALS = only to be used as trailing class (the last class) on elements..
+    - .no-ss === no small screen === display none for small screens
+    - .no-ws === no wide screen === display none for wide screens
+    - target browsers: IE9+ FF6+ Chrome 11+ Safari5+ Opera11+
+    */
+
+/* TEMPLATE
+  0.0 Document setup
+  0.1 Images, Media & Embedded content
+  0.2 Common Layout
+  0.3 Site Structure - Basic
+  0.4 Headings and Titles
+  0.5 Headers - Navigations - Footers
+  0.6 Custom Content Structure
+  0.1 Accessibility & Usability
+
+---------------------------------------------- */
+
+
+/* $ 0.2 Common Layout
+====================================================================== */
+
+    /* main site wrapper = default to 980px for small desktop and IE 7 & 8 */
+.site-wrapper{ margin: 0 auto; padding: 0 1.15%; width: 100%; max-width: 61.250em; }
+
+    /* Fluid wrapper for main content - identical to site wrapper - fine grained adjustments for responsive breakpoints */
+    .fluid{
+        margin: 0 auto;
+        padding: 0 1.15%;
+        width: 100%;
+        max-width: 61.250em;
+        }
+
+    /* all purpose wrapper */
+    .region{ width: 100%; }
+
+    /* all purpose wrapper == padding top, margin bottom */
+    .content-wrapper{
+        padding-top: 0;
+        padding-bottom: 1.563em;
+        width: 100%;
+        }
+
+    /* Clear fix
+    ---------------------------------------------- */
+    .cf:before, .cf:after   { content:""; display:table; }
+    .cf:after               { clear:both; }
+
+
+/* $ 0.3 Site Structure - Basic
+====================================================================== */
+
+    /* Global Wrappers
+    ---------------------------------------------- */
+    /* body - homepage */
+    //.page-home{}
+    .page-site #main-content{ padding-top: 2em; }
+
+    /* Global Header */
+    .global-header { clear: both; z-index: 100; }
+    .is--primary   { color: #000000; padding: .4em 0; }
+    .is--secondary {  position: static; padding: 1.375em 0; }
+.header-blue-banner { background-color: #d6f2f6; position: static; padding: 1.375em 0 1.375em 0; }
+
+.header-blue-banner h1, .header-blue-banner h5 {
+  padding: 5px;
+  line-height: 1.4em;
+}
+.aeroplan-logo {
+  z-index: 0;
+  position: relative;
+  overflow: visible;
+}
+.aeroplan-logo:before {
+    content: asset-url('logos/aeroplan.png');
+    padding-left: 45%;
+    position: absolute;
+    top: -95px;
+
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.sign-in-or-up-circle {
+  float: left;
+  position: absolute;
+  top: 45px;
+  left: 48%;
+}
+
+.big-or {
+  border: 2px solid #e0e0e0;
+  border-radius: 28px;
+  height: 48px;
+  padding: 10px;
+  width: 48px;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.question-mark {
+  display: inline-block;
+  background: #e0e0e0;
+  border: 2px solid #e0e0e0;
+  border-radius: 20px;
+  height: 25px;
+  padding: 0px 2px 0px 2px;
+  width: 25px;
+  text-align: center;
+}
+
+    // .is--tertiary{
+    //     display: table;
+    //     table-layout: fixed;
+    //     }
+    .navigation-wrapper{ padding-top: .313em; }
+    
+    /* body content */
+    #main-content   { padding-bottom: 2em; }
+    
+    /* aside */
+    .aside{ margin-bottom: 2em; }
+    
+    /* footer */
+    //.footer         {}
+    .is--f-primary  { background-color: #f5f9f8; padding: 1em 0 1.375em; z-index: 3; }
+    .is--f-secondary{ background-color: #efefef; color: #000000; padding: 5% 10% 5% 10%; z-index: 3; }
+    .f--contact-us { width: 600px; margin-left:auto; margin-right:auto; }
+    .footer .icon-padding { padding: 0 20px 0 20px; }
+    .footer-sub-padding { padding-left: 10%; }
+
+    .touch .print-btn{ display: none; }
+
+    /* nextissue home offer selection css*/
+.stripe {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  clear: both; }
+
+.plans {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: #36393e;
+  text-align: center;
+  border-spacing: 40px 0;
+}
+.plans .content-width {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 1280px;
+}
+
+.eq-columns {
+  display: table;
+  width: 100%;
+}
+.eq-columns > .column {
+  float: none;
+  display: table-cell;
+}
+.eq-columns.reverse {
+  direction: rtl;
+}
+.eq-columns.reverse > .column {
+  direction: ltr;
+}
+
+@media only screen and (max-width: 48em) {
+  .eq-columns {
+    display: block;
+  }
+  .eq-columns > .column {
+    display: block;
+    width: auto;
+  }
+}
+
+@media (max-width: 37.5em) { /* 600PX */
+  .f--contact-us {  width: 100%; }
+}
+
+.plan {
+  background: #2a2b30;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+.plan-footer {
+  margin-top: 30px;
+  padding-top: 30px;
+}
+.plan-footer .plans-fine-print {
+  margin: 0;
+}
+
+/* 0.4 Headings & Titles 
+====================================================================== */
+    @import "partials/type";
+
+
+/* $ 0.5 Headers - Navigations - Footers
+====================================================================== */
+    @import "layout/global-menus";
+
+
+/* $ 0.6 Custom Content Structure
+====================================================================== */
+
+    /* Hero Homepage
+    ---------------------------------------------- */
+    @import "layout/heros";
+
+
+    /* FORMS - Site Specific
+    ====================================================================== */
+    @import "layout/form-global";
+
+
+    /* FORMS - Styling additions
+    ====================================================================== */
+    @import "partials/forms-enhanced";
+
+
+    /* Feature and Promos modules
+    ---------------------------------------------- */
+    @import "layout/grid-modules";
+
+
+    /* 3 Custom Promos styled with borders and LOGO's
+    ---------------------------------------------- */
+    @import "modules/fancy-promos";
+
+
+    /* App Downloads
+    ---------------------------------------------- */
+    @import "modules/app-buttons";
+
+
+    /* Order Table
+    ---------------------------------------------- */
+    @import "layout/order-tables";
+
+
+
+/* $ 0.7 Accessibility & Usability
+====================================================================== */
+@import "partials/accessibility";

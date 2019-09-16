@@ -1,0 +1,104 @@
+<div class="global-header" id="global-header" aria-expanded="true" aria-labelledby="menu-trigger">
+  <div class="header is--primary cf" id="header-primary">
+    <div class="site-wrapper">
+      <%= link_to "", I18n.t("buttons.marketing_links.#{ENV['marketing_env']}.home"), class: "block nextissue_logo", :rel => "external", title: 'visit next issue' %>
+
+      <ul id="utility-menu" class="menu menu--primary">
+
+        <%#=<li> link_to_unless_current t("menu.devices"), devices_path, :class => "" do link_to t("menu.devices"), root_path, :class => "is-selected" end </li>%>
+        <li><%= link_to_unless_current t("header.magazines"), t('header.magazines_link'), target: '_blank', :class => "" do
+          link_to t("header.magazines"), t('header.magazines_link'), target: '_blank', :class => "is-selected" end %></li>
+
+        <% if t('header.gifts_link') != 'na' %>
+        <li><%= link_to_unless_current t("header.gifts"), t('header.gifts_link'), target: '_blank', :class => "" do
+          link_to t("header.gifts"), t('header.gifts_link'), :class => "is-selected" end %></li>
+        <% end %>
+
+        <li>
+          <% language_switch_params = {lang: (I18n.locale == I18n.default_locale) ? 'fr' : 'en'} %>
+          <% if ['/orders/new', '/orders'].any?{|p| current_page?(p)} %>
+            <% if params.fetch(:order, {}).fetch(:billing_option, nil).nil? %>
+              <% language_switch_params = language_switch_params.merge({ operation: params[:operation], order: { operation: params.fetch(:order, {}).fetch(:operation, nil) || params[:operation], billing_option: @current_session.profile.accounts.any? ? 'rogersbill' : 'cc' } }) %>
+            <% else %>
+              <% language_switch_params = language_switch_params.merge({ operation: params[:operation], order: { operation: params.fetch(:order, {}).fetch(:operation, nil) || params[:operation], billing_option: params[:order][:billing_option] } }) %>
+            <% end %>
+          <% end %>
+
+          <%= link_to (I18n.locale == I18n.default_locale) ? 'Français' : 'English', language_switch_params %>
+        </li>
+
+        <% if @current_session.logged? %>
+            <li class="welcome-id">
+              <%= link_to t("menu.sign_out"), logout_path, method: 'delete', class: "signout" %>
+            </li>
+        <% else %>
+            <li><%= link_to t("menu.sign_in"), new_session_path, :class => "" %></li>
+        <% end %>
+
+        <li>
+          <div class="i-am-canadian<%= @current_session.try(:logged?) ? '-logged' : '' %>">
+            <%= image_tag asset_url('icons/ui/i-canadian.png'), alt: 'Canadian flag', height: '23px;', width: '40px;' %>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="header is--secondary cf" id="header-secondary">
+    <div class="site-wrapper">
+
+    <ul id="utility-menu" class="menu menu--secondary">
+      <% num_of_next_links = current_page?(root_path) || current_page?('/redemption') ? 3 : 4 %>
+      <% num_of_next_links = ['/register', '/email_check', '/rogers_sign_in_or_up', edit_profile_path].any?{|p| current_page?(p)} ? 2 : num_of_next_links %>
+      <% num_of_next_links = ['/orders/new', '/orders/summary', '/orders/history', '/orders'].any?{|p| current_page?(p)} ? 1 : num_of_next_links %>
+      <% num_of_next_links = current_page?(profiles_path) ? 0 : num_of_next_links %>
+
+      <li>
+        <% if [root_path, '/redemption'].any?{|p| current_page?(p)} %>
+          <%=  link_to @current_session.logged? ? t('header.redeem') : t('header.redemption'), redemption_path, :class => "is-selected"  %>
+        <% else %>
+          <%= link_to @current_session.logged? ? t('header.redeem') : t('header.redemption'), redemption_path, :class => num_of_next_links > 3 ? 'nextlink' : '' %>
+        <% end %>
+      </li>
+      
+      <li>
+        <% if @current_session.logged? %>
+          <%= link_to t('header.account'), edit_profile_path, class: current_page?(edit_profile_path) ? 'is-selected' : '' %>
+        <% else %>
+          <% if ['/register', '/email_check', '/rogers_sign_in_or_up', edit_profile_path].any?{|p| current_page?(p) } %>
+            <%= link_to t('header.account'), profile_email_check_path, :class => "is-selected" %>
+          <% else %>
+            <%= link_to t('header.account'), profile_email_check_path, :class => num_of_next_links > 2 ? 'nextlink' : '' %>
+          <% end %>
+        <% end %>
+      </li>
+
+      <li>
+        <% payment_operation = @current_session.try(:latest_order).try(:status).to_s.downcase == 'cancelled' ? 'create' : 'update' %>
+        <% if ['/orders/new', '/orders/summary', '/orders/history', '/orders'].any?{|p| current_page?(p)} %>
+          <% if @current_session.try(:profile) && @current_session.profile.try(:accounts).any? %>
+            <%= link_to t('header.payment'), new_order_path({order: { billing_option: 'rogersbill', operation: payment_operation } }), :class => "is-selected" %>
+          <% else %>
+            <%= link_to t('header.payment'), new_order_path({order: { billing_option:  'cc' }, operation: payment_operation }), :class => "is-selected" %>
+          <% end %>
+        <% else %>
+          <% if @current_session.try(:profile) && @current_session.profile.try(:accounts).any? %>
+            <%= link_to t('header.payment'), new_order_path({order: { billing_option: 'rogersbill', operation: payment_operation } }), :class => num_of_next_links > 1 ? 'nextlink' : '' %>
+          <% else %>
+            <%= link_to t('header.payment'), new_order_path({order: { billing_option:  'cc' }, operation: payment_operation }), :class => num_of_next_links > 1 ? 'nextlink' : '' %>
+          <% end %>
+        <% end %>
+      </li>
+
+      <li><%= link_to_unless_current t('header.summary_link'), profiles_path, :class => num_of_next_links > 0 ? 'nextlink' : '' do link_to t('header.summary_link'), profiles_path, :class => "is-selected" end %></li>
+
+      <% if @current_session.logged? %>
+          <span class="welcome"><strong><%= "#{@current_session.username}" %></strong></span>
+      <% end %>
+    </ul>
+
+    </div>
+  </div>
+
+</div>

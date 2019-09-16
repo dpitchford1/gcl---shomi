@@ -1,0 +1,26 @@
+<% unless @order %>
+    <% content_for :body_start do %>
+	   <div id="track2"></div>
+    <% end %>
+    <% content_for :footer do %>
+    <script>
+		var track2js = '', axel = Math.random() + "", a = axel * 10000000000000; track2js += '<iframe src="https://4498654.fls.doubleclick.net/activityi;src=4498654;type=invmedia;cat=YbBTTuaG;ord=' + a + '?" class="hidden"></iframe>';
+		document.getElementById('track2').innerHTML = track2js;
+	</script>
+    <% end %>
+    <% content_for(:noscript) do %>
+        <iframe src="https://4498654.fls.doubleclick.net/activityi;src=4498654;type=invmedia;cat=YbBTTuaG;ord=1?" class="hidden"></iframe>
+    <% end %>
+<% end %>
+
+<p class="h-lgt sizes-M2 w-ul noprint"><%= t('text.hi') %> <%= @current_session.username %></p>
+
+<% @session.errors.full_messages.each do |msg| %>
+    <p class="error-copy"><%= msg %></p>
+<% end %>
+
+<% if @current_session.try(:profile).try(:eligible?) %>
+    <%= render 'profiles/eligible' %>
+<% else %>
+    <%= render 'profiles/ineligible' %>
+<% end %>

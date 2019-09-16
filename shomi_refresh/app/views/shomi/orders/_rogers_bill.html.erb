@@ -1,0 +1,42 @@
+<% content_for :footer do  ajax_validation(:order, order_summary_path) end %>
+
+<%= render "layouts/form_error_header", object: @order %>
+
+<%= simple_form_for(@order, url: order_summary_path, data: {validate: 'order'}, html: {class: 'general-form' }) do |f| %>
+    <%= f.input :billing_option, as: :hidden, :input_html => { :value => "rogersbill" }%>
+    <%= f.input :offer_id, as: :hidden %>
+
+<% if @order.optin %>
+    <p class="lg-m"><%= t('orders.optin_best_description').html_safe %></p>
+    <%= f.input :optin, as: :hidden %>
+    <%= f.input :optin_account_token, as: :hidden %>
+<% else %>
+
+	<fieldset class="fieldset subscribe-set">
+		<legend class="hide-text"><%= t("form.legend.account_info") %></legend>
+		<%= f.input :rogers_account_token, collection: @current_session.profile.collection, required: true, wrapper: 'fancy_select', label: t('orders.added_to_rogers_account').html_safe, prompt: t('simple_form.prompts.order.rogers_account_token') %>
+		<p><%= t('orders.only_cable_net_accounts') %></p>
+  	</fieldset>
+
+    <% if ENV['ask_for_email_optin'] %>
+    <fieldset class="content-wrapper submit-fieldset">
+        <legend class="hide-text"><%= t("orders.terms_optional") %></legend>
+        <%= f.input :optin_email, as: :boolean, :wrapper => :inline_checkbox, label: t('profiles.receive_email').html_safe %>
+    </fieldset>
+    <% end %>
+<% end %>
+
+    <fieldset class="content-wrapper submit-fieldset">
+		<legend class="legend-visible"><%= t("orders.terms_of_service") %></legend>
+		<%= render 'tos/modal', tos: @tos %>
+        <%= f.input :tos, as: :boolean, :wrapper => :inline_checkbox, label: t('orders.wfm_term1').html_safe %>
+  		<%= f.input :tos2, as: :boolean, :wrapper => :inline_checkbox, :input_html => { :class => "check-tos" }, required: true, label: t('orders.wfm_term2').html_safe %>
+  	</fieldset>
+
+<% if @order.optin %>
+  	<p class="btn-group-right"><%= f.button :submit, t('btn.submit') %></p>
+<% else %>
+  	<p class="btn-group-right"><%= link_to t('btn.cancel'), profiles_path, class: 'btn btn-cancel' %> <%= f.button :submit, t('btn.submit') %></p>
+<% end %>
+  	<p class="clear text-right"><small><%= t('orders.opportunity_to_review') %></small></p>
+<% end %>

@@ -1,0 +1,4 @@
+﻿// /* IE10 Mobile bug fix */
+if (doc.querySelector && doc.addEventListener) {
+    (function() { if (navigator.userAgent.match(/IEMobile\/10\.0/)) { var msViewportStyle = doc.createElement("style"); msViewportStyle.appendChild( doc.createTextNode("@-ms-viewport{width:auto!important}") ); doc.getElementsByTagName("head")[0].appendChild(msViewportStyle); } })();
+};

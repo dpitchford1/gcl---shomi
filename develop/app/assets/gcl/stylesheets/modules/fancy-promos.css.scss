@@ -1,0 +1,110 @@
+/* Fancy promo boxes - modified from "span-of-3 and span-of-2 promos" in grid-modules
+---------------------------------------------- */
+.fancy-promos-3{
+    margin: 1.3em 0 0;
+    }
+
+.fancy-promos-2{
+    margin: 0 auto;
+    width: 80%;
+    }
+
+// .is--fancy{
+//     margin-bottom: 1.5em;
+//     }
+[lang="en-ca"] .is--fancy{
+    min-height: 275px;
+    }
+[lang="fr-ca"] .is--fancy{
+    min-height: 310px;
+    }
+.fancy-promos-3 .is--fancy{
+    padding: 0 3.5%;
+    text-align: center;
+    }
+.fancy-promos-2 .is--fancy{
+    padding: 1em 6% 0;
+    text-align: center;
+    }
+
+/* Apply borders between the promos */
+.fancy-promos-3 .is--fancy:nth-of-type(2){
+    background: asset-url("data:image/gif;base64,R0lGODdhAQBjAfQdAOHh4evr6+3t7ezs7PDw8Pn5+enp6fr6+vb29vX19fj4+PPz8/f39/T09PHx8e7u7vv7++fn5+Xl5fz8/Orq6u/v7+bm5v39/ejo6OTk5OLi4uPj4+Dg4PLy8gAAAAAAACwAAAAAAQBjAQAFi+AljqQ4nWg6QWzbHnBczHSh3DejM0jvJ0BgY7goFjtIpGPpIDgr0OhjKqgKBlhsYBugeL2GsAFDJkfOEYt6bZG43Zm4PL6p2++ajWbPB+wBgIGCgBwcAIWIiYqLjI2Oj4SFh4OUgXyXeXd3c3Nvb2wWaGhlpBhiX19cW1kDVlVTsA9RUU61TEtJHSEAOw==") no-repeat left bottom, asset-url("data:image/gif;base64,R0lGODdhAQBjAfQdAOHh4evr6+3t7ezs7PDw8Pn5+enp6fr6+vb29vX19fj4+PPz8/f39/T09PHx8e7u7vv7++fn5+Xl5fz8/Orq6u/v7+bm5v39/ejo6OTk5OLi4uPj4+Dg4PLy8gAAAAAAACwAAAAAAQBjAQAFi+AljqQ4nWg6QWzbHnBczHSh3DejM0jvJ0BgY7goFjtIpGPpIDgr0OhjKqgKBlhsYBugeL2GsAFDJkfOEYt6bZG43Zm4PL6p2++ajWbPB+wBgIGCgBwcAIWIiYqLjI2Oj4SFh4OUgXyXeXd3c3Nvb2wWaGhlpBhiX19cW1kDVlVTsA9RUU61TEtJHSEAOw==") no-repeat right bottom;
+    }
+
+.fancy-promos-2 .is--fancy:first-child{
+    background: asset-url("data:image/gif;base64,R0lGODdhAQBjAfQdAOHh4evr6+3t7ezs7PDw8Pn5+enp6fr6+vb29vX19fj4+PPz8/f39/T09PHx8e7u7vv7++fn5+Xl5fz8/Orq6u/v7+bm5v39/ejo6OTk5OLi4uPj4+Dg4PLy8gAAAAAAACwAAAAAAQBjAQAFi+AljqQ4nWg6QWzbHnBczHSh3DejM0jvJ0BgY7goFjtIpGPpIDgr0OhjKqgKBlhsYBugeL2GsAFDJkfOEYt6bZG43Zm4PL6p2++ajWbPB+wBgIGCgBwcAIWIiYqLjI2Oj4SFh4OUgXyXeXd3c3Nvb2wWaGhlpBhiX19cW1kDVlVTsA9RUU61TEtJHSEAOw==") no-repeat right bottom;
+    background-size: auto auto;
+    }
+
+
+.is--fancy .sizes-M3{ margin-bottom: .7em; }
+
+/* Modifiers for the icons 
+---------------------------------------------- */
+//.is--fancy .size-M-alt{ padding-right: 5px; padding-left: 5px; }
+
+.buy-price{ line-height: .9; }
+.buy-price .price{ @include rem(font-size, 30px); }
+.buy-price .block{ padding-top: .2em; }
+.price sup{ @include rem(font-size, 18px); top: .1em; }
+
+// [lang="en-ca"] .is--fancy .feature-excerpt{
+//     min-height: 77px;
+//     }
+[lang="en-ca"] .fancy-promos-2 .feature-excerpt{
+    min-height: 140px;
+    }
+[lang="fr-ca"] .fancy-promos-2 .feature-excerpt{
+    min-height: 180px;
+    }
+
+
+[lang="en-ca"] .fancy-promos-3 .feature-excerpt{
+    min-height: 165px;
+    }
+[lang="fr-ca"] .fancy-promos-3 .feature-excerpt{
+    min-height: 215px;
+    }
+    
+.feature-body .small-text{
+    line-height: 1.4;
+    }
+
+[lang="en-ca"] .feature-excerpt .inline-logo.i--logo-gameplus, [lang="fr-ca"] .feature-excerpt .inline-logo.i--logo-gameplus{ width: 5.5em; }
+
+
+
+[lang="en-ca"] .is--fancy .yuck1{ margin-bottom: 1.5em; }
+[lang="fr-ca"] .is--fancy .yuck1{ margin-bottom: 1.2em; }
+
+.overages{ clear: both; line-height: 1.2; width: 100%; text-align: center; padding-top: 1em; margin-bottom: 0; }
+
+
+/* fancy dividers between sections
+---------------------------------------------- */
+.has--ul-fancy{
+    background: asset-url("content/bg-ul-fancy.gif") no-repeat center bottom;
+    padding-bottom: 5px;
+    margin-bottom: 1.8em;
+    }
+.has--ul-fancy .is--promo{
+    padding-bottom: 2em;
+    }
+
+/* Fancy shaded dividers */
+.has--fancy-top, .has--fancy-bot{
+    background-image: asset-url("content/bg-ul-fancy.gif");
+    background-repeat: no-repeat;
+    }
+.has--fancy-top{
+    background-position: center top;
+    padding-top: 3em;
+    margin-top: 3em;
+    }
+
+.has--fancy-bot{
+    background-position: center bottom;
+    padding-bottom: 2em;
+    margin-bottom: 1.5em;
+    }

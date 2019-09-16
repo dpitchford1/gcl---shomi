@@ -1,0 +1,57 @@
+<% content_for :title, t('titles.link_account').html_safe %>
+<% content_for :live_chat_url, t('live_chat.link_account') %>
+<% content_for :footer do ajax_validation(:account_search, profiles_link_accounts_path) end %>
+
+<section class="content-wrapper">
+    <h2 class="h-reg sizes-XLG cc"><%= t('profiles.accounts.subscribe_to_shomi') %></h2>
+    <h3 class="h-med sizes-M w-ul xlg-m"><%= t('profiles.accounts.link_your_account') %></h3>
+
+    <p class="copy--LG lg-m"><%= t('profiles.accounts.find_out_if_account_linked').html_safe %></p>
+
+    <%= render "layouts/form_error_header", object: @account_search %>
+    
+    <%= simple_form_for @account_search, remote: true, url: profiles_link_accounts_path, data: {validate: 'account_search'}, html: {class: 'general-form default-form ov' } do |f| %>
+        <fieldset class="link-account">
+        <% if session[:accounts] && session[:accounts].size > 1 %>
+            <%= f.input :account_number, collection: session[:accounts].map { |a| a[:account_number] }, prompt: false, required: true, input_html: { autofocus: true } %>
+        <% else %>
+            <%= f.input :account_number, label: false, placeholder: t('activemodel.attributes.account_search.only_account_number').html_safe, hint: '<div id="howToFindMyAccount"><img src="https://www.rogers.com/web/resources/images/selfregistration/bill_English.jpg"></div>', required: true, error: 'help me', input_html: { autofocus: true } %>
+        <% end %>
+
+            <%= f.input :postal_code, label: false, placeholder: t('activemodel.attributes.account_search.postal_code').html_safe, required: true, input_html: { size: 7, maxlength: 7, title: t("errors.attributes.postal_code.blank")} %>
+            <p><%= link_to t('btn.link_later_2'), profiles_path, class: 'btn btn-cancel' %> <%= f.button :submit, t("btn.link_account") %></p>
+        </fieldset>    
+    <% end %>
+</section>
+
+<% content_for :body_start do %>
+    <div class="trackjs" id="track2" aria-hidden="true" hidden="true"></div><div class="trackjs" id="track3" aria-hidden="true" hidden="true"></div>
+<% end %>
+
+<% content_for :analyticsfooter do %>
+<script>
+addLoadEvent(function() {
+    var track2js = '', track3js = '';
+    var axel2 = Math.random() + "", a2 = axel2 * 10000000000000, axel3 = Math.random() + "", a3 = axel3 * 10000000000000;
+
+    track2js += '<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=Bv5kgyDL;ord=' + a2 + '?" class="hidden" height="0" width="0" frameborder="0"></iframe>';
+    track3js += '<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger001;ord=' + a3 + '?" class="hidden" height="0" width="0" frameborder="0"></iframe>';
+
+    document.getElementById('track2').innerHTML = track2js;
+    document.getElementById('track3').innerHTML = track3js;
+});
+</script>
+<% end %>
+
+<% content_for(:noscript) do %>
+<iframe src="https://4493900.fls.doubleclick.net/activityi;src=4493900;type=invmedia;cat=Bv5kgyDL;ord=1" class="hidden" height="0" width="0" frameborder="0"></iframe>
+<iframe src="https://4533302.fls.doubleclick.net/activityi;src=4533302;type=Shomi14;cat=Roger001;ord=1" class="hidden" height="0" width="0" frameborder="0"></iframe>
+<% end %>
+
+<% content_for :link_account_faq_content do %>
+  <%= render "layouts/link_account_faq" %>
+<% end %>
+
+<% content_for :live_chat_content do %>
+  <%= render "layouts/live_chat" %>
+<% end %>

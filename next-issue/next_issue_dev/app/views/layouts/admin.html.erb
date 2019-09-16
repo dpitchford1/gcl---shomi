@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GCL admin tool</title>
+  <%= stylesheet_link_tag "admin", media: "all" %>
+  <%= javascript_include_tag "admin" %>
+  <%= csrf_meta_tag %>
+
+
+</head>
+<body>
+
+<p>
+  <p id="notice" style="color:green"><b><%= notice %></b></p>
+  <p id="alert" style="color:red"><b><%= alert %></b></p>
+
+  <div>
+  <%= yield %>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<% content_for :title, t('titles.welcome').html_safe %>
+
+<%= cache(action_suffix: ['ineligible', I18n.locale, @session.logged?, @session.try(:profile).try(:level), @session.try(:profile).try(:code), @offer.try(:offer_id)].join(':')) do %>
+    <section class="hero-standard">
+        <%= section :ineligible_associate do %>
+        <h2 class="h-lgt sizes-M2 lg-m text-center"><%= t("profiles.ineligible.heading2").html_safe %></h2>
+        <div class="info info-lg info--primary text-center">
+            <h3 class="copy-L lg-m"><%= t("profiles.ineligible.associate2").html_safe %></h3>
+            <p><%= link_to t("btn.link_accounts"), profiles_accounts_path,  class: 'btn btn-default btn--lg' %></p>
+        </div>
+        <% end %>
+    </section>
+
+    <section class="fancy-promos-3 span-of-3">
+
+        <h2 class="hide-text h-lgt sizes-M3 lg-m"><%= t("promos.heading_ineligible").html_safe %></h2>
+
+        <%= render 'partials/promo_getrogers' %>
+
+        <article class="feature is--fancy">
+            <%= render 'profiles/promo_code_form', use_styling: "landing_page"%>
+        </article>
+
+        <%= render 'partials/promo_purchase_nonrogers_gcl' %>
+
+        <%#= render 'partials/promo_french_package' %>
+
+        <%#= t("legal.data_overage").html_safe %>
+        <p class="overages"><small><%= t("legal.data_overage_new").html_safe %></small></p>
+    </section>
+
+    <section class="content-wrapper has--fancy-top">
+        <h2 class="h-lgt sizes-M3"><%= t("pages.faq.notes.still_looking_heading").html_safe %></h2>
+        <p><%= t("pages.faq.notes.still_looking_copy").html_safe %></p>
+    </section>
+
+    <section class="content-wrapper">
+        <h2 class="h-lgt sizes-M3"><%= t("text.need_help") %></h2>
+        <% if I18n.locale == I18n.default_locale %>
+        <a href="http://rogershelp.com/customerserv/livechatsupport/index.php?source=701&lctc=701%7C01%7Cws%7CGCL_portal_LinkAccInelgCable_en" class="i-inline i-pl i--livechat" target="blank" rel="external"><%= t("text.live_chat") %></a>
+        <% else %>
+        <a href="http://rogershelp.com/customerserv/livechatsupport/index.php?source=751&lctc=751%7C01%7Cws%7CGCL_portal_LinkAccInelgCable_fr" class="i-inline i-pl i--livechat" target="blank" rel="external"><%= t("text.live_chat") %></a>
+        <%end%>
+    </section>
+
+    <%# START: GCL Footnotes Profiles %>
+    <% content_for :legal_footnotes do %>
+        <%= render 'partials/footnotes_profiles' %>
+    <% end %>
+<% end %>

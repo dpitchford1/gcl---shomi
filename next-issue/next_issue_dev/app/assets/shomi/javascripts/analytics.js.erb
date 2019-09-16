@@ -1,0 +1,58 @@
+﻿/* global vars
+-----------------------------------------*/
+var rdm_analytics_js_brand = "gamecentrelive",
+    rdm_analytics_js_property_type = "oando",
+    rdm_analytics_js_operating_company = "corporate",
+    rdm_analytics_js_language = "english",
+    rdm_analytics_js_authentication_type = "none",
+
+    s_account = "rogersrmisports", // Report Suite ID
+
+    _comscore = _comscore || [];
+    _comscore.push({ c1: "2", c2: "3005682" });
+
+    //analyticsProtocol = (("https:" == document.location.protocol) ? "https://" : "http://"),
+    //analyticsHostServer = "analytics.rogersmedia.com",
+
+    // _gaq = _gaq || [];
+    // _gaq.push(['_setAccount', 'UA-17578970-37']);
+    // _gaq.push(['_trackPageview']);
+
+function loadAnalytics() {
+
+    (function(doc, script){
+        var js,
+            fjs = doc.getElementsByTagName(script)[0],
+            frag = doc.createDocumentFragment(),
+            add = function(url, id) {
+                if (doc.getElementById(id)) {return;}
+                js = doc.createElement(script);
+                js.src = url;
+                js.async = false;
+                id && (js.id = id);
+                frag.appendChild( js );
+            };
+        
+        /* RDM - Omniture - SiteCatalyst */
+        add('//analytics.rogersmedia.com/js/js_version/rdm_analytics_js_base.js');
+        add('//analytics.rogersmedia.com/js/rdm_s_code.min.js');
+        add('//analytics.rogersmedia.com/js/rdm_dil_code.full.js');
+        
+        /* Google Analytics */
+        //add('//www.google-analytics.com/ga.js');
+        
+        (document.getElementsByTagName('body')[0]).appendChild(frag, fjs);
+    }(document, 'script'));
+
+    // comScore beacons
+    (function() {
+        var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+        s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+        (document.getElementsByTagName('body')[0]).appendChild(s, el);
+    })();
+};
+loadAnalytics();
+
+/* inject analytics scripts
+---------------------------------------------- */
+//addLoadEvent(loadAnalytics);

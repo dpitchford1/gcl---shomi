@@ -1,0 +1,32 @@
+<% content_for :below_navigation do %>
+  <h1><%= t('header.sign_in.not_subscriber') %></h1>
+  <h5><%= t('header.sign_in.choose_plan').html_safe %></h5>
+
+  <%= render "sessions/form_error_header", object: @session %>
+<%  end %>
+
+<% content_for :forgot_password_section do %>
+  <p>
+    <%= t('register.sign_in.forgot_username_or_sign_in',
+          username: link_to(t("activemodel.attributes.profile.email_address"),
+                            CONFIG["forgot_username_#{session[:lang].to_s}".to_sym],
+                            title: t('sessions.will_be_taken'), rel: 'external', class: 'btn-blk lowercase'),
+          password: link_to(t("register.sign_in.password").downcase, forgot_password_path,
+                            class: 'btn-blk')).html_safe %>
+  </p>
+<% end %>
+
+
+<%= render 'profiles/sign_in_form', sign_in_note: t('register.sign_in.sign_into'), email_address_placeholder: t('simple_form.placeholders.email_address') %>
+
+<div class="general-form">
+  <div class="submission">
+    <%= link_to t('buttons.go_back'), 'http://www.nextissue.ca', class: 'btn btn-cancel' %>
+  </div>
+
+  <div >
+    <%= t('register.sign_in.no_account') %> <%= link_to t('menu.sign-up'), new_profile_path, class: 'btn-blk' %>
+  </div>
+
+</div>
+

@@ -1,0 +1,93 @@
+/* FANCY SELECT MENU STYLES */
+.fancy-select {
+    border: 1px solid $color-primary;
+    border-radius: 14px;
+    background-color: $white;
+    float: left;
+    position: relative;
+    }
+    .error .fancy-select, .error .controls select.date{
+        border-color: $cc-primary;
+        border-left-width: 7px;
+        }
+
+/* This hides native dropdown button arrow in IE */
+.fancy-select select::-ms-expand {
+    display: none;
+    }
+
+/* Custom arrow - could be an image, SVG, icon font, etc. */
+.fancy-select:after {
+    background-color: $color-primary;
+    border-radius: 0 14px 14px 0;
+    color: $white;
+    content: "▼";
+    font-size: 14px;
+    padding: 13px 9px;
+    position: absolute;
+    right: -2px;
+    top: 0;
+    z-index: 1;
+    /* This hack makes the select behind the arrow clickable in some browsers */
+    pointer-events: none;
+    height: 100%;
+    width: 7%;
+    text-align: center;
+
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    }
+   
+/* Hover style - tricky because we're clipping the overflow */
+.fancy-select:hover {
+    border-color: #434a4f;
+    }
+    
+/* Focus style */
+.fancy-select select:focus, .fancy-select select:active {
+    outline: none;
+    border: none;
+    box-shadow: 0 0 1px 1px rgba(180,222,250, .85);
+    }
+    
+/* This hides focus around selected option in FF */
+.fancy-select select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+    }
+
+/* small select -- in a list */
+.fancy-select-sm{
+    width: 120px;
+    overflow: hidden;
+    //float: left;
+    }
+.fancy-select-sm .text-field {
+    width: 120px;
+    }
+.fancy-select-sm select {
+    width: 110%;
+    max-width: 110%;
+    min-width: 110%;
+    padding: .5em 39% .5em .8em;
+    border: 0 none;
+    }
+
+
+.select.error .fancy-select{
+    overflow: visible;
+    }
+
+/* large select -- one in a block */
+.fancy-select-lg {
+    width: 70%;
+    max-width: 70%;
+    }
+.fancy-select-lg select {
+    /* Make sure the select is wider than the container so we can clip the arrow */
+    width: 110%;
+    max-width: 110%;
+    min-width: 110%;
+    /* Padding works surpringly well */
+    padding: .6em 19% .6em .9em;
+    border: 0 none;
+    }

@@ -1,0 +1,5 @@
+<% if I18n.locale == I18n.default_locale %>
+  <%= simple_format(@tos.tos_en.force_encoding('ISO-8859-1').encode('UTF-8')) if @tos.tos_en %>
+<% else %>
+  <%= simple_format(@tos.tos_fr.force_encoding('ISO-8859-1').encode('UTF-8')) if @tos.tos_fr %>
+<%end%>

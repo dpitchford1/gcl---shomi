@@ -1,0 +1,37 @@
+<%= simple_form_for(@account_search, url: profiles_search_accounts_path, html: {class: 'modal-form' }) do |f| %>
+<div class="modal m-fade" id="account_search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <a href="#main-content" class="ico i-m i--close" data-dismiss="modal" role="button"><%= t("btn.close") %></a>
+
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel"><%= t("profiles.accounts.find_account") %></h4>
+        </div>
+        <div class="modal-body cf">
+            <fieldset>
+                <legend class="hide-text"><%= t("form.legend.personal_details") %></legend>
+                <%= f.input :first_name, required: true %>
+                <%= f.input :last_name, required: true %>
+                <%= f.input :birthdate, required: true %>
+                <%= f.input :postal_code, required: true, input_html: { size: 7, maxlength: 7, class: 'uppercase', title: t("errors.attributes.postal_code.blank")} %>
+                <%= f.input :account_pin, required: false %>
+                <%= f.input :search_type, as: :hidden, input_html: { value: 'advanced' } %>
+            </fieldset>
+            <p>
+                <%= f.button :submit, t("btn.find_account"), class: 'btn-block' %>
+                <button type="button" class="btn btn-cancel pr float-r" data-dismiss="modal"><%= t("btn.cancel") %></button>
+            </p>
+        </div>
+
+    </div>
+</div>
+<% end %>
+
+<% content_for(:footer) do %>
+    <% if @account_search.search_type == 'advanced' %>
+    <script>
+        $(function() {
+            $("#account_search").modal('show');
+        });
+    </script>
+    <% end %>
+<% end %>

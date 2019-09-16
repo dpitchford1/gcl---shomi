@@ -1,0 +1,13 @@
+<article class="feature is--fancy promo-signin">
+	<h3 class="h-lgt sizes-M3">
+		<span class="icon-mouse-icon sizes-M"></span><span class="icon-screen-icon sizes-M"></span><br>
+		<%= t("promo_signin.heading") %>
+	</h3>
+	<div class="feature-body">
+		<p class="feature-excerpt"><%= t("promo_signin.excerpt").html_safe %></p>
+		<p class="feature-excerpt"><%= t("promo_signin.excerpt_2").html_safe %></p>
+		<p class="promo-excerpt"><%= t("promo_signin.confirm_eligibility").html_safe %></p>
+		<p><button class="btn btn-default btn-block btn--myrogers" data-target="#new_session_modal" data-toggle="modal" href="#new_session_modal" id="btn-signin"><%= t("btn.my_rogers").html_safe %></button></p>
+		<p class="small-text"><%= t("signin.new").html_safe %> <%= link_to t("signin.registernow"), new_profile_path %></p>
+	</div>
+</article>

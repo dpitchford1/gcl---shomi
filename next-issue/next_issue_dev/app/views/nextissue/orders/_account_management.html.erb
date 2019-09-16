@@ -1,0 +1,27 @@
+<div class="content-wrapper">
+  <h3><%= t('profiles.your_activity.download') %></h3>
+
+  <hr/>
+  <div class="content-wrapper">
+    <%= link_to t('apps_promo.google'), t('apps_promo.google_link'), class: 'ico i--apps i-google', target: 'blank' %>
+  </div>
+  <div class="content-wrapper">
+    <%= link_to t('apps_promo.apple'), t('apps_promo.apple_link'), class: 'ico i--apps i-apple', target: 'blank' %>
+  </div>
+  <div class="content-wrapper">
+    <%= link_to t('apps_promo.windows'), t('apps_promo.windows_link'), class: 'ico i--apps i-windows', target: 'blank' %>
+  </div>
+</div>
+
+<div class="content-wrapper hidden">
+  <div class="col span-6">
+    <div class="float-left"><%= t('profiles.your_activity.payment_options') %></div>
+    <div class="float-right footer"><%= link_to t('profiles.your_activity.edit'), '#', class: 'underline' %></div>
+  </div>
+</div>
+<div class="content-wrapper hidden">
+  <div class="col span-6">
+    <div class="float-left"><%= t('profiles.your_activity.profile_preferences') %></div>
+    <div class="float-right footer"><%= link_to t('profiles.your_activity.edit'), edit_profile_path, class: 'underline' %></div>
+  </div>
+</div>

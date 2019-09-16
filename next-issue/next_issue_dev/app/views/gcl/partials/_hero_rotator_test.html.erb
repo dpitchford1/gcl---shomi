@@ -1,0 +1,75 @@
+
+<div class="flexslider cf">
+    <h3 class="h-lgt sizes-L lg-m"><%= t("pages.index.hero_rotator_slide1_heading").html_safe %></h3>
+    <noscript><%= t("text.nojs").html_safe %></noscript>
+    <ul class="slides">
+
+        <li class="slide slide-1">
+            <div class="slide-content">
+                <div class="slide-screen" id="slide1-screen">
+                    <% if I18n.locale == I18n.default_locale %>
+                    <a class="ico i-video-play is--icon" id="btn-play-slide1" href="#" onclick="ga('beec4528a634c1272e86ba159d7b4b8e.send', 'event', 'Carousel Video Laptop EN', 'Started video', 'Laptop Video', {'nonInteraction': 1});"><%= I18n.t('text.vid_play') %></a>
+                    <% else %>
+                    <a class="ico i-video-play is--icon" id="btn-play-slide1" href="#" onclick="ga('beec4528a634c1272e86ba159d7b4b8e.send', 'event', 'Carousel Video Laptop FR', 'Started video', 'Laptop Video', {'nonInteraction': 1});"><%= I18n.t('text.vid_play') %></a>
+                    <%end%>
+                    <div class="flex-embed flex-embed--16by9" tabindex="-1" aria-hidden="true" href="#" id="video1-wrap">
+                        <div class="slides-video-wrapper is--relative" id="slide1-video">
+                            <% if I18n.locale == I18n.default_locale %>
+                            <iframe class="player1-en" id="player_1" src="" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                            <% else %>
+                            <iframe class="player1-fr" id="player_1" src="" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                            <%end%>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+
+        <li class="slide slide-2">
+            <div class="slide-content">
+                <div class="slide-screen" id="slide2-screen">
+                    <% if I18n.locale == I18n.default_locale %>
+                    <a class="ico i-video-play is--icon" id="btn-play-slide2" href="#" onclick="ga('beec4528a634c1272e86ba159d7b4b8e.send', 'event', 'Carousel Video Tablet EN', 'Started video', 'Tablet Video', {'nonInteraction': 1})"><%= I18n.t('text.vid_play') %></a>
+                    <% else %>
+                    <a class="ico i-video-play is--icon" id="btn-play-slide2" href="#" onclick="ga('beec4528a634c1272e86ba159d7b4b8e.send', 'event', 'Carousel Video Tablet FR', 'Started video', 'Tablet Video', {'nonInteraction': 1})"><%= I18n.t('text.vid_play') %></a>
+                    <%end%>
+
+                    <div class="flex-embed flex-embed--16by9" tabindex="-1" aria-hidden="true" href="#" id="video2-wrap">
+                        <div class="slides-video-wrapper is--relative" id="slide2-video">
+                            <% if I18n.locale == I18n.default_locale %>
+                            <iframe class="player2-en" id="player_2" src="" width="739" height="464" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                            <% else %>
+                            <iframe class="player2-fr" id="player_2" src="" width="739" height="464" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                            <%end%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <li class="slide slide-3">
+            <div class="slide-content">
+                <div class="slide-screen" id="slide3-screen">
+                    <% if I18n.locale == I18n.default_locale %>
+                    <a class="ico i-video-play is--icon" id="btn-play-slide3" href="#" onclick="ga('beec4528a634c1272e86ba159d7b4b8e.send', 'event', 'Carousel Video Phone EN', 'Started video', 'Phone Video', {'nonInteraction': 1});"><%= I18n.t('text.vid_play') %></a>
+                    <% else %>
+                    <a class="ico i-video-play is--icon" id="btn-play-slide3" href="#" onclick="ga('beec4528a634c1272e86ba159d7b4b8e.send', 'event', 'Carousel Video Phone FR', 'Started video', 'Phone Video', {'nonInteraction': 1});"><%= I18n.t('text.vid_play') %></a>
+                    <%end%>
+
+                    <div class="flex-embed flex-embed--portrait" tabindex="-1" aria-hidden="true" href="#" id="video3-wrap">
+                        <div class="slides-video-wrapper is--relative" id="slide3-video">
+                            <% if I18n.locale == I18n.default_locale %>
+                            <iframe class="player3-en" id="player_3" src="" width="333" height="547" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                            <% else %>
+                            <iframe class="player3-fr" id="player_3" src="" width="333" height="547" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                            <%end%>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+
+    </ul>
+</div>

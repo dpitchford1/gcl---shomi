@@ -1,0 +1,24 @@
+<% email_placeholder ||= '' %>
+<% email_check_form_note ||= '' %>
+<% try_again ||= false %>
+
+<% content_for :footer do  ajax_validation(:email_check, email_check_path) end %>
+
+<%= simple_form_for(:email_check, url: email_check_path, remote: true, html: {class: 'general-form' }, data: {validate: 'email_check'}) do |f| %>
+  <fieldset>
+
+    <div><%= email_check_form_note %></div>
+
+    <%= f.input :email_address, label: false, required: true, input_html: {placeholder: email_placeholder, autofocus: true, title: t('errors.attributes.email_address.blank')}, hint: session[:promo_code] && session[:promo_code].code_type == 'business'  ? t('simple_form.hints.promo.business_username') : nil %>
+
+  </fieldset>
+
+  <% if try_again %>
+    <div class="large-submission"> <%= f.button :submit, t('buttons.try_again'), class: 'btn-light' %></div>
+  <% else %>
+    <div class="large-submission"> <%= f.button :submit, t('btn.continue'), class: 'btn-light' %></div>
+  <% end %>
+
+  <div class="submission"><%= link_to t('buttons.go_back'), redemption_path, class: 'btn btn-cancel' %> </div>
+
+<% end %>

@@ -1,0 +1,2 @@
+*/10 * * * * rake renew_sessions
+0 5 * * * *  rake fetch_tos

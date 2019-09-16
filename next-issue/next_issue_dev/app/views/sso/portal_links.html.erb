@@ -1,0 +1,5 @@
+<p><%= sso_link_to "GCL", ENV['gcl_url'], sso_url: "#{ENV['gcl_url']}/sso_land", destination_url: "/blackouts", class: "block", :rel => "external" %></p>
+
+<p><%= sso_link_to "shomi", ENV['shomi_url'], sso_url: "#{ENV['shomi_url']}/sso_land", class: "block", destination_url: "/profiles/accounts", :rel => "external" %></p>
+
+<p><%= sso_link_to "Next Issue", ENV['nextissue_url'], sso_url: "#{ENV['nextissue_url']}/sso_land", destination_url: "/", class: "block", :rel => "external" %></p>

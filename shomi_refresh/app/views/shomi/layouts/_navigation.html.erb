@@ -1,0 +1,56 @@
+<%= cache(action_suffix: ['navigation', I18n.locale, @session.logged?, @current_session.username, @session.try(:profile).try(:level), @session.try(:profile).try(:code)].join(':')) do %>
+
+<%= render 'layouts/messages' %>
+<div class="global-header is-hidden" id="global-header" aria-expanded="true" aria-labelledby="menu-trigger">
+    <div class="header is--primary cf" id="header-primary">
+        <div class="site-wrapper">
+            <% if @home_page %>
+                <% if I18n.locale == I18n.default_locale %>
+                <p class="brand-link"><span class="block">Rogers&trade;</span></p>
+                <% else %>
+                <p class="brand-link"><span class="block">Rogers&trade;</span></p>
+                <%end%>
+            <% else %>
+                <% if I18n.locale == I18n.default_locale %>
+                <p class="brand-link"><%= link_to t("menu.nav_link"), root_path, class: "block" %></p>
+                <% else %>
+                <p class="brand-link"><%= link_to t("menu.nav_link"), root_path, class: "block" %></p>
+                <%end%>
+            <% end %>
+            <ul id="utility-menu" class="menu menu--primary">
+            <% if @current_session.logged? %>
+                <li><%= link_to t("menu.sign_out"), logout_path, method: 'delete', class: "signout" %></li>
+            <% else %>
+                <li><%= link_to_unless_current t("menu.sign_in"), new_session_path, :class => "not-selected" do link_to t("menu.sign_in"), new_session_path, :class => "is-selected" end %></li>
+            <%end%>
+                <li>
+                <% if I18n.locale == I18n.default_locale %>
+                    <%= link_to "Français", :lang=>'fr'%>
+                <% else %>
+                    <%= link_to "English", :lang=>'en'%>
+                <%end%>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="header is--secondary cf" id="header-secondary">
+        <header class="site-wrapper is--tertiary" role="banner">
+        <% if @home_page %>
+            <p class="brand-fs" id="logo"><a class="block" href="/#main-content" rel="external"><%= t("titles.default").html_safe %></a></p>
+        <% else %>
+            <p class="brand-fs" id="logo"><%= link_to "<span class='block'>#{t('titles.default')}</span>".html_safe, root_path, title: t('menu.return') %></p>
+        <% end %>
+            <nav class="navigation-wrapper" role="navigation" aria-label="<%= t('menu.main_menu') %>">
+                <h2 class="hide-text"><%= t("menu.main_menu") %></h2>
+                <%# START: Main Menu %>
+                <ul class="menu menu--secondary cf">
+                <%= render partial: 'layouts/main_menu', locals: {home_page: @home_page} %>
+                </ul>
+                <% if !@current_session.logged? %>
+                <p class="menu-cta"><%= link_to t("Get Started"), new_session_path, class: "btn btn-default" %></p>
+                <% end %>
+            </nav>
+        </header>
+    </div>
+</div>
+<% end %>

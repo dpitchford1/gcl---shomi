@@ -1,0 +1,51 @@
+<script>
+  addLoadEvent(function() {
+    var form = $('form#<%= form_id %>'),
+        add_error_to_controls = '<%= add_error_to_controls %>',
+        rows = form.find('.form-row'),
+        fieldset = form.find('fieldset'),
+        blank_code_error = '<%= t('errors.attributes.promo_code.blank') %>';
+
+    function validateNotBlank(e) {
+      var wrapper = $(this);
+
+      if (add_error_to_controls == 'true') {
+        // Remove previous error from controls
+        wrapper.find(' .controls p.help-inline.code').remove();
+        wrapper.removeClass("error");
+      } else {
+        // Remove all existing errors from promo code form
+        if (fieldset.find('.promo-row').length > 1) {
+          fieldset.find('.promo-row').each(function (index, row) {
+            if (index > 0) {
+              $(row).remove();
+            }
+          });
+        }
+      }
+
+      if ($(e.target).val() == undefined || $(e.target).val().trim() == '') {
+        if (form.find('.btn-default[type="submit"]')) {
+          form.find('.btn-default[type="submit"]').attr('disabled', true);
+
+          if (add_error_to_controls == 'true') {
+            // add error to controls div
+            wrapper.find(".controls").append('<p class="help-inline code">' + blank_code_error + "</p>");
+            wrapper.addClass('error');
+          } else {
+            // add error to fieldset within a new promo-row
+            fieldset.append('<div class="promo-row error"> <p class="help-inline code">' + blank_code_error + '</p> </div>');
+          }
+        }
+      } else {
+        if (form.find('.btn-default[type="submit"]')) {
+          form.find('.btn-default[type="submit"]').removeAttr('disabled');
+        }
+      }
+    }
+
+    form.find('.btn-default[type="submit"]').attr('disabled', true);
+    rows.on('keyup', validateNotBlank);
+    rows.on('focusout', validateNotBlank);
+  });
+</script>

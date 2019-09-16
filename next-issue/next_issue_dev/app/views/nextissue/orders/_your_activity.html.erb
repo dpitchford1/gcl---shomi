@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col span-2 no-print">
+    <%= render 'orders/account_management' %>
+  </div>
+
+  <div class="col span-4">
+    <div class="content-wrapper">
+      <h3><%= t('profiles.your_activity.previous_activity') %></h3>
+
+      <span class="no-print"><hr /></span>
+
+      <div class="table-overflow">
+        <table class="summary-table zebra-table" summary="Review order details">
+          <tbody>
+          <% if @current_session.profile.user_orders.any?  %>
+
+            <% @current_session.profile.user_orders.each do |uo| %>
+              <tr class="summary-row">
+                <td class="summary-col">
+                  <%= l Date.parse(uo.order_date), :format => :long rescue t('profiles.your_activity.invalid_date') %>
+                </td>
+
+                <td class="summary-col">
+                  <%= uo.short_description %>
+                </td>
+
+                <td class="summary-col">
+                  <% unless uo.status.blank? %>
+                  (<%= t("orders.status.#{uo.status.to_s.gsub(/\s/,'_').downcase}") %>)
+                  <% end %>
+                </td>
+
+              </tr>
+            <% end %>
+
+          <% else %>
+
+            <%= t('profiles.your_activity.no_orders')  %>
+
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+

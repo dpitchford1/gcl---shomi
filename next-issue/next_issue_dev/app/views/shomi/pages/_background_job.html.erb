@@ -1,0 +1,15 @@
+<%= cache(action_suffix: ['background_job', I18n.locale].join(':')) do %>
+
+	<div class="modal m-fade" id="background_job_modal" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog" aria-labelledby="backgroundJobLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	      <div class="modal-header">
+	        <h4 class="modal-title" id="backgroundJobLabel"><%= t('pages.index.please_wait') %></h4>
+	      </div>
+	      <div class="modal-body">
+	        <p id="background_job_notice"></p>
+	        <p class="modal-footer" id="background_job_cancel_button" style="display: none"><%= link_to t('btn.cancel'), background_cancel_path, class: 'btn btn-tertiary float-r' %></p>
+	      </div>
+	  </div>
+	</div>
+
+<% end %>	

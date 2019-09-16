@@ -1,0 +1,29 @@
+br, .clear      { clear: both; }                /*clears floats*/
+.float-l        { float: left; }                /*floats left*/
+.float-r        { float: right !important; }     /*floats right*/
+.visible, .show { display: block !important; }           /*displays as block, turns ON*/
+.block          { display: block !important; }           /*displays as block, turns ON*/
+.inline         { display: inline; }           /*displays as block, turns ON*/
+.inline-bl      { display: inline-block; }           /*displays as block, turns ON*/
+.hidden         { display: none !important; }      /*displays as hidden, turns OFF*/
+.no-bg          { background: 0 none !important; }           /*Removes Background*/
+.no-border      { border: 0 none !important; }               /*Removes Border*/
+hr              { clear: both; overflow: hidden; }
+
+/*fonts*/
+.text-left  { text-align: left; }
+.text-right { text-align: right; }
+.text-center{ text-align: center; }
+.bold       { font-weight: bold; }
+.italic     { font-style: italic; }
+.underline  { border-bottom: 1px solid; }
+.caption    { list-style: none; font-style: normal; @include rem(font-size, 11px); line-height: normal; }
+.uppercase  { text-transform: uppercase; }
+.lowercase  { text-transform: lowercase; }
+
+.no-m{ margin: 0; }
+
+.profiler-result, .profiler-results.profiler-left, .profiler-results.profiler-right { overflow: visible !important; }
+
+[data-mercury]{ outline: none !important; border: 1px solid #09F !important; }
+  

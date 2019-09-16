@@ -1,0 +1,11 @@
+<% content_for :title, t("titles.edit_profile") %>
+
+<% content_for :below_navigation do  %>
+  <div class="row">
+    <div class="col span-6">
+      <h3><%= t("titles.edit_profile") %></h3>
+    </div>
+  </div>
+<% end %>
+
+<%= render "form", editing: true %>

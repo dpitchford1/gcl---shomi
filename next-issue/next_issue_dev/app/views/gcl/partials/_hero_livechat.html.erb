@@ -1,0 +1,9 @@
+<section class="fluid text-center">
+    <h2 class="h-lgt sizes-L"><%= t("pages.index.hero_chat_heading").html_safe %></h2>
+    <p class="copy-LG"><%= t("pages.index.hero_chat_copy").html_safe %></p>
+    <% if I18n.locale == I18n.default_locale %>
+    <p><a class="btn btn-default" href="http://rogershelp.com/customerserv/livechatsupport/index.php?source=701&lctc=701%7C01%7Cws%7CGCL_portal_Support_en" target="blank" rel="external"><%= t("text.live_chat") %></a></p>
+    <% else %>
+    <p><a class="btn btn-default" href="http://rogershelp.com/customerserv/livechatsupport/index.php?source=751&lctc=751%7C01%7Cws%7CGCL_portal_Support_fr" target="blank" rel="external"><%= t("text.live_chat") %></a></p>
+    <%end%>
+</section>

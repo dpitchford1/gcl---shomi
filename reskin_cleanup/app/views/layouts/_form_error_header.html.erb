@@ -1,0 +1,10 @@
+<% if object.errors.full_messages.any? %>
+	<div id="form-errors" class="region form-errors">
+	    <p class="cc"><strong><%= t("form.errors.error_title") %></strong></p>
+      <ol class="error-listing">
+        <% object.errors.messages[:base].try(:each) do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ol>
+	</div>
+<% end %>

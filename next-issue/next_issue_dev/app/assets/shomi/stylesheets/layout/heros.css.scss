@@ -1,0 +1,309 @@
+/* Main Hero with Video 
+---------------------------------------------- */
+.region.hero{
+    position: relative;
+    }
+
+.video-loaded{
+    width: 70% !important;
+    margin-top: 14.5% !important;
+
+     @media (max-width: $media-660) {
+            margin-top: 28.5% !important;
+        }
+
+    #video-close {
+        display: inline-block;
+    }    
+
+}
+
+[lang="fr-ca"] .video-promo {
+    z-index: -99999;
+
+    @media (max-width: $media-660) {
+            margin-top: 42%;
+            width: 27%;
+        }
+
+    .i-video-play {
+        display: none;
+    }
+}    
+
+.video-promo{
+    width: 19%;
+    margin: 0 auto 0;
+    margin-top: 19%;
+    overflow: visible;
+    position: absolute;
+    -webkit-transition: width 0.3s;
+    -moz-transition: width 0.3s;
+    transition: width 0.3s;
+    max-width: 810px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+        
+        @media (max-width: $media-980) {
+           width: 20%;
+           margin-top: 18%;
+        }
+
+        @media (max-width: $media-660) {
+            margin-top: 39%;
+            width: 27%;
+        }
+
+        @media (max-width: $media-480) {
+            width: 30%;
+            margin-top: 37%;
+        }  
+
+        @media (max-width: $media-380) {
+            width: 38%;
+            margin-top: 34%;
+        }  
+    }
+
+#vid-wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    
+    }
+.vid-wrap{
+    height: 100%;
+    width: 100%;
+    }
+
+
+.close-btn{ position:absolute; top:0; right:0; z-index:30000; height:40px; width: 60px; opacity: .8; }
+.video-promo.html .close-btn { right: -42px; }
+
+.video-load {
+    //margin-top: 30%;
+}
+
+.hero-title {
+    //display: none;
+    max-width: 1200px !important;
+    width: 100%;
+    padding: 0;
+    margin-top: 30%;
+
+    @media (min-width: $media-1200) {
+        font-size: 28px;
+    }
+
+    @media (max-width: $media-1200) {
+        font-size: 22px;
+    }
+
+    @media (max-width: $media-980) {
+        font-size: 15px;
+    }
+
+    @media (max-width: $media-660) {
+        font-size: 20px !important;
+        line-height: 1.2;
+        width: 85%;
+        margin-top: 61%;
+    }    
+
+    @media (max-width: $media-480) {
+        font-size: 15px !important;
+    }  
+
+    @media (max-width: $media-380) {
+        font-size: 14px !important;
+        margin-top: 60%;
+    }  
+
+}   
+
+html[lang="fr-CA"] 
+.hero-title {
+
+    @media (min-width: $media-1200) {
+        font-size: 20px;
+    }
+
+    @media (max-width: $media-1200) {
+        font-size: 17px;
+    }
+
+    @media (max-width: $media-980) {
+        font-size: 11px;
+    }
+
+    @media (max-width: $media-660) {
+        font-size: 17px !important;
+        margin-top: 1%;
+    }    
+
+    @media (max-width: $media-480) {
+        font-size: 14px !important;
+    }  
+
+    @media (max-width: $media-380) {
+        font-size: 12px !important;
+    }  
+
+}  
+
+.page-home {
+    .hp-summary, .fancy-promos, .app-devices, .footnote, .support-module .container {
+        padding-left: 1.2% !important;
+        padding-right: 1.2% !important;
+    }
+
+    .fancy-promos, .app-devices, .footnote {
+         padding-top: 2em !important;
+    }
+}
+
+.page-home .hp-summary {
+    text-align: center;
+    margin-top: 30%;
+
+    @media (max-width: $media-660) {
+        margin-top: 59%;
+    } 
+
+}
+
+.hp-summary-description {
+    width: 70%;
+    color: $text-color-light;
+    margin: 1em auto;
+}
+
+/* Main feature video
+---------------------------------------------- */
+
+.is--icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto !important;
+    z-index: 12; 
+
+    @media screen and (min-width:0\0) { 
+        left: inherit;
+        bottom: inherit;
+        }
+
+    }
+.no-js .feature-video{
+    //background: none;
+    padding: 1em 1em;
+    cursor: default;
+    }
+.no-js .feature-video:hover{
+    text-decoration: none;
+    }
+.video-active .is--icon, .no-js .is--icon{
+    display: none;
+    }
+.no-js .feature-video{ color: #fff; }
+.no-js .feature-video noscript{ background-color: #000; display: block; text-align: center; opacity: .8; font-size: 1.2em }
+
+
+/* Standard Hero wrapper
+---------------------------------------------- */
+.hero-standard{
+    float: left;
+    width: 60%;
+    display: inline-block;
+
+    p {
+        text-align: center;
+        margin: 23% 0 1%; 
+    }
+
+}
+//.hero-standard .btn--lg{}
+
+.hero-confirmation {
+    width: 60%;
+    display: block;
+    margin: 0em auto;
+
+    h2 {
+        margin-bottom: .5em;
+    }
+}
+
+.hero-eligible {
+    display: block;
+    width: 85%;
+    margin-bottom: 1em;
+}
+
+.confirmation-aside {
+    .btn {
+        font-size: 20px;
+        padding: 0.45em 1em; 
+    }
+}
+
+.hero-standard .congrats-preseason{ background: asset-url("content/bg-laptop-congrats.jpg") no-repeat center 0; margin: 2em auto 0; padding-bottom: 36.5%; width: 48%; }
+
+
+/* Countdown Clock
+---------------------------------------------- */
+.js .countdown{ min-height: 180px; padding: 0 0 .5em; }
+
+/* Basic styling with BG */
+.countdown-inner{
+    //background: asset-url("content/bg-countdown.png") no-repeat 0 0;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALYAAABuCAMAAAC9Qxl0AAAAOVBMVEVMaXEjKCwEBQYEBQYUGBoEBQYjKCwjKCwEBQYjKCwEBQYUGBojKCwEBQYjKCwEBQYVGRsdISQJCwybKgjzAAAADnRSTlMA19YrBvwqkpP69gm8vLp3+0IAAAEUSURBVHja7dI7jsMwEARRfSiRlG0OpfsfdrFJw5mT6az6AIWHIZf/nXXtI2V9refyPV+/1JG6+pLX2C/vkbx3EdnXryN9VWZb/+z52a7/7errGKZzu/qrI7tK7ep3R7ZL7eoPy6Q29WHDhg0bNmzYsGHDhg0bNmzYsGHDhg0bNmzYsGHDhg0bNmzYsGHDhg0bNmzYsGHDhg0bNmzYsGHDhg0bNmzYsGHDhg0bNmzYv/u3o3pL7epPR3ZK7eo/juwjtasf03CMkNrVv+JO/3lxSe3qbxEz+xaxSe3qt4h45p12iflERJPa1d+PSN+xS23rt/xsWzRbv3yyq58is7Ff2pH6gu21aNb+3rak8rW1/Uts6/8BDQsHi3+47VwAAAAASUVORK5CYII=");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    color: #fff;
+    margin: 0 auto;
+    min-height: 125px;
+    width: 182px;
+    }
+
+/* style numbers */
+.countdown-inner .numbers{
+    display: block;
+    font-family: $font-semibold;
+    @include rem(font-size, 88px);
+    letter-spacing: .5em;
+    line-height: 1;
+    overflow: hidden;
+    padding-left: 19px;
+    padding-top: 7px;
+    text-shadow: -1px 5px 0 #000;
+    }
+
+/* Apply glossy overlay to numbers -- will not apply in IE8 */
+.countdown-inner .numbers::before, .countdown-inner .numbers::after{
+    background-color: #000;
+    border-radius: 8px 8px 0 0;
+    content: '';
+    display: block;
+    height: 55px;
+    opacity: .2;
+    position: absolute;
+    top: 0;
+    width: 86px;
+    z-index: 3;
+    }
+    .countdown-inner .numbers::before{ left: 0; }
+    .countdown-inner .numbers::after { right: 0; }
+
+/* Modifier for "Days to puck drop" */
+.countdown .h-xb{
+    @include rem(font-size, 32px);
+    letter-spacing: -1px;
+    }
+    

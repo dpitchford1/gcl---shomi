@@ -1,0 +1,149 @@
+/* List - More category-tag lists
+---------------------------------------------- */
+.more-categories{
+    color: #4b4b4b;
+    clear: both;
+    font-size:14px; font-size:.875rem;
+    margin-bottom:.9375em;
+    text-transform: uppercase;
+    }
+.more-categories a:before               { color: #333; content:'/'; padding-right: .575em; }
+.more-categories a:first-child:before   { content: ''; padding-right: 0; }
+
+.more-categories a{ color: #ee0000; padding: 0 .175em 0; }
+.more-categories a:hover, .more-categories a:focus{ color: #333; }
+
+
+/* List - Keywords = <ul class="keywords">
+---------------------------------------------- */
+.keywords{ 
+    list-style: none; 
+    margin: 0 0 .938em; 
+    padding-left: 0;
+    }
+.keywords li{ 
+    display: inline; 
+    text-transform: lowercase; 
+    }
+.keywords li:first-of-type{ 
+    text-transform: capitalize; 
+    }
+.keywords li:after{ content: ", "; }
+.keywords li:last-of-type:after{ content: " "; }
+
+
+/* List - automatic numbered list (based on number of items)
+---------------------------------------------- */
+.counted-list{
+    counter-reset: item;
+    list-style-type: none;
+    padding-left: 15px;
+    }
+.counted-list li { counter-increment: item; }
+.counted-list li:before  { content: counters(item, ".") ". "; }
+.counted-list .count-heading, .counted-list .count-title, .counted-list a{
+    display: inline;
+    }
+.counted-list .counted-list{
+    padding-left: 7px;
+    }
+
+
+/* List - display inline with bullets
+---------------------------------------------- */
+.inline-bullet{
+    margin: 0 0 1.5em;
+    overflow: hidden;
+    padding: 0;
+    }
+.inline-bullet li{
+    float: left;
+    margin-bottom: 0;
+    padding-right: 1.562500em;
+    }
+.inline-bullet li:first-child{
+    list-style: none;
+    }
+
+
+
+/**
+ * For use with media embeds – such as videos, slideshows, or even images –
+ * that need to retain a specific aspect ratio but adapt to the width of their
+ * containing element.
+ *
+ * Example HTML:
+ *
+ * <div class="flex-embed flex-embed--4by3">
+ *   <iframe class="flex-embed-item" src="…"></iframe>
+ * </div>
+ *
+ * <div class="flex-embed flex-embed--16by9">
+ *   [iframe|object|embed]
+ * </div>
+ */
+
+.flex-test-run {
+    max-width: 500px;
+    }
+
+#flex-max-height .flex-embed {
+    max-height: 200px;
+    }
+
+#flexmax-width .flex-embed {
+    max-width: 200px;
+    }
+
+.flex-embed {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    }
+
+/**
+ * The aspect-ratio hack is applied to a pseudo-element because it allows the
+ * component to respect `max-height`. Default aspect ratio is 1:1.
+ */
+
+.flex-embed:before {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+    width: 100%;
+    }
+
+/** Modifier: 3:1 aspect ratio */
+.flex-embed--3by1:before { padding-bottom: calc(100% / 3); }
+
+/** Modifier: 2:1 aspect ratio */
+.flex-embed--2by1:before { padding-bottom: 50%; }
+
+/** Modifier: 16:9 aspect ratio */
+.flex-embed--16by9:before { padding-bottom: 56.25%; }
+
+/** Modifier: 4:3 aspect ratio */
+.flex-embed--4by3:before { padding-bottom: 75%; }
+
+/**
+ * Works automatically for iframes, embeds, and objects to account for
+ * situations where you cannot modify the enbedded element's attributes (e.g.,
+ * 3rd party widget code).
+ */
+
+.flex-embed-item, .flex-embed iframe, .flex-embed embed, .flex-embed object {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    }
+
+
+
+
+/* helpers */
+.img-centre{ display: block; margin:0 auto; }
+.img-left  { float: left; margin: 0 7px 0 0; }     /* Float image LEFT and give it some margin */
+.img-right { float: right; margin: 0 0 0 10px; }   /* Float image to the RIGHT and give it some margin */

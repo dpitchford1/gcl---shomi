@@ -1,0 +1,19 @@
+<% content_for :title, t('titles.forgot_username').html_safe %>
+
+<section class="region">
+	<h2 class="h-sb size-L w-ul"><%= t("profiles.recover.forgot_username") %></h2>
+
+	<p><%= t("profiles.recover.enter_username") %></p>
+
+	<% if @error_msg %>
+	<p><%= t("profiles.recover.not_registered") %></p>
+	
+	<p><%= t("profiles.recover.the_email_address") %> <%=  %> <%= t("profiles.recover.is_not") %> <%= link_to t("register_now").downcase, new_profile_path %></p>
+	<% end %>
+
+	<%= simple_form_for :profile, html: {class: 'general-form' }, :url => forgot_username_path do |f| %>
+	  <%= f.input :email, label: t("text.email"), placeholder: "your.email@address.com", input_html: {:title => 'Please use a valid email address'} %>
+	  
+	  <p><%= f.button :submit, t('btn.continue') %></p>
+	<% end %>
+</section>

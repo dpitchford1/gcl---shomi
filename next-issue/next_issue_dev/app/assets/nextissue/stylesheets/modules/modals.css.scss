@@ -1,0 +1,167 @@
+/* Effect 1: Fade in and scale up */
+.js .modal{
+    display: none;
+    }
+
+.js .modal {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    }
+.transparent-modal-dialog {
+  width:100%;
+  height:100%;
+  background: asset-url("images/content/transparent-blk-50.png") repeat top left;
+  color: #ffffff;
+  padding: 10% 30% 15px 30%;
+  text-align: center;
+}
+[lang="fr-ca"] .transparent-modal-dialog {
+  padding: 10% 25% 15px 25%;
+}
+.white-modal-dialog {
+  width: 400px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  background: #ffffff;
+  color: #000000;
+  text-align: center;
+}
+.premium-offer-images { overflow-y: auto; max-height: 78% }
+.premium-offer-images img { margin: 2px; }
+
+.modal-dialog {
+    margin: 30px auto;
+    background-color: #fff;
+    border: 5px solid #999;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    background-clip: padding-box;
+    outline: 0;
+    padding: 30px 35px 15px;
+    width: 460px;
+    }
+.js .modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
+    }
+.js .modal-backdrop.fade {
+    opacity: 0;
+    }
+.js .modal-backdrop.in {
+    opacity: 0.75;
+    }
+
+.js .modal-dialog .i--close {
+    height: 45px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1051;
+    }
+.no-js .modal-dialog .i--close, .no-js .modal-dialog .btn-cancel{ display: none; }
+.modal-dialog .i--close:focus {
+    border: 2px dotted red;
+    }
+.modal-dialog .i--close:active {
+    border: 1px dotted #000;
+    }
+
+.modal-header .modal-title { border-bottom: 1px solid #adb0af; @include rem(font-size, 25px); line-height: 1.25; margin-bottom: .7em; padding-bottom: .4em; }
+
+[lang="en-ca"] .modal-header .i--logo-myrogers { height: 1.65em; margin-bottom: 0; width: 4.6em; }
+[lang="fr-ca"] .modal-header .i--logo-myrogers { height: 1.25em; margin-bottom: 0; width: 5.5em; }
+
+.modal-footer {
+    border-top: 1px solid #ccc;
+    padding-top: .5em;
+    }
+
+
+/* TOS conversion to inline in page - turned off modal */
+.tos-wrapper{ margin-top: 1.5em;}
+.tos-frame{
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    border: 1px solid #ccc;
+    height: 250px;
+    margin: .4em 0 .5em;
+    padding: .7em 0 .7em .7em;
+    width: 100%;
+    }
+@media (max-height: 600px) and (max-width: 600px) {
+    .tos-frame{
+        height: 130px;
+        }
+}
+
+
+@media (max-width: 67.500em){ /* MQ 1080 */
+  [lang="fr-ca"] .transparent-modal-dialog { padding: 5% 15% 15px 15%; }
+}
+@media (max-width:51.250em){ /* MQ 820- tablets & small screens */
+  .transparent-modal-dialog { padding: 5% 15% 15px 15%; }
+}
+@media (max-width:40em){ /* 640px */
+  [lang="fr-ca"] .transparent-modal-dialog { padding: 5% 5% 15px 5%; }
+}
+@media (max-width: 37.5em) { /* 600PX */
+  .transparent-modal-dialog { padding: 5% 5% 15px 5%; }
+}
+@media (max-width: 30.625em) { /* 490PX */
+  [lang="fr-ca"] .transparent-modal-dialog a { margin: 10px; }
+}
+@media (max-width: 20em) { /* 320PX */
+  .transparent-modal-dialog { padding: 0; }
+}
+
+
+// #tos_modal{}
+// #tos_modal .modal-body{ 
+//     -webkit-overflow-scrolling: touch; 
+//     //overflow-y: scroll; 
+//     height: 230px; 
+//     }
+
+// /* Terms of Service Iframe within modal */
+// #tos_modal .tos-frame{
+//     border: 0 none;
+//     height: 230px;
+//     overflow-x: hidden;
+//     overflow-y: scroll;
+//     -webkit-overflow-scrolling: touch;
+//     width: 100%;
+//     }
+
+// @media (min-height: 1024px) {
+//     #tos_modal .modal-body, #tos_modal .tos-frame{
+//         height: 380px;
+//         }
+
+// }
+
+// @media (max-height: 360px) and (max-width: 600px) {
+//     #tos_modal .modal-body, #tos_modal .tos-frame{
+//         height: 130px;
+//         }
+
+// }
+// @media (max-height: 320px) and (max-width: 600px) {
+//     #tos_modal .modal-body, #tos_modal .tos-frame{
+//         height: 100px;
+//         }
+
+// }
+
+

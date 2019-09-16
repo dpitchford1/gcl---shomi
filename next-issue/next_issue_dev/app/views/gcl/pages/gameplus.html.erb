@@ -1,0 +1,86 @@
+<% content_for :title, t('titles.gameplus').html_safe %>
+
+<section class="list-of-features lazy-img" id="gameplus">
+	<h2 class="h-lgt sizes-M w-ul"><span class="ico i-logos i--logo-gameplus"><%= t("gameplus.heading").html_safe %></span></h2>
+    <%= t("gameplus.excerpt_long").html_safe %>
+
+    <h2 class="sizes-SM"><%= t("gameplus.eligibility_heading").html_safe %></h2>
+    <%#= section(:gameplus_eligibility_copy1) do %>
+        <p><%= t("gameplus.eligibility_copy1").html_safe %></p>
+    <%# end %>
+    <p class="lg-m"><%= t("gameplus.eligibility_copy2").html_safe %></p>
+
+    <%#= section :feature do %>
+	<article class="feature is--promo">
+        <span class="feature-img img--isPromo" aria-hidden="true" data-src="<%= asset_path 'content/gp-feature1.jpg' %>" data-alt="<%= t("gameplus.feature1.heading").html_safe %>" data-width="220" data-height="119"></span>
+        
+        <div class="feature-body">
+            <h3 class="sizes-SM"><%= t("gameplus.feature1.heading").html_safe %></h3>
+            <p class="promo-excerpt"><%= t("gameplus.feature1.copy").html_safe %></p>
+        </div>
+    </article>
+    
+    <article class="feature is--promo">
+        <span class="feature-img img--isPromo" aria-hidden="true" data-src="<%= asset_path 'content/gp-feature2.jpg' %>" data-alt="<%= t("gameplus.feature2.heading").html_safe %>" data-width="200" data-height="119"></span>
+        
+        <div class="feature-body">
+            <h3 class="sizes-SM"><%= t("gameplus.feature2.heading").html_safe %></h3>
+            <p class="promo-excerpt"><%= t("gameplus.feature2.copy").html_safe %></p>
+        </div>
+    </article>
+    <article class="feature is--promo">
+        <span class="feature-img img--isPromo" aria-hidden="true" data-src="<%= asset_path 'content/gp-feature3a.jpg' %>" data-alt="<%= t("gameplus.feature3.heading").html_safe %>" data-width="200" data-height="119"></span>
+        
+        <div class="feature-body">
+            <h3 class="sizes-SM"><%= t("gameplus.feature3.heading").html_safe %></h3>
+            <p class="promo-excerpt"><%= t("gameplus.feature3.copy").html_safe %></p>
+        </div>
+    </article>
+
+    <article class="feature is--promo">
+        <span class="feature-img img--isPromo" aria-hidden="true" data-src="<%= asset_path 'content/gp-feature4.jpg' %>" data-alt="<%= t("gameplus.feature4.heading").html_safe %>" data-width="220" data-height="119"></span>
+        
+        <div class="feature-body">
+            <h3 class="sizes-SM"><%= t("gameplus.feature4.heading").html_safe %></h3>
+            <p class="promo-excerpt"><%= t("gameplus.feature4.copy").html_safe %></p>
+        </div>
+    </article>
+    <article class="feature is--promo">
+        <span class="feature-img img--isPromo" aria-hidden="true" data-src="<%= asset_path 'content/gp-feature5.jpg' %>" data-alt="<%= t("gameplus.feature5.heading").html_safe %>" data-width="200" data-height="119"></span>
+        
+        <div class="feature-body">
+            <h3 class="sizes-SM"><%= t("gameplus.feature5.heading").html_safe %></h3>
+            <p class="promo-excerpt"><%= t("gameplus.feature5.copy").html_safe %></p>
+        </div>
+    </article>
+    <article class="feature is--promo">
+        <span class="feature-img img--isPromo" aria-hidden="true" data-src="<%= asset_path 'content/gp-feature6.jpg' %>" data-alt="<%= t("gameplus.feature6.heading").html_safe %>" data-width="200" data-height="119"></span>
+        
+        <div class="feature-body">
+            <h3 class="sizes-SM"><%= t("gameplus.feature6.heading").html_safe %></h3>
+            <p class="promo-excerpt"><%= t("gameplus.feature6.copy").html_safe %></p>
+        </div>
+    </article>
+
+    <article class="feature is--promo">
+        <span class="feature-img img--isPromo" aria-hidden="true" data-src="<%= asset_path 'content/gp-feature7.jpg' %>" data-alt="<%= t("gameplus.feature7.heading").html_safe %>" data-width="220" data-height="119"></span>
+        
+        <div class="feature-body">
+            <h3 class="sizes-SM"><%= t("gameplus.feature7.heading").html_safe %></h3>
+            <p class="promo-excerpt"><%= t("gameplus.feature7.copy").html_safe %></p>
+        </div>
+    </article>
+    <article class="feature is--promo">
+        <span class="feature-img img--isPromo" aria-hidden="true" data-src="<%= asset_path 'content/gp-feature8.jpg' %>" data-alt="<%= t("gameplus.feature8.heading").html_safe %>" data-width="200" data-height="119"></span>
+        
+        <div class="feature-body">
+            <h3 class="sizes-SM"><%= t("gameplus.feature8.heading").html_safe %></h3>
+            <p class="promo-excerpt"><%= t("gameplus.feature8.copy").html_safe %></p>
+        </div>
+    </article>
+	<%# end %>
+</section>
+
+<% content_for :legal_footnotes do %>
+    <%= render 'partials/footnotes_gameplus' %>
+<% end %>

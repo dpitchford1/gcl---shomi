@@ -1,0 +1,66 @@
+<% editing ||= false %>
+
+<% content_for :footer do  ajax_validation(:profile) end %>
+
+<%= simple_form_for(@profile, remote: true, html: {class: 'general-form' }, data: {validate: 'profile'}) do |f| %>
+  <%= hidden_field_tag request_forgery_protection_token.to_s, form_authenticity_token %>
+  <%= f.input :email_opt_in, as: :hidden, input_html: { value: true } %>
+  <fieldset>
+    <legend class="hide-text"><%= t('form.legend.personal_details') %></legend>
+
+    <% if editing %>
+      <%= f.input :email_address, as: :hidden %>
+    <% else %>
+      <div><%= t("profiles.profile_form.description") %></div>
+    <% end %>
+
+    <%= f.input :email_address, label: false, required: true, disabled: editing,
+                input_html: {placeholder: t('simple_form.placeholders.email_address'),
+                             title: t('errors.attributes.email_address.blank')},
+                hint: session[:promo_code] && session[:promo_code].code_type == 'business'  ?
+                    t('simple_form.hints.promo.business_username') : nil %>
+    <% unless editing %>
+      <%= f.input :email_address_confirmation, label: false, required: true,
+                input_html: {placeholder: t('activemodel.attributes.profile.email_address_confirmation'),
+                             title: t('errors.attributes.email_address.blank'), autofocus: true}  %>
+    <% end %>
+    <%= f.input :password, label: false, input_html: { placeholder: t('simple_form.placeholders.your_password'), maxlength: 16, :autocomplete => 'off', autofocus: editing}, :hint => '' %>
+
+    <%= f.input :password_confirmation, label: false, required: true,
+                input_html: { placeholder: t('simple_form.placeholders.password_confirmation'), maxlength: 16, :autocomplete => 'off', :title => t('errors.attributes.password_confirmation.blank')},
+                :hint => @profile.errors.messages.fetch(:password, []).size > 0 ? "" : t('simple_form.hints.profile.password').html_safe %>
+  </fieldset>
+
+  <fieldset class="content-wrapper">
+    <legend class="hide-text"><%= t('form.legend.security_details') %></legend>
+    <div class="form-row answer-selection">
+    <%= f.input :question, label: false, collection: Question.collection(session[:lang]), as: :select, prompt: t('simple_form.labels.question_prompt'),
+                error: t('errors.attributes.question.blank'), wrapper: 'fancy_select', input_html: { style: '-moz-appearance: none;' } %>
+    </div>
+    <%= f.input :answer, label: false, input_html: { placeholder: t('simple_form.placeholders.answer'), maxlength: 40 } %>
+  </fieldset>
+
+  <fieldset>
+    <div class="content-wrapper">
+      <% if editing %>
+        <%= t('profiles.profile_form.edit_terms_of_service') %>
+      <% else %>
+        <%= t('profiles.profile_form.terms_of_service') %>
+      <% end %>
+    </div>
+
+    <%= f.input :lang_pref, as: :hidden, input_html: { value: I18n.locale.to_s } %>
+    <%= f.input :tos, as: :hidden, input_html: { value: '1' } %>
+  </fieldset>
+
+  <% if editing %>
+    <div class="submission"> <%= f.button :submit, t('buttons.update'), class: 'btn-light' %></div>
+  <% else %>
+    <div class="submission sign_up"> <%= f.button :submit, t('buttons.signup'), class: 'btn-light' %></div>
+  <% end %>
+  <div class="submission"><%= link_to t('buttons.go_back'), editing ? profiles_path : profile_email_check_path, class: 'btn btn-cancel' %> </div>
+
+  <% unless editing %>
+    <div><%= t('profiles.profile_form.already_have_account') %> <%= link_to t("menu.sign_in"), new_session_path, :class => "btn-blk" %></div>
+  <% end %>
+<% end %>

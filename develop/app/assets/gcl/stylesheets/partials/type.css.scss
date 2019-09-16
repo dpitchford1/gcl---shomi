@@ -1,0 +1,238 @@
+/* Heading Sizes 
+
+53 - mega
+
+42 - XLG
+
+36 - LG
+34 - L
+
+30 - M
+24 - M2
+
+22 - S
+20 - SM
+
+19 - copy-L
+16 - copy-M
+
+
+
+*/
+
+
+.wfl    { font-family: $font-light; font-weight: normal; } 
+.wfr    { font-family: $font-reg; font-weight: normal; }
+.wfsb   { font-family: $font-semibold; font-weight: normal; }
+// .wfb    { font-family: $font-bold; font-weight: normal; margin-top: 0; }
+// .wfeb  { font-family: $font-extrabold; font-weight: normal; margin-top: 0; }
+
+/* Primary Heading selectors setup 
+---------------------------------------------- */
+//.h-xb   { font-family: $font-extrabold; letter-spacing: -1px; }
+.h-b    { font-family: $font-bold;  }
+.h-sb   { font-family: $font-semibold; }
+.h-r    { font-family: $font-reg; }
+.h-lgt  { font-family: $font-light; letter-spacing: -1px; }
+
+.h-reverse{
+    color: $white;
+    }
+
+/* Heading sizes setup
+---------------------------------------------- */
+.sizes-XLG      { @include rem(font-size, 42px); }
+.sizes-LG       { @include rem(font-size, 36px); margin-bottom: .7em; }
+.sizes-L        { @include rem(font-size, 34px); margin-bottom: .8em; line-height: 1.1; }
+
+.sizes-M        { @include rem(font-size, 30px); line-height: normal; }
+.sizes-M2       { @include rem(font-size, 24px); }
+.sizes-M3       { @include rem(font-size, 24px); line-height: 1.1; margin-bottom: .3em; }
+
+.sizes-S        { @include rem(font-size, 22px); line-height: 1.1; margin-bottom: .9em; }
+.sizes-SM       { @include rem(font-size, 20px); line-height: 1.1; margin-bottom: .7em; }
+.sizes-SM-alt   { @include rem(font-size, 20px); line-height: normal; color: $callout; }
+.sizes-XSM      { @include rem(font-size, 18px); line-height: 1.1; margin-bottom: .7em; }
+
+
+
+
+
+// .sizes-XLG{
+//   @include rem(font-size, 44px); 
+//   line-height: 1; 
+//   margin-bottom: .4em; 
+//   }
+
+
+// .sizes-LG    { @include rem(font-size, 42px); line-height: 1.1; }
+// .sizes-LG2   { @include rem(font-size, 40px); line-height: 1.1; margin-bottom: .3em; }
+// .sizes-L     { @include rem(font-size, 36px); line-height: normal; letter-spacing: -1px; margin-bottom: .5em; }
+// .sizes-L2    { @include rem(font-size, 34px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+// .sizes-L3    { @include rem(font-size, 30px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+// .sizes-L4    { @include rem(font-size, 22px); line-height: 1.1; letter-spacing: -1px; margin-bottom: .7em; }
+
+// .sizes-M     { @include rem(font-size, 18px); line-height: normal; }
+// .sizes-M-alt { @include rem(font-size, 20px); line-height: 1.1; margin-bottom: .4em; }
+
+// .sizes-S     { @include rem(font-size, 16px); line-height: normal; }
+// .sizes-SM    { @include rem(font-size, 14px); line-height: normal; margin-bottom: .5em; }
+// .sizes-XSM   { @include rem(font-size, 12px); line-height: normal; }
+
+
+// [lang="en-ca"] .sizes-M .i--logo-myrogers{ height: 1.55em; width: 4.5em; }
+// [lang="fr-ca"] .sizes-M .i--logo-myrogers{ height: 1.3em; width: 4.7em; }
+
+
+
+
+
+.size-XLG, .size-LG, .size-LG2, .size-L, .size-L2, .size-L3, .size-L4, .size-M, .size-M-alt, .size-S, .size-SM, .size-XSM{ color: lime !important; }
+
+
+// .size-XLG{
+//   @include rem(font-size, 40px); 
+//   line-height: 1; 
+//   margin-bottom: .4em; 
+//   }
+
+// .size-LG    { @include rem(font-size, 38px); line-height: 1.1; }
+// .size-LG2   { @include rem(font-size, 32px); line-height: 1.1; margin-bottom: .3em; }
+// .size-L     { @include rem(font-size, 28px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+// .size-L2    { @include rem(font-size, 26px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+// .size-L3    { @include rem(font-size, 24px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+// .size-L4    { @include rem(font-size, 22px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+
+// .size-M     { @include rem(font-size, 18px); line-height: normal; }
+// .size-M-alt { @include rem(font-size, 20px); line-height: 1.1; margin-bottom: .3em; }
+
+// .size-S     { @include rem(font-size, 16px); line-height: normal; }
+// .size-SM    { @include rem(font-size, 14px); line-height: normal; margin-bottom: .5em; }
+// .size-XSM   { @include rem(font-size, 12px); line-height: normal; }
+
+
+//[lang="en-ca"] .size-L4 .i--logo-myrogers{ height: 1.75em; width: 5em; }
+//[lang="fr-ca"] .size-L4 .i--logo-myrogers{ height: 1.4em; width: 5.5em; }
+
+
+@media (max-width:51.250em){
+
+/* Headings & Titles
+---------------------------------------------- */
+// .size-LG    { @include rem(font-size, 32px); }
+// .size-L     { @include rem(font-size, 26px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+// .size-L2    { @include rem(font-size, 24px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+// .size-L3    { @include rem(font-size, 22px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+// .size-L4    { @include rem(font-size, 20px); line-height: normal; letter-spacing: -1px; margin-bottom: .7em; }
+
+// .size-M     { @include rem(font-size, 18px); line-height: normal; }
+// .size-M-alt { @include rem(font-size, 20px); line-height: 1.1; margin-bottom: .3em; }
+
+// .size-S     { @include rem(font-size, 16px); line-height: normal; }
+// .size-SM    { @include rem(font-size, 14px); line-height: normal; margin-bottom: .5em; }
+// .size-XSM   { @include rem(font-size, 12px); line-height: normal; }
+
+}
+
+
+
+/* Mega setup - general huge style 
+---------------------------------------------- */
+.mega-reversed{
+    @include rem(font-size, 53px);
+    //color: #fff;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    margin-bottom: 0.5em;
+    //text-shadow: 02 1px 2px $black;
+    }
+.mega-reversed sup{
+    @include rem(font-size, 14px);
+    }
+
+// .mega-reverse{
+//     @include rem(font-size, 65px);
+//     color: #fff;
+//     letter-spacing: -3px;
+//     line-height: .95;
+//     margin-bottom: 0.5em;
+//     text-shadow: 2px 2px 5px #000;
+//     }
+// .mega-reverse .block{
+//     @include rem(font-size, 34px);
+//     text-transform: none;
+//     letter-spacing: -1px;
+//     }
+
+
+/* Heading Styling modifiers and helpers
+---------------------------------------------- */
+/* center and uppercase */
+.uc-center{
+    text-transform: uppercase;
+    text-align: center;
+    }
+
+/* just uppercase */
+.uc{ text-transform: uppercase; }
+
+/* with an underline */
+.w-ul{ border-bottom: 1px solid $border-color-ul; padding-bottom: .2em; margin-bottom: 1em; }
+
+/* extra large margin bottom */
+.xlg-m{ @include rem(margin-bottom, 45px); }
+
+/* large margin bottom */
+.lg-m{ @include rem(margin-bottom, 30px); }
+
+/* medium margin bottom */
+.med-m{ @include rem(margin-bottom, 15px); }
+
+/* medium margin bottom */
+.sm-m{ @include rem(margin-bottom, 10px); }
+
+
+/* specific modifiers */
+.promo-form .size-L{ margin-bottom: .1rem; }
+
+
+/* Messaging & Copy
+---------------------------------------------- */
+// .copy{}
+// .copy-size-LG {  }
+
+.copy-mega  { @include rem(font-size, 26px); line-height: 1.2; }
+.copy-XLG   { @include rem(font-size, 22px); line-height: 1.2; }
+.copy-LG    { @include rem(font-size, 19px); line-height: 1.3; @include rem(margin-bottom, 30px); }
+.copy-L     { @include rem(font-size, 18px); line-height: 1.4; }
+.copy-M     { @include rem(font-size, 16px); }
+.copy-S     { @include rem(font-size, 14px); }
+
+
+// .copy--L      { @include rem(font-size, 22px); line-height: 1.2; }
+// .copy--LG     { @include rem(font-size, 20px); line-height: 1.2; }
+// .copy--LG2    { @include rem(font-size, 19px); line-height: 1.3; }
+// .copy-size-M  { @include rem(font-size, 18px); margin: .3em 0 1.8em; }
+// .copy-size-M2 { @include rem(font-size, 18px); margin: .3em 0 1.3em; }
+// .copy-size-S  { @include rem(font-size, 14px); margin: 0; }
+// .copy-size-SM {  }
+
+/* legal footnotes */
+.footnotes{ @include rem(font-size, 11px); padding-top: 2.5em; }
+.footnote-basic{ border-top: 1px solid #ccc; @include rem(font-size, 11px); padding-top: 1em; margin-top: 1.5em; }
+.footnote-sm{ @include rem(font-size, 11px); }
+
+/* legal & branding TM's */
+.tm{ font-size: 50%; padding: 0; }
+//h2 sup, h3 sup, h4 sup, h5 sup{ top: -5px; }
+
+.already-have{ @include rem(font-size, 15px); float: right; padding-top: .8em; }
+
+.congrats-blurb{ padding: .4em 5% 0; }
+
+
+/* If needed, modifier selector for callout colour
+---------------------------------------------- */
+.cc        { color: $callout; }
+.cc-alt, .cc-alt:hover, .cc-alt:focus, .cc-alt:active{ color: $callout-alt; }
+

@@ -1,0 +1,128 @@
+/* Effect 1: Fade in and scale up */
+.js .modal{
+    display: none;
+    }
+
+.js .modal {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    }
+
+.modal-dialog {
+    margin: 30px auto;
+    background-color: $white;
+    border: 5px solid #999;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    background-clip: padding-box;
+    outline: 0;
+    padding: 30px 35px 15px;
+    width: 460px;
+    }
+.js .modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: $black;
+    }
+.js .modal-backdrop.fade {
+    opacity: 0;
+    }
+.js .modal-backdrop.in {
+    opacity: 0.75;
+    }
+
+.js .modal-dialog .i--close {
+    height: 45px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1051;
+    }
+.no-js .modal-dialog .i--close, .no-js .modal-dialog .btn-cancel{ display: none; }
+.modal-dialog .i--close:focus {
+    border: 2px dotted red;
+    }
+.modal-dialog .i--close:active {
+    border: 1px dotted #000;
+    }
+
+.modal-header .modal-title { border-bottom: 1px solid $border-color-ul; font-family: $font-light; @include rem(font-size, 25px); line-height: 1.25; margin-bottom: .7em; padding-bottom: .2em; }
+
+[lang="en-ca"] .modal-header .i--logo-myrogers { height: 1.65em; margin-bottom: 0; width: 4.6em; }
+[lang="fr-ca"] .modal-header .i--logo-myrogers { height: 1.25em; margin-bottom: 0; width: 5.5em; }
+
+.modal-footer {
+    border-top: 1px solid $border-primary;
+    padding-top: .5em;
+    }
+
+
+/* TOS conversion to inline in page - turned off modal */
+.tos-wrapper{ margin-top: 1.5em;}
+.tos-frame{
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    border: 1px solid $border-primary;
+    height: 250px;
+    margin: .4em 0 .5em;
+    padding: .7em 0 .7em .7em;
+    width: 100%;
+    }
+@media (max-height: 600px) and (max-width: 600px) {
+    .tos-frame{
+        height: 130px;
+        }
+}
+
+
+
+
+
+
+// #tos_modal{}
+// #tos_modal .modal-body{ 
+//     -webkit-overflow-scrolling: touch; 
+//     //overflow-y: scroll; 
+//     height: 230px; 
+//     }
+
+// /* Terms of Service Iframe within modal */
+// #tos_modal .tos-frame{
+//     border: 0 none;
+//     height: 230px;
+//     overflow-x: hidden;
+//     overflow-y: scroll;
+//     -webkit-overflow-scrolling: touch;
+//     width: 100%;
+//     }
+
+// @media (min-height: 1024px) {
+//     #tos_modal .modal-body, #tos_modal .tos-frame{
+//         height: 380px;
+//         }
+
+// }
+
+// @media (max-height: 360px) and (max-width: 600px) {
+//     #tos_modal .modal-body, #tos_modal .tos-frame{
+//         height: 130px;
+//         }
+
+// }
+// @media (max-height: 320px) and (max-width: 600px) {
+//     #tos_modal .modal-body, #tos_modal .tos-frame{
+//         height: 100px;
+//         }
+
+// }
+
+

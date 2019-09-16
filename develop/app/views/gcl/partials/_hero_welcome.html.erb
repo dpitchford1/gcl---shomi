@@ -1,0 +1,31 @@
+<div class="hero-enhance hero-welcome welcome-bg" id="hero-welcome">
+    <%= render 'layouts/messages' %>
+    <section class="fluid-lg hero--1-inner text-center">
+        
+        <% if @current_session.logged? %>
+        <h2 class="h-lgt mega-reversed"><%= t("pages.index.hero_welcome_back").html_safe %></h2>
+        <% else %>
+        <h2 class="h-lgt mega-reversed"><%= t("pages.index.hero_welcome_default_heading").html_safe %></h2>
+        <% end %>
+        <p class="wfl copy-XLG"><%= t("pages.index.hero_welcome_default_copy").html_safe %></p>
+        <p class="wfl copy-XLG"><%= t("pages.index.hero_welcome_offseason_copy").html_safe %></p>
+
+        <div class="region hero-1-devices">
+            <div class="hero-device hero--device1" id="hero-device1">
+                <div class="hero-device1-screen"></div>
+            </div>
+            <div class="hero-device hero--device2">
+                <div class="hero-device2-container">
+                    <div class="hero-device2-screen" id="hero-device2">
+
+                        <%= render 'module_hero_main' %>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-device hero--device3" id="hero-device3">
+                <div class="hero-device3-screen"></div>
+            </div>
+        </div>
+    </section>
+
+</div>

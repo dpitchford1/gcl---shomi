@@ -1,0 +1,55 @@
+addLoadEvent(function() {
+  $(function() {
+    return $('.check-tos').on("click", function() {
+      if ($(".check-tos").is(":checked")) {
+        //$("#tos_modal").modal("show");
+      }
+    });
+  });
+
+$( ".help-block" ).each(function( index ) {   
+   $(this).attr('data-content',  $(this).text() );
+   $(this).attr('data-toggle', 'popover');
+   $(this).attr('data-placement', 'right');
+   $(this).attr('data-trigger', 'hover');
+   $(this).attr('data-html', 'true');
+   $(this).html('');
+   $(this).addClass('icon-info');
+
+   $(this).popover();
+
+   if ( $(window).width() < 600) {
+      var $helpblock = $(this);
+      $(this).parent().find('input').before( $helpblock);
+      $(this).after('<br>');
+    }  
+});
+
+
+// if ($("#confirmation-page").length > 0) {
+  
+//   function adjustHeight() {
+//     var headerHeight = $('.global-header').outerHeight();
+//     var footerHeight = $('.footer').outerHeight();
+//     var bodyHeight = $(window).height() - (headerHeight + footerHeight);
+//     $('#main-content').css('min-height',bodyHeight+'px');
+//   }
+//   adjustHeight();
+//   $(window).resize(debounce(function(){
+//       adjustHeight();
+//     },500));
+// }
+
+
+if ($("fieldset.link-account").length > 0) {
+  $('#account_search_postal_code').keyup(function()
+  {
+      if( !$(this).val() ) {
+            $(this).removeClass('uppercase');
+      } else {
+           $(this).addClass('uppercase');
+      }
+  });
+}  
+
+});

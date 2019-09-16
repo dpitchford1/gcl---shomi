@@ -1,0 +1,55 @@
+/* Fancy 3 promo boxes - modified from "span-of-3 promos" in grid-modules
+---------------------------------------------- */
+.fancy-promos{
+    margin: 1.3em 0 0;
+    }
+.fancy-promos .is--fancy{
+    margin-bottom: 1.5em;
+    }
+[lang="en-ca"] .fancy-promos .is--fancy{
+    /*min-height: 275px; */
+    }
+[lang="fr-ca"] .fancy-promos .is--fancy{
+    min-height: 310px;
+    }
+.fancy-promos .is--fancy{
+    padding: 0 3.5%;
+    text-align: center;
+    }
+
+/* Apply borders between the promos */
+.fancy-promos .is--fancy:nth-of-type(2){
+    background: asset-url("data:image/gif;base64,R0lGODdhAQBjAfQdAOHh4evr6+3t7ezs7PDw8Pn5+enp6fr6+vb29vX19fj4+PPz8/f39/T09PHx8e7u7vv7++fn5+Xl5fz8/Orq6u/v7+bm5v39/ejo6OTk5OLi4uPj4+Dg4PLy8gAAAAAAACwAAAAAAQBjAQAFi+AljqQ4nWg6QWzbHnBczHSh3DejM0jvJ0BgY7goFjtIpGPpIDgr0OhjKqgKBlhsYBugeL2GsAFDJkfOEYt6bZG43Zm4PL6p2++ajWbPB+wBgIGCgBwcAIWIiYqLjI2Oj4SFh4OUgXyXeXd3c3Nvb2wWaGhlpBhiX19cW1kDVlVTsA9RUU61TEtJHSEAOw==") no-repeat left bottom, asset-url("data:image/gif;base64,R0lGODdhAQBjAfQdAOHh4evr6+3t7ezs7PDw8Pn5+enp6fr6+vb29vX19fj4+PPz8/f39/T09PHx8e7u7vv7++fn5+Xl5fz8/Orq6u/v7+bm5v39/ejo6OTk5OLi4uPj4+Dg4PLy8gAAAAAAACwAAAAAAQBjAQAFi+AljqQ4nWg6QWzbHnBczHSh3DejM0jvJ0BgY7goFjtIpGPpIDgr0OhjKqgKBlhsYBugeL2GsAFDJkfOEYt6bZG43Zm4PL6p2++ajWbPB+wBgIGCgBwcAIWIiYqLjI2Oj4SFh4OUgXyXeXd3c3Nvb2wWaGhlpBhiX19cW1kDVlVTsA9RUU61TEtJHSEAOw==") no-repeat right bottom;
+    }
+
+.fancy-promos .size-LG2{ margin-bottom: 1em; }
+
+/* Modifiers for the icons 
+---------------------------------------------- */
+.is--fancy .size-M-alt{ padding-right: 5px; padding-left: 5px; }
+
+.buy-price{ line-height: .9; }
+.buy-price .price{ @include rem(font-size, 30px); }
+.buy-price .block{ padding-top: .2em; }
+.price sup{ @include rem(font-size, 18px); top: .1em; }
+
+// [lang="en-ca"] .is--fancy .feature-excerpt{
+//     min-height: 77px;
+//     }
+.is--fancy .feature-excerpt{
+    min-height: 105px;
+    }
+// [lang="fr-ca"] .is--fancy .feature-excerpt{
+//     min-height: 58px;
+//     }
+// [lang="fr-ca"] .is--fancy .feature-excerpt{
+//     min-height: 105px;
+//     }
+.feature-body .small-text{
+    line-height: 1.4;
+    }
+
+[lang="en-ca"] .is--fancy .yuck1{ margin-bottom: 2.2em; }
+[lang="fr-ca"] .is--fancy .yuck1{ margin-bottom: 2.2em; }
+
+.overages{ clear: both; line-height: 1; width: 100%; text-align: center; padding: .8em 0 .5em; margin-bottom: 0; }

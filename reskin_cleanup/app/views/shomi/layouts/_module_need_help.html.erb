@@ -1,0 +1,18 @@
+<section class="support-module <%= yield :support_module_class %>">
+    <div class="container fluid">
+      <div class="box-left">
+        <h2 class="h-l size-XL rogers-red"><%= t("text.need_help").html_safe %></h2>
+        <ul class="inline-list help-list">
+            <li>
+              <%= link_to t("help.view_faq.text"), t("help.view_faq.link").html_safe, class: "is-selected", :rel => "external", :target => "_blank" %>
+            </li>
+        
+        <%= yield :link_account_faq_content %>
+          
+       </div><%# end box-left %>
+    
+      <%= yield :live_chat_content %>
+
+    </div><%# end .container fluid  %>
+
+</section>
