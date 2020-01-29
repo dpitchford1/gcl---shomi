@@ -8,7 +8,7 @@ Bluepill.application("gcl-#{hostname}", base_dir: "/clients/sportsnet/gamecentre
   app.working_dir = "/clients/sportsnet/gamecentrelive.rogers.com/current"
   app.process("sidekiq") do |process|
 
-    pidfile = "/clients/sportsnet/gamecentrelive.rogers.com/shared/pids/gcl-#{hostname}/sidekiq.pid" 
+     
     process.pid_file = pidfile
     process.start_command = "sidekiq -q default -q scheduler -e #{rails_env} -P #{pidfile} -d  -L /clients/sportsnet/gamecentrelive.rogers.com/shared/log/sidekiq.log "
     process.stop_command = "sidekiqctl stop #{pidfile}"
